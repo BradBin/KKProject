@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"当前是ENV_Code: %d",ENV_CODE);
+    
     self.view.backgroundColor = UIColor.redColor;
     // Do any additional setup after loading the view.
 }

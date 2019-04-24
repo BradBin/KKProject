@@ -22,9 +22,9 @@
 		0A634B1D2270BE2A00C0D0B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349ED2270B08E00C0D0B0 /* main.m */; };
 		0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */; };
 		0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */; };
-		0A634B222270BE2A00C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
 		0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
 		0A634B2A2270C02300C0D0B0 /* KKProject-Objc-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */; };
+		0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +47,7 @@
 		0A634AFA2270BD1A00C0D0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKProject-Objc-Info.plist"; sourceTree = "<group>"; };
+		0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 				0A6349EC2270B08E00C0D0B0 /* Info.plist */,
 				0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */,
 				0A6349ED2270B08E00C0D0B0 /* main.m */,
+				0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */,
 			);
 			path = KKProject;
 			sourceTree = "<group>";
@@ -242,7 +244,7 @@
 			files = (
 				0A634B2A2270C02300C0D0B0 /* KKProject-Objc-Info.plist in Resources */,
 				0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */,
-				0A634B222270BE2A00C0D0B0 /* Assets.xcassets in Resources */,
+				0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */,
 				0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +437,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/KKProjectMacros.h";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=0";
 				INFOPLIST_FILE = KKProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +456,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/KKProjectMacros.h";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=0";
 				INFOPLIST_FILE = KKProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -506,9 +512,10 @@
 		0A634B252270BE2A00C0D0B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=1";
 				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,9 +530,10 @@
 		0A634B262270BE2A00C0D0B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=1";
 				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
