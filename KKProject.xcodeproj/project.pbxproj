@@ -18,6 +18,13 @@
 		0A634AF42270BD1900C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A634AF22270BD1900C0D0B0 /* Main.storyboard */; };
 		0A634AF62270BD1A00C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A634AF52270BD1A00C0D0B0 /* Assets.xcassets */; };
 		0A634AF92270BD1A00C0D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A634AF72270BD1A00C0D0B0 /* LaunchScreen.storyboard */; };
+		0A634B1C2270BE2A00C0D0B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349E22270B08D00C0D0B0 /* ViewController.m */; };
+		0A634B1D2270BE2A00C0D0B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349ED2270B08E00C0D0B0 /* main.m */; };
+		0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */; };
+		0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */; };
+		0A634B222270BE2A00C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
+		0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
+		0A634B2A2270C02300C0D0B0 /* KKProject-Objc-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,8 @@
 		0A634AF52270BD1A00C0D0B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A634AF82270BD1A00C0D0B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A634AFA2270BD1A00C0D0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKProject-Objc-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +58,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0A634AE92270BD1900C0D0B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A634B1F2270BE2A00C0D0B0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,6 +88,7 @@
 			children = (
 				0A6349DB2270B08D00C0D0B0 /* KKProject.app */,
 				0A634AEC2270BD1900C0D0B0 /* KKProject_Swift.app */,
+				0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +104,7 @@
 				0A6349E72270B08E00C0D0B0 /* Assets.xcassets */,
 				0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */,
 				0A6349EC2270B08E00C0D0B0 /* Info.plist */,
+				0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */,
 				0A6349ED2270B08E00C0D0B0 /* main.m */,
 			);
 			path = KKProject;
@@ -142,6 +160,23 @@
 			productReference = 0A634AEC2270BD1900C0D0B0 /* KKProject_Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0A634B1A2270BE2A00C0D0B0 /* KKProject_Objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A634B242270BE2A00C0D0B0 /* Build configuration list for PBXNativeTarget "KKProject_Objc" */;
+			buildPhases = (
+				0A634B1B2270BE2A00C0D0B0 /* Sources */,
+				0A634B1F2270BE2A00C0D0B0 /* Frameworks */,
+				0A634B202270BE2A00C0D0B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKProject_Objc;
+			productName = KKProject;
+			productReference = 0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,6 +209,7 @@
 			projectRoot = "";
 			targets = (
 				0A6349DA2270B08D00C0D0B0 /* KKProject */,
+				0A634B1A2270BE2A00C0D0B0 /* KKProject_Objc */,
 				0A634AEB2270BD1900C0D0B0 /* KKProject_Swift */,
 			);
 		};
@@ -200,6 +236,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A634B202270BE2A00C0D0B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A634B2A2270C02300C0D0B0 /* KKProject-Objc-Info.plist in Resources */,
+				0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */,
+				0A634B222270BE2A00C0D0B0 /* Assets.xcassets in Resources */,
+				0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -219,6 +266,16 @@
 			files = (
 				0A634AF12270BD1900C0D0B0 /* ViewController.swift in Sources */,
 				0A634AEF2270BD1900C0D0B0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A634B1B2270BE2A00C0D0B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A634B1C2270BE2A00C0D0B0 /* ViewController.m in Sources */,
+				0A634B1D2270BE2A00C0D0B0 /* main.m in Sources */,
+				0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +503,40 @@
 			};
 			name = Release;
 		};
+		0A634B252270BE2A00C0D0B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LR3Z96539F;
+				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youbin.KKProject-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0A634B262270BE2A00C0D0B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LR3Z96539F;
+				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youbin.KKProject-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -472,6 +563,15 @@
 			buildConfigurations = (
 				0A634B112270BD1A00C0D0B0 /* Debug */,
 				0A634B122270BD1A00C0D0B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A634B242270BE2A00C0D0B0 /* Build configuration list for PBXNativeTarget "KKProject_Objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A634B252270BE2A00C0D0B0 /* Debug */,
+				0A634B262270BE2A00C0D0B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,13 +6,42 @@
 	<dict>
 		<key>KKProject.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>KKProject_Swift.xcscheme_^#shared#^_</key>
+		<key>KKProject_Objc.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>KKProject_Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0A6349DA2270B08D00C0D0B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A634AEB2270BD1900C0D0B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0A634B1A2270BE2A00C0D0B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
