@@ -1,0 +1,6 @@
+module Pods_KKProject_Swift [system] {
+  umbrella header "Pods-KKProject_Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

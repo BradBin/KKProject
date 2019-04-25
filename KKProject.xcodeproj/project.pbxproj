@@ -25,6 +25,9 @@
 		0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
 		0A634B2A2270C02300C0D0B0 /* KKProject-Objc-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */; };
 		0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
+		A16EFEEC0A51EF606F81C3CF /* libPods-KKProject_Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD918E446C221F19B531724 /* libPods-KKProject_Swift.a */; };
+		C0E3CDB08138B2ABB9393EE9 /* libPods-KKProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D98E7F2EC6A41977A257D /* libPods-KKProject.a */; };
+		DAB117A6C4ABC672D923BBD8 /* libPods-KKProject_Objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,15 @@
 		0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKProject-Objc-Info.plist"; sourceTree = "<group>"; };
 		0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectMacros.h; sourceTree = "<group>"; };
+		1B9C241756EEF8F825ECEC9C /* Pods-KKProject_Objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_Objc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_Objc/Pods-KKProject_Objc.debug.xcconfig"; sourceTree = "<group>"; };
+		204109BCA539723EAC3C4303 /* Pods-KKProject_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_Swift/Pods-KKProject_Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		317D961BA2DD2BFB51EE381D /* Pods-KKProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject/Pods-KKProject.debug.xcconfig"; sourceTree = "<group>"; };
+		3B3FB8C619DB2DE564EAB42A /* Pods-KKProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject/Pods-KKProject.release.xcconfig"; sourceTree = "<group>"; };
+		5D46E76F1AC1A84F170F9B4C /* Pods-KKProject_Objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_Objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_Objc/Pods-KKProject_Objc.release.xcconfig"; sourceTree = "<group>"; };
+		822D98E7F2EC6A41977A257D /* libPods-KKProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6EE4928222551FE06A4F32C /* Pods-KKProject_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_Swift/Pods-KKProject_Swift.release.xcconfig"; sourceTree = "<group>"; };
+		F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKProject_Objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFD918E446C221F19B531724 /* libPods-KKProject_Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKProject_Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E3CDB08138B2ABB9393EE9 /* libPods-KKProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A16EFEEC0A51EF606F81C3CF /* libPods-KKProject_Swift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB117A6C4ABC672D923BBD8 /* libPods-KKProject_Objc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				0A6349DD2270B08D00C0D0B0 /* KKProject */,
 				0A634AED2270BD1900C0D0B0 /* KKProject_Swift */,
 				0A6349DC2270B08D00C0D0B0 /* Products */,
+				5FACC60D7A0B42EAA7E31E47 /* Pods */,
+				F3E9ACCC91B3EC9457AB7448 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,29 @@
 			path = KKProject_Swift;
 			sourceTree = "<group>";
 		};
+		5FACC60D7A0B42EAA7E31E47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				317D961BA2DD2BFB51EE381D /* Pods-KKProject.debug.xcconfig */,
+				3B3FB8C619DB2DE564EAB42A /* Pods-KKProject.release.xcconfig */,
+				1B9C241756EEF8F825ECEC9C /* Pods-KKProject_Objc.debug.xcconfig */,
+				5D46E76F1AC1A84F170F9B4C /* Pods-KKProject_Objc.release.xcconfig */,
+				204109BCA539723EAC3C4303 /* Pods-KKProject_Swift.debug.xcconfig */,
+				E6EE4928222551FE06A4F32C /* Pods-KKProject_Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3E9ACCC91B3EC9457AB7448 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				822D98E7F2EC6A41977A257D /* libPods-KKProject.a */,
+				F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */,
+				FFD918E446C221F19B531724 /* libPods-KKProject_Swift.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A634A072270B08E00C0D0B0 /* Build configuration list for PBXNativeTarget "KKProject" */;
 			buildPhases = (
+				9F3C9CE8B089A85CF7DA85A9 /* [CP] Check Pods Manifest.lock */,
 				0A6349D72270B08D00C0D0B0 /* Sources */,
 				0A6349D82270B08D00C0D0B0 /* Frameworks */,
 				0A6349D92270B08D00C0D0B0 /* Resources */,
@@ -149,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A634B172270BD1A00C0D0B0 /* Build configuration list for PBXNativeTarget "KKProject_Swift" */;
 			buildPhases = (
+				5918EA64FFE532965F5309B4 /* [CP] Check Pods Manifest.lock */,
 				0A634AE82270BD1900C0D0B0 /* Sources */,
 				0A634AE92270BD1900C0D0B0 /* Frameworks */,
 				0A634AEA2270BD1900C0D0B0 /* Resources */,
@@ -166,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A634B242270BE2A00C0D0B0 /* Build configuration list for PBXNativeTarget "KKProject_Objc" */;
 			buildPhases = (
+				01884929673D6FBE490BE20D /* [CP] Check Pods Manifest.lock */,
 				0A634B1B2270BE2A00C0D0B0 /* Sources */,
 				0A634B1F2270BE2A00C0D0B0 /* Frameworks */,
 				0A634B202270BE2A00C0D0B0 /* Resources */,
@@ -250,6 +293,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01884929673D6FBE490BE20D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKProject_Objc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5918EA64FFE532965F5309B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKProject_Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F3C9CE8B089A85CF7DA85A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KKProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A6349D72270B08D00C0D0B0 /* Sources */ = {
@@ -433,6 +533,7 @@
 		};
 		0A634A082270B08E00C0D0B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 317D961BA2DD2BFB51EE381D /* Pods-KKProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,6 +541,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/KKProjectMacros.h";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=0";
 				INFOPLIST_FILE = KKProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,6 +554,7 @@
 		};
 		0A634A092270B08E00C0D0B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3FB8C619DB2DE564EAB42A /* Pods-KKProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -459,6 +562,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/KKProjectMacros.h";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=0";
 				INFOPLIST_FILE = KKProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,11 +575,13 @@
 		};
 		0A634B112270BD1A00C0D0B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 204109BCA539723EAC3C4303 /* Pods-KKProject_Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				INFOPLIST_FILE = KKProject_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,17 +591,19 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0A634B122270BD1A00C0D0B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6EE4928222551FE06A4F32C /* Pods-KKProject_Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				INFOPLIST_FILE = KKProject_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,18 +613,20 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		0A634B252270BE2A00C0D0B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B9C241756EEF8F825ECEC9C /* Pods-KKProject_Objc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=1";
 				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,12 +639,14 @@
 		};
 		0A634B262270BE2A00C0D0B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D46E76F1AC1A84F170F9B4C /* Pods-KKProject_Objc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=1";
 				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
