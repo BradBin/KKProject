@@ -17,38 +17,52 @@ PODS:
   - Alamofire (4.8.2)
   - dsBridge (3.0.6)
   - FBRetainCycleDetector (0.1.4)
+  - IQKeyboardManager (6.2.1)
   - Masonry (1.1.0)
+  - ReactiveObjC (3.1.0)
   - SnapKit (4.2.0)
   - SwiftyJSON (4.2.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
   - dsBridge
   - FBRetainCycleDetector
+  - IQKeyboardManager
   - Masonry
+  - ReactiveObjC
   - SnapKit
   - SwiftyJSON
+  - YYKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Alamofire
     - dsBridge
     - FBRetainCycleDetector
+    - IQKeyboardManager
     - Masonry
+    - ReactiveObjC
     - SnapKit
     - SwiftyJSON
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a20848093cb8582b65e6bfd00575e7b3bd1c182c
+PODFILE CHECKSUM: 3f40c961eb3fb8e1924d47e1fa5e0d94a19b1d10
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.1

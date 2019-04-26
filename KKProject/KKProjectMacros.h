@@ -19,7 +19,5 @@
 #endif
 
 
-
-
 #endif /* KKProjectMacros_h */
 

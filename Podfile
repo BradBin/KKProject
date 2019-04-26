@@ -5,7 +5,7 @@ inhibit_all_warnings!
 def commonPods
     pod 'Masonry'
     pod 'dsBridge'
-#    pod 'YYKit'
+    pod 'YYKit'
     pod 'AFNetworking'
 end
 
@@ -17,6 +17,8 @@ end
 
 target 'KKProject_Objc' do
     commonPods
+    pod 'ReactiveObjC'
+    pod 'IQKeyboardManager'
 end
 
 #targets = ['KKProject','KKProject_Objc']
