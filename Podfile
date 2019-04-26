@@ -37,4 +37,7 @@ target 'KKProject_Swift' do
     pod 'SnapKit'
     pod 'SwiftyJSON'
     pod 'Alamofire'
+    pod 'IQKeyboardManagerSwift'
+    pod 'RxSwift'
+    pod 'ReactiveCocoa'
 end

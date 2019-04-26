@@ -18,8 +18,15 @@ PODS:
   - dsBridge (3.0.6)
   - FBRetainCycleDetector (0.1.4)
   - IQKeyboardManager (6.2.1)
+  - IQKeyboardManagerSwift (6.2.1)
   - Masonry (1.1.0)
+  - ReactiveCocoa (9.0.0):
+    - ReactiveSwift (~> 5.0)
   - ReactiveObjC (3.1.0)
+  - ReactiveSwift (5.0.1):
+    - Result (~> 4.1)
+  - Result (4.1.0)
+  - RxSwift (4.5.0)
   - SnapKit (4.2.0)
   - SwiftyJSON (4.2.0)
   - YYKit (1.0.9):
@@ -32,8 +39,11 @@ DEPENDENCIES:
   - dsBridge
   - FBRetainCycleDetector
   - IQKeyboardManager
+  - IQKeyboardManagerSwift
   - Masonry
+  - ReactiveCocoa
   - ReactiveObjC
+  - RxSwift
   - SnapKit
   - SwiftyJSON
   - YYKit
@@ -45,8 +55,13 @@ SPEC REPOS:
     - dsBridge
     - FBRetainCycleDetector
     - IQKeyboardManager
+    - IQKeyboardManagerSwift
     - Masonry
+    - ReactiveCocoa
     - ReactiveObjC
+    - ReactiveSwift
+    - Result
+    - RxSwift
     - SnapKit
     - SwiftyJSON
     - YYKit
@@ -57,12 +72,17 @@ SPEC CHECKSUMS:
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
+  IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveCocoa: 29709cf0cc7502ddd04a51220e10ee0336d8bec8
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  ReactiveSwift: cac20a5bbe560c5806bd29c0fccf90d03b996ac1
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 3f40c961eb3fb8e1924d47e1fa5e0d94a19b1d10
+PODFILE CHECKSUM: 214f9c742ce4bfb82a82fa8fabe107a508788c96
 
 COCOAPODS: 1.6.1
