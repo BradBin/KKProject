@@ -19,6 +19,7 @@ PODS:
   - FBRetainCycleDetector (0.1.4)
   - IQKeyboardManager (6.2.1)
   - IQKeyboardManagerSwift (6.2.1)
+  - Kingfisher (4.10.1)
   - Masonry (1.1.0)
   - ReactiveCocoa (9.0.0):
     - ReactiveSwift (~> 5.0)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - FBRetainCycleDetector
   - IQKeyboardManager
   - IQKeyboardManagerSwift
+  - Kingfisher
   - Masonry
   - ReactiveCocoa
   - ReactiveObjC
@@ -56,6 +58,7 @@ SPEC REPOS:
     - FBRetainCycleDetector
     - IQKeyboardManager
     - IQKeyboardManagerSwift
+    - Kingfisher
     - Masonry
     - ReactiveCocoa
     - ReactiveObjC
@@ -73,6 +76,7 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
   IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveCocoa: 29709cf0cc7502ddd04a51220e10ee0336d8bec8
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
@@ -83,6 +87,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 214f9c742ce4bfb82a82fa8fabe107a508788c96
+PODFILE CHECKSUM: 1d6b389c72c33dfb540323cce7ea5661ff178847
 
 COCOAPODS: 1.6.1

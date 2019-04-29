@@ -40,4 +40,5 @@ target 'KKProject_Swift' do
     pod 'IQKeyboardManagerSwift'
     pod 'RxSwift'
     pod 'ReactiveCocoa'
+    pod 'Kingfisher'
 end
