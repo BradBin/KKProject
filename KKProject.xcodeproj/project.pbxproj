@@ -27,6 +27,8 @@
 		0ABB2611227755CD00397661 /* KKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB2610227755CD00397661 /* KKBaseViewController.swift */; };
 		0ABB26132277560400397661 /* KKHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB26122277560400397661 /* KKHomeViewController.swift */; };
 		0ABB26152277565800397661 /* KKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB26142277565800397661 /* KKTabBarController.swift */; };
+		9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF6A2278430400BC7AAC /* InfoPlist.strings */; };
+		9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF702278482100BC7AAC /* KKProject-Objc-InfoPlist.strings */; };
 		A16EFEEC0A51EF606F81C3CF /* libPods-KKProject_Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD918E446C221F19B531724 /* libPods-KKProject_Swift.a */; };
 		C0E3CDB08138B2ABB9393EE9 /* libPods-KKProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D98E7F2EC6A41977A257D /* libPods-KKProject.a */; };
 		DAB117A6C4ABC672D923BBD8 /* libPods-KKProject_Objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */; };
@@ -41,7 +43,6 @@
 		0A6349E52270B08D00C0D0B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A6349E72270B08E00C0D0B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A6349EA2270B08E00C0D0B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0A6349EC2270B08E00C0D0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A6349ED2270B08E00C0D0B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A634AEC2270BD1900C0D0B0 /* KKProject_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A634AEE2270BD1900C0D0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +63,15 @@
 		3B3FB8C619DB2DE564EAB42A /* Pods-KKProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject/Pods-KKProject.release.xcconfig"; sourceTree = "<group>"; };
 		5D46E76F1AC1A84F170F9B4C /* Pods-KKProject_Objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_Objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_Objc/Pods-KKProject_Objc.release.xcconfig"; sourceTree = "<group>"; };
 		822D98E7F2EC6A41977A257D /* libPods-KKProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9347CF5922783F3500BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		9347CF5A22783F3600BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9347CF5B22783F3700BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		9347CF5C22783F3700BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9347CF63227842AC00BC7AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		9347CF692278430400BC7AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9347CF6B2278430A00BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		9347CF6F2278482100BC7AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
+		9347CF712278482200BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
 		E6EE4928222551FE06A4F32C /* Pods-KKProject_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_Swift/Pods-KKProject_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKProject_Objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD918E446C221F19B531724 /* libPods-KKProject_Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKProject_Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,11 +212,13 @@
 				0A6349E12270B08D00C0D0B0 /* ViewController.h */,
 				0A6349E22270B08D00C0D0B0 /* ViewController.m */,
 				0A6349E42270B08D00C0D0B0 /* Main.storyboard */,
-				0A6349E72270B08E00C0D0B0 /* Assets.xcassets */,
 				0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */,
-				0A6349EC2270B08E00C0D0B0 /* Info.plist */,
+				0A6349E72270B08E00C0D0B0 /* Assets.xcassets */,
+				9347CF64227842AC00BC7AAC /* Info.plist */,
 				0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */,
 				0A6349ED2270B08E00C0D0B0 /* main.m */,
+				9347CF6A2278430400BC7AAC /* InfoPlist.strings */,
+				9347CF702278482100BC7AAC /* KKProject-Objc-InfoPlist.strings */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -306,6 +318,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 0A6349D22270B08D00C0D0B0;
 			productRefGroup = 0A6349DC2270B08D00C0D0B0 /* Products */;
@@ -325,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6349EB2270B08E00C0D0B0 /* LaunchScreen.storyboard in Resources */,
+				9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */,
 				0A6349E82270B08E00C0D0B0 /* Assets.xcassets in Resources */,
 				0A6349E62270B08D00C0D0B0 /* Main.storyboard in Resources */,
 			);
@@ -346,6 +360,7 @@
 			files = (
 				0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */,
 				0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */,
+				9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */,
 				0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +508,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0A6349E52270B08D00C0D0B0 /* Base */,
+				9347CF5922783F3500BC7AAC /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -501,6 +517,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0A6349EA2270B08E00C0D0B0 /* Base */,
+				9347CF5A22783F3600BC7AAC /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -509,6 +526,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0A634AF32270BD1900C0D0B0 /* Base */,
+				9347CF5B22783F3700BC7AAC /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -517,8 +535,35 @@
 			isa = PBXVariantGroup;
 			children = (
 				0A634AF82270BD1A00C0D0B0 /* Base */,
+				9347CF5C22783F3700BC7AAC /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9347CF64227842AC00BC7AAC /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9347CF63227842AC00BC7AAC /* Base */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		9347CF6A2278430400BC7AAC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9347CF692278430400BC7AAC /* en */,
+				9347CF6B2278430A00BC7AAC /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9347CF702278482100BC7AAC /* KKProject-Objc-InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9347CF6F2278482100BC7AAC /* en */,
+				9347CF712278482200BC7AAC /* zh-Hans */,
+			);
+			name = "KKProject-Objc-InfoPlist.strings";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -528,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -587,6 +633,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -642,6 +689,7 @@
 			baseConfigurationReference = 317D961BA2DD2BFB51EE381D /* Pods-KKProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
@@ -663,6 +711,7 @@
 			baseConfigurationReference = 3B3FB8C619DB2DE564EAB42A /* Pods-KKProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
@@ -728,6 +777,7 @@
 			baseConfigurationReference = 1B9C241756EEF8F825ECEC9C /* Pods-KKProject_Objc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
@@ -749,6 +799,7 @@
 			baseConfigurationReference = 5D46E76F1AC1A84F170F9B4C /* Pods-KKProject_Objc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
