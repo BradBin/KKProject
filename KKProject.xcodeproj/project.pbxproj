@@ -23,7 +23,6 @@
 		0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */; };
 		0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */; };
 		0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
-		0A634B2A2270C02300C0D0B0 /* KKProject-Objc-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */; };
 		0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
 		0ABB2611227755CD00397661 /* KKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB2610227755CD00397661 /* KKBaseViewController.swift */; };
 		0ABB26132277560400397661 /* KKHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB26122277560400397661 /* KKHomeViewController.swift */; };
@@ -120,17 +119,12 @@
 		0A6349DD2270B08D00C0D0B0 /* KKProject */ = {
 			isa = PBXGroup;
 			children = (
-				0A6349DE2270B08D00C0D0B0 /* AppDelegate.h */,
-				0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */,
-				0A6349E12270B08D00C0D0B0 /* ViewController.h */,
-				0A6349E22270B08D00C0D0B0 /* ViewController.m */,
-				0A6349E42270B08D00C0D0B0 /* Main.storyboard */,
-				0A6349E72270B08E00C0D0B0 /* Assets.xcassets */,
-				0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */,
-				0A6349EC2270B08E00C0D0B0 /* Info.plist */,
-				0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */,
-				0A6349ED2270B08E00C0D0B0 /* main.m */,
-				0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */,
+				9347CF5622783A5500BC7AAC /* App */,
+				9347CF5722783A5F00BC7AAC /* Tool */,
+				9347CF552278393600BC7AAC /* Common */,
+				9347CF542278392300BC7AAC /* Vender */,
+				9347CF532278391900BC7AAC /* Controller */,
+				9347CF5822783A7100BC7AAC /* SupportFiles */,
 			);
 			path = KKProject;
 			sourceTree = "<group>";
@@ -162,6 +156,59 @@
 				E6EE4928222551FE06A4F32C /* Pods-KKProject_Swift.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9347CF532278391900BC7AAC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9347CF542278392300BC7AAC /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		9347CF552278393600BC7AAC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9347CF5622783A5500BC7AAC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0A6349DE2270B08D00C0D0B0 /* AppDelegate.h */,
+				0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9347CF5722783A5F00BC7AAC /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		9347CF5822783A7100BC7AAC /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0A6349E12270B08D00C0D0B0 /* ViewController.h */,
+				0A6349E22270B08D00C0D0B0 /* ViewController.m */,
+				0A6349E42270B08D00C0D0B0 /* Main.storyboard */,
+				0A6349E72270B08E00C0D0B0 /* Assets.xcassets */,
+				0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */,
+				0A6349EC2270B08E00C0D0B0 /* Info.plist */,
+				0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */,
+				0A6349ED2270B08E00C0D0B0 /* main.m */,
+			);
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		F3E9ACCC91B3EC9457AB7448 /* Frameworks */ = {
@@ -297,7 +344,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A634B2A2270C02300C0D0B0 /* KKProject-Objc-Info.plist in Resources */,
 				0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */,
 				0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */,
 				0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */,
@@ -586,6 +632,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -597,9 +644,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/KKProjectMacros.h";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=0";
-				INFOPLIST_FILE = KKProject/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KKProject/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,9 +665,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/KKProjectMacros.h";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=0";
-				INFOPLIST_FILE = KKProject/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KKProject/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,8 +730,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=1";
-				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KKProject/SupportFiles/KKProject-Objc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -703,8 +751,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Objc;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LR3Z96539F;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/KKProject/Common/KKProjectMacros.h";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "ENV_CODE=1";
-				INFOPLIST_FILE = "KKProject/KKProject-Objc-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KKProject/SupportFiles/KKProject-Objc-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
