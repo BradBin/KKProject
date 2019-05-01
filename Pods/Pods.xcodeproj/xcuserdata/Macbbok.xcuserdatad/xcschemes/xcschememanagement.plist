@@ -169,6 +169,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NIMSDK_LITE.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NVActivityIndicatorView.xcscheme</key>
 		<dict>
 			<key>isShown</key>

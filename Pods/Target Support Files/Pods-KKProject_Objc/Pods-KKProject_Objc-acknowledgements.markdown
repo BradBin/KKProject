@@ -416,6 +416,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## NIMSDK_LITE
+
+Copyright 2019 Netease 
+
 ## ReactiveObjC
 
 **Copyright (c) 2012 - 2016, GitHub, Inc.**

@@ -26,6 +26,7 @@ target 'KKProject_Objc' do
   commonPods
   pod 'ReactiveObjC'
   pod 'IQKeyboardManager'
+  pod 'NIMSDK_LITE', '~> 6.4.0'
 end
 
 

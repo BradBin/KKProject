@@ -63,6 +63,7 @@ PODS:
   - Moya/Core (13.0.0):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
+  - NIMSDK_LITE (6.4.0)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
@@ -156,6 +157,7 @@ DEPENDENCIES:
   - Masonry
   - Material
   - Moya
+  - NIMSDK_LITE (~> 6.4.0)
   - NVActivityIndicatorView
   - PromiseKit
   - R.swift
@@ -218,6 +220,7 @@ SPEC REPOS:
     - Material
     - Motion
     - Moya
+    - NIMSDK_LITE
     - NVActivityIndicatorView
     - Player
     - PromiseKit
@@ -286,6 +289,7 @@ SPEC CHECKSUMS:
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
   Moya: 161263550064ff8a4948e8ff63137fd72a876292
+  NIMSDK_LITE: 80086a3f1f96b7137e15bc8ce1f5eb160e1ce60b
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
@@ -322,6 +326,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9e5b4fc9f16aa01e69af09e5f62533e4b2fcdd74
+PODFILE CHECKSUM: 58bf6e30f7ad4f74b8ebdce52729829d85f2771f
 
 COCOAPODS: 1.6.1
