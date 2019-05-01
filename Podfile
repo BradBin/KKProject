@@ -9,6 +9,9 @@ def commonPods
   pod 'AFNetworking'
   pod 'FFRouter'
   
+  pod 'EasyReact'
+  pod 'ReactiveObjC'
+  
   pod 'SVGAPlayer'
   pod 'SVGKit'
   
@@ -17,14 +20,14 @@ end
 
 target 'KKProject' do
   commonPods
-  pod 'EasyReact'
+  
   #循环引用检测工具
   pod 'FBRetainCycleDetector'
 end
 
 target 'KKProject_Objc' do
   commonPods
-  pod 'ReactiveObjC'
+  
   pod 'IQKeyboardManager'
   pod 'NIMSDK_LITE', '~> 6.4.0'
 end
