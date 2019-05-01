@@ -3,24 +3,27 @@ inhibit_all_warnings!
 
 #多个target的pod引入
 def commonPods
-    pod 'Masonry'
-    pod 'dsBridge'
-    pod 'YYKit'
-    pod 'AFNetworking'
-    pod 'FFRouter'
+  pod 'Masonry'
+  pod 'dsBridge'
+  pod 'YYKit'
+  pod 'AFNetworking'
+  pod 'FFRouter'
+  
+  pod 'SVGAPlayer'
+  pod 'SVGKit'
 end
 
 target 'KKProject' do
-    commonPods
-    pod 'EasyReact'
-    #循环引用检测工具
-    pod 'FBRetainCycleDetector'
+  commonPods
+  pod 'EasyReact'
+  #循环引用检测工具
+  pod 'FBRetainCycleDetector'
 end
 
 target 'KKProject_Objc' do
-    commonPods
-    pod 'ReactiveObjC'
-    pod 'IQKeyboardManager'
+  commonPods
+  pod 'ReactiveObjC'
+  pod 'IQKeyboardManager'
 end
 
 
@@ -36,17 +39,19 @@ end
 
 
 target 'KKProject_Swift' do
+  use_frameworks!
+  pod 'CocoaLumberjack/Swift'
   
-    pod 'SnapKit'
-    pod 'SwiftyJSON'
-    pod 'Alamofire'
-    pod 'Then'
-    
-    pod 'IQKeyboardManagerSwift'
-    pod 'RxSwift'
-    pod 'RxCocoa'
-    pod 'ReactiveCocoa'
-    
-    pod 'Kingfisher'
-    
+  pod 'SnapKit'
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'Then'
+  
+  pod 'IQKeyboardManagerSwift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'ReactiveCocoa'
+  
+  pod 'Kingfisher'
+  
 end

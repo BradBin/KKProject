@@ -15,6 +15,11 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (4.8.2)
+  - CocoaLumberjack (3.5.3):
+    - CocoaLumberjack/Core (= 3.5.3)
+  - CocoaLumberjack/Core (3.5.3)
+  - CocoaLumberjack/Swift (3.5.3):
+    - CocoaLumberjack/Core
   - dsBridge (3.0.6)
   - EasyFoundation (1.0.0):
     - EasySequence (~> 1.3.0)
@@ -29,6 +34,7 @@ PODS:
   - IQKeyboardManagerSwift (6.2.1)
   - Kingfisher (4.10.1)
   - Masonry (1.1.0)
+  - Protobuf (3.7.0)
   - ReactiveCocoa (9.0.0):
     - ReactiveSwift (~> 5.0)
   - ReactiveObjC (3.1.0)
@@ -39,6 +45,17 @@ PODS:
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
   - SnapKit (4.2.0)
+  - SSZipArchive (2.1.5)
+  - SVGAPlayer (2.3.3):
+    - SVGAPlayer/Core (= 2.3.3)
+    - SVGAPlayer/ProtoFiles (= 2.3.3)
+  - SVGAPlayer/Core (2.3.3):
+    - SSZipArchive (>= 1.8.1)
+    - SVGAPlayer/ProtoFiles
+  - SVGAPlayer/ProtoFiles (2.3.3):
+    - Protobuf (~> 3.4)
+  - SVGKit (2.1.0):
+    - CocoaLumberjack (~> 3.0)
   - SwiftyJSON (4.2.0)
   - Then (2.4.0)
   - YYKit (1.0.9):
@@ -48,6 +65,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
+  - CocoaLumberjack/Swift
   - dsBridge
   - EasyReact
   - FBRetainCycleDetector
@@ -61,6 +79,8 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SnapKit
+  - SVGAPlayer
+  - SVGKit
   - SwiftyJSON
   - Then
   - YYKit
@@ -69,6 +89,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Alamofire
+    - CocoaLumberjack
     - dsBridge
     - EasyFoundation
     - EasyReact
@@ -80,6 +101,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - Masonry
+    - Protobuf
     - ReactiveCocoa
     - ReactiveObjC
     - ReactiveSwift
@@ -87,6 +109,9 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SnapKit
+    - SSZipArchive
+    - SVGAPlayer
+    - SVGKit
     - SwiftyJSON
     - Then
     - YYKit
@@ -94,6 +119,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   EasyFoundation: a4bb86dd4ba01cb720f5320c314c5628ee237acd
   EasyReact: 39fdf743eab448b1c3f61622a2bddc7c6ec71af2
@@ -105,6 +131,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   ReactiveCocoa: 29709cf0cc7502ddd04a51220e10ee0336d8bec8
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   ReactiveSwift: cac20a5bbe560c5806bd29c0fccf90d03b996ac1
@@ -112,10 +139,13 @@ SPEC CHECKSUMS:
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
+  SVGAPlayer: cf93c1761209c478003951fa23376e7ed7dedc96
+  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 7b38837089a3cd137af6afc041eba24733c2919b
+PODFILE CHECKSUM: 3f2ff6d5dc4b03e8a51239f37f702bc48ea8959d
 
 COCOAPODS: 1.6.1
