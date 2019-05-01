@@ -102,3 +102,21 @@ target 'KKProject_Swift' do
   pod 'LTMorphingLabel'
   
 end
+
+
+
+#***********
+#Build system information
+#Xcode 9 --> deployment target 4.3
+#Xcode 10 --> deployment target 8.0
+#Xcode10的这次更新直接把deployment target提到了8.0，故之前的一些第三方库会出现这样的问题。
+#*********
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 9.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+  end
+end
