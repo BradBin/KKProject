@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0D6A11227A84BD005BA58F /* UIColor+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A10227A84BD005BA58F /* UIColor+KKAdd.m */; };
+		0A0D6A12227A84BD005BA58F /* UIColor+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A10227A84BD005BA58F /* UIColor+KKAdd.m */; };
+		0A0D6A1C227A89AC005BA58F /* JXPagerListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */; };
+		0A0D6A1D227A89AC005BA58F /* JXPagerListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */; };
+		0A0D6A1E227A89AC005BA58F /* JXPagerMainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A15227A89AC005BA58F /* JXPagerMainTableView.m */; };
+		0A0D6A1F227A89AC005BA58F /* JXPagerMainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A15227A89AC005BA58F /* JXPagerMainTableView.m */; };
+		0A0D6A20227A89AC005BA58F /* JXPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A16227A89AC005BA58F /* JXPagerView.m */; };
+		0A0D6A21227A89AC005BA58F /* JXPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A16227A89AC005BA58F /* JXPagerView.m */; };
+		0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A1B227A89AC005BA58F /* JXPagerListRefreshView.m */; };
+		0A0D6A23227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A1B227A89AC005BA58F /* JXPagerListRefreshView.m */; };
 		0A6349E02270B08D00C0D0B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */; };
 		0A6349E32270B08D00C0D0B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349E22270B08D00C0D0B0 /* ViewController.m */; };
 		0A6349E62270B08D00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
@@ -113,6 +123,16 @@
 
 /* Begin PBXFileReference section */
 		0A0D69FD227A7049005BA58F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A0D6A0F227A84BD005BA58F /* UIColor+KKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+KKAdd.h"; sourceTree = "<group>"; };
+		0A0D6A10227A84BD005BA58F /* UIColor+KKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KKAdd.m"; sourceTree = "<group>"; };
+		0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPagerListContainerView.m; sourceTree = "<group>"; };
+		0A0D6A15227A89AC005BA58F /* JXPagerMainTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPagerMainTableView.m; sourceTree = "<group>"; };
+		0A0D6A16227A89AC005BA58F /* JXPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPagerView.m; sourceTree = "<group>"; };
+		0A0D6A17227A89AC005BA58F /* JXPagerListRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPagerListRefreshView.h; sourceTree = "<group>"; };
+		0A0D6A18227A89AC005BA58F /* JXPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPagerView.h; sourceTree = "<group>"; };
+		0A0D6A19227A89AC005BA58F /* JXPagerListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPagerListContainerView.h; sourceTree = "<group>"; };
+		0A0D6A1A227A89AC005BA58F /* JXPagerMainTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPagerMainTableView.h; sourceTree = "<group>"; };
+		0A0D6A1B227A89AC005BA58F /* JXPagerListRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPagerListRefreshView.m; sourceTree = "<group>"; };
 		0A6349DB2270B08D00C0D0B0 /* KKProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6349DE2270B08D00C0D0B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -274,6 +294,176 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0D69FF227A8056005BA58F /* KKLoadingPlaceHolderView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12C2A227A13ED00CF94ED /* UIView+KKPlaceHolder.h */,
+				0AC12C2B227A13ED00CF94ED /* UIView+KKPlaceHolder.m */,
+				0AC12C2E227A62F300CF94ED /* KKLoadingPlaceHolderView.h */,
+				0AC12C2F227A62F300CF94ED /* KKLoadingPlaceHolderView.m */,
+			);
+			path = KKLoadingPlaceHolderView;
+			sourceTree = "<group>";
+		};
+		0A0D6A00227A8164005BA58F /* KKTextField */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BC4227A107100CF94ED /* KKTextField.h */,
+				0AC12BA9227A107100CF94ED /* KKTextField.m */,
+			);
+			path = KKTextField;
+			sourceTree = "<group>";
+		};
+		0A0D6A01227A81AB005BA58F /* KKButton */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BC2227A107100CF94ED /* KKButton.h */,
+				0AC12BAA227A107100CF94ED /* KKButton.m */,
+			);
+			path = KKButton;
+			sourceTree = "<group>";
+		};
+		0A0D6A02227A81EE005BA58F /* KKView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BBE227A107100CF94ED /* KKView.h */,
+				0AC12BAE227A107100CF94ED /* KKView.m */,
+				0AC12BB9227A107100CF94ED /* KKViewProtocol.h */,
+			);
+			path = KKView;
+			sourceTree = "<group>";
+		};
+		0A0D6A03227A8214005BA58F /* KKViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BAD227A107100CF94ED /* KKViewModel.h */,
+				0AC12BBF227A107100CF94ED /* KKViewModel.m */,
+				0AC12BC5227A107100CF94ED /* KKViewModelProtocol.h */,
+			);
+			path = KKViewModel;
+			sourceTree = "<group>";
+		};
+		0A0D6A04227A822A005BA58F /* KKCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BC0227A107100CF94ED /* KKCollectionViewCell.h */,
+				0AC12BAC227A107100CF94ED /* KKCollectionViewCell.m */,
+				0AC12BB5227A107100CF94ED /* KKCollectionViewCellProtocol.h */,
+			);
+			path = KKCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		0A0D6A05227A8267005BA58F /* KKTableViewHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BC3227A107100CF94ED /* KKTableViewHeaderFooterView.h */,
+				0AC12BAB227A107100CF94ED /* KKTableViewHeaderFooterView.m */,
+				0AC12BED227A107100CF94ED /* KKTableViewHeaderFooterViewProtocol.h */,
+			);
+			path = KKTableViewHeaderFooterView;
+			sourceTree = "<group>";
+		};
+		0A0D6A06227A828A005BA58F /* KKModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BBD227A107100CF94ED /* KKModel.h */,
+				0AC12BAF227A107100CF94ED /* KKModel.m */,
+			);
+			path = KKModel;
+			sourceTree = "<group>";
+		};
+		0A0D6A07227A82A7005BA58F /* KKTableView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BB6227A107100CF94ED /* KKTableView.h */,
+				0AC12BEC227A107100CF94ED /* KKTableView.m */,
+				0AC12BB2227A107100CF94ED /* KKTableViewProtocol.h */,
+			);
+			path = KKTableView;
+			sourceTree = "<group>";
+		};
+		0A0D6A08227A82BA005BA58F /* KKLabel */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BB3227A107100CF94ED /* KKLabel.h */,
+				0AC12BC6227A107100CF94ED /* KKLabel.m */,
+			);
+			path = KKLabel;
+			sourceTree = "<group>";
+		};
+		0A0D6A09227A82D6005BA58F /* KKUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BCA227A107100CF94ED /* KKUIKit.h */,
+				0AC12BB8227A107100CF94ED /* KKUIKit.m */,
+			);
+			path = KKUIKit;
+			sourceTree = "<group>";
+		};
+		0A0D6A0A227A82EC005BA58F /* KKTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BB7227A107100CF94ED /* KKTableViewCell.h */,
+				0AC12BCB227A107100CF94ED /* KKTableViewCell.m */,
+				0AC12BC1227A107100CF94ED /* KKTableViewCellProtocol.h */,
+			);
+			path = KKTableViewCell;
+			sourceTree = "<group>";
+		};
+		0A0D6A0B227A8306005BA58F /* KKLayout */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BC7227A107100CF94ED /* KKLayout.h */,
+				0AC12BB4227A107100CF94ED /* KKLayout.m */,
+			);
+			path = KKLayout;
+			sourceTree = "<group>";
+		};
+		0A0D6A0C227A836A005BA58F /* KKCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BB1227A107100CF94ED /* KKCollectionView.h */,
+				0AC12BC8227A107100CF94ED /* KKCollectionView.m */,
+				0AC12BEE227A107100CF94ED /* KKCollectionViewProtocol.h */,
+			);
+			path = KKCollectionView;
+			sourceTree = "<group>";
+		};
+		0A0D6A0D227A837A005BA58F /* KKCollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BC9227A107100CF94ED /* KKCollectionReusableView.h */,
+				0AC12BBA227A107100CF94ED /* KKCollectionReusableView.m */,
+				0AC12BBB227A107100CF94ED /* KKCollectionReusableViewProtocol.h */,
+			);
+			path = KKCollectionReusableView;
+			sourceTree = "<group>";
+		};
+		0A0D6A0E227A8443005BA58F /* KKViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0AC12BEB227A107100CF94ED /* KKViewController.h */,
+				0AC12BE2227A107100CF94ED /* KKViewController.m */,
+				0AC12BD9227A107100CF94ED /* KKViewControllerProtocol.h */,
+			);
+			path = KKViewController;
+			sourceTree = "<group>";
+		};
+		0A0D6A13227A89AC005BA58F /* JXPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				0A0D6A18227A89AC005BA58F /* JXPagerView.h */,
+				0A0D6A16227A89AC005BA58F /* JXPagerView.m */,
+				0A0D6A19227A89AC005BA58F /* JXPagerListContainerView.h */,
+				0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */,
+				0A0D6A1A227A89AC005BA58F /* JXPagerMainTableView.h */,
+				0A0D6A15227A89AC005BA58F /* JXPagerMainTableView.m */,
+				0A0D6A17227A89AC005BA58F /* JXPagerListRefreshView.h */,
+				0A0D6A1B227A89AC005BA58F /* JXPagerListRefreshView.m */,
+			);
+			path = JXPagerView;
+			sourceTree = "<group>";
+		};
 		0A6349D22270B08D00C0D0B0 = {
 			isa = PBXGroup;
 			children = (
@@ -327,14 +517,16 @@
 		0AC12B692279EE5900CF94ED /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				0A0D6A13227A89AC005BA58F /* JXPagerView */,
+				0A0D6A0F227A84BD005BA58F /* UIColor+KKAdd.h */,
+				0A0D6A10227A84BD005BA58F /* UIColor+KKAdd.m */,
+				0AC12BBC227A107100CF94ED /* UITabBarController+KKAdd.h */,
+				0AC12BB0227A107100CF94ED /* UITabBarController+KKAdd.m */,
 				0AC12C32227A658F00CF94ED /* DZNEmptyDataSet */,
 				0AC12C25227A126100CF94ED /* YYTextLinePositionModifier */,
 				0AC12BA8227A107100CF94ED /* KKBaseUIKit */,
 				0AC12B6A2279EE5900CF94ED /* EasyReact+KKAdd */,
-				0AC12C2A227A13ED00CF94ED /* UIView+KKPlaceHolder.h */,
-				0AC12C2B227A13ED00CF94ED /* UIView+KKPlaceHolder.m */,
-				0AC12C2E227A62F300CF94ED /* KKLoadingPlaceHolderView.h */,
-				0AC12C2F227A62F300CF94ED /* KKLoadingPlaceHolderView.m */,
+				0A0D69FF227A8056005BA58F /* KKLoadingPlaceHolderView */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -436,45 +628,21 @@
 		0AC12BA8227A107100CF94ED /* KKBaseUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				0AC12BA9227A107100CF94ED /* KKTextField.m */,
-				0AC12BAA227A107100CF94ED /* KKButton.m */,
-				0AC12BAB227A107100CF94ED /* KKTableViewHeaderFooterView.m */,
-				0AC12BAC227A107100CF94ED /* KKCollectionViewCell.m */,
-				0AC12BAD227A107100CF94ED /* KKViewModel.h */,
-				0AC12BAE227A107100CF94ED /* KKView.m */,
-				0AC12BAF227A107100CF94ED /* KKModel.m */,
-				0AC12BB0227A107100CF94ED /* UITabBarController+KKAdd.m */,
-				0AC12BB1227A107100CF94ED /* KKCollectionView.h */,
-				0AC12BB2227A107100CF94ED /* KKTableViewProtocol.h */,
-				0AC12BB3227A107100CF94ED /* KKLabel.h */,
-				0AC12BB4227A107100CF94ED /* KKLayout.m */,
-				0AC12BB5227A107100CF94ED /* KKCollectionViewCellProtocol.h */,
-				0AC12BB6227A107100CF94ED /* KKTableView.h */,
-				0AC12BB7227A107100CF94ED /* KKTableViewCell.h */,
-				0AC12BB8227A107100CF94ED /* KKUIKit.m */,
-				0AC12BB9227A107100CF94ED /* KKViewProtocol.h */,
-				0AC12BBA227A107100CF94ED /* KKCollectionReusableView.m */,
-				0AC12BBB227A107100CF94ED /* KKCollectionReusableViewProtocol.h */,
-				0AC12BBC227A107100CF94ED /* UITabBarController+KKAdd.h */,
-				0AC12BBD227A107100CF94ED /* KKModel.h */,
-				0AC12BBE227A107100CF94ED /* KKView.h */,
-				0AC12BBF227A107100CF94ED /* KKViewModel.m */,
-				0AC12BC0227A107100CF94ED /* KKCollectionViewCell.h */,
-				0AC12BC1227A107100CF94ED /* KKTableViewCellProtocol.h */,
-				0AC12BC2227A107100CF94ED /* KKButton.h */,
-				0AC12BC3227A107100CF94ED /* KKTableViewHeaderFooterView.h */,
-				0AC12BC4227A107100CF94ED /* KKTextField.h */,
-				0AC12BC5227A107100CF94ED /* KKViewModelProtocol.h */,
-				0AC12BC6227A107100CF94ED /* KKLabel.m */,
-				0AC12BC7227A107100CF94ED /* KKLayout.h */,
-				0AC12BC8227A107100CF94ED /* KKCollectionView.m */,
-				0AC12BC9227A107100CF94ED /* KKCollectionReusableView.h */,
-				0AC12BCA227A107100CF94ED /* KKUIKit.h */,
-				0AC12BCB227A107100CF94ED /* KKTableViewCell.m */,
+				0A0D6A00227A8164005BA58F /* KKTextField */,
+				0A0D6A01227A81AB005BA58F /* KKButton */,
+				0A0D6A05227A8267005BA58F /* KKTableViewHeaderFooterView */,
+				0A0D6A04227A822A005BA58F /* KKCollectionViewCell */,
+				0A0D6A03227A8214005BA58F /* KKViewModel */,
+				0A0D6A02227A81EE005BA58F /* KKView */,
+				0A0D6A06227A828A005BA58F /* KKModel */,
+				0A0D6A07227A82A7005BA58F /* KKTableView */,
+				0A0D6A08227A82BA005BA58F /* KKLabel */,
+				0A0D6A0B227A8306005BA58F /* KKLayout */,
+				0A0D6A0A227A82EC005BA58F /* KKTableViewCell */,
+				0A0D6A09227A82D6005BA58F /* KKUIKit */,
+				0A0D6A0D227A837A005BA58F /* KKCollectionReusableView */,
+				0A0D6A0C227A836A005BA58F /* KKCollectionView */,
 				0AC12BCC227A107100CF94ED /* KKViewController */,
-				0AC12BEC227A107100CF94ED /* KKTableView.m */,
-				0AC12BED227A107100CF94ED /* KKTableViewHeaderFooterViewProtocol.h */,
-				0AC12BEE227A107100CF94ED /* KKCollectionViewProtocol.h */,
 			);
 			path = KKBaseUIKit;
 			sourceTree = "<group>";
@@ -482,14 +650,11 @@
 		0AC12BCC227A107100CF94ED /* KKViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0A0D6A0E227A8443005BA58F /* KKViewController */,
 				0AC12BCD227A107100CF94ED /* KKNavigationBarCategory */,
-				0AC12BD9227A107100CF94ED /* KKViewControllerProtocol.h */,
 				0AC12BDA227A107100CF94ED /* TransitionAnimation */,
-				0AC12BE1227A107100CF94ED /* KKNavigationBarHeader.h */,
-				0AC12BE2227A107100CF94ED /* KKViewController.m */,
 				0AC12BE3227A107100CF94ED /* KKNavigationBarHelper */,
 				0AC12BE7227A107100CF94ED /* KKNavigationBar */,
-				0AC12BEB227A107100CF94ED /* KKViewController.h */,
 			);
 			path = KKViewController;
 			sourceTree = "<group>";
@@ -528,6 +693,7 @@
 		0AC12BE3227A107100CF94ED /* KKNavigationBarHelper */ = {
 			isa = PBXGroup;
 			children = (
+				0AC12BE1227A107100CF94ED /* KKNavigationBarHeader.h */,
 				0AC12BE4227A107100CF94ED /* KKNavigationBarHelper.h */,
 				0AC12BE5227A107100CF94ED /* KKNavigationBarCommon.h */,
 				0AC12BE6227A107100CF94ED /* KKNavigationBarHelper.m */,
@@ -979,6 +1145,8 @@
 				0AC12B9F2279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0AC12C07227A107200CF94ED /* KKCollectionView.m in Sources */,
 				0AC12C23227A107200CF94ED /* KKTableView.m in Sources */,
+				0A0D6A20227A89AC005BA58F /* JXPagerView.m in Sources */,
+				0A0D6A1C227A89AC005BA58F /* JXPagerListContainerView.m in Sources */,
 				0AC12B8A2279F1BC00CF94ED /* KKTabBarController.m in Sources */,
 				0A6349E32270B08D00C0D0B0 /* ViewController.m in Sources */,
 				0AC12C35227A659000CF94ED /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -996,6 +1164,7 @@
 				0AC12C05227A107200CF94ED /* KKLabel.m in Sources */,
 				0AC12B8C2279F1BC00CF94ED /* KKProfileViewController.m in Sources */,
 				0AC12C0F227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
+				0A0D6A1E227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
 				0AC12C01227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
 				0AC12C21227A107200CF94ED /* KKNavigationBar.m in Sources */,
 				0AC12BA5227A029300CF94ED /* KKAccountHelper.m in Sources */,
@@ -1008,7 +1177,9 @@
 				0AC12B6D2279EE5900CF94ED /* UITextField+KKEasyReact.m in Sources */,
 				0A6349EE2270B08E00C0D0B0 /* main.m in Sources */,
 				0AC12C11227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
+				0A0D6A11227A84BD005BA58F /* UIColor+KKAdd.m in Sources */,
 				0AC12C0B227A107200CF94ED /* UIScrollView+KKNavigationBar.m in Sources */,
+				0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
 				0AC12BFF227A107200CF94ED /* KKUIKit.m in Sources */,
 				0A6349E02270B08D00C0D0B0 /* AppDelegate.m in Sources */,
 				0AC12BFD227A107200CF94ED /* KKLayout.m in Sources */,
@@ -1047,17 +1218,22 @@
 				0AC12C0A227A107200CF94ED /* KKTableViewCell.m in Sources */,
 				0AC12C24227A107200CF94ED /* KKTableView.m in Sources */,
 				0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */,
+				0A0D6A1D227A89AC005BA58F /* JXPagerListContainerView.m in Sources */,
 				0AC12C16227A107200CF94ED /* KKPushPopTransitionProtocol.m in Sources */,
+				0A0D6A1F227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
 				0AC12C22227A107200CF94ED /* KKNavigationBar.m in Sources */,
 				0AC12C36227A659000CF94ED /* UIScrollView+EmptyDataSet.m in Sources */,
 				0AC12B8D2279F1BC00CF94ED /* KKProfileViewController.m in Sources */,
 				0AC12B9C2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
 				0AC12BF0227A107200CF94ED /* KKTextField.m in Sources */,
+				0A0D6A21227A89AC005BA58F /* JXPagerView.m in Sources */,
+				0A0D6A23227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
 				0AC12B892279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
 				0AC12C06227A107200CF94ED /* KKLabel.m in Sources */,
 				0AC12BA02279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0AC12BFA227A107200CF94ED /* KKModel.m in Sources */,
 				0AC12C10227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
+				0A0D6A12227A84BD005BA58F /* UIColor+KKAdd.m in Sources */,
 				0AC12C12227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
 				0AC12BA6227A029300CF94ED /* KKAccountHelper.m in Sources */,
 				0AC12C02227A107200CF94ED /* KKCollectionReusableView.m in Sources */,

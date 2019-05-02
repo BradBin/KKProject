@@ -16,8 +16,8 @@ CGFloat const marginText = 5.15;
 {
     self = [super init];
     if (self) {
-        _marginTop    = 5.15;
-        _marginBottom = 5.15;
+        _marginTop    = marginText;
+        _marginBottom = marginText;
     }
     return self;
 }

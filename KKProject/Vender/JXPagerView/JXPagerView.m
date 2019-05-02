@@ -13,9 +13,11 @@
 @property (nonatomic, strong) JXPagerMainTableView *mainTableView;
 @property (nonatomic, strong) JXPagerListContainerView *listContainerView;
 @property (nonatomic, strong) UIScrollView *currentScrollingListView;
+
 @property (nonatomic, strong) id<JXPagerViewListViewDelegate> currentList;
 @property (nonatomic, strong) NSMutableDictionary <NSNumber *, id<JXPagerViewListViewDelegate>> *validListDict;
 @property (nonatomic, assign) UIDeviceOrientation currentDeviceOrientation;
+
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) BOOL willRemoveFromWindow;
 @property (nonatomic, assign) BOOL isFirstMoveToWindow;
