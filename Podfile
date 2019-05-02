@@ -46,7 +46,7 @@ end
 
 target 'KKProject_Swift' do
   use_frameworks!
-  pod 'CocoaLumberjack/Swift'
+ 
   pod 'SwiftLint'
   
   
@@ -80,15 +80,14 @@ target 'KKProject_Swift' do
   pod 'SwiftDate'
   
   pod 'SwiftMessages'
-  pod 'Whisper'
   pod 'SwiftEntryKit'
   pod 'Advance'
   
   pod 'SwiftyStoreKit'
   pod 'Instructions'
   
-  pod 'ImagePicker'
-  
+
+
   pod 'AnimatedCollectionViewLayout'
   pod 'CollectionKit'
   pod 'Cards'

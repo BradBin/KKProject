@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7684C095709B3F8C25278B9C4082EF66"
+               BlueprintIdentifier = "B5E15C03A2787BD7E3FEBB70AFEB79EF"
                BuildableName = "Surge.framework"
                BlueprintName = "Surge"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7684C095709B3F8C25278B9C4082EF66"
+            BlueprintIdentifier = "B5E15C03A2787BD7E3FEBB70AFEB79EF"
             BuildableName = "Surge.framework"
             BlueprintName = "Surge"
             ReferencedContainer = "container:Pods.xcodeproj">
