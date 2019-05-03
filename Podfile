@@ -14,6 +14,8 @@ def commonPods
   
   pod 'SVGAPlayer'
   pod 'SVGKit'
+  pod 'MJRefresh'
+  pod 'GPUImage'
   
   #  pod 'PromiseKit'
 end
