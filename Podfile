@@ -8,6 +8,7 @@ def commonPods
   pod 'YYKit'
   pod 'AFNetworking'
   pod 'FFRouter'
+  pod 'CYLTabBarController'
   
   pod 'EasyReact'
   pod 'ReactiveObjC'
@@ -17,18 +18,34 @@ def commonPods
   pod 'MJRefresh'
   pod 'GPUImage'
   
+
   #  pod 'PromiseKit'
 end
 
 target 'KKProject' do
   commonPods
   
+  #腾讯Bugly
+  pod 'Bugly'
   #循环引用检测工具
   pod 'FBRetainCycleDetector'
 end
 
 target 'KKProject_Objc' do
   commonPods
+  #友盟-基础组件
+  pod 'UMCCommon'
+  pod 'UMCSecurityPlugins'
+  pod 'UMCCommonLog'
+  #友盟-消息推送
+  pod 'UMCPush'
+  #友盟-移动统计
+  pod 'UMCAnalytics'
+  #友盟-分享/第三方登录
+  pod 'UMCShare/UI'
+  #pod 'UMCShare/Social/WeChat'
+  pod 'UMCShare/Social/ReducedWeChat'
+  pod 'UMCShare/Social/QQ'
   
   pod 'IQKeyboardManager'
   pod 'NIMSDK_LITE', '~> 6.4.0'

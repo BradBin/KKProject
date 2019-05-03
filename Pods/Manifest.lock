@@ -19,6 +19,7 @@ PODS:
   - AnimatedCollectionViewLayout (0.6.0)
   - AsyncSwift (2.0.4)
   - Atributika (4.8.2)
+  - Bugly (2.5.0)
   - Cards (1.4.0):
     - Player (= 0.13.0)
   - CocoaLumberjack (3.5.3):
@@ -28,6 +29,9 @@ PODS:
     - CollectionKit/Core (= 2.4.0)
   - CollectionKit/Core (2.4.0)
   - CryptoSwift (1.0.0)
+  - CYLTabBarController (1.24.1):
+    - CYLTabBarController/Core (= 1.24.1)
+  - CYLTabBarController/Core (1.24.1)
   - dsBridge (3.0.6)
   - EasyFoundation (1.0.0):
     - EasySequence (~> 1.3.0)
@@ -121,6 +125,28 @@ PODS:
   - SwiftyUserDefaults (4.0.0)
   - SwipeCellKit (2.6.0)
   - Then (2.4.0)
+  - UMCAnalytics (6.0.3):
+    - UMCCommon
+  - UMCCommon (2.0.1)
+  - UMCCommonLog (1.0.0)
+  - UMCPush (3.2.4):
+    - UMCCommon
+  - UMCSecurityPlugins (1.0.6)
+  - UMCShare/Core (6.9.5):
+    - UMCCommon
+  - UMCShare/Social/QQ (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedQQ (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/UI (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
   - ViewAnimator (2.5.1)
   - XLPagerTabStrip (8.1.0)
   - YYKit (1.0.9):
@@ -134,9 +160,11 @@ DEPENDENCIES:
   - AnimatedCollectionViewLayout
   - AsyncSwift
   - Atributika
+  - Bugly
   - Cards
   - CollectionKit
   - CryptoSwift
+  - CYLTabBarController
   - dsBridge
   - EasyReact
   - Eureka
@@ -180,6 +208,14 @@ DEPENDENCIES:
   - SwiftyUserDefaults
   - SwipeCellKit
   - Then
+  - UMCAnalytics
+  - UMCCommon
+  - UMCCommonLog
+  - UMCPush
+  - UMCSecurityPlugins
+  - UMCShare/Social/QQ
+  - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI
   - ViewAnimator
   - XLPagerTabStrip
   - YYKit
@@ -192,10 +228,12 @@ SPEC REPOS:
     - AnimatedCollectionViewLayout
     - AsyncSwift
     - Atributika
+    - Bugly
     - Cards
     - CocoaLumberjack
     - CollectionKit
     - CryptoSwift
+    - CYLTabBarController
     - dsBridge
     - EasyFoundation
     - EasyReact
@@ -250,6 +288,12 @@ SPEC REPOS:
     - SwiftyUserDefaults
     - SwipeCellKit
     - Then
+    - UMCAnalytics
+    - UMCCommon
+    - UMCCommonLog
+    - UMCPush
+    - UMCSecurityPlugins
+    - UMCShare
     - ViewAnimator
     - XLPagerTabStrip
     - YYKit
@@ -261,10 +305,12 @@ SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   Atributika: 7b3631032cf11f2197b352343e0bd1b783d8ca88
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  CYLTabBarController: 46fa053a2fb165095e04792431ad91a759bb7f9f
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
   EasyFoundation: a4bb86dd4ba01cb720f5320c314c5628ee237acd
   EasyReact: 39fdf743eab448b1c3f61622a2bddc7c6ec71af2
@@ -319,10 +365,16 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
+  UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
+  UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
+  UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
+  UMCPush: 1edd856027dcf905333effb4040ace5d236a7316
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   ViewAnimator: 173932c659a43c5a15c665878750d92801ae2cf1
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f1262bd36b3a63e281ad41df6cec274c8f57a8b2
+PODFILE CHECKSUM: 6353c617e3f7fa50a3300f7c9677d96b529e6eda
 
 COCOAPODS: 1.6.1
