@@ -6,11 +6,11 @@
 //  Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CYLTabBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKTabBarController : UITabBarController
+@interface KKTabBarController : CYLTabBarController
 
 @end
 

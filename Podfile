@@ -7,18 +7,17 @@ def commonPods
   pod 'dsBridge'
   pod 'YYKit'
   pod 'AFNetworking'
-  pod 'FFRouter'
   pod 'CYLTabBarController'
   
   pod 'EasyReact'
   pod 'ReactiveObjC'
-  
+   pod 'FFRouter'
+   
   pod 'SVGAPlayer'
   pod 'SVGKit'
   pod 'MJRefresh'
   pod 'GPUImage'
   
-
   #  pod 'PromiseKit'
 end
 

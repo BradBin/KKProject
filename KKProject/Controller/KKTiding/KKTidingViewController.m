@@ -1,32 +1,18 @@
 //
-//  KKTabBarController.m
+//  KKTidingViewController.m
 //  KKProject
 //
-//  Created by Macbook Pro 15.4  on 2019/5/1.
+//  Created by Macbook Pro 15.4  on 2019/5/4.
 //  Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 //
 
-#import "KKTabBarController.h"
-
-#import "KKHomeViewController.h"
 #import "KKTidingViewController.h"
-#import "KKFindViewController.h"
-#import "KKProfileViewController.h"
 
-@interface KKTabBarController ()<UITabBarControllerDelegate,CYLTabBarControllerDelegate>
+@interface KKTidingViewController ()
 
 @end
 
-@implementation KKTabBarController
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
+@implementation KKTidingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

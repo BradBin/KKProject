@@ -17,6 +17,10 @@
 		0A0D6A21227A89AC005BA58F /* JXPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A16227A89AC005BA58F /* JXPagerView.m */; };
 		0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A1B227A89AC005BA58F /* JXPagerListRefreshView.m */; };
 		0A0D6A23227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A1B227A89AC005BA58F /* JXPagerListRefreshView.m */; };
+		0A429402227CA84700D7AF09 /* KKFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A429401227CA84700D7AF09 /* KKFindViewController.m */; };
+		0A429403227CA84700D7AF09 /* KKFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A429401227CA84700D7AF09 /* KKFindViewController.m */; };
+		0A429407227CA86D00D7AF09 /* KKTidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A429406227CA86D00D7AF09 /* KKTidingViewController.m */; };
+		0A429408227CA86D00D7AF09 /* KKTidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A429406227CA86D00D7AF09 /* KKTidingViewController.m */; };
 		0A6349E02270B08D00C0D0B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */; };
 		0A6349E32270B08D00C0D0B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6349E22270B08D00C0D0B0 /* ViewController.m */; };
 		0A6349E62270B08D00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
@@ -133,6 +137,10 @@
 		0A0D6A19227A89AC005BA58F /* JXPagerListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPagerListContainerView.h; sourceTree = "<group>"; };
 		0A0D6A1A227A89AC005BA58F /* JXPagerMainTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPagerMainTableView.h; sourceTree = "<group>"; };
 		0A0D6A1B227A89AC005BA58F /* JXPagerListRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPagerListRefreshView.m; sourceTree = "<group>"; };
+		0A429400227CA84700D7AF09 /* KKFindViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKFindViewController.h; sourceTree = "<group>"; };
+		0A429401227CA84700D7AF09 /* KKFindViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKFindViewController.m; sourceTree = "<group>"; };
+		0A429405227CA86D00D7AF09 /* KKTidingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKTidingViewController.h; sourceTree = "<group>"; };
+		0A429406227CA86D00D7AF09 /* KKTidingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKTidingViewController.m; sourceTree = "<group>"; };
 		0A6349DB2270B08D00C0D0B0 /* KKProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6349DE2270B08D00C0D0B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0A6349DF2270B08D00C0D0B0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -464,6 +472,24 @@
 			path = JXPagerView;
 			sourceTree = "<group>";
 		};
+		0A4293FF227CA82D00D7AF09 /* KKTiding */ = {
+			isa = PBXGroup;
+			children = (
+				0A429405227CA86D00D7AF09 /* KKTidingViewController.h */,
+				0A429406227CA86D00D7AF09 /* KKTidingViewController.m */,
+			);
+			path = KKTiding;
+			sourceTree = "<group>";
+		};
+		0A429404227CA85300D7AF09 /* KKFind */ = {
+			isa = PBXGroup;
+			children = (
+				0A429400227CA84700D7AF09 /* KKFindViewController.h */,
+				0A429401227CA84700D7AF09 /* KKFindViewController.m */,
+			);
+			path = KKFind;
+			sourceTree = "<group>";
+		};
 		0A6349D22270B08D00C0D0B0 = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +575,8 @@
 				0AC12B922279F25000CF94ED /* KKProfile */,
 				0AC12B932279F26100CF94ED /* KKTabBar */,
 				0AC12BA12279FCAF00CF94ED /* KKLogin */,
+				0A4293FF227CA82D00D7AF09 /* KKTiding */,
+				0A429404227CA85300D7AF09 /* KKFind */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1212,6 +1240,7 @@
 				0AC12BF3227A107200CF94ED /* KKTableViewHeaderFooterView.m in Sources */,
 				0AC12C05227A107200CF94ED /* KKLabel.m in Sources */,
 				0AC12B8C2279F1BC00CF94ED /* KKProfileViewController.m in Sources */,
+				0A429402227CA84700D7AF09 /* KKFindViewController.m in Sources */,
 				0AC12C0F227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
 				0A0D6A1E227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
 				0AC12C01227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
@@ -1228,6 +1257,7 @@
 				0AC12C11227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
 				0A0D6A11227A84BD005BA58F /* UIColor+KKAdd.m in Sources */,
 				0AC12C0B227A107200CF94ED /* UIScrollView+KKNavigationBar.m in Sources */,
+				0A429407227CA86D00D7AF09 /* KKTidingViewController.m in Sources */,
 				0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
 				0AC12BFF227A107200CF94ED /* KKUIKit.m in Sources */,
 				0A6349E02270B08D00C0D0B0 /* AppDelegate.m in Sources */,
@@ -1256,6 +1286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC12BF4227A107200CF94ED /* KKTableViewHeaderFooterView.m in Sources */,
+				0A429403227CA84700D7AF09 /* KKFindViewController.m in Sources */,
 				0AC12C18227A107200CF94ED /* KKPopTransitionAnimation.m in Sources */,
 				0AC12B8B2279F1BC00CF94ED /* KKTabBarController.m in Sources */,
 				0AC12C0C227A107200CF94ED /* UIScrollView+KKNavigationBar.m in Sources */,
@@ -1268,6 +1299,7 @@
 				0AC12C24227A107200CF94ED /* KKTableView.m in Sources */,
 				0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */,
 				0A0D6A1D227A89AC005BA58F /* JXPagerListContainerView.m in Sources */,
+				0A429408227CA86D00D7AF09 /* KKTidingViewController.m in Sources */,
 				0AC12C16227A107200CF94ED /* KKPushPopTransitionProtocol.m in Sources */,
 				0A0D6A1F227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
 				0AC12C22227A107200CF94ED /* KKNavigationBar.m in Sources */,
