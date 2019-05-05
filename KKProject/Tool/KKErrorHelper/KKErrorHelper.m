@@ -81,14 +81,16 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
     BOOL isLogin   = helper.isLogin; // 是否登录
     BOOL isExpired = helper.isExpired; //是否过期
     UIViewController *resultVC;
-    if (isLogin && !isExpired ) {
+    if (!isLogin && !isExpired ) {
         KKTabBarController *tabBarVC = [self creatTabBarVC];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tabBarVC];
+        UINavigationController *nav = [UINavigationController kk_rooterViewController:tabBarVC translationScale:true];
+        nav.kk_openScrollLeftPush = true;
         manager.currentVC = tabBarVC;
         resultVC = nav;
     }else {
         KKLoginViewController *loginVC = [self creatLoginVC];
-        UINavigationController *loginNavVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        UINavigationController *loginNavVC = [UINavigationController kk_rooterViewController:loginVC translationScale:true];
+        loginNavVC.kk_openScrollLeftPush = true;
         resultVC = loginNavVC;
         manager.currentVC = loginVC;
     }

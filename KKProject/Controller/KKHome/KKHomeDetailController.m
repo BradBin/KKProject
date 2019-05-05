@@ -1,31 +1,34 @@
 //
-//  KKFindViewController.m
+//  KKHomeDetailController.m
 //  KKProject
 //
-//  Created by Macbook Pro 15.4  on 2019/5/4.
+//  Created by Macbook Pro 15.4  on 2019/5/6.
 //  Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 //
 
-#import "KKFindViewController.h"
+#import "KKHomeDetailController.h"
 
-@interface KKFindViewController ()
+@interface KKHomeDetailController ()
 
 @end
 
-@implementation KKFindViewController
+@implementation KKHomeDetailController
+
+-(void)kk_layoutNavigation{
+    [super kk_layoutNavigation];
+    self.kk_navShadowImage = UIImage.new;
+    self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
+    self.kk_navBackgroundColor = UIColor.cyanColor;
+    self.kk_navTitle = @"Detail";
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
--(void)kk_layoutNavigation{
-    [super kk_layoutNavigation];
-    self.kk_navShadowImage = UIImage.new;
-    self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
-    self.kk_navBackgroundColor = UIColor.magentaColor;
-    self.kk_navTitle = @"Find";
-}
+
+
 /*
 #pragma mark - Navigation
 

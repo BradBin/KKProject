@@ -38,6 +38,16 @@
 		0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */; };
 		0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
 		0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
+		0AA78900227F42B700242C91 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FC227F42B700242C91 /* tab_me_animate.json */; };
+		0AA78901227F42B700242C91 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FC227F42B700242C91 /* tab_me_animate.json */; };
+		0AA78902227F42B700242C91 /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FD227F42B700242C91 /* tab_home_animate.json */; };
+		0AA78903227F42B700242C91 /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FD227F42B700242C91 /* tab_home_animate.json */; };
+		0AA78904227F42B700242C91 /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FE227F42B700242C91 /* tab_search_animate.json */; };
+		0AA78905227F42B700242C91 /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FE227F42B700242C91 /* tab_search_animate.json */; };
+		0AA78906227F42B700242C91 /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FF227F42B700242C91 /* tab_message_animate.json */; };
+		0AA78907227F42B700242C91 /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FF227F42B700242C91 /* tab_message_animate.json */; };
+		0AA7890A227F49A600242C91 /* KKHomeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA78909227F49A600242C91 /* KKHomeDetailController.m */; };
+		0AA7890B227F49A600242C91 /* KKHomeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA78909227F49A600242C91 /* KKHomeDetailController.m */; };
 		0ABB2611227755CD00397661 /* KKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB2610227755CD00397661 /* KKBaseViewController.swift */; };
 		0ABB26132277560400397661 /* KKHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB26122277560400397661 /* KKHomeViewController.swift */; };
 		0ABB26152277565800397661 /* KKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB26142277565800397661 /* KKTabBarController.swift */; };
@@ -160,6 +170,12 @@
 		0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKProject-Objc-Info.plist"; sourceTree = "<group>"; };
 		0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectMacros.h; sourceTree = "<group>"; };
+		0AA788FC227F42B700242C91 /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
+		0AA788FD227F42B700242C91 /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
+		0AA788FE227F42B700242C91 /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
+		0AA788FF227F42B700242C91 /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
+		0AA78908227F49A600242C91 /* KKHomeDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeDetailController.h; sourceTree = "<group>"; };
+		0AA78909227F49A600242C91 /* KKHomeDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeDetailController.m; sourceTree = "<group>"; };
 		0ABB2610227755CD00397661 /* KKBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBaseViewController.swift; sourceTree = "<group>"; };
 		0ABB26122277560400397661 /* KKHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKHomeViewController.swift; sourceTree = "<group>"; };
 		0ABB26142277565800397661 /* KKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKTabBarController.swift; sourceTree = "<group>"; };
@@ -540,6 +556,17 @@
 			path = KKProject_Swift;
 			sourceTree = "<group>";
 		};
+		0AA788FB227F42B700242C91 /* LottieResources */ = {
+			isa = PBXGroup;
+			children = (
+				0AA788FC227F42B700242C91 /* tab_me_animate.json */,
+				0AA788FD227F42B700242C91 /* tab_home_animate.json */,
+				0AA788FE227F42B700242C91 /* tab_search_animate.json */,
+				0AA788FF227F42B700242C91 /* tab_message_animate.json */,
+			);
+			path = LottieResources;
+			sourceTree = "<group>";
+		};
 		0AC12B692279EE5900CF94ED /* Vender */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,6 +622,8 @@
 			children = (
 				0AC12B822279F1BB00CF94ED /* KKHomeViewController.h */,
 				0AC12B812279F1BB00CF94ED /* KKHomeViewController.m */,
+				0AA78908227F49A600242C91 /* KKHomeDetailController.h */,
+				0AA78909227F49A600242C91 /* KKHomeDetailController.m */,
 			);
 			path = KKHome;
 			sourceTree = "<group>";
@@ -792,6 +821,7 @@
 		9347CF5822783A7100BC7AAC /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0AA788FB227F42B700242C91 /* LottieResources */,
 				0A0D69FD227A7049005BA58F /* Info.plist */,
 				0A6349E12270B08D00C0D0B0 /* ViewController.h */,
 				0A6349E22270B08D00C0D0B0 /* ViewController.m */,
@@ -923,9 +953,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A6349EB2270B08E00C0D0B0 /* LaunchScreen.storyboard in Resources */,
+				0AA78904227F42B700242C91 /* tab_search_animate.json in Resources */,
 				9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */,
+				0AA78902227F42B700242C91 /* tab_home_animate.json in Resources */,
 				0A6349E82270B08E00C0D0B0 /* Assets.xcassets in Resources */,
+				0AA78900227F42B700242C91 /* tab_me_animate.json in Resources */,
 				0AC12C1F227A107200CF94ED /* KKNavigationBar.bundle in Resources */,
+				0AA78906227F42B700242C91 /* tab_message_animate.json in Resources */,
 				0A6349E62270B08D00C0D0B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,9 +979,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */,
+				0AA78905227F42B700242C91 /* tab_search_animate.json in Resources */,
 				0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */,
+				0AA78903227F42B700242C91 /* tab_home_animate.json in Resources */,
 				9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */,
+				0AA78901227F42B700242C91 /* tab_me_animate.json in Resources */,
 				0AC12C20227A107200CF94ED /* KKNavigationBar.bundle in Resources */,
+				0AA78907227F42B700242C91 /* tab_message_animate.json in Resources */,
 				0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1229,6 +1267,7 @@
 				0AC12C35227A659000CF94ED /* UIScrollView+EmptyDataSet.m in Sources */,
 				0AC12C17227A107200CF94ED /* KKPopTransitionAnimation.m in Sources */,
 				0AC12BF1227A107200CF94ED /* KKButton.m in Sources */,
+				0AA7890A227F49A600242C91 /* KKHomeDetailController.m in Sources */,
 				0AC12BF7227A107200CF94ED /* KKView.m in Sources */,
 				0AC12BEF227A107200CF94ED /* KKTextField.m in Sources */,
 				0AC12B9B2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
@@ -1310,6 +1349,7 @@
 				0A0D6A21227A89AC005BA58F /* JXPagerView.m in Sources */,
 				0A0D6A23227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
 				0AC12B892279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
+				0AA7890B227F49A600242C91 /* KKHomeDetailController.m in Sources */,
 				0AC12C06227A107200CF94ED /* KKLabel.m in Sources */,
 				0AC12BA02279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0AC12BFA227A107200CF94ED /* KKModel.m in Sources */,

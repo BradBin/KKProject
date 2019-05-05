@@ -18,17 +18,20 @@
 
 @implementation KKLanuchViewController
 
+-(void)kk_layoutNavigation{
+    [super kk_layoutNavigation];
+    self.kk_navShadowImage     = UIImage.new;
+    self.kk_navShadowColor     = UIColor.clearColor;
+    self.kk_navBackgroundColor = UIColor.clearColor;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-  
-    self.view.backgroundColor = UIColor.cyanColor;
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self kk_enterApp];
     });
-    
 }
 
 

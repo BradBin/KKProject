@@ -7,6 +7,7 @@
 //
 
 #import "KKHomeViewController.h"
+#import "KKHomeDetailController.h"
 
 @interface KKHomeViewController ()
 
@@ -17,6 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)kk_layoutNavigation{
+    [super kk_layoutNavigation];
+    self.kk_navShadowImage = UIImage.new;
+    self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
+    self.kk_navBackgroundColor = UIColor.redColor;
+    self.kk_navTitle = @"Home";
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    KKHomeDetailController *vc = KKHomeDetailController.new;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 /*

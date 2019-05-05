@@ -19,6 +19,14 @@
     // Do any additional setup after loading the view.
 }
 
+
+-(void)kk_layoutNavigation{
+    [super kk_layoutNavigation];
+    self.kk_navShadowImage = UIImage.new;
+    self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
+    self.kk_navBackgroundColor = UIColor.cyanColor;
+    self.kk_navTitle = @"Profile";
+}
 /*
 #pragma mark - Navigation
 
