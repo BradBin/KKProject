@@ -1,5 +1,5 @@
 //
-//  KKHomeDetailController.h
+//  KKHomePageViewController.h
 //  KKProject
 //
 //  Created by Macbook Pro 15.4  on 2019/5/6.
@@ -7,10 +7,11 @@
 //
 
 #import "KKViewController.h"
+#import <JXCategoryView/JXCategoryView.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKHomeDetailController : KKViewController
+@interface KKHomePageViewController : KKViewController<JXCategoryListContentViewDelegate>
 
 @end
 
