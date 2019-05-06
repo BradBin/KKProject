@@ -51,6 +51,7 @@ PODS:
   - IQKeyboardManager (6.2.1)
   - IQKeyboardManagerSwift (6.2.1)
   - JXCategoryView (1.3.3)
+  - JXSegmentedView (0.0.11)
   - KeychainAccess (3.2.0)
   - Kingfisher (4.10.1)
   - LTMorphingLabel (0.7.0)
@@ -180,6 +181,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - IQKeyboardManagerSwift
   - JXCategoryView
+  - JXSegmentedView
   - KeychainAccess
   - Kingfisher
   - LTMorphingLabel
@@ -254,6 +256,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - IQKeyboardManagerSwift
     - JXCategoryView
+    - JXSegmentedView
     - KeychainAccess
     - Kingfisher
     - LTMorphingLabel
@@ -333,6 +336,7 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
   IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   JXCategoryView: 25e379fa1e8f5577f878e2446207bb869ec97228
+  JXSegmentedView: cb5f8841f64255ba86c68a8cbab24da72a75b11c
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
@@ -383,6 +387,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c48ed8a560fb3498138e0f33509978541c3ff70f
+PODFILE CHECKSUM: 361606f8117f7185450b0d8f30f53ebd18ac8e0b
 
 COCOAPODS: 1.6.1

@@ -34,6 +34,7 @@ target 'KKProject' do
   pod 'FBRetainCycleDetector'
 end
 
+
 target 'KKProject_Objc' do
   commonPods
   #友盟-基础组件
@@ -108,7 +109,7 @@ target 'KKProject_Swift' do
   pod 'SwiftyStoreKit'
   pod 'Instructions'
   
-  
+  pod 'JXSegmentedView'
   
   pod 'AnimatedCollectionViewLayout'
   pod 'CollectionKit'
@@ -126,7 +127,6 @@ target 'KKProject_Swift' do
   pod 'LTMorphingLabel'
   
 end
-
 
 
 #***********
