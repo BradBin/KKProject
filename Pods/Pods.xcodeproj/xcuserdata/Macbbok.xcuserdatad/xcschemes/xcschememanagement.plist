@@ -38,12 +38,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Cards.xcscheme</key>
+		<key>Bugly.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CocoaLumberjack-Core-Swift.xcscheme</key>
+		<key>CYLTabBarController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Cards.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -115,22 +120,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ImagePicker-ImagePicker.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ImagePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -151,6 +151,11 @@
 			<false/>
 		</dict>
 		<key>LTMorphingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -407,12 +412,37 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ViewAnimator.xcscheme</key>
+		<key>UMCAnalytics.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Whisper.xcscheme</key>
+		<key>UMCCommon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UMCCommonLog.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UMCPush.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UMCSecurityPlugins.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UMCShare.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ViewAnimator.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
