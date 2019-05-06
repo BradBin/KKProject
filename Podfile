@@ -19,6 +19,9 @@ def commonPods
   pod 'MJRefresh'
   pod 'GPUImage'
   
+  
+  pod 'JXCategoryView'
+  
   #  pod 'PromiseKit'
 end
 

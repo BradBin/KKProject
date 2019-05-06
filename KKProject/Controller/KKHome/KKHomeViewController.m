@@ -9,6 +9,7 @@
 #import "KKHomeViewController.h"
 #import "KKHomeDetailController.h"
 
+
 @interface KKHomeViewController ()
 
 @end
@@ -24,7 +25,7 @@
     [super kk_layoutNavigation];
     self.kk_navShadowImage     = UIImage.new;
     self.kk_navShadowColor     = [UIColor colorWithHexString:@"#EFEFEF"];
-    self.kk_navTitle           = @"Home";
+    self.kk_navigationBar.hidden = true;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
