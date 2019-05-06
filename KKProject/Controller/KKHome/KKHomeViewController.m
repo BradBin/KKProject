@@ -22,10 +22,9 @@
 
 -(void)kk_layoutNavigation{
     [super kk_layoutNavigation];
-    self.kk_navShadowImage = UIImage.new;
-    self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
-    self.kk_navBackgroundColor = UIColor.redColor;
-    self.kk_navTitle = @"Home";
+    self.kk_navShadowImage     = UIImage.new;
+    self.kk_navShadowColor     = [UIColor colorWithHexString:@"#EFEFEF"];
+    self.kk_navTitle           = @"Home";
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

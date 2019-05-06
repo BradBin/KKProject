@@ -48,41 +48,33 @@
     return @[homeVC,tidingsVC,findVC,profileVC];
 }
 - (NSArray *)tabBarAttributes {
-    CGFloat firstXOffset = -12/2;
+
     NSBundle *bundle = [NSBundle bundleForClass:[KKTabBarController class]];
     NSDictionary *homeAttributes = @{
                                      CYLTabBarItemTitle : @"首页",
-                                     CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(firstXOffset, -3.5)],
                                      CYLTabBarItemImage:[UIImage imageNamed:@"home_normal.png"],
                                      CYLTabBarItemSelectedImage:[UIImage imageNamed:@"home_highlight.png"],
-                                     CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_home_animate" ofType:@"json"]],
-                                     
+                                     CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_home_animate" ofType:@"json"]]
                                      };
-    CGFloat secondXOffset = (-25+2)/2;
+
     NSDictionary *tidingsAttributes = @{
                                         CYLTabBarItemTitle : @"消息",
                                         CYLTabBarItemImage:[UIImage imageNamed:@"message_normal.png"],
                                         CYLTabBarItemSelectedImage:[UIImage imageNamed:@"message_highlight.png"],
-                                        CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(secondXOffset, -3.5)],
-                                        CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_search_animate" ofType:@"json"]],
-                                        
+                                        CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_search_animate" ofType:@"json"]]
                                         };
     
     NSDictionary *findAttributes = @{
                                      CYLTabBarItemTitle : @"发现",
                                      CYLTabBarItemImage:[UIImage imageNamed:@"fishpond_normal.png"],
                                      CYLTabBarItemSelectedImage:[UIImage imageNamed:@"fishpond_highlight.png"],
-                                     CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(-secondXOffset, -3.5)],
-                                     CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_message_animate" ofType:@"json"]],
-                                     
+                                     CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_message_animate" ofType:@"json"]]
                                      };
     NSDictionary *profileAttributes = @{
                                         CYLTabBarItemTitle : @"我的",
                                         CYLTabBarItemImage:[UIImage imageNamed:@"account_normal.png"],
                                         CYLTabBarItemSelectedImage:[UIImage imageNamed:@"account_normal.png"],
-                                        CYLTabBarItemTitlePositionAdjustment: [NSValue valueWithUIOffset:UIOffsetMake(-firstXOffset, -3.5)],
-                                        CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_me_animate" ofType:@"json"]],
-                                        
+                                        CYLTabBarLottieURL : [NSURL fileURLWithPath:[bundle pathForResource:@"tab_me_animate" ofType:@"json"]]
                                         };
     
     return @[homeAttributes,tidingsAttributes,findAttributes,profileAttributes];

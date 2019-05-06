@@ -23,7 +23,6 @@
     [super kk_layoutNavigation];
     self.kk_navShadowImage = UIImage.new;
     self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
-    self.kk_navBackgroundColor = UIColor.orangeColor;
     self.kk_navTitle = @"Tiding";
 }
 

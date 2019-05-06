@@ -77,22 +77,24 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
 
 + (UIViewController *)kk_defaultVC {
     KKAccountHelper *helper = KKAccountHelper.shared;
-    KKErrorHelper *manager = [KKErrorHelper shared];
-    BOOL isLogin   = helper.isLogin; // 是否登录
-    BOOL isExpired = helper.isExpired; //是否过期
+    KKErrorHelper *manager  = [KKErrorHelper shared];
+    BOOL isLogin            = helper.isLogin; // 是否登录
+    BOOL isExpired          = helper.isExpired; //是否过期
     UIViewController *resultVC;
     if (!isLogin && !isExpired ) {
         KKTabBarController *tabBarVC = [self creatTabBarVC];
-        UINavigationController *nav = [UINavigationController kk_rooterViewController:tabBarVC translationScale:true];
-        nav.kk_openScrollLeftPush = true;
-        manager.currentVC = tabBarVC;
-        resultVC = nav;
+        UINavigationController *nav  = [UINavigationController kk_rooterViewController:tabBarVC translationScale:true];
+        nav.view.backgroundColor     = UIColor.whiteColor;
+        nav.kk_openScrollLeftPush    = true;
+        manager.currentVC            = tabBarVC;
+        resultVC                     = nav;
     }else {
-        KKLoginViewController *loginVC = [self creatLoginVC];
+        KKLoginViewController *loginVC     = [self creatLoginVC];
         UINavigationController *loginNavVC = [UINavigationController kk_rooterViewController:loginVC translationScale:true];
-        loginNavVC.kk_openScrollLeftPush = true;
-        resultVC = loginNavVC;
-        manager.currentVC = loginVC;
+        loginNavVC.view.backgroundColor    = UIColor.whiteColor;
+        loginNavVC.kk_openScrollLeftPush   = true;
+        resultVC                           = loginNavVC;
+        manager.currentVC                  = loginVC;
     }
     return resultVC;
 }
@@ -108,8 +110,8 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
 }
 
 + (void)transitionToVC:(UIViewController *)viewController {
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    AppDelegate *app              = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    UINavigationController *nav   = [[UINavigationController alloc] initWithRootViewController:viewController];
     app.window.rootViewController = nav;
     [UIView transitionWithView:app.window
                       duration:0.5

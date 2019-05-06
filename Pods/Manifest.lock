@@ -19,6 +19,7 @@ PODS:
   - AnimatedCollectionViewLayout (0.6.0)
   - AsyncSwift (2.0.4)
   - Atributika (4.8.2)
+  - BlockHook (1.2.3)
   - Bugly (2.5.0)
   - Cards (1.4.0):
     - Player (= 0.13.0)
@@ -160,6 +161,7 @@ DEPENDENCIES:
   - AnimatedCollectionViewLayout
   - AsyncSwift
   - Atributika
+  - BlockHook
   - Bugly
   - Cards
   - CollectionKit
@@ -228,6 +230,7 @@ SPEC REPOS:
     - AnimatedCollectionViewLayout
     - AsyncSwift
     - Atributika
+    - BlockHook
     - Bugly
     - Cards
     - CocoaLumberjack
@@ -305,6 +308,7 @@ SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   Atributika: 7b3631032cf11f2197b352343e0bd1b783d8ca88
+  BlockHook: d7dd31830c3cacd602bb6928a71eaa97b777a9d6
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
@@ -375,6 +379,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 049a770199c7014ce1f4dcca50cea53ccdea30f2
+PODFILE CHECKSUM: 7f3df15d04010c2c6c728fe26c5a20071edc5420
 
 COCOAPODS: 1.6.1

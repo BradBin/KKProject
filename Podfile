@@ -11,8 +11,9 @@ def commonPods
   
   pod 'EasyReact'
   pod 'ReactiveObjC'
-   pod 'FFRouter'
-   
+  pod 'FFRouter'
+  pod 'BlockHook'
+  
   pod 'SVGAPlayer'
   pod 'SVGKit'
   pod 'MJRefresh'
@@ -64,7 +65,7 @@ end
 
 target 'KKProject_Swift' do
   use_frameworks!
- 
+  
   pod 'SwiftLint'
   
   
@@ -104,8 +105,8 @@ target 'KKProject_Swift' do
   pod 'SwiftyStoreKit'
   pod 'Instructions'
   
-
-
+  
+  
   pod 'AnimatedCollectionViewLayout'
   pod 'CollectionKit'
   pod 'Cards'
