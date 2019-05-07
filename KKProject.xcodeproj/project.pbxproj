@@ -134,6 +134,12 @@
 		0AF1CC9D22808D68006487CA /* KKHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF1CC9B22808D68006487CA /* KKHomeViewModel.m */; };
 		9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF6A2278430400BC7AAC /* InfoPlist.strings */; };
 		9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF702278482100BC7AAC /* KKProject-Objc-InfoPlist.strings */; };
+		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
+		93D3621F22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
+		93D3622422815F2500DD815F /* KKHomePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3622322815F2500DD815F /* KKHomePageViewModel.m */; };
+		93D3622522815F2500DD815F /* KKHomePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3622322815F2500DD815F /* KKHomePageViewModel.m */; };
+		93D362282281627700DD815F /* KKChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D362272281627700DD815F /* KKChannelView.m */; };
+		93D362292281627700DD815F /* KKChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D362272281627700DD815F /* KKChannelView.m */; };
 		C0E3CDB08138B2ABB9393EE9 /* libPods-KKProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D98E7F2EC6A41977A257D /* libPods-KKProject.a */; };
 		D7AC4836AD8C04CADEE5272E /* Pods_KKProject_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8493C3BAEB9B29D9D5C455 /* Pods_KKProject_Swift.framework */; };
 		DAB117A6C4ABC672D923BBD8 /* libPods-KKProject_Objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */; };
@@ -294,6 +300,13 @@
 		9347CF6B2278430A00BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF6F2278482100BC7AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF712278482200BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
+		93D3621B228123FE00DD815F /* KKProjectAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectAPI.h; sourceTree = "<group>"; };
+		93D3621C22812FE400DD815F /* KKHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeModel.h; sourceTree = "<group>"; };
+		93D3621D22812FE400DD815F /* KKHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeModel.m; sourceTree = "<group>"; };
+		93D3622222815F2500DD815F /* KKHomePageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomePageViewModel.h; sourceTree = "<group>"; };
+		93D3622322815F2500DD815F /* KKHomePageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomePageViewModel.m; sourceTree = "<group>"; };
+		93D362262281627700DD815F /* KKChannelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChannelView.h; sourceTree = "<group>"; };
+		93D362272281627700DD815F /* KKChannelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChannelView.m; sourceTree = "<group>"; };
 		E6EE4928222551FE06A4F32C /* Pods-KKProject_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_Swift/Pods-KKProject_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKProject_Objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -630,9 +643,10 @@
 			children = (
 				0AC12B822279F1BB00CF94ED /* KKHomeViewController.h */,
 				0AC12B812279F1BB00CF94ED /* KKHomeViewController.m */,
-				0AF1CC8D22807A8E006487CA /* KKHomePageViewController.h */,
-				0AF1CC8E22807A8E006487CA /* KKHomePageViewController.m */,
+				93D3622122815EFE00DD815F /* Controller */,
 				934F2523228114F400EC63D5 /* ViewModel */,
+				93D3622022812FEB00DD815F /* Model */,
+				93D3622A2281628400DD815F /* View */,
 			);
 			path = KKHome;
 			sourceTree = "<group>";
@@ -824,6 +838,7 @@
 				0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */,
 				0AC12B632279E7F300CF94ED /* KKProjectHeader.h */,
 				0AC12B642279E81300CF94ED /* KKProjectObjcHeader.h */,
+				93D3621B228123FE00DD815F /* KKProjectAPI.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -862,6 +877,35 @@
 				0AF1CC9B22808D68006487CA /* KKHomeViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		93D3622022812FEB00DD815F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93D3621C22812FE400DD815F /* KKHomeModel.h */,
+				93D3621D22812FE400DD815F /* KKHomeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		93D3622122815EFE00DD815F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0AF1CC8D22807A8E006487CA /* KKHomePageViewController.h */,
+				0AF1CC8E22807A8E006487CA /* KKHomePageViewController.m */,
+				93D3622222815F2500DD815F /* KKHomePageViewModel.h */,
+				93D3622322815F2500DD815F /* KKHomePageViewModel.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		93D3622A2281628400DD815F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93D362262281627700DD815F /* KKChannelView.h */,
+				93D362272281627700DD815F /* KKChannelView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F3E9ACCC91B3EC9457AB7448 /* Frameworks */ = {
@@ -1302,6 +1346,7 @@
 				0AC12C35227A659000CF94ED /* UIScrollView+EmptyDataSet.m in Sources */,
 				0AC12C17227A107200CF94ED /* KKPopTransitionAnimation.m in Sources */,
 				0AC12BF1227A107200CF94ED /* KKButton.m in Sources */,
+				93D362282281627700DD815F /* KKChannelView.m in Sources */,
 				0AC12BF7227A107200CF94ED /* KKView.m in Sources */,
 				0AF1CC982280857F006487CA /* KKNetWorking.m in Sources */,
 				0AC12BEF227A107200CF94ED /* KKTextField.m in Sources */,
@@ -1311,6 +1356,7 @@
 				0AC12B8E2279F1BC00CF94ED /* KKLanuchViewController.m in Sources */,
 				0AC12BF9227A107200CF94ED /* KKModel.m in Sources */,
 				0AC12C09227A107200CF94ED /* KKTableViewCell.m in Sources */,
+				93D3622422815F2500DD815F /* KKHomePageViewModel.m in Sources */,
 				0AC12BF3227A107200CF94ED /* KKTableViewHeaderFooterView.m in Sources */,
 				0AC12C05227A107200CF94ED /* KKLabel.m in Sources */,
 				0AC12B8C2279F1BC00CF94ED /* KKProfileViewController.m in Sources */,
@@ -1334,6 +1380,7 @@
 				0AC12C0B227A107200CF94ED /* UIScrollView+KKNavigationBar.m in Sources */,
 				0A429407227CA86D00D7AF09 /* KKTidingViewController.m in Sources */,
 				0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
+				93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */,
 				0AC12BFF227A107200CF94ED /* KKUIKit.m in Sources */,
 				0A6349E02270B08D00C0D0B0 /* AppDelegate.m in Sources */,
 				0AC12BFD227A107200CF94ED /* KKLayout.m in Sources */,
@@ -1360,6 +1407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D3622522815F2500DD815F /* KKHomePageViewModel.m in Sources */,
 				0AC12BF4227A107200CF94ED /* KKTableViewHeaderFooterView.m in Sources */,
 				0A429403227CA84700D7AF09 /* KKFindViewController.m in Sources */,
 				0AC12C18227A107200CF94ED /* KKPopTransitionAnimation.m in Sources */,
@@ -1400,6 +1448,7 @@
 				0AC12C00227A107200CF94ED /* KKUIKit.m in Sources */,
 				0AC12C1A227A107200CF94ED /* KKPushTransitionAnimation.m in Sources */,
 				0AC12C14227A107200CF94ED /* UIBarButtonItem+KKNavigationBar.m in Sources */,
+				93D3621F22812FE400DD815F /* KKHomeModel.m in Sources */,
 				0AC12BF6227A107200CF94ED /* KKCollectionViewCell.m in Sources */,
 				0AC12BFC227A107200CF94ED /* UITabBarController+KKAdd.m in Sources */,
 				0AC12BF2227A107200CF94ED /* KKButton.m in Sources */,
@@ -1407,6 +1456,7 @@
 				0AC12C2D227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
 				0AC12BF8227A107200CF94ED /* KKView.m in Sources */,
 				0AC12C0E227A107200CF94ED /* UINavigationController+KKNavigationBar.m in Sources */,
+				93D362292281627700DD815F /* KKChannelView.m in Sources */,
 				0AC12C1C227A107200CF94ED /* KKViewController.m in Sources */,
 				0AC12C04227A107200CF94ED /* KKViewModel.m in Sources */,
 				0AC12BFE227A107200CF94ED /* KKLayout.m in Sources */,

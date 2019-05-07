@@ -7,8 +7,11 @@
 //
 
 #import "KKHomePageViewController.h"
+#import "KKHomePageViewModel.h"
 
 @interface KKHomePageViewController ()
+@property (nonatomic,strong) KKHomePageViewModel *viewModel;
+
 
 @end
 
@@ -19,10 +22,16 @@
 }
 
 //可选使用，列表显示的时候调用
-- (void)listDidAppear {}
+- (void)listDidAppear {
+    if (self.viewModel.pageDatas.count == 0) {
+        NSLog(@"----加载数据: %@",self.categoryModel.name);
+    }
+}
 
 //可选使用，列表消失的时候调用
-- (void)listDidDisappear {}
+- (void)listDidDisappear {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +46,16 @@
 
 
 
+
+#pragma mark -
+#pragma mark - initialize instance
+-(KKHomePageViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = KKHomePageViewModel.alloc.init;
+        _viewModel.categoryModel = self.categoryModel;
+    }
+    return _viewModel;
+}
 
 /*
 #pragma mark - Navigation

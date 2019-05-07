@@ -19,6 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+    //网络BASE_URL
+    [KKNetWorking updateBaseUrl:KK_BASE_URL];
+    
+    //配置主控制
     [self setupMainVC];
     
     return YES;

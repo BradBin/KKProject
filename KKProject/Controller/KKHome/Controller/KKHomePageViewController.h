@@ -10,8 +10,9 @@
 #import <JXCategoryView/JXCategoryView.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class KKHomeCategoryModel;
 @interface KKHomePageViewController : KKViewController<JXCategoryListContentViewDelegate>
+@property (nonatomic,strong) KKHomeCategoryModel *categoryModel;
 
 @end
 

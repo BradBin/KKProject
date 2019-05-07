@@ -8,14 +8,18 @@
 
 #import "KKHomeViewController.h"
 #import <JXCategoryView/JXCategoryView.h>
+#import "KKChannelView.h"
 #import "KKHomePageViewController.h"
+#import "KKHomeViewModel.h"
 
 @interface KKHomeViewController ()<JXCategoryViewDelegate,
 JXCategoryListContainerViewDelegate>
-
+@property (nonatomic,strong) KKHomeViewModel             *viewModel;
+@property (nonatomic,strong) UIButton                    *editBtn;
 @property (nonatomic,strong) JXCategoryTitleView         *categoryView;
 @property (nonatomic,strong) JXCategoryListContainerView *listContainerView;
-@property (nonatomic,strong) NSArray *categoryTitles;
+@property (nonatomic,strong) NSArray                     *categoryTitles;
+
 
 @end
 
@@ -35,6 +39,20 @@ JXCategoryListContainerViewDelegate>
 
 -(void)kk_addSubviews{
     [super kk_addSubviews];
+    
+    self.editBtn = ({
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:[UIImage imageNamed:@"home_edit.png"] forState:UIControlStateNormal];
+        [self.view addSubview:button];
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(button.superview.mas_top).offset(_kk_status_height());
+            make.right.equalTo(button.superview.mas_right);
+            make.width.equalTo(button.superview.mas_width).multipliedBy(0.1);
+            make.height.mas_equalTo(50);
+        }];
+        button;
+    });
+    
     self.categoryView = ({
         JXCategoryTitleView *view      = JXCategoryTitleView.alloc.init;
         view.averageCellSpacingEnabled = false;
@@ -61,16 +79,33 @@ JXCategoryListContainerViewDelegate>
         view;
     });
     
-   
     [self kk_categoryReloadData];
 }
 
 -(void)kk_bindViewModel{
     [super kk_bindViewModel];
+    @weakify(self);
+    [[[self.editBtn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        [[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_showBlock:^{
+            NSLog(@"kk_showBlock");
+        } hideBlock:^{
+            NSLog(@"kk_hideBlock");
+        }];
+        
+    }];
     
-    
-    
-    
+    [[self.viewModel.categoryUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:NSArray.class]) {
+            self.categoryTitles = [self geTitlestWithModelArray:(NSArray *)x];
+            [self kk_categoryReloadData];
+        }else if([x isKindOfClass:NSNumber.class]){
+            
+        }else{
+            
+        }
+    }];
 }
 
 
@@ -93,6 +128,7 @@ JXCategoryListContainerViewDelegate>
 #pragma mark - JXCategoryListContainerViewDelegate
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
     KKHomePageViewController *listVC = [[KKHomePageViewController alloc] init];
+    listVC.categoryModel             = self.viewModel.categoryTitles[index];
     return listVC;
 }
 
@@ -113,14 +149,28 @@ JXCategoryListContainerViewDelegate>
 
 
 #pragma mark -
+#pragma mark - Private method
+/**
+ 获取类型标题数据源
+ */
+- (NSArray *)geTitlestWithModelArray:(NSArray *)array {
+    NSMutableArray *results = NSMutableArray.array;
+    for (KKHomeCategoryModel *model in array) {
+        [results addObject:model.name];
+    }
+    return results;
+}
+#pragma mark -
 #pragma mark - initialize instance
 
-- (NSArray *)categoryTitles{
-    if (_categoryTitles == nil) {
-        _categoryTitles = @[@"1",@"2"];
+
+- (KKHomeViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = KKHomeViewModel.alloc.init;
     }
-    return _categoryTitles;
+    return _viewModel;
 }
+
 
 /*
 #pragma mark - Navigation
