@@ -32,7 +32,8 @@ end
 
 target 'KKProject' do
   commonPods
-  
+  #社交软件
+  pod 'OpenShare'
   #腾讯Bugly
   pod 'Bugly'
   #循环引用检测工具

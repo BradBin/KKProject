@@ -91,6 +91,7 @@ PODS:
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
+  - OpenShare (0.0.1)
   - Player (0.13.0)
   - PromiseKit (6.8.4):
     - PromiseKit/CorePromise (= 6.8.4)
@@ -211,6 +212,7 @@ DEPENDENCIES:
   - NIMSDK_LITE (~> 6.4.0)
   - NJKWebViewProgress
   - NVActivityIndicatorView
+  - OpenShare
   - PromiseKit
   - R.swift
   - RAMAnimatedTabBarController
@@ -289,6 +291,7 @@ SPEC REPOS:
     - NIMSDK_LITE
     - NJKWebViewProgress
     - NVActivityIndicatorView
+    - OpenShare
     - Player
     - PromiseKit
     - Protobuf
@@ -371,6 +374,7 @@ SPEC CHECKSUMS:
   NIMSDK_LITE: 80086a3f1f96b7137e15bc8ce1f5eb160e1ce60b
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
@@ -411,6 +415,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 13682d7984db9c09e41285c8d66e32c0e7f53bc0
+PODFILE CHECKSUM: 8927f35e2587c795f0468b65c6a4a5c61fc7478a
 
 COCOAPODS: 1.6.1
