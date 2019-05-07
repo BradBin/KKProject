@@ -9,10 +9,6 @@
 #ifndef KKProjectAPI_h
 #define KKProjectAPI_h
 
-#define KK_ACCOUNT_IID    @"17769976909"
-#define kk_DEVICE_ID      @"41312231473"
-#define KK_CATEGORY_TITLE @"article/category/get_subscribed/v1/?"
-
 #if   ENV_CODE == ENV_PROJECT
 #define KK_BASE_URL        @"https://is.snssdk.com/"
 
@@ -21,7 +17,12 @@
 
 #endif
 
+#define KK_ACCOUNT_IID          @"17769976909"
+#define kk_DEVICE_ID            @"41312231473"
+#define KK_CATEGORY_TITLE       @"article/category/get_subscribed/v1/?"
 
+
+#define KK_Home_CATEGORY_LIST   @"api/news/feed/v58/?"
 
 
 

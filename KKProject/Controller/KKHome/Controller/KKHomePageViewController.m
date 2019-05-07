@@ -12,7 +12,6 @@
 @interface KKHomePageViewController ()
 @property (nonatomic,strong) KKHomePageViewModel *viewModel;
 
-
 @end
 
 @implementation KKHomePageViewController
@@ -24,7 +23,7 @@
 //可选使用，列表显示的时候调用
 - (void)listDidAppear {
     if (self.viewModel.pageDatas.count == 0) {
-        NSLog(@"----加载数据: %@",self.categoryModel.name);
+        [self.viewModel.refreshCommand execute:self.categoryModel];
     }
 }
 

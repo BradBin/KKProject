@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A077C032281BB1400A1C7AD /* KKHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A077C022281BB1400A1C7AD /* KKHomePageModel.m */; };
+		0A077C042281BB1400A1C7AD /* KKHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A077C022281BB1400A1C7AD /* KKHomePageModel.m */; };
 		0A0D6A11227A84BD005BA58F /* UIColor+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A10227A84BD005BA58F /* UIColor+KKAdd.m */; };
 		0A0D6A12227A84BD005BA58F /* UIColor+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A10227A84BD005BA58F /* UIColor+KKAdd.m */; };
 		0A0D6A1C227A89AC005BA58F /* JXPagerListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */; };
@@ -146,6 +148,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A077C012281BB1400A1C7AD /* KKHomePageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomePageModel.h; sourceTree = "<group>"; };
+		0A077C022281BB1400A1C7AD /* KKHomePageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomePageModel.m; sourceTree = "<group>"; };
 		0A0D69FD227A7049005BA58F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A0D6A0F227A84BD005BA58F /* UIColor+KKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+KKAdd.h"; sourceTree = "<group>"; };
 		0A0D6A10227A84BD005BA58F /* UIColor+KKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KKAdd.m"; sourceTree = "<group>"; };
@@ -895,6 +899,8 @@
 				0AF1CC8E22807A8E006487CA /* KKHomePageViewController.m */,
 				93D3622222815F2500DD815F /* KKHomePageViewModel.h */,
 				93D3622322815F2500DD815F /* KKHomePageViewModel.m */,
+				0A077C012281BB1400A1C7AD /* KKHomePageModel.h */,
+				0A077C022281BB1400A1C7AD /* KKHomePageModel.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1353,6 +1359,7 @@
 				0AC12B9B2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
 				0AC12B882279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
 				0AC12C2C227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
+				0A077C032281BB1400A1C7AD /* KKHomePageModel.m in Sources */,
 				0AC12B8E2279F1BC00CF94ED /* KKLanuchViewController.m in Sources */,
 				0AC12BF9227A107200CF94ED /* KKModel.m in Sources */,
 				0AC12C09227A107200CF94ED /* KKTableViewCell.m in Sources */,
@@ -1410,6 +1417,7 @@
 				93D3622522815F2500DD815F /* KKHomePageViewModel.m in Sources */,
 				0AC12BF4227A107200CF94ED /* KKTableViewHeaderFooterView.m in Sources */,
 				0A429403227CA84700D7AF09 /* KKFindViewController.m in Sources */,
+				0A077C042281BB1400A1C7AD /* KKHomePageModel.m in Sources */,
 				0AC12C18227A107200CF94ED /* KKPopTransitionAnimation.m in Sources */,
 				0AF1CC9D22808D68006487CA /* KKHomeViewModel.m in Sources */,
 				0AC12B8B2279F1BC00CF94ED /* KKTabBarController.m in Sources */,

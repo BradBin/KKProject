@@ -22,9 +22,10 @@
 
 -(void)kk_layoutNavigation{
     [super kk_layoutNavigation];
-    self.kk_navShadowImage = UIImage.new;
-    self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
-    self.kk_navTitle = @"Profile";
+    self.kk_navShadowImage     = UIImage.new;
+    self.kk_navShadowColor     = [UIColor colorWithHexString:@"#EFEFEF"];
+    self.kk_navBackgroundColor = UIColor.clearColor;
+    self.kk_navTitle           = @"Profile";
 }
 /*
 #pragma mark - Navigation
