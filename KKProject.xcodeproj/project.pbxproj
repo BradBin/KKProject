@@ -632,8 +632,7 @@
 				0AC12B812279F1BB00CF94ED /* KKHomeViewController.m */,
 				0AF1CC8D22807A8E006487CA /* KKHomePageViewController.h */,
 				0AF1CC8E22807A8E006487CA /* KKHomePageViewController.m */,
-				0AF1CC9A22808D68006487CA /* KKHomeViewModel.h */,
-				0AF1CC9B22808D68006487CA /* KKHomeViewModel.m */,
+				934F2523228114F400EC63D5 /* ViewModel */,
 			);
 			path = KKHome;
 			sourceTree = "<group>";
@@ -856,6 +855,15 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
+		934F2523228114F400EC63D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0AF1CC9A22808D68006487CA /* KKHomeViewModel.h */,
+				0AF1CC9B22808D68006487CA /* KKHomeViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F3E9ACCC91B3EC9457AB7448 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1040,6 +1048,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KKProject/Pods-KKProject-resources.sh",
+				"${PODS_ROOT}/DKNightVersion/DKNightVersion/ColorTable/DKColorTable.txt",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
@@ -1051,6 +1060,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DKColorTable.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
@@ -1242,6 +1252,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-KKProject_Objc/Pods-KKProject_Objc-resources.sh",
+				"${PODS_ROOT}/DKNightVersion/DKNightVersion/ColorTable/DKColorTable.txt",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
 				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
@@ -1256,6 +1267,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DKColorTable.txt",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",

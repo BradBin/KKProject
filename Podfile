@@ -7,7 +7,6 @@ def commonPods
   pod 'dsBridge'
   pod 'YYKit'
   pod 'AFNetworking'
-  pod 'CYLTabBarController'
   
   pod 'EasyReact'
   pod 'ReactiveObjC'
@@ -16,13 +15,19 @@ def commonPods
   
   pod 'SVGAPlayer'
   pod 'SVGKit'
+  #刷新库
   pod 'MJRefresh'
+  #图像处理库
   pod 'GPUImage'
-  
-  
+  #tabBar标签控制器
+  pod 'CYLTabBarController'
+  #昼夜模式切换
+  pod 'DKNightVersion'
+  #滚动标签
   pod 'JXCategoryView'
+  #网页加载进度
+  pod 'NJKWebViewProgress'
   
-  #  pod 'PromiseKit'
 end
 
 target 'KKProject' do
@@ -108,7 +113,7 @@ target 'KKProject_Swift' do
   
   pod 'SwiftyStoreKit'
   pod 'Instructions'
-  
+  #滚动标签
   pod 'JXSegmentedView'
   
   pod 'AnimatedCollectionViewLayout'

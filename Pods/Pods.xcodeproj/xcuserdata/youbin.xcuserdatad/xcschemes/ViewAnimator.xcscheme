@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0334CF19060BD6B8CD8D287BADAB7C21"
+               BlueprintIdentifier = "9A98A4E76635BBC15B8CFA560269D22C"
                BuildableName = "ViewAnimator.framework"
                BlueprintName = "ViewAnimator"
                ReferencedContainer = "container:Pods.xcodeproj">

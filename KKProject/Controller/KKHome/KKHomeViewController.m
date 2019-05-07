@@ -61,8 +61,16 @@ JXCategoryListContainerViewDelegate>
         view;
     });
     
-    self.categoryView.contentScrollView = self.listContainerView.scrollView;
+   
     [self kk_categoryReloadData];
+}
+
+-(void)kk_bindViewModel{
+    [super kk_bindViewModel];
+    
+    
+    
+    
 }
 
 
@@ -71,9 +79,9 @@ JXCategoryListContainerViewDelegate>
  */
 - (void)kk_categoryReloadData {
     
-    //重载之后默认回到0，你也可以指定一个index
+    self.categoryView.contentScrollView    = self.listContainerView.scrollView;
     self.categoryView.defaultSelectedIndex = 1;
-    self.categoryView.titles = self.categoryTitles;
+    self.categoryView.titles               = self.categoryTitles;
     [self.categoryView reloadData];
     
     self.listContainerView.defaultSelectedIndex = 1;
