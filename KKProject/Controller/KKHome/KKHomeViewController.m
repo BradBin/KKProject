@@ -20,7 +20,6 @@ JXCategoryListContainerViewDelegate>
 @property (nonatomic,strong) JXCategoryListContainerView *listContainerView;
 @property (nonatomic,strong) NSArray                     *categoryTitles;
 
-
 @end
 
 @implementation KKHomeViewController
@@ -92,7 +91,6 @@ JXCategoryListContainerViewDelegate>
         } hideBlock:^{
             NSLog(@"kk_hideBlock");
         }];
-        
     }];
     
     [[self.viewModel.categoryUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
@@ -108,7 +106,6 @@ JXCategoryListContainerViewDelegate>
     }];
 }
 
-
 /**
  重载数据源：比如从服务器获取新的数据、否则用户对分类进行了排序等
  */
@@ -122,7 +119,6 @@ JXCategoryListContainerViewDelegate>
     self.listContainerView.defaultSelectedIndex = 1;
     [self.listContainerView reloadData];
 }
-
 
 #pragma mark -
 #pragma mark - JXCategoryListContainerViewDelegate
@@ -145,8 +141,6 @@ JXCategoryListContainerViewDelegate>
 - (void)categoryView:(JXCategoryBaseView *)categoryView scrollingFromLeftIndex:(NSInteger)leftIndex toRightIndex:(NSInteger)rightIndex ratio:(CGFloat)ratio {
     [self.listContainerView scrollingFromLeftIndex:leftIndex toRightIndex:rightIndex ratio:ratio selectedIndex:categoryView.selectedIndex];
 }
-
-
 
 #pragma mark -
 #pragma mark - Private method

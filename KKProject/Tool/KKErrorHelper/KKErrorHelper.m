@@ -134,7 +134,7 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
     BOOL isLogin            = helper.isLogin; // 是否登录
     BOOL isExpired          = helper.isExpired; //是否过期
     UIViewController *resultVC;
-    if (!isLogin && !isExpired ) {
+    if (isLogin && isExpired ) {
         KKTabBarController *tabBarVC = [self creatTabBarVC];
         UINavigationController *nav  = [UINavigationController kk_rooterViewController:tabBarVC translationScale:true];
         nav.view.backgroundColor     = UIColor.whiteColor;

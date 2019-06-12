@@ -19,15 +19,20 @@ static inline UIEdgeInsets safeEdgeInsets(){
     return safeInsets;
 }
 static inline CGFloat channelTopMargin(){
-    return (safeEdgeInsets().top + 50);
+    return (safeEdgeInsets().top + CGFloatPixelRound(50));
 }
 static inline CGFloat channelHeight(){
     return (screenSize().height - channelTopMargin());
+}
+static inline CGFloat headHeight(){
+    return CGFloatPixelRound(50);
 }
 
 static CGFloat const duration = 0.3;
 @interface KKChannelView()<UIGestureRecognizerDelegate>
 @property (nonatomic,strong) UIView        *contentView;
+@property (nonatomic,strong) YYLabel *titlelb;
+@property (nonatomic,strong) UIButton *closeBtn;
 @property (nonatomic,  copy) KKChannelBlock hideBlock;
 
 @end
@@ -72,6 +77,34 @@ static CGFloat const duration = 0.3;
         }];
         view;
     });
+    
+    self.titlelb = ({
+        YYLabel *label = YYLabel.alloc.init;
+        label.backgroundColor = [UIColor colorWithHexString:@"#FEFEFE"];
+        [self.contentView addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(label.superview.mas_top);
+            make.centerX.equalTo(label.superview.mas_centerX);
+            make.left.equalTo(label.superview.mas_left).offset(headHeight());
+            make.right.equalTo(label.superview.mas_right).offset(-headHeight());
+            make.height.mas_equalTo(CGFloatPixelRound(44));
+        }];
+        label;
+    });
+    
+    self.closeBtn = ({
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setBackgroundImage:[UIImage imageWithColor:UIColor.redColor]
+                          forState:UIControlStateNormal];
+        [self.contentView addSubview:button];
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(button.superview.mas_top);
+            make.right.equalTo(button.superview.mas_right);
+            make.width.height.mas_equalTo(headHeight());
+        }];
+        button;
+    });
+    
 }
 
 -(void)kk_bindViewModel{
@@ -83,12 +116,17 @@ static CGFloat const duration = 0.3;
     }];
     tapGestrue.delegate = self;
     [self addGestureRecognizer:tapGestrue];
+    
+    [[self.closeBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        [self kk_hideBlock];
+    }];
 }
 
 -(void)kk_showBlock:(KKChannelBlock)showBlock hideBlock:(KKChannelBlock)hideBlock{
     [UIApplication.sharedApplication.keyWindow addSubview:self];
     [self layoutIfNeeded];
-    [UIView animateWithDuration:duration delay:0.0 usingSpringWithDamping:5 initialSpringVelocity:10 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:duration delay:0.0 usingSpringWithDamping:5 initialSpringVelocity:5 options:UIViewAnimationOptionCurveLinear animations:^{
         [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.superview.mas_bottom).offset(-channelHeight());
         }];

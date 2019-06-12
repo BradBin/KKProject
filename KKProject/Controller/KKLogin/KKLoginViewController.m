@@ -21,6 +21,12 @@
     self.view.backgroundColor = UIColor.orangeColor;
 }
 
+-(void)kk_layoutNavigation{
+    [super kk_layoutNavigation];
+    self.kk_navigationBar.hidden = true;
+}
+
+
 /*
 #pragma mark - Navigation
 

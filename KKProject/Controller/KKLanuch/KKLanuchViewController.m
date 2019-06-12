@@ -12,7 +12,7 @@
 
 @interface KKLanuchViewController ()
 
-@property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic,strong) UIActivityIndicatorView *loadingView;
     
 @end
 
@@ -20,19 +20,39 @@
 
 -(void)kk_layoutNavigation{
     [super kk_layoutNavigation];
-    self.kk_navShadowImage     = UIImage.new;
-    self.kk_navShadowColor     = UIColor.clearColor;
-    self.kk_navBackgroundColor = UIColor.clearColor;
+    self.kk_navigationBar.hidden = true;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+}
+
+-(void)kk_addSubviews{
+    [super kk_addSubviews];
+    self.loadingView = ({
+        UIActivityIndicatorView *view = UIActivityIndicatorView.alloc.init;
+        view.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+        view.color = [UIColor colorWithHexString:@"#207CB7"];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(view.superview.mas_centerX);
+            make.centerY.equalTo(view.superview.mas_centerY);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+        view;
+    });
+}
+
+-(void)kk_bindViewModel{
+    [super kk_bindViewModel];
+    [self.loadingView startAnimating];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.loadingView stopAnimating];
         [self kk_enterApp];
     });
 }
+
 
 
 - (void) kk_enterApp{
