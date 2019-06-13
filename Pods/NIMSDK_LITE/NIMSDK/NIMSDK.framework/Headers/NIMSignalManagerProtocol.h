@@ -23,6 +23,8 @@
 @class NIMSignalingControlRequest;
 @class NIMSignalingCallRequest;
 @class NIMSignalingAcceptJoinRequest;
+@class NIMSignalingMemberInfo;
+@class NIMSignalingQueryChannelRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -67,6 +69,13 @@ typedef void(^NIMSignalingAcceptBlock)(NSError * __nullable error, NIMSignalingC
  *  @param error 错误信息,如果成功,error 为 nil
  */
 typedef void(^NIMSignalingOperationBlock)(NSError * __nullable error);
+
+/**
+ *  频道查询回调
+ *
+ *  @param error 错误信息,如果成功,error 为 nil
+ */
+typedef void(^NIMSignalingQueryChannelBlock)(NSError * __nullable error, NIMSignalingChannelDetailedInfo * __nullable response);
 
 
 /**
@@ -301,6 +310,16 @@ typedef NS_ENUM(NSInteger, NIMSignalingEventType){
 - (void)signalingCall:(NIMSignalingCallRequest *)request
            completion:(nullable NIMSignalingCallBlock)completion;
 
+
+
+/**
+ 查询频道信息
+
+ @param request 查询请求
+ @param completion 完成回调
+ */
+- (void)signalingQueryChannelInfo:(NIMSignalingQueryChannelRequest *)request
+                       completion:(nullable NIMSignalingQueryChannelBlock)completion;
 
 /**
  *  添加通知对象
