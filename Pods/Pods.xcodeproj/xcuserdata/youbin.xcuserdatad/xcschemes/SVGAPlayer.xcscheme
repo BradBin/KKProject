@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C164E9A49098B34FD5D2D0F7379B6020"
+               BlueprintIdentifier = "AE884FAC006EC7910A039DAEF0C9DBCF"
                BuildableName = "libSVGAPlayer.a"
                BlueprintName = "SVGAPlayer"
                ReferencedContainer = "container:Pods.xcodeproj">

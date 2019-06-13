@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20D0E614DA2629578825F2AEE3C8C4A7"
-               BuildableName = "SQLite.swift.framework"
-               BlueprintName = "SQLite.swift"
+               BlueprintIdentifier = "A5A8AD00EC1AB0800B421D0BF40BC934"
+               BuildableName = "libOpenShare.a"
+               BlueprintName = "OpenShare"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
