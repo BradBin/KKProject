@@ -8,10 +8,63 @@
 
 #import "KKErrorHelper.h"
 
+@implementation KKError
+
+- (BOOL)kk_isReloginError {
+    
+    switch (self.errorCode) {
+            
+        case KKNetErrorCodeErrorTokenExpired:
+            //        case KKNetErrorCodeErrorTokenInvalid:
+            //        case KKNetErrorCodeErrorTokenNotExist:
+            //        case KKNetErrorCodeErrorTokenCheckFailure:
+            //        case KKNetErrorCodeUserNotExist:
+        case KKNetErrorCodeUserInvalid:
+            //        case KKNetErrorCodeUserNotLogin:
+            return YES;
+            break;
+        default:
+            return NO;
+            break;
+    }
+}
+
+@end
+
+
 #pragma mark -
 #pragma mark - KKErrorHelper
 @implementation KKErrorHelper
++ (KKError *)kk_errorWithInfo:(id)errorInfo {
     
+    NSDictionary *infoDic = (NSDictionary *)errorInfo;
+    NSInteger code = [infoDic[@"code"] integerValue];
+    if (code == KKNetErrorCodeSuccess || !code) {
+        return nil;
+    }
+    KKError *error = [[KKError alloc] initWithDomain:NSNetServicesErrorDomain code:code userInfo:@{
+                                                                                                   NSLocalizedDescriptionKey:infoDic[@"msg"],
+                                                                                                   }];
+    error.errorCodeValue = code;
+    error.errorCode = code;
+    error.desc = infoDic[@"msg"];
+    error.info = errorInfo;
+    
+    return error;
+}
+
++ (KKError *)kk_errorWithDesc:(NSString *)desc {
+    
+    KKError *error = [[KKError alloc] initWithDomain:NSNetServicesErrorDomain code:0 userInfo:@{
+                                                                                                NSLocalizedDescriptionKey:desc,
+                                                                                                }];
+    error.errorCodeValue = KKNetErrorCodeNormalERROR;
+    error.errorCode = KKNetErrorCodeNormalERROR;
+    error.desc = desc;
+    
+    return error;
+}
+
 
 @end
 
@@ -81,7 +134,7 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
     BOOL isLogin            = helper.isLogin; // 是否登录
     BOOL isExpired          = helper.isExpired; //是否过期
     UIViewController *resultVC;
-    if (!isLogin && !isExpired ) {
+    if (isLogin && isExpired ) {
         KKTabBarController *tabBarVC = [self creatTabBarVC];
         UINavigationController *nav  = [UINavigationController kk_rooterViewController:tabBarVC translationScale:true];
         nav.view.backgroundColor     = UIColor.whiteColor;

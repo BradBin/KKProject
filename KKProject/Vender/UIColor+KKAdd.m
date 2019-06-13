@@ -10,7 +10,7 @@
 
 @implementation UIColor (KKAdd)
 
-+(UIColor *)randomColor{
++ (UIColor *)randomColor{
     return [UIColor colorWithRed:arc4random_uniform(255)/255.0f
                            green:arc4random_uniform(255)/255.0f
                             blue:arc4random_uniform(255)/255.0f

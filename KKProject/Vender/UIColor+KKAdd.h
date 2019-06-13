@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (KKAdd)
 
-+(UIColor *)randomColor;
++ (UIColor *)randomColor;
 
 @end
 
