@@ -153,6 +153,11 @@ typedef void(^NIMArchiveLogsHandler)(NSError *error, NSString *path);
 @property (nonatomic,strong,readonly)   id<NIMTeamManager>    teamManager;
 
 /**
+ *  超大群，负责超大群的相关操作
+ */
+@property (nonatomic,strong,readonly) id<NIMSuperTeamManager> superTeamManager;
+
+/**
  *  好友管理类
  */
 @property (nonatomic,strong,readonly)   id<NIMUserManager>      userManager;

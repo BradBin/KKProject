@@ -1,0 +1,11 @@
+${PODS_ROOT}/Target Support Files/Pods-KKProject_Objc/Pods-KKProject_Objc-resources.sh
+${PODS_ROOT}/DKNightVersion/DKNightVersion/ColorTable/DKColorTable.txt
+${PODS_ROOT}/GPUImage/framework/Resources/lookup.png
+${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png
+${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png
+${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png
+${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle
+${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle
+${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle

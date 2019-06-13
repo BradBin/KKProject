@@ -11,6 +11,7 @@
 #import "NIMNetCallNotificationContent.h"
 #import "NIMChatroomNotificationContent.h"
 #import "NIMUnsupportedNotificationContent.h"
+#import "NIMSuperTeamNotificationContent.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

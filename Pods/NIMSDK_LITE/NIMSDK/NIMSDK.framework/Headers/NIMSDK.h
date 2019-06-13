@@ -42,6 +42,15 @@
 #import "NIMTeam.h"
 #import "NIMTeamMember.h"
 #import "NIMCreateTeamOption.h"
+
+/**
+ *  超级群相关定义
+ */
+#import "NIMSuperTeamDefs.h"
+#import "NIMSuperTeam.h"
+#import "NIMSuperTeamMember.h"
+#import "NIMSuperTeamFetchMemberOption.h"
+
 /**
  *  聊天室相关定义
  */
@@ -114,6 +123,7 @@
 #import "NIMMediaManagerProtocol.h"
 #import "NIMUserManagerProtocol.h"
 #import "NIMTeamManagerProtocol.h"
+#import "NIMSuperTeamManagerProtocol.h"
 #import "NIMSystemNotificationManagerProtocol.h"
 #import "NIMApnsManagerProtocol.h"
 #import "NIMResourceManagerProtocol.h"

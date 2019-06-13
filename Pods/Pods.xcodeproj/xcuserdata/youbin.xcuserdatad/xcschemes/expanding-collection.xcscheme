@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0837B0AAC93950910A75FA5CE470CB18"
+               BlueprintIdentifier = "CF6CBA0EAF0F4054DC23B5672D30C021"
                BuildableName = "expanding-collection.framework"
                BlueprintName = "expanding-collection"
                ReferencedContainer = "container:Pods.xcodeproj">

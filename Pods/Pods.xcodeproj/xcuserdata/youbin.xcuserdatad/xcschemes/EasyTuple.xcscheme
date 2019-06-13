@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC992969B24CF9B14476A8D91C3D2D1B"
+               BlueprintIdentifier = "C8E013CF647EB910A60972C43023C084"
                BuildableName = "libEasyTuple.a"
                BlueprintName = "EasyTuple"
                ReferencedContainer = "container:Pods.xcodeproj">

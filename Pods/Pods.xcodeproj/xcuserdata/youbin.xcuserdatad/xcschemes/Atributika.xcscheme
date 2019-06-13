@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D54543059A256636E145363122A54101"
+               BlueprintIdentifier = "BE7B3A8FFA6892B35CE5D9F8A7B8D25C"
                BuildableName = "Atributika.framework"
                BlueprintName = "Atributika"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C1B106AE1F42762D1D988166714299CE"
+               BlueprintIdentifier = "1A6F633BD0A4B9EF892715BEB76AC948"
                BuildableName = "libdsBridge.a"
                BlueprintName = "dsBridge"
                ReferencedContainer = "container:Pods.xcodeproj">
