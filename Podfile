@@ -58,7 +58,7 @@ target 'KKProject_Objc' do
   pod 'UMCShare/Social/QQ'
   
   pod 'IQKeyboardManager'
-  pod 'NIMSDK_LITE', '~> 6.4.0'
+  pod 'NIMSDK_LITE', '~> 6.5.5'
 end
 
 

@@ -81,6 +81,10 @@ typedef NS_ENUM(NSInteger,NIMMessageSearchOrder) {
  */
 @property (nullable,nonatomic,copy)      NSArray<NSString *> *fromIds;
 
+/**
+ * 将搜索文本中的正则特殊字符转义，默认 YES
+ */
+@property (nonatomic,assign) BOOL   enableContentTransfer;
 @end
 
 

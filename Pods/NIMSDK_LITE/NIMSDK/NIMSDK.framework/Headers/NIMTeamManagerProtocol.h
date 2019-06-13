@@ -55,8 +55,13 @@ typedef void(^NIMTeamFetchInfoHandler)(NSError * __nullable error, NIMTeam * __n
  */
 typedef void(^NIMTeamApplyHandler)(NSError * __nullable error, NIMTeamApplyStatus applyStatus);
 
-
-
+/**
+ *  邀请人Accids
+ *
+ *  @param error       错误,如果成功则error为nil
+ *  @param inviters    群成员与邀请人关系
+ */
+typedef void(^NIMTeamFetchInviterAccidsHandler)(NSError * __nullable error, NSDictionary<NSString *, NSString *> * __nullable inviters);
 
 /**
  *  群组委托
@@ -130,7 +135,7 @@ typedef void(^NIMTeamApplyHandler)(NSError * __nullable error, NIMTeamApplyStatu
  *  创建群组
  *
  *  @param option     创建群选项
- *  @param users      用户ID列表
+ *  @param users      用户Accid列表
  *  @param completion 完成后的回调
  */
 - (void)createTeam:(NIMCreateTeamOption *)option
@@ -523,6 +528,15 @@ typedef void(^NIMTeamApplyHandler)(NSError * __nullable error, NIMTeamApplyStatu
 - (void)fetchTeamMembersFromServer:(NSString *)teamId
                         completion:(nullable NIMTeamMemberHandler)completion;
 
+/**
+ *  获取群成员邀请人Accid 
+ *  @param teamId      群组ID
+ *  @param memberIDs   查询的成员ID，数目不允许大于200
+ *  @param completion  完成后的回调
+ */
+- (void)fetchInviterAccids:(NSString *)teamID
+         withTargetMembers:(NSArray<NSString *> *)memberIDs
+                completion:(nullable NIMTeamFetchInviterAccidsHandler)completion;
 
 /**
  *  获取群信息

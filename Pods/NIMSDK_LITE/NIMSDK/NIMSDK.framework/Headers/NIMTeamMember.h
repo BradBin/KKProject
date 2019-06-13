@@ -32,6 +32,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable,nonatomic,copy,readonly)         NSString *invitor;
 
 /**
+ *  邀请者Accid
+ *  @discussion 该属性值为@""或者自身Accid时均表示无邀请人，当为nil时需要主动调用接口去获取
+ */
+@property (nullable,nonatomic,copy,readonly)         NSString *inviterAccid;
+
+/**
  *  群成员类型
  */
 @property (nonatomic,assign)                NIMTeamMemberType  type;

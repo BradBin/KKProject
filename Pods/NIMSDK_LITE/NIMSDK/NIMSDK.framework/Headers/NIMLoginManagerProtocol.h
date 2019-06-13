@@ -148,6 +148,12 @@ typedef NS_ENUM(NSInteger, NIMKickReason)
  */
 - (void)onTeamUsersSyncFinished:(BOOL)success;
 
+/**
+ *  超大群用户同步完成通知
+ *  @param success 群用户信息同步是否成功
+ */
+- (void)onSuperTeamUsersSyncFinished:(BOOL)success;
+
 @end
 
 /**

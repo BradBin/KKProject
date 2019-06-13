@@ -345,5 +345,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#pragma mark - 查询请求
+/**
+ *  查询请求
+ */
+@interface NIMSignalingQueryChannelRequest : NSObject
+
+/**
+ 频道名称，选填（对应的频道名称）(channelId两者必须要填一个，优先使用channelName查询)
+ */
+@property(nonatomic, copy) NSString *channelName;
+
+/**
+ 频道id，选填 (对应的频道id)(channelName两者必须要填一个,必须进入房间后，才能使用channelId查询)
+ */
+@property(nonatomic, copy) NSString *channelId;
+
+@end
+
 
 NS_ASSUME_NONNULL_END

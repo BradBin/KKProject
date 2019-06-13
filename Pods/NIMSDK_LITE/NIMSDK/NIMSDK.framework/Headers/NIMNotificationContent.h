@@ -31,6 +31,10 @@ typedef NS_ENUM(NSInteger, NIMNotificationType){
      *  聊天室通知
      */
     NIMNotificationTypeChatroom        = 3,
+    /**
+     *  超大群通知
+     */
+    NIMNotificationTypeSuperTeam       = 4,
 };
 
 
