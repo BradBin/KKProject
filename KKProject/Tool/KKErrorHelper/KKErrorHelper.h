@@ -52,15 +52,19 @@ typedef NS_ENUM(NSInteger,KKNetErrorCode)  {
 
 
 UIKIT_EXTERN NSNotificationName KKHideLiveRoomNotificationName;
+typedef void(^ _Nullable KKVCBlock)(UIViewController *vc);
 @interface KKErrorHelper(VCControl)
-   
+
+/********************界面UI的相关部分**********************/
 /**
- 显示登陆VC
- */
-+(void)kk_showLoginVC;
-+(void)kk_showLoginVCWithMessage:(nullable NSString *)message;
- 
-+(void)kk_showHomeVC;
+显示登陆VC
+*/
++ (void)kk_showLoginVC;
++ (void)kk_showLoginVCWithBlock:(KKVCBlock)block;
+
++ (void)kk_showHomeVC;
++ (void)kk_showHomeVCWithBlock:(KKVCBlock)block;
+
 
 /**
  获取首次登陆需要显示的VC
@@ -68,6 +72,13 @@ UIKIT_EXTERN NSNotificationName KKHideLiveRoomNotificationName;
  @return VC
  */
 +(UIViewController *)kk_defaultVC;
+
+/**
+ 进入App
+ */
++ (void)kk_enterApp;
+
+
     
 @end
 

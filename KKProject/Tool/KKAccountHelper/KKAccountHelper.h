@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KKAccount.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,18 +20,39 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign,readonly) BOOL isExpired;
 /** 用户token */
 @property (nonatomic,  copy,readonly) NSString *token;
+/** 用户账号 */
+@property (nonatomic,  copy,readonly) NSString *userName;
+/** 用户UserId */
+@property (nonatomic,  copy,readonly) NSString *userId;
+/** 用户信息模型 */
+@property (nonatomic,strong,readonly) KKAccount *account;
 
 
-+(instancetype)shared;
+/**
+ 管理工具对象
+
+ @return 工具对象
+ */
++ (instancetype)shared;
+
+
+/**
+ 保存登录账号信息
+
+ @param account 账号信息
+ */
+- (void)kk_saveAccountInfoWithAccount:(KKAccount *)account;
+
 /**
  登陆
  */
-+(void)kk_logIn;
+- (void)kk_logIn;
 
 /**
  退出登录
  */
-+(void)kk_logOut;
+- (void)kk_logOut;
+
 @end
 
 NS_ASSUME_NONNULL_END

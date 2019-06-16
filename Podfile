@@ -13,6 +13,8 @@ def commonPods
   pod 'FFRouter'
   pod 'BlockHook'
   
+  pod 'MBProgressHUD'
+  
   pod 'SVGAPlayer'
   pod 'SVGKit'
   #刷新库
@@ -27,8 +29,8 @@ def commonPods
   pod 'JXCategoryView'
   #网页加载进度
   pod 'NJKWebViewProgress'
-  
-   pod 'NIMSDK', '~> 6.5.5'
+  #网易云信sdk
+  pod 'NIMSDK', '~> 6.5.5'
   
 end
 

@@ -30,9 +30,10 @@ static inline CGFloat headHeight(){
 
 static CGFloat const duration = 0.3;
 @interface KKChannelView()<UIGestureRecognizerDelegate>
+@property (nonatomic,strong) YYTimer       *hideTimer;
 @property (nonatomic,strong) UIView        *contentView;
-@property (nonatomic,strong) YYLabel *titlelb;
-@property (nonatomic,strong) UIButton *closeBtn;
+@property (nonatomic,strong) YYLabel       *titlelb;
+@property (nonatomic,strong) UIButton      *closeBtn;
 @property (nonatomic,  copy) KKChannelBlock hideBlock;
 
 @end
@@ -62,7 +63,21 @@ static CGFloat const duration = 0.3;
 
 -(void)kk_setupView{
     [super kk_setupView];
-    self.backgroundColor = [UIColor colorWithWhite:0.05 alpha:0.05];
+    
+    //    self.hideTimer = ({
+    //        //立即执行定时任务,间隔1秒执行一次
+    //        YYTimer *timer = [YYTimer timerWithTimeInterval:1.0 target:self selector:@selector(kk_hideEvent:) repeats:true];
+    //        [timer fire];
+    //        timer;
+    //    });
+    
+    self.hideTimer = ({
+        NSLog(@"-----YYTimer-------");
+        //比当前晚多长(5秒)时间开始执行定时器任务,间隔1秒执行一次
+        YYTimer *timer = [[YYTimer alloc] initWithFireTime:5 interval:1.0 target:self selector:@selector(kk_hideEvent:) repeats:true];
+        timer;
+    });
+    
     self.contentView = ({
         UIView *view             = UIView.alloc.init;
         view.layer.masksToBounds = true;
@@ -81,6 +96,8 @@ static CGFloat const duration = 0.3;
     self.titlelb = ({
         YYLabel *label = YYLabel.alloc.init;
         label.backgroundColor = [UIColor colorWithHexString:@"#FEFEFE"];
+        label.textAlignment   = NSTextAlignmentCenter;
+        label.text            = @"Title";
         [self.contentView addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(label.superview.mas_top);
@@ -94,8 +111,7 @@ static CGFloat const duration = 0.3;
     
     self.closeBtn = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundImage:[UIImage imageWithColor:UIColor.redColor]
-                          forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"home_down.png"] forState:UIControlStateNormal];
         [self.contentView addSubview:button];
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(button.superview.mas_top);
@@ -104,7 +120,18 @@ static CGFloat const duration = 0.3;
         }];
         button;
     });
-    
+}
+
+- (void)kk_hideEvent:(YYTimer *)timer{
+    static NSInteger count = 0;
+    if (count < 10) {
+        count ++;
+        NSLog(@"KKChannelView YYTimer ---- %ld",count);
+    }else{
+        count = 0;
+        [timer invalidate];
+        [self kk_hideBlock:self.hideBlock];
+    }
 }
 
 -(void)kk_bindViewModel{
@@ -125,6 +152,14 @@ static CGFloat const duration = 0.3;
 
 -(void)kk_showBlock:(KKChannelBlock)showBlock hideBlock:(KKChannelBlock)hideBlock{
     [UIApplication.sharedApplication.keyWindow addSubview:self];
+    
+    UIImage *backImg = [UIImage imageWithColor:[UIColor colorWithWhite:1.0 alpha:0.5] size:self.bounds.size];
+    backImg          = [backImg imageByBlurRadius:10 tintColor:[UIColor colorWithWhite:0.8 alpha:0.3] tintMode:kCGBlendModeNormal saturation:1.0 maskImage:nil];
+    
+    self.layer.contents    = (id)backImg.CGImage;
+    self.layer.contentMode = UIViewContentModeScaleAspectFit;
+    
+    
     [self layoutIfNeeded];
     [UIView animateWithDuration:duration delay:0.0 usingSpringWithDamping:5 initialSpringVelocity:5 options:UIViewAnimationOptionCurveLinear animations:^{
         [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -155,11 +190,11 @@ static CGFloat const duration = 0.3;
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

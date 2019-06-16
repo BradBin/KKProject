@@ -15,6 +15,8 @@
 @interface KKHomeViewController ()<JXCategoryViewDelegate,
 JXCategoryListContainerViewDelegate>
 @property (nonatomic,strong) KKHomeViewModel             *viewModel;
+@property (nonatomic,strong) UIView                      *maskView;
+@property (nonatomic,strong) CAGradientLayer             *maskLayer;
 @property (nonatomic,strong) UIButton                    *editBtn;
 @property (nonatomic,strong) JXCategoryTitleView         *categoryView;
 @property (nonatomic,strong) JXCategoryListContainerView *listContainerView;
@@ -36,8 +38,36 @@ JXCategoryListContainerViewDelegate>
     self.kk_navigationBar.hidden = true;
 }
 
+
 -(void)kk_addSubviews{
     [super kk_addSubviews];
+    
+    self.maskView = ({
+        UIView *view = UIView.alloc.init;
+        [self.view addSubview:view];
+        [self.view insertSubview:view atIndex:0];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(view.superview.mas_top);
+            make.centerX.equalTo(view.superview.mas_centerX);
+            make.width.equalTo(view.superview.mas_width);
+            make.height.mas_equalTo(CGFloatPixelRound(_kk_nav_height() + 50));
+        }];
+        [view.superview layoutIfNeeded];
+        view;
+    });
+    
+    self.maskLayer = ({
+        CAGradientLayer *layer = CAGradientLayer.layer;
+        layer.frame            = self.maskView.bounds;
+        layer.colors           = @[(__bridge id)[UIColor colorWithHexString:@"#F30E3B"].CGColor,
+                                   (__bridge id)[UIColor colorWithHexString:@"#F50015"].CGColor,
+                                   (__bridge id)[UIColor colorWithHexString:@"#FFFFFF"].CGColor];
+        layer.locations        = @[@0.25, @0.50];
+        layer.startPoint       = CGPointMake(0, 0);
+        layer.endPoint         = CGPointMake(0, 1);
+        [self.maskView.layer insertSublayer:layer atIndex:0];
+        layer;
+    });
     
     self.editBtn = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -56,6 +86,12 @@ JXCategoryListContainerViewDelegate>
         JXCategoryTitleView *view      = JXCategoryTitleView.alloc.init;
         view.averageCellSpacingEnabled = false;
         view.delegate                  = self;
+        view.titleColor                = [UIColor colorWithHexString:@"#5B5B5B"];
+        view.titleSelectedColor        = [UIColor colorWithHexString:@"#1B1B1B"];
+        view.titleLabelZoomScale       = 1.35;
+        view.titleLabelZoomEnabled     = true;
+        view.titleColorGradientEnabled = true;
+        view.titleFont                 = [UIFont systemFontOfSize:16.5];
         [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(view.superview.mas_top).offset(_kk_status_height());
@@ -135,7 +171,11 @@ JXCategoryListContainerViewDelegate>
 #pragma mark -
 #pragma mark - JXCategoryViewDelegate
 - (void)categoryView:(JXCategoryBaseView *)categoryView didClickSelectedItemAtIndex:(NSInteger)index {
+    NSLog(@"didClickSelectedItemAtIndex-----%ld",index);
     [self.listContainerView didClickSelectedItemAtIndex:index];
+}
+- (void)categoryView:(JXCategoryBaseView *)categoryView didScrollSelectedItemAtIndex:(NSInteger)index{
+    NSLog(@"didScrollSelectedItemAtIndex-----%ld",index);
 }
 
 - (void)categoryView:(JXCategoryBaseView *)categoryView scrollingFromLeftIndex:(NSInteger)leftIndex toRightIndex:(NSInteger)rightIndex ratio:(CGFloat)ratio {
@@ -167,13 +207,13 @@ JXCategoryListContainerViewDelegate>
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

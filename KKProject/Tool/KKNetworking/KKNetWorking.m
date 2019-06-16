@@ -616,7 +616,9 @@ static inline NSString *cachePath() {
         KKError *kkerror = [KKErrorHelper kk_errorWithInfo:responseObj];
         if (kkerror) {
             if ([kkerror kk_isReloginError]) {
-                [KKErrorHelper kk_showLoginVCWithMessage:kkerror.desc];
+                [KKErrorHelper kk_showLoginVCWithBlock:^(UIViewController * _Nonnull vc) {
+                    [vc.view showTitle:kkerror.desc];
+                }];
                 error(response,kkerror);
             }else {
                 error(response,kkerror);

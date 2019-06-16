@@ -73,6 +73,7 @@ PODS:
     - Material/Core (= 2.16.4)
   - Material/Core (2.16.4):
     - Motion (~> 1.4.3)
+  - MBProgressHUD (1.1.0)
   - MJRefresh (3.1.16)
   - Motion (1.4.3):
     - Motion/Core (= 1.4.3)
@@ -207,6 +208,7 @@ DEPENDENCIES:
   - LTMorphingLabel
   - Masonry
   - Material
+  - MBProgressHUD
   - MJRefresh
   - Moya
   - NIMSDK (~> 6.5.5)
@@ -285,6 +287,7 @@ SPEC REPOS:
     - LTMorphingLabel
     - Masonry
     - Material
+    - MBProgressHUD
     - MJRefresh
     - Motion
     - Moya
@@ -368,6 +371,7 @@ SPEC CHECKSUMS:
   LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
   Moya: 161263550064ff8a4948e8ff63137fd72a876292
@@ -415,6 +419,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e092733d0bf66f33e1f323e73e6306b082619887
+PODFILE CHECKSUM: a1532b53cd78b3e64637eb477e3a246757bd2186
 
 COCOAPODS: 1.7.1

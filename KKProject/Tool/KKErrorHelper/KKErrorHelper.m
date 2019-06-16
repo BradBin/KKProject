@@ -74,7 +74,6 @@
 
 #pragma mark -
 #pragma mark - KKErrorHelper(VCControl)
-
 #import <objc/runtime.h>
 #import "AppDelegate.h"
 #import "KKLoginViewController.h"
@@ -85,7 +84,7 @@ static NSString * const currentVCKey              = @"currentVCKey";
 NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notification.Name";
 @implementation KKErrorHelper(VCControl)
     
-+(instancetype)shared{
++ (instancetype)shared{
     static KKErrorHelper *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -93,39 +92,57 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
     });
     return _instance;
 }
-    
--(UIViewController *)currentVC{
+
+- (UIViewController *)currentVC{
     return objc_getAssociatedObject(self, &currentVCKey);
 }
-    
--(void)setCurrentVC:(UIViewController *)currentVC{
+
+- (void)setCurrentVC:(UIViewController *)currentVC{
     objc_setAssociatedObject(self, &currentVCKey, currentVC, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-   
-+(void)kk_showLoginVC{
-    [self kk_showLoginVCWithMessage:nil];
+
++ (void)kk_showLoginVC{
+    [self kk_showLoginVCWithBlock:nil];
 }
-    
-+(void)kk_showLoginVCWithMessage:(NSString *)message{
+
++ (void)kk_showLoginVCWithBlock:(KKVCBlock)block{
     KKErrorHelper *shared = [KKErrorHelper shared];
     if (![shared.currentVC isKindOfClass:KKLoginViewController.class]) {
         [NSNotificationCenter.defaultCenter postNotificationName:KKHideLiveRoomNotificationName object:nil];
-        [KKAccountHelper kk_logOut];
         KKLoginViewController *loginVC = [self creatLoginVC];
         [self transitionToVC:loginVC];
         shared.currentVC = loginVC;
-        if (message.isNotBlank) {
+        if (block) {
+            block(loginVC);
         }
     }
 }
-    
-+(void)kk_showHomeVC{
+
++ (void)kk_showHomeVC{
+    [self kk_showHomeVCWithBlock:nil];
+}
+
++ (void)kk_showHomeVCWithBlock:(KKVCBlock)block{
     KKErrorHelper *shared = [KKErrorHelper shared];
-    if (![shared.currentVC isKindOfClass:KKLoginViewController.class]) {
+    if (![shared.currentVC isKindOfClass:KKTabBarController.class]) {
         KKTabBarController *tabBarVC = [self creatTabBarVC];
         [self transitionToVC:tabBarVC];
         shared.currentVC = tabBarVC;
+        if (block) {
+            block(tabBarVC);
+        }
     }
+}
+
++ (void)kk_enterApp{
+    UIViewController *vc = [self kk_defaultVC];
+    AppDelegate *app     = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    app.window.rootViewController = vc;
+    [UIView transitionWithView:app.window
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:nil
+                    completion:nil];
 }
 
 + (UIViewController *)kk_defaultVC {
@@ -134,7 +151,7 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
     BOOL isLogin            = helper.isLogin; // 是否登录
     BOOL isExpired          = helper.isExpired; //是否过期
     UIViewController *resultVC;
-    if (isLogin && isExpired ) {
+    if (isLogin && isExpired == false) {
         KKTabBarController *tabBarVC = [self creatTabBarVC];
         UINavigationController *nav  = [UINavigationController kk_rooterViewController:tabBarVC translationScale:true];
         nav.view.backgroundColor     = UIColor.whiteColor;
@@ -164,7 +181,8 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
 
 + (void)transitionToVC:(UIViewController *)viewController {
     AppDelegate *app              = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UINavigationController *nav   = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *nav   = [UINavigationController kk_rooterViewController:viewController translationScale:true];
+    nav.kk_openScrollLeftPush     = true;
     app.window.rootViewController = nav;
     [UIView transitionWithView:app.window
                       duration:0.5
@@ -172,5 +190,6 @@ NSNotificationName KKHideLiveRoomNotificationName = @"KK.Hide.LiveRoom.Notificat
                     animations:nil
                     completion:nil];
 }
-    
+
+
 @end

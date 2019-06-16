@@ -45,3 +45,44 @@ static CGFloat kk_textContainerMargin = 12.0f;
 
 
 @end
+
+
+
+
+#pragma mark -
+#pragma mark - KKTextFieldView
+@interface KKTextFieldView ()
+@property (nonatomic,strong) CALayer *bottomLayer;
+
+@end
+
+@implementation KKTextFieldView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _textfield = [[KKTextField alloc] init];
+        [self addSubview:_textfield];
+        _bottomLayer = CALayer.layer;
+        _bottomLayer.backgroundColor = [UIColor colorWithWhite:0.75 alpha:0.5].CGColor;
+        [self.layer addSublayer:_bottomLayer];
+    }
+    return self;
+}
+
+-(void)setBottomlineColor:(UIColor *)bottomlineColor{
+    if (bottomlineColor) {
+        _bottomLayer.backgroundColor = bottomlineColor.CGColor;
+    }
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    CGFloat width          = CGRectGetWidth(self.frame);
+    CGFloat height         = CGRectGetHeight(self.frame);
+    CGFloat lineHeight     = CGFloatPixelRound(0.8);
+    self.textfield.frame   = CGRectMake(0, 0, width, height - lineHeight);
+    self.bottomLayer.frame = CGRectMake(0, height - lineHeight, width, lineHeight);
+}
+@end

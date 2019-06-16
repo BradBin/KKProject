@@ -13,6 +13,7 @@
 @interface KKLanuchViewController ()
 
 @property (nonatomic,strong) UIActivityIndicatorView *loadingView;
+
     
 @end
 
@@ -49,25 +50,10 @@
     [self.loadingView startAnimating];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.loadingView stopAnimating];
-        [self kk_enterApp];
+        [KKErrorHelper kk_enterApp];
     });
 }
 
-
-
-- (void) kk_enterApp{
-    AppDelegate *app = (AppDelegate *)UIApplication.sharedApplication.delegate;
-    UIViewController *viewController = [KKErrorHelper kk_defaultVC];
-    app.window.rootViewController = viewController;
-    [UIView transitionWithView:app.window
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:nil
-                    completion:nil];
-}
-    
-    
-    
 /*
 #pragma mark - Navigation
 

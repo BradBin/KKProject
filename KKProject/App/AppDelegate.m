@@ -8,8 +8,19 @@
 
 #import "AppDelegate.h"
 #import "KKLanuchViewController.h"
+#import <NIMSDK/NIMSDK.h>
 
-@interface AppDelegate ()
+#import <UserNotifications/UserNotifications.h>
+#if ENV_CODE == ENV_PROJECT
+
+#elif ENV_CODE == ENV_PROJECT_OBJC
+#import <UMPush/UMessage.h>
+#import <UMCommon/UMCommon.h>
+#import <UMShare/UMShare.h>
+#import <UMCommonLog/UMCommonLogHeaders.h>
+#endif
+
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
@@ -19,13 +30,67 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //导航栏配置
+    [self kk_setupNavigationBar];
+    //友盟配置
+    [self setupUMeng];
+    //配置云信SDK
+    [self setupNIM];
     //网络BASE_URL
     [KKNetWorking updateBaseUrl:KK_BASE_URL];
-    
     //配置主控制
     [self setupMainVC];
     
     return YES;
+}
+
+/**
+ 导航栏配置
+ */
+- (void)kk_setupNavigationBar{
+    [KKNavigationBarHelper.sharedInstance kk_updateConfigure:^(KKNavigationBarHelper *helper) {
+        helper.kk_navItemRightSpace = CGFloatPixelRound(10.0);
+        helper.kk_navItemLeftSpace  = CGFloatPixelRound(10.0);
+        helper.kk_backStyle         = KKNavigationBarBackStyleBlack;
+    }];
+}
+
+
+/**
+ 友盟配置
+ */
+- (void)setupUMeng{
+#if   ENV_CODE == ENV_PROJECT
+    
+#elif ENV_CODE == ENV_PROJECT_OBJC
+    [UMCommonLogManager setUpUMCommonLogManager];
+    [UMConfigure setLogEnabled:true];
+    [UMConfigure initWithAppkey:UMengKey channel:@"App Store"];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession|UMSocialPlatformType_WechatSession
+//                                          appKey:weChatAppId
+//                                       appSecret:weChatAppSecret
+//                                     redirectURL:nil];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
+//                                          appKey:QQAppKey
+//                                       appSecret:QQAppSecret
+//                                     redirectURL:nil];
+#endif
+}
+
+
+/**
+ 配置云信SDK
+ */
+- (void) setupNIM{
+    NIMSDKConfig *config          = [NIMSDKConfig sharedConfig];
+    config.maxAutoLoginRetryTimes = 6;
+    NIMServerSetting *settings    = [[NIMServerSetting alloc] init];
+    settings.httpsEnabled         = true;
+    [NIMSDK.sharedSDK setServerSetting:settings];
+    NIMSDKOption *option = [NIMSDKOption optionWithAppKey:IM_AppKey];
+    option.apnsCername   = @"";
+    option.pkCername     = @"";
+    [NIMSDK.sharedSDK registerWithOption:option];
 }
 
 /**
@@ -63,6 +128,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
 
 
 @end

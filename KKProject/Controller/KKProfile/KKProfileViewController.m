@@ -7,6 +7,7 @@
 //
 
 #import "KKProfileViewController.h"
+#import "KKSettingsViewController.h"
 
 @interface KKProfileViewController ()
 
@@ -19,14 +20,26 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)kk_settingsEvent:(UIBarButtonItem *)item{
+    KKSettingsViewController *vc = KKSettingsViewController.new;
+    vc.kk_navTitle = @"设置";
+    [self.navigationController pushViewController:vc animated:true];
+}
 
--(void)kk_layoutNavigation{
+- (void)kk_layoutNavigation{
     [super kk_layoutNavigation];
     self.kk_navShadowImage     = UIImage.new;
     self.kk_navShadowColor     = [UIColor colorWithHexString:@"#EFEFEF"];
     self.kk_navBackgroundColor = UIColor.clearColor;
     self.kk_navTitle           = @"Profile";
+    self.kk_navRightBarButtonItem = [UIBarButtonItem kk_itemWithTitle:nil
+                                                           titleColor:nil
+                                                            imageName:[UIImage imageNamed:@"profile_settings.png"]
+                                                        highImageName:[UIImage imageNamed:@"profile_settings.png"]
+                                                               target:self
+                                                               action:@selector(kk_settingsEvent:)];
 }
+
 /*
 #pragma mark - Navigation
 
