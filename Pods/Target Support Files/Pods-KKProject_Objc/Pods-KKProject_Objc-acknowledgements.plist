@@ -569,6 +569,16 @@ THE SOFTWARE.</string>
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright 2019 Netease </string>
+			<key>License</key>
+			<string>Copyright</string>
+			<key>Title</key>
+			<string>NIMSDK</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
 Copyright (c) 2013 Satoshi Asano
@@ -986,16 +996,6 @@ SOFTWARE.
 			<string>MIT</string>
 			<key>Title</key>
 			<string>IQKeyboardManager</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2019 Netease </string>
-			<key>License</key>
-			<string>Copyright</string>
-			<key>Title</key>
-			<string>NIMSDK_LITE</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

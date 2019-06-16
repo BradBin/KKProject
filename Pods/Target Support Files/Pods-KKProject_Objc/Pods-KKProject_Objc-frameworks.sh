@@ -161,10 +161,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${PODS_ROOT}/NIMSDK_LITE/NIMSDK/NIMSDK.framework"
+  install_framework "${PODS_ROOT}/NIMSDK/NIMSDK/NIMSDK.framework"
+  install_framework "${PODS_ROOT}/NIMSDK/NIMAVChat/NIMAVChat.framework"
+  install_framework "${PODS_ROOT}/NIMSDK/NIMAVChat/NMC.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${PODS_ROOT}/NIMSDK_LITE/NIMSDK/NIMSDK.framework"
+  install_framework "${PODS_ROOT}/NIMSDK/NIMSDK/NIMSDK.framework"
+  install_framework "${PODS_ROOT}/NIMSDK/NIMAVChat/NIMAVChat.framework"
+  install_framework "${PODS_ROOT}/NIMSDK/NIMAVChat/NMC.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5617B350433590156C1E0B5316801D0E"
+               BlueprintIdentifier = "ACEC240691765BAEC015334327AA6B4A"
                BuildableName = "libBlockHook.a"
                BlueprintName = "BlockHook"
                ReferencedContainer = "container:Pods.xcodeproj">

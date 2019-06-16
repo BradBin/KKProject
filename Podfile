@@ -28,6 +28,8 @@ def commonPods
   #网页加载进度
   pod 'NJKWebViewProgress'
   
+   pod 'NIMSDK', '~> 6.5.5'
+  
 end
 
 target 'KKProject' do
@@ -58,7 +60,7 @@ target 'KKProject_Objc' do
   pod 'UMCShare/Social/QQ'
   
   pod 'IQKeyboardManager'
-  pod 'NIMSDK_LITE', '~> 6.5.5'
+ 
 end
 
 

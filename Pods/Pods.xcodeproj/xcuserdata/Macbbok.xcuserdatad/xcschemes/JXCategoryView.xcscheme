@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A5D09677FD8A9724943CDB1C7416B32B"
+               BlueprintIdentifier = "8BEAFAA726C1965864B79B4B441AA513"
                BuildableName = "libJXCategoryView.a"
                BlueprintName = "JXCategoryView"
                ReferencedContainer = "container:Pods.xcodeproj">

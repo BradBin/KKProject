@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-KKProject_Objc/Pods-KKProject_Objc-frameworks.sh
-${PODS_ROOT}/NIMSDK_LITE/NIMSDK/NIMSDK.framework
+${PODS_ROOT}/NIMSDK/NIMSDK/NIMSDK.framework
+${PODS_ROOT}/NIMSDK/NIMAVChat/NIMAVChat.framework
+${PODS_ROOT}/NIMSDK/NIMAVChat/NMC.framework

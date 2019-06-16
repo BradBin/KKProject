@@ -936,6 +936,7 @@
 				0A6349D82270B08D00C0D0B0 /* Frameworks */,
 				0A6349D92270B08D00C0D0B0 /* Resources */,
 				18BD3871C5CA9EF0E5098EE4 /* [CP] Copy Pods Resources */,
+				8FE0E44EB33A25699CF259FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1156,6 +1157,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKProject_Swift/Pods-KKProject_Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FE0E44EB33A25699CF259FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKProject/Pods-KKProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KKProject/Pods-KKProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KKProject/Pods-KKProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F3C9CE8B089A85CF7DA85A9 /* [CP] Check Pods Manifest.lock */ = {

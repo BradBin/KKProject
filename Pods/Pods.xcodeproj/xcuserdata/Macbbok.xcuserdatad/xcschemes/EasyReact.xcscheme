@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D832118E7C91CE31F1322A1DA4EFCD9C"
+               BlueprintIdentifier = "05F9763A0BF5BAE7E792FA4989B0F32D"
                BuildableName = "libEasyReact.a"
                BlueprintName = "EasyReact"
                ReferencedContainer = "container:Pods.xcodeproj">
