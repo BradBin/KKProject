@@ -54,6 +54,10 @@
 		0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */; };
 		0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
 		0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
+		0AA4F44622BA8A7600088493 /* KKHomePageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44522BA8A7600088493 /* KKHomePageTableView.m */; };
+		0AA4F44722BA8A7600088493 /* KKHomePageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44522BA8A7600088493 /* KKHomePageTableView.m */; };
+		0AA4F44A22BA8F9900088493 /* KKHomePageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44922BA8F9900088493 /* KKHomePageTableCell.m */; };
+		0AA4F44B22BA8F9900088493 /* KKHomePageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44922BA8F9900088493 /* KKHomePageTableCell.m */; };
 		0AA78900227F42B700242C91 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FC227F42B700242C91 /* tab_me_animate.json */; };
 		0AA78901227F42B700242C91 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FC227F42B700242C91 /* tab_me_animate.json */; };
 		0AA78902227F42B700242C91 /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FD227F42B700242C91 /* tab_home_animate.json */; };
@@ -210,6 +214,10 @@
 		0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKProject-Objc-Info.plist"; sourceTree = "<group>"; };
 		0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectMacros.h; sourceTree = "<group>"; };
+		0AA4F44422BA8A7600088493 /* KKHomePageTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomePageTableView.h; sourceTree = "<group>"; };
+		0AA4F44522BA8A7600088493 /* KKHomePageTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomePageTableView.m; sourceTree = "<group>"; };
+		0AA4F44822BA8F9900088493 /* KKHomePageTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomePageTableCell.h; sourceTree = "<group>"; };
+		0AA4F44922BA8F9900088493 /* KKHomePageTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomePageTableCell.m; sourceTree = "<group>"; };
 		0AA788FC227F42B700242C91 /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
 		0AA788FD227F42B700242C91 /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
 		0AA788FE227F42B700242C91 /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
@@ -549,8 +557,8 @@
 		0A12E8AE22B67B6200851FDB /* KKForgetPwd */ = {
 			isa = PBXGroup;
 			children = (
-				0A12E8AF22B67B6200851FDB /* KKForgetPwdViewController.m */,
 				0A12E8B022B67B6200851FDB /* KKForgetPwdViewController.h */,
+				0A12E8AF22B67B6200851FDB /* KKForgetPwdViewController.m */,
 			);
 			path = KKForgetPwd;
 			sourceTree = "<group>";
@@ -652,6 +660,35 @@
 				0ABB26142277565800397661 /* KKTabBarController.swift */,
 			);
 			path = KKProject_Swift;
+			sourceTree = "<group>";
+		};
+		0AA4F44122BA88F100088493 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0AA4F44422BA8A7600088493 /* KKHomePageTableView.h */,
+				0AA4F44522BA8A7600088493 /* KKHomePageTableView.m */,
+				0AA4F44822BA8F9900088493 /* KKHomePageTableCell.h */,
+				0AA4F44922BA8F9900088493 /* KKHomePageTableCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0AA4F44222BA890400088493 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93D3622222815F2500DD815F /* KKHomePageViewModel.h */,
+				93D3622322815F2500DD815F /* KKHomePageViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0AA4F44322BA891500088493 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A077C012281BB1400A1C7AD /* KKHomePageModel.h */,
+				0A077C022281BB1400A1C7AD /* KKHomePageModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0AA788FB227F42B700242C91 /* LottieResources */ = {
@@ -971,12 +1008,11 @@
 		93D3622122815EFE00DD815F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0AA4F44122BA88F100088493 /* View */,
 				0AF1CC8D22807A8E006487CA /* KKHomePageViewController.h */,
 				0AF1CC8E22807A8E006487CA /* KKHomePageViewController.m */,
-				93D3622222815F2500DD815F /* KKHomePageViewModel.h */,
-				93D3622322815F2500DD815F /* KKHomePageViewModel.m */,
-				0A077C012281BB1400A1C7AD /* KKHomePageModel.h */,
-				0A077C022281BB1400A1C7AD /* KKHomePageModel.m */,
+				0AA4F44222BA890400088493 /* ViewModel */,
+				0AA4F44322BA891500088493 /* Model */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1313,12 +1349,14 @@
 				0AC12BF7227A107200CF94ED /* KKView.m in Sources */,
 				0AF1CC982280857F006487CA /* KKNetWorking.m in Sources */,
 				0AC12BEF227A107200CF94ED /* KKTextField.m in Sources */,
+				0AA4F44622BA8A7600088493 /* KKHomePageTableView.m in Sources */,
 				0AC12B9B2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
 				0AC12B882279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
 				0AC12C2C227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
 				0A077C032281BB1400A1C7AD /* KKHomePageModel.m in Sources */,
 				0AC12B8E2279F1BC00CF94ED /* KKLanuchViewController.m in Sources */,
 				0AC12BF9227A107200CF94ED /* KKModel.m in Sources */,
+				0AA4F44A22BA8F9900088493 /* KKHomePageTableCell.m in Sources */,
 				0AC12C09227A107200CF94ED /* KKTableViewCell.m in Sources */,
 				93D3622422815F2500DD815F /* KKHomePageViewModel.m in Sources */,
 				0AC12BF3227A107200CF94ED /* KKTableViewHeaderFooterView.m in Sources */,
@@ -1412,8 +1450,10 @@
 				0AC12BA02279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0A12E8C922B67E6200851FDB /* KKLoginViewModel.m in Sources */,
 				0AC12BFA227A107200CF94ED /* KKModel.m in Sources */,
+				0AA4F44B22BA8F9900088493 /* KKHomePageTableCell.m in Sources */,
 				0AC12C10227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
 				0AC12C12227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
+				0AA4F44722BA8A7600088493 /* KKHomePageTableView.m in Sources */,
 				0AC12BA6227A029300CF94ED /* KKAccountHelper.m in Sources */,
 				0AC12C02227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
 				0AF1CC9022807A8E006487CA /* KKHomePageViewController.m in Sources */,

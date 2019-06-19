@@ -7,10 +7,11 @@
 //
 
 #import "KKHomePageViewController.h"
-#import "KKHomePageViewModel.h"
+#import "KKHomePageTableView.h"
 
 @interface KKHomePageViewController ()
 @property (nonatomic,strong) KKHomePageViewModel *viewModel;
+@property (nonatomic,strong) KKHomePageTableView *pageView;
 
 @end
 
@@ -43,8 +44,26 @@
     self.kk_navigationBar.hidden = true;
 }
 
+- (void)kk_addSubviews{
+    [super kk_addSubviews];
+    self.pageView = ({
+        KKHomePageTableView *view = [[KKHomePageTableView alloc] initWithViewModel:self.viewModel];
+        view.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(view.superview.mas_top);
+            make.centerX.equalTo(view.superview.mas_centerX);
+            make.width.equalTo(view.superview.mas_width);
+            make.bottom.equalTo(view.superview.mas_bottom);
+        }];
+        view;
+    });
+}
 
-
+-(void)kk_bindViewModel{
+    [super kk_bindViewModel];
+    
+}
 
 
 #pragma mark -

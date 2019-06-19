@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 保存登录账号信息
+ 保存登录账号信息/Users/mac/KKProject/KKProject.xcodeproj
 
  @param account 账号信息
  */

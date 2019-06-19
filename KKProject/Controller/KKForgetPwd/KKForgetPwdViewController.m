@@ -19,6 +19,12 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)kk_layoutNavigation{
+    [super kk_layoutNavigation];
+    self.kk_navShadowColor = [UIColor clearColor];
+    self.kk_navShadowImage = [UIImage new];
+}
+
 /*
 #pragma mark - Navigation
 

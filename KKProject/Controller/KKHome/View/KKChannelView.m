@@ -153,7 +153,7 @@ static CGFloat const duration = 0.3;
 -(void)kk_showBlock:(KKChannelBlock)showBlock hideBlock:(KKChannelBlock)hideBlock{
     [UIApplication.sharedApplication.keyWindow addSubview:self];
     
-    UIImage *backImg = [UIImage imageWithColor:[UIColor colorWithWhite:1.0 alpha:0.5] size:self.bounds.size];
+    UIImage *backImg = [UIImage imageWithColor:[UIColor colorWithWhite:1.0 alpha:.07] size:self.bounds.size];
     backImg          = [backImg imageByBlurRadius:10 tintColor:[UIColor colorWithWhite:0.8 alpha:0.3] tintMode:kCGBlendModeNormal saturation:1.0 maskImage:nil];
     
     self.layer.contents    = (id)backImg.CGImage;
