@@ -25,8 +25,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self.backgroundView removeFromSuperview];
-        self.contentView.backgroundColor = UIColor.whiteColor;
-        self.backgroundColor             = UIColor.whiteColor;
         [self kk_setupView];
         [self kk_setupConfigurate];
         [self kk_bindViewModel];

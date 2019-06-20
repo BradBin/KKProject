@@ -7,8 +7,6 @@
 //
 
 #import "KKTabBarController.h"
-#import "UITabBarController+KKAdd.h"
-
 #import "KKHomeViewController.h"
 #import "KKTidingViewController.h"
 #import "KKFindViewController.h"

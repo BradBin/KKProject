@@ -7,11 +7,14 @@ def commonPods
   pod 'dsBridge'
   pod 'YYKit'
   pod 'AFNetworking'
-  
+  pod 'IQKeyboardManager'
+
   pod 'EasyReact'
   pod 'ReactiveObjC'
   pod 'FFRouter'
   pod 'BlockHook'
+  
+  pod 'MBProgressHUD'
   
   pod 'SVGAPlayer'
   pod 'SVGKit'
@@ -25,8 +28,9 @@ def commonPods
   pod 'DKNightVersion'
   #滚动标签
   pod 'JXCategoryView'
-  #网页加载进度
-  pod 'NJKWebViewProgress'
+
+  #网易云信sdk
+  pod 'NIMSDK', '~> 6.5.5'
   
 end
 
@@ -57,8 +61,8 @@ target 'KKProject_Objc' do
   pod 'UMCShare/Social/ReducedWeChat'
   pod 'UMCShare/Social/QQ'
   
-  pod 'IQKeyboardManager'
-  pod 'NIMSDK_LITE', '~> 6.5.5'
+  
+ 
 end
 
 

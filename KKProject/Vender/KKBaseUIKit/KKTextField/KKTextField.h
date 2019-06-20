@@ -19,4 +19,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+@interface KKTextFieldView : UIView
+
+/**
+ textfiel
+ */
+@property (nonatomic,strong) KKTextField *textfield;
+
+/**
+ 底部横线的颜色
+ */
+@property (nonatomic,strong) UIColor *bottomlineColor;
+
+@end
+
 NS_ASSUME_NONNULL_END
