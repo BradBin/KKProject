@@ -11,6 +11,7 @@
 #import "KKChannelView.h"
 #import "KKHomeView.h"
 #import "KKHomeViewModel.h"
+#import "KKTextField.h"
 
 @interface KKHomeViewController ()<JXCategoryViewDelegate,
 JXCategoryListContainerViewDelegate>
@@ -18,6 +19,7 @@ JXCategoryListContainerViewDelegate>
 @property (nonatomic,strong) UIView                      *maskView;
 @property (nonatomic,strong) CAGradientLayer             *maskLayer;
 @property (nonatomic,strong) UIButton                    *editBtn;
+@property (nonatomic,strong) KKTextField                 *textfieldBar;
 @property (nonatomic,strong) JXCategoryTitleView         *categoryView;
 @property (nonatomic,strong) JXCategoryListContainerView *listContainerView;
 @property (nonatomic,strong) NSArray                     *categoryTitles;
@@ -34,7 +36,7 @@ JXCategoryListContainerViewDelegate>
 -(void)kk_layoutNavigation{
     [super kk_layoutNavigation];
     self.kk_navShadowImage       = UIImage.new;
-    self.kk_navShadowColor       = [UIColor colorWithHexString:@"#EFEFEF"];
+    self.kk_navShadowColor       = UIColor.clearColor;
     self.kk_navigationBar.hidden = true;
 }
 
@@ -69,15 +71,37 @@ JXCategoryListContainerViewDelegate>
         layer;
     });
     
+    self.textfieldBar = ({
+        KKTextField *textfield        = KKTextField.alloc.init;
+        textfield.backgroundColor     = UIColor.whiteColor;
+        textfield.layer.masksToBounds = true;
+        textfield.layer.cornerRadius  = CGFloatPixelRound(5.0f);
+        NSMutableAttributedString *attributedPlaceholder = [[NSMutableAttributedString alloc]
+                                                            initWithString:@"请输入感兴趣..."
+                                                            attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.f]}];
+        textfield.attributedPlaceholder = attributedPlaceholder;
+        textfield.font = [UIFont systemFontOfSize:15.f];
+        [self.view addSubview:textfield];
+        [textfield mas_makeConstraints:^(MASConstraintMaker *make) {
+            UIEdgeInsets insets = UIEdgeInsetsMake(_kk_status_height() + 5.0,
+                                                   16, 0, -60);
+            make.top.equalTo(textfield.superview.mas_top).offset(insets.top);
+            make.left.equalTo(textfield.superview.mas_left).offset(insets.left);
+            make.right.equalTo(textfield.superview.mas_right).offset(insets.right);
+            make.height.mas_equalTo(@40);
+        }];
+        textfield;
+    });
+    
     self.editBtn = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setImage:[UIImage imageNamed:@"home_edit.png"] forState:UIControlStateNormal];
         [self.view addSubview:button];
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(button.superview.mas_top).offset(_kk_status_height());
-            make.right.equalTo(button.superview.mas_right);
-            make.width.equalTo(button.superview.mas_width).multipliedBy(0.1);
-            make.height.mas_equalTo(50);
+            make.centerY.equalTo(self.textfieldBar.mas_centerY);
+            make.left.equalTo(self.textfieldBar.mas_right).offset(8);
+            make.right.equalTo(button.superview.mas_right).offset(-16);
+            make.height.equalTo(self.textfieldBar.mas_height);
         }];
         button;
     });
@@ -94,10 +118,10 @@ JXCategoryListContainerViewDelegate>
         view.titleFont                 = [UIFont systemFontOfSize:16.5];
         [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(view.superview.mas_top).offset(_kk_status_height());
+            make.top.equalTo(self.textfieldBar.mas_bottom).offset(4);
             make.left.equalTo(view.superview.mas_left);
-            make.width.equalTo(view.superview.mas_width).multipliedBy(0.9);
-            make.height.mas_equalTo(50);
+            make.width.equalTo(view.superview.mas_width).multipliedBy(1.0);
+            make.height.mas_equalTo(44);
         }];
         view;
     });
@@ -141,6 +165,15 @@ JXCategoryListContainerViewDelegate>
         }
     }];
     
+    [[self.viewModel.refreshCategoryBackUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:UIColor.class]) {
+            UIColor *color = (UIColor *)x;
+            self.maskLayer.colors  = @[(__bridge id)[UIColor colorWithHexString:@"#F30E3B"].CGColor,
+                                       (__bridge id)color.CGColor,
+                                       (__bridge id)[UIColor colorWithHexString:@"#FFFFFF"].CGColor];
+        }
+    }];
     
     //HomePage事件响应 push VC
     [[self.viewModel.homePageVM.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {

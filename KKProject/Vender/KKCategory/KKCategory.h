@@ -11,5 +11,6 @@
 
 #import "UIColor+KKAdd.h"
 #import "UIView+MBProgressHUD.h"
+#import "UISearchBar+KKAdd.h"
 
 #endif /* KKCategory_h */

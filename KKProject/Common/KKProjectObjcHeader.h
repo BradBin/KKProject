@@ -10,6 +10,7 @@
 #define KKProjectObjcHeader_h
 #import <Masonry/Masonry.h>
 #import <YYKit/YYKit.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <EasyReact/EasyReact.h>

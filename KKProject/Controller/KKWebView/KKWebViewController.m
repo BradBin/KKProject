@@ -7,6 +7,7 @@
 //
 
 #import "KKWebViewController.h"
+#import "WKWebView+KKProgress.h"
 #import <dsBridge/dsbridge.h>
 
 @interface KKWebViewController ()<WKUIDelegate,WKNavigationDelegate,KKWebApiProtocol>

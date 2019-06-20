@@ -16,5 +16,16 @@
 
 @implementation WKWebView (KKProgress)
 
+-(UIView *)progessView{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+-(void)setProgessView:(UIView *)progessView{
+    if (self.progessView) {
+        [self.progessView removeFromSuperview];
+    }
+    objc_setAssociatedObject(self, @selector(progessView), progessView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 
 @end

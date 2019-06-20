@@ -80,6 +80,12 @@
     return _categoryUISubject;
 }
 
+-(RACSubject *)refreshCategoryBackUISubject{
+    if (_refreshCategoryBackUISubject == nil) {
+        _refreshCategoryBackUISubject = RACSubject.subject;
+    }
+    return _refreshCategoryBackUISubject;
+}
 
 -(KKHomePageViewModel *)homePageVM{
     if (_homePageVM == nil) {

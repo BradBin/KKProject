@@ -30,6 +30,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    //键盘配置
+    [self setupKeyboard];
     //导航栏配置
     [self kk_setupNavigationBar];
     //友盟配置
@@ -43,6 +45,22 @@
     
     return YES;
 }
+
+/**
+ 导航栏配置
+ */
+- (void) setupKeyboard{
+    IQKeyboardManager *keyboardManager                  = [IQKeyboardManager sharedManager];
+    keyboardManager.shouldResignOnTouchOutside          = true;
+    keyboardManager.shouldToolbarUsesTextFieldTintColor = true;
+    keyboardManager.enableAutoToolbar                   = false;
+    keyboardManager.toolbarManageBehaviour              = IQAutoToolbarByTag;
+    keyboardManager.shouldResignOnTouchOutside          = true;
+    [[IQKeyboardManager sharedManager] registerTextFieldViewClass:[YYTextView class]
+                                  didBeginEditingNotificationName:YYTextViewTextDidBeginEditingNotification
+                                    didEndEditingNotificationName:YYTextViewTextDidEndEditingNotification];
+}
+
 
 /**
  导航栏配置

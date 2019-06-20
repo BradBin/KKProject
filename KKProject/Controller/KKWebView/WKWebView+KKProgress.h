@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WKWebView (KKProgress)
 
+@property (nonatomic,strong) UIView *progessView;
+
 
 @end
 

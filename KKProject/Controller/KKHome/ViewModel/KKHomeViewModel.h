@@ -29,7 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,strong) NSArray<KKHomeCategoryModel *> *categoryTitles;
 
+/**
+ 刷新category的背景UI
+ */
+@property (nonatomic,strong) RACSubject *refreshCategoryBackUISubject;
 
+/**
+ 类别的详情处理ViewModel
+ */
 @property (nonatomic,strong) KKHomePageViewModel *homePageVM;
 
 
@@ -39,7 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface KKHomePageViewModel : KKViewModel
-
 
 /**
  类别模型

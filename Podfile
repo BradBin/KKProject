@@ -7,7 +7,8 @@ def commonPods
   pod 'dsBridge'
   pod 'YYKit'
   pod 'AFNetworking'
-  
+  pod 'IQKeyboardManager'
+
   pod 'EasyReact'
   pod 'ReactiveObjC'
   pod 'FFRouter'
@@ -60,7 +61,7 @@ target 'KKProject_Objc' do
   pod 'UMCShare/Social/ReducedWeChat'
   pod 'UMCShare/Social/QQ'
   
-  pod 'IQKeyboardManager'
+  
  
 end
 

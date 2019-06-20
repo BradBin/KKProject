@@ -56,6 +56,8 @@
 		0AA4F44722BA8A7600088493 /* KKHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44522BA8A7600088493 /* KKHomeView.m */; };
 		0AA4F44A22BA8F9900088493 /* KKHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44922BA8F9900088493 /* KKHomeViewCell.m */; };
 		0AA4F44B22BA8F9900088493 /* KKHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44922BA8F9900088493 /* KKHomeViewCell.m */; };
+		0AA4F45222BBDE5E00088493 /* UISearchBar+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F45122BBDE5E00088493 /* UISearchBar+KKAdd.m */; };
+		0AA4F45322BBDE5E00088493 /* UISearchBar+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F45122BBDE5E00088493 /* UISearchBar+KKAdd.m */; };
 		0AA78900227F42B700242C91 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FC227F42B700242C91 /* tab_me_animate.json */; };
 		0AA78901227F42B700242C91 /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FC227F42B700242C91 /* tab_me_animate.json */; };
 		0AA78902227F42B700242C91 /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FD227F42B700242C91 /* tab_home_animate.json */; };
@@ -216,6 +218,8 @@
 		0AA4F44522BA8A7600088493 /* KKHomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeView.m; sourceTree = "<group>"; };
 		0AA4F44822BA8F9900088493 /* KKHomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeViewCell.h; sourceTree = "<group>"; };
 		0AA4F44922BA8F9900088493 /* KKHomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeViewCell.m; sourceTree = "<group>"; };
+		0AA4F45022BBDE5E00088493 /* UISearchBar+KKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+KKAdd.h"; sourceTree = "<group>"; };
+		0AA4F45122BBDE5E00088493 /* UISearchBar+KKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+KKAdd.m"; sourceTree = "<group>"; };
 		0AA788FC227F42B700242C91 /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
 		0AA788FD227F42B700242C91 /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
 		0AA788FE227F42B700242C91 /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
@@ -573,6 +577,8 @@
 				0A12E8B722B67CA100851FDB /* UIColor+KKAdd.h */,
 				0A12E8B822B67CA100851FDB /* UIColor+KKAdd.m */,
 				0A12E8B922B67CA100851FDB /* UIView+MBProgressHUD.m */,
+				0AA4F45022BBDE5E00088493 /* UISearchBar+KKAdd.h */,
+				0AA4F45122BBDE5E00088493 /* UISearchBar+KKAdd.m */,
 			);
 			path = KKCategory;
 			sourceTree = "<group>";
@@ -1358,6 +1364,7 @@
 				0AC12C1B227A107200CF94ED /* KKViewController.m in Sources */,
 				0AC12C15227A107200CF94ED /* KKPushPopTransitionProtocol.m in Sources */,
 				0AC12C28227A126100CF94ED /* YYTextLinePositionModifier.m in Sources */,
+				0AA4F45222BBDE5E00088493 /* UISearchBar+KKAdd.m in Sources */,
 				0AC12C0D227A107200CF94ED /* UINavigationController+KKNavigationBar.m in Sources */,
 				0AC12C13227A107200CF94ED /* UIBarButtonItem+KKNavigationBar.m in Sources */,
 				0A12E8BE22B67CA100851FDB /* UIView+MBProgressHUD.m in Sources */,
@@ -1454,6 +1461,7 @@
 				0AC12C31227A62F300CF94ED /* KKLoadingPlaceHolderView.m in Sources */,
 				0AC12C2D227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
 				0AC12BF8227A107200CF94ED /* KKView.m in Sources */,
+				0AA4F45322BBDE5E00088493 /* UISearchBar+KKAdd.m in Sources */,
 				0AC12C0E227A107200CF94ED /* UINavigationController+KKNavigationBar.m in Sources */,
 				93D362292281627700DD815F /* KKChannelView.m in Sources */,
 				0A12E8AC22B6798B00851FDB /* KKSettingsViewController.m in Sources */,
