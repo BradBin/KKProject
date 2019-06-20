@@ -1,15 +1,15 @@
 //
-//  KKHomePageTableCell.m
+//  KKHomeViewCell.m
 //  KKProject
 //
 //  Created by Macbook Pro 15.4  on 2019/6/19.
 //  Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 //
 
-#import "KKHomePageTableCell.h"
+#import "KKHomeViewCell.h"
 
-NSString * const KKHomePageTableCellIdentifier = @"KK.Home.Page.TableCell.Identifier";
-@implementation KKHomePageTableCell
+NSString * const KKHomeViewCellIdentifier = @"KK.Home.Page.TableCell.Identifier";
+@implementation KKHomeViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

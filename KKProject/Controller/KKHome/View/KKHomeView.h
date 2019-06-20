@@ -1,17 +1,18 @@
 //
-//  KKHomePageViewController.h
+//  KKHomeView.h
 //  KKProject
 //
-//  Created by Macbook Pro 15.4  on 2019/5/6.
+//  Created by Macbook Pro 15.4  on 2019/6/19.
 //  Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 //
 
-#import "KKViewController.h"
+#import "KKTableView.h"
 #import <JXCategoryView/JXCategoryView.h>
+#import "KKHomeViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@class KKHomeCategoryModel;
-@interface KKHomePageViewController : KKViewController<JXCategoryListContentViewDelegate>
+
+@interface KKHomeView : KKTableView<JXCategoryListContentViewDelegate>
 @property (nonatomic,strong) KKHomeCategoryModel *categoryModel;
 
 @end

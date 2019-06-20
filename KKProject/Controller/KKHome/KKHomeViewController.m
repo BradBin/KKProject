@@ -9,7 +9,7 @@
 #import "KKHomeViewController.h"
 #import <JXCategoryView/JXCategoryView.h>
 #import "KKChannelView.h"
-#import "KKHomePageViewController.h"
+#import "KKHomeView.h"
 #import "KKHomeViewModel.h"
 
 @interface KKHomeViewController ()<JXCategoryViewDelegate,
@@ -140,6 +140,24 @@ JXCategoryListContainerViewDelegate>
             
         }
     }];
+    
+    
+    //HomePage事件响应 push VC
+    [[self.viewModel.homePageVM.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:KKViewController.class]) {
+            [self.navigationController pushViewController:(KKViewController *)x animated:true];
+        }
+    }];
+    
+     //HomePage事件响应 present VC
+    [[self.viewModel.homePageVM.presentVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:KKViewController.class]) {
+            [self presentViewController:(KKViewController *)x animated:true completion:nil];
+        }
+    }];
+    
 }
 
 /**
@@ -159,9 +177,9 @@ JXCategoryListContainerViewDelegate>
 #pragma mark -
 #pragma mark - JXCategoryListContainerViewDelegate
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    KKHomePageViewController *listVC = [[KKHomePageViewController alloc] init];
-    listVC.categoryModel             = self.viewModel.categoryTitles[index];
-    return listVC;
+    KKHomeView *listView = [[KKHomeView alloc] initWithViewModel:self.viewModel];
+    listView.categoryModel             = self.viewModel.categoryTitles[index];
+    return listView;
 }
 
 - (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView {

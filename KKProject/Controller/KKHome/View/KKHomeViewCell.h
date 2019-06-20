@@ -1,5 +1,5 @@
 //
-//  KKHomePageTableCell.h
+//  KKHomeViewCell.h
 //  KKProject
 //
 //  Created by Macbook Pro 15.4  on 2019/6/19.
@@ -9,8 +9,8 @@
 #import "KKTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
-UIKIT_EXTERN NSString * const KKHomePageTableCellIdentifier;
-@interface KKHomePageTableCell : KKTableViewCell
+UIKIT_EXTERN NSString * const KKHomeViewCellIdentifier;
+@interface KKHomeViewCell : KKTableViewCell
 
 @end
 

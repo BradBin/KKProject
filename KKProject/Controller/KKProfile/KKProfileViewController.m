@@ -29,9 +29,8 @@
 - (void)kk_layoutNavigation{
     [super kk_layoutNavigation];
     self.kk_navShadowImage     = UIImage.new;
-    self.kk_navShadowColor     = [UIColor colorWithHexString:@"#EFEFEF"];
+    self.kk_navShadowColor     = [UIColor clearColor];
     self.kk_navBackgroundColor = UIColor.clearColor;
-    self.kk_navTitle           = @"Profile";
     self.kk_navRightBarButtonItem = [UIBarButtonItem kk_itemWithTitle:nil
                                                            titleColor:nil
                                                             imageName:[UIImage imageNamed:@"profile_settings.png"]

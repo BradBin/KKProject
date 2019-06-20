@@ -27,8 +27,7 @@ def commonPods
   pod 'DKNightVersion'
   #滚动标签
   pod 'JXCategoryView'
-  #网页加载进度
-  pod 'NJKWebViewProgress'
+
   #网易云信sdk
   pod 'NIMSDK', '~> 6.5.5'
   

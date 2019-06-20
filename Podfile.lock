@@ -84,11 +84,6 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
   - NIMSDK (6.5.5)
-  - NJKWebViewProgress (0.2.3):
-    - NJKWebViewProgress/Core (= 0.2.3)
-    - NJKWebViewProgress/ProgressView (= 0.2.3)
-  - NJKWebViewProgress/Core (0.2.3)
-  - NJKWebViewProgress/ProgressView (0.2.3)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
@@ -212,7 +207,6 @@ DEPENDENCIES:
   - MJRefresh
   - Moya
   - NIMSDK (~> 6.5.5)
-  - NJKWebViewProgress
   - NVActivityIndicatorView
   - OpenShare
   - PromiseKit
@@ -292,7 +286,6 @@ SPEC REPOS:
     - Motion
     - Moya
     - NIMSDK
-    - NJKWebViewProgress
     - NVActivityIndicatorView
     - OpenShare
     - Player
@@ -376,7 +369,6 @@ SPEC CHECKSUMS:
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
   Moya: 161263550064ff8a4948e8ff63137fd72a876292
   NIMSDK: 76cebc468e91e5f51095de8e78ce4d698f432bfd
-  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
   Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
@@ -419,6 +411,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a1532b53cd78b3e64637eb477e3a246757bd2186
+PODFILE CHECKSUM: 0a3df653dd9f0fe7ec087c3bfffb6f010a90e4e6
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.2
