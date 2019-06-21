@@ -84,7 +84,6 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars = false;
     self.navigationController.navigationBar.translucent = false;
-    self.view.backgroundColor = UIColor.whiteColor;
     [self setupCustomNavBar];
     [self setupNavBarAppearance];
 }

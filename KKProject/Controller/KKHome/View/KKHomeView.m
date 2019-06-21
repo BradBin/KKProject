@@ -80,8 +80,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
-//        [self.viewModel.homePageVM.pushVCSubject sendNext:vc];
+//    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
+//    [self.viewModel.homePageVM.pushVCSubject sendNext:vc];
 //    [self.viewModel.homePageVM.presentVCSubject sendNext:vc];
 }
 

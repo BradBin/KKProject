@@ -156,6 +156,36 @@
  */
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"didFailProvisionalNavigation页面加载失败时调用: %@",error.localizedDescription);
+    
+#if 0
+    if (self.navigationController.topViewController == self) {
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self.navigationController popViewControllerAnimated:true];
+        }
+    }else{
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self dismissViewControllerAnimated:true completion:nil];
+        }
+    }
+#else
+    if (self.presentingViewController) {
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self dismissViewControllerAnimated:true completion:nil];
+        }
+    }else{
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self.navigationController popViewControllerAnimated:true];
+        }
+    }
+#endif
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{

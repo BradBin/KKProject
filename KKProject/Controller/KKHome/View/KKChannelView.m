@@ -11,6 +11,7 @@
 static inline CGSize screenSize(){
     return UIScreen.mainScreen.bounds.size;
 }
+
 static inline UIEdgeInsets safeEdgeInsets(){
     UIEdgeInsets safeInsets = UIEdgeInsetsZero;
     if (@available(iOS 11, *)) {
@@ -18,51 +19,77 @@ static inline UIEdgeInsets safeEdgeInsets(){
     }
     return safeInsets;
 }
+
 static inline CGFloat channelTopMargin(){
-    return (safeEdgeInsets().top + CGFloatPixelRound(50));
+    return (safeEdgeInsets().top + CGFloatPixelRound(screenSize().width));
 }
+
 static inline CGFloat channelHeight(){
     return (screenSize().height - channelTopMargin());
 }
+
 static inline CGFloat headHeight(){
     return CGFloatPixelRound(50);
 }
 
-static CGFloat const duration = 0.3;
+static CGFloat const channelDuration = 0.3;
+static NSInteger channelCount        = 0;
 @interface KKChannelView()<UIGestureRecognizerDelegate>
 @property (nonatomic,strong) YYTimer       *hideTimer;
-@property (nonatomic,strong) UIView        *contentView;
-@property (nonatomic,strong) YYLabel       *titlelb;
-@property (nonatomic,strong) UIButton      *closeBtn;
 @property (nonatomic,  copy) KKChannelBlock hideBlock;
 
 @end
 
 @implementation KKChannelView
 
--(void)dealloc{
+- (void)dealloc{
     NSLog(@"KKChannelView dealloc");
+    channelCount = 0;
+    if (self.hideTimer) {
+        if (self.hideTimer.valid) {
+            [self.hideTimer invalidate];
+        }
+        self.hideTimer = nil;
+    }
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
-- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+
+
+- (instancetype)kk_updateConfigure:(void (^)(KKChannelView * _Nonnull))block{
+    if (block) block(self);
+    return self;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     if ([touch.view isDescendantOfView:self.contentView ]) {
         return  false;
     }
     return true;
 }
 
-+(instancetype)kk_channelViewWithViewModel:(id<KKViewModelProtocol>)viewModel{
++ (instancetype)kk_channelViewWithViewModel:(id<KKViewModelProtocol>)viewModel{
     return [[self alloc] initWithViewModel:viewModel];
 }
 
 - (instancetype)initWithViewModel:(id<KKViewModelProtocol>)viewModel{
     self = [super initWithViewModel:viewModel];
     self.frame = CGRectMake(0, 0, screenSize().width, screenSize().height);
+    [self kk_addNotificationObserver];
     return self;
 }
 
--(void)kk_setupView{
+/**
+ 添加观察者
+ */
+- (void)kk_addNotificationObserver{
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(kk_appDidEnterBackgroundNotification) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(kk_appDidBecomeActiveNotification) name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)kk_setupView{
     [super kk_setupView];
+    self.showDuration = ULONG_LONG_MAX;
     
     //    self.hideTimer = ({
     //        //立即执行定时任务,间隔1秒执行一次
@@ -73,8 +100,8 @@ static CGFloat const duration = 0.3;
     
     self.hideTimer = ({
         NSLog(@"-----YYTimer-------");
-        //比当前晚多长(5秒)时间开始执行定时器任务,间隔1秒执行一次
-        YYTimer *timer = [[YYTimer alloc] initWithFireTime:5 interval:1.0 target:self selector:@selector(kk_hideEvent:) repeats:true];
+        //比当前晚多长(0.5秒)时间开始执行定时器任务,间隔1秒执行一次
+        YYTimer *timer = [[YYTimer alloc] initWithFireTime:0.5 interval:1.0 target:self selector:@selector(kk_hideEvent:) repeats:true];
         timer;
     });
     
@@ -93,9 +120,9 @@ static CGFloat const duration = 0.3;
         view;
     });
     
-    self.titlelb = ({
+    self.titlelabel = ({
         YYLabel *label = YYLabel.alloc.init;
-        label.backgroundColor = [UIColor colorWithHexString:@"#FEFEFE"];
+        label.numberOfLines   = 1;
         label.textAlignment   = NSTextAlignmentCenter;
         label.text            = @"Title";
         [self.contentView addSubview:label];
@@ -104,7 +131,8 @@ static CGFloat const duration = 0.3;
             make.centerX.equalTo(label.superview.mas_centerX);
             make.left.equalTo(label.superview.mas_left).offset(headHeight());
             make.right.equalTo(label.superview.mas_right).offset(-headHeight());
-            make.height.mas_equalTo(CGFloatPixelRound(44));
+            make.height.mas_greaterThanOrEqualTo(CGFloatPixelRound(44));
+            make.height.mas_lessThanOrEqualTo(CGFloatPixelRound(80));
         }];
         label;
     });
@@ -122,19 +150,28 @@ static CGFloat const duration = 0.3;
     });
 }
 
-- (void)kk_hideEvent:(YYTimer *)timer{
-    static NSInteger count = 0;
-    if (count < 10) {
-        count ++;
-        NSLog(@"KKChannelView YYTimer ---- %ld",count);
+-(void)setShowDuration:(NSUInteger)showDuration{
+    if (showDuration >= 3) {
+        _showDuration = showDuration;
     }else{
-        count = 0;
+        _showDuration = 3;
+        NSLog(@"KKChannelView : The Minimum effective time is 3S,Please modify \"showDuration\"");
+    }
+    
+}
+
+- (void)kk_hideEvent:(YYTimer *)timer{
+    if (channelCount < _showDuration) {
+        channelCount ++;
+        NSLog(@"KKChannelView YYTimer ---- %ld",(long)channelCount);
+    }else{
+        channelCount = 0;
         [timer invalidate];
         [self kk_hideBlock:self.hideBlock];
     }
 }
 
--(void)kk_bindViewModel{
+- (void)kk_bindViewModel{
     [super kk_bindViewModel];
     @weakify(self);
     UITapGestureRecognizer *tapGestrue = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
@@ -150,18 +187,17 @@ static CGFloat const duration = 0.3;
     }];
 }
 
--(void)kk_showBlock:(KKChannelBlock)showBlock hideBlock:(KKChannelBlock)hideBlock{
+- (void)kk_showBlock:(KKChannelBlock)showBlock hideBlock:(KKChannelBlock)hideBlock{
     [UIApplication.sharedApplication.keyWindow addSubview:self];
     
-    UIImage *backImg = [UIImage imageWithColor:[UIColor colorWithWhite:1.0 alpha:.07] size:self.bounds.size];
-    backImg          = [backImg imageByBlurRadius:10 tintColor:[UIColor colorWithWhite:0.8 alpha:0.3] tintMode:kCGBlendModeNormal saturation:1.0 maskImage:nil];
+    UIImage *backImg = [UIImage imageWithColor:[UIColor colorWithWhite:1.0 alpha:0.01] size:self.bounds.size];
+    backImg          = [backImg imageByBlurRadius:10 tintColor:[UIColor colorWithWhite:1.0 alpha:0.1] tintMode:kCGBlendModeNormal saturation:1.0 maskImage:nil];
     
     self.layer.contents    = (id)backImg.CGImage;
     self.layer.contentMode = UIViewContentModeScaleAspectFit;
     
-    
     [self layoutIfNeeded];
-    [UIView animateWithDuration:duration delay:0.0 usingSpringWithDamping:5 initialSpringVelocity:5 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:channelDuration delay:0.0 usingSpringWithDamping:5 initialSpringVelocity:5 options:UIViewAnimationOptionCurveLinear animations:^{
         [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.superview.mas_bottom).offset(-channelHeight());
         }];
@@ -172,21 +208,38 @@ static CGFloat const duration = 0.3;
     self.hideBlock = hideBlock;
 }
 
-- (void) kk_hideBlock{
+- (void)kk_hideBlock{
     [self kk_hideBlock:self.hideBlock];
 }
 
-- (void) kk_hideBlock:(KKChannelBlock)hideBlock{
+- (void)kk_hideBlock:(KKChannelBlock)hideBlock{
     [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView.superview.mas_bottom);
     }];
-    [UIView animateWithDuration:duration animations:^{
+    [UIView animateWithDuration:channelDuration animations:^{
         self.backgroundColor = UIColor.clearColor;
         [self layoutIfNeeded];
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
         if (hideBlock) hideBlock();
     }];
+}
+
+#pragma mark -
+#pragma mark - 观察者事件响应
+- (void)kk_appDidEnterBackgroundNotification{
+    NSLog(@"kk_appDidEnterBackgroundNotification");
+    if (self.hideTimer) {
+        if (self.hideTimer.valid) {
+            [self.hideTimer invalidate];
+        }
+    }
+}
+
+- (void)kk_appDidBecomeActiveNotification{
+    NSLog(@"kk_appDidBecomeActiveNotification");
+    self.hideTimer = nil;
+    self.hideTimer = [[YYTimer alloc] initWithFireTime:0.1 interval:1.0 target:self selector:@selector(kk_hideEvent:) repeats:true];
 }
 
 /*

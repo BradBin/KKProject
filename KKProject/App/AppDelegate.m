@@ -54,13 +54,12 @@
     keyboardManager.shouldResignOnTouchOutside          = true;
     keyboardManager.shouldToolbarUsesTextFieldTintColor = true;
     keyboardManager.enableAutoToolbar                   = false;
-    keyboardManager.toolbarManageBehaviour              = IQAutoToolbarByTag;
+    keyboardManager.toolbarManageBehaviour              = IQAutoToolbarByPosition;
     keyboardManager.shouldResignOnTouchOutside          = true;
     [[IQKeyboardManager sharedManager] registerTextFieldViewClass:[YYTextView class]
                                   didBeginEditingNotificationName:YYTextViewTextDidBeginEditingNotification
                                     didEndEditingNotificationName:YYTextViewTextDidEndEditingNotification];
 }
-
 
 /**
  导航栏配置
@@ -72,7 +71,6 @@
         helper.kk_backStyle         = KKNavigationBarBackStyleBlack;
     }];
 }
-
 
 /**
  友盟配置
@@ -94,7 +92,6 @@
 //                                     redirectURL:nil];
 #endif
 }
-
 
 /**
  配置云信SDK

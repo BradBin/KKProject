@@ -12,6 +12,7 @@
 #import "KKHomeView.h"
 #import "KKHomeViewModel.h"
 #import "KKTextField.h"
+#import "KKShareView.h"
 
 @interface KKHomeViewController ()<JXCategoryViewDelegate,
 JXCategoryListContainerViewDelegate>
@@ -146,10 +147,21 @@ JXCategoryListContainerViewDelegate>
     @weakify(self);
     [[[self.editBtn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
-        [[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_showBlock:^{
+//        [[[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_updateConfigure:^(KKChannelView * _Nonnull channelView) {
+//            channelView.contentView.backgroundColor = UIColor.redColor;
+//            channelView.titlelabel.text = @"fasasfaffa";
+//            channelView.titlelabel.numberOfLines = 0;
+//            channelView.closeBtn.backgroundColor = UIColor.orangeColor;
+//            channelView.showDuration             = 5;
+//        }] kk_showBlock:^{
+//             NSLog(@"kk_showBlock");
+//        } hideBlock:^{
+//            NSLog(@"kk_hideBlock");
+//        }];
+        [KKShareView.shared kk_shareWithItems:nil functions:nil showBlock:^{
             NSLog(@"kk_showBlock");
         } hideBlock:^{
-            NSLog(@"kk_hideBlock");
+             NSLog(@"kk_hideBlock");
         }];
     }];
     

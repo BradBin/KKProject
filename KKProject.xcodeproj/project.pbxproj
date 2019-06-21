@@ -154,8 +154,12 @@
 		931F648A22BB21930039FE51 /* KKWebApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F648822BB21930039FE51 /* KKWebApi.m */; };
 		931F648E22BB6D8A0039FE51 /* WKWebView+KKProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F648D22BB6D8A0039FE51 /* WKWebView+KKProgress.m */; };
 		931F648F22BB6D8A0039FE51 /* WKWebView+KKProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F648D22BB6D8A0039FE51 /* WKWebView+KKProgress.m */; };
+		931F649622BCAAD80039FE51 /* KKShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F649522BCAAD70039FE51 /* KKShareView.m */; };
+		931F649722BCAAD80039FE51 /* KKShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F649522BCAAD70039FE51 /* KKShareView.m */; };
 		9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF6A2278430400BC7AAC /* InfoPlist.strings */; };
 		9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF702278482100BC7AAC /* KKProject-Objc-InfoPlist.strings */; };
+		93AE775022BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
+		93AE775122BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D3621F22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D362282281627700DD815F /* KKChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D362272281627700DD815F /* KKChannelView.m */; };
@@ -335,6 +339,8 @@
 		931F648B22BB21B10039FE51 /* KKWebApiProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKWebApiProtocol.h; sourceTree = "<group>"; };
 		931F648C22BB6D8A0039FE51 /* WKWebView+KKProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+KKProgress.h"; sourceTree = "<group>"; };
 		931F648D22BB6D8A0039FE51 /* WKWebView+KKProgress.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+KKProgress.m"; sourceTree = "<group>"; };
+		931F649422BCAAD70039FE51 /* KKShareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareView.h; sourceTree = "<group>"; };
+		931F649522BCAAD70039FE51 /* KKShareView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKShareView.m; sourceTree = "<group>"; };
 		9347CF5922783F3500BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		9347CF5A22783F3600BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9347CF5B22783F3700BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -343,6 +349,9 @@
 		9347CF6B2278430A00BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF6F2278482100BC7AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF712278482200BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
+		93AE774D22BCCD900020A2AC /* KKShareConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareConst.h; sourceTree = "<group>"; };
+		93AE774E22BCCE510020A2AC /* KKShareCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareCollectionView.h; sourceTree = "<group>"; };
+		93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKShareCollectionView.m; sourceTree = "<group>"; };
 		93D3621B228123FE00DD815F /* KKProjectAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectAPI.h; sourceTree = "<group>"; };
 		93D3621C22812FE400DD815F /* KKHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeModel.h; sourceTree = "<group>"; };
 		93D3621D22812FE400DD815F /* KKHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeModel.m; sourceTree = "<group>"; };
@@ -690,6 +699,7 @@
 				0AC12BA8227A107100CF94ED /* KKBaseUIKit */,
 				0AC12B6A2279EE5900CF94ED /* EasyReact+KKAdd */,
 				0A0D69FF227A8056005BA58F /* KKLoadingPlaceHolderView */,
+				931F649822BCAAE30039FE51 /* KKShareView */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -940,6 +950,18 @@
 				931F648D22BB6D8A0039FE51 /* WKWebView+KKProgress.m */,
 			);
 			path = KKWebView;
+			sourceTree = "<group>";
+		};
+		931F649822BCAAE30039FE51 /* KKShareView */ = {
+			isa = PBXGroup;
+			children = (
+				931F649422BCAAD70039FE51 /* KKShareView.h */,
+				931F649522BCAAD70039FE51 /* KKShareView.m */,
+				93AE774D22BCCD900020A2AC /* KKShareConst.h */,
+				93AE774E22BCCE510020A2AC /* KKShareCollectionView.h */,
+				93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */,
+			);
+			path = KKShareView;
 			sourceTree = "<group>";
 		};
 		9347CF552278393600BC7AAC /* Common */ = {
@@ -1335,7 +1357,9 @@
 				0A0D6A1C227A89AC005BA58F /* JXPagerListContainerView.m in Sources */,
 				0AC12B8A2279F1BC00CF94ED /* KKTabBarController.m in Sources */,
 				0A6349E32270B08D00C0D0B0 /* ViewController.m in Sources */,
+				93AE775022BCCE510020A2AC /* KKShareCollectionView.m in Sources */,
 				0AC12C35227A659000CF94ED /* UIScrollView+EmptyDataSet.m in Sources */,
+				931F649622BCAAD80039FE51 /* KKShareView.m in Sources */,
 				0AC12C17227A107200CF94ED /* KKPopTransitionAnimation.m in Sources */,
 				0AC12BF1227A107200CF94ED /* KKButton.m in Sources */,
 				93D362282281627700DD815F /* KKChannelView.m in Sources */,
@@ -1440,8 +1464,10 @@
 				0AC12B892279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
 				931F648F22BB6D8A0039FE51 /* WKWebView+KKProgress.m in Sources */,
 				0AC12C06227A107200CF94ED /* KKLabel.m in Sources */,
+				93AE775122BCCE510020A2AC /* KKShareCollectionView.m in Sources */,
 				0AC12BA02279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0A12E8C922B67E6200851FDB /* KKLoginViewModel.m in Sources */,
+				931F649722BCAAD80039FE51 /* KKShareView.m in Sources */,
 				0AC12BFA227A107200CF94ED /* KKModel.m in Sources */,
 				0AA4F44B22BA8F9900088493 /* KKHomeViewCell.m in Sources */,
 				0AC12C10227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
