@@ -52,6 +52,9 @@
 		0A634B212270BE2A00C0D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E92270B08E00C0D0B0 /* LaunchScreen.storyboard */; };
 		0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E42270B08D00C0D0B0 /* Main.storyboard */; };
 		0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6349E72270B08E00C0D0B0 /* Assets.xcassets */; };
+		0A6996E622C122E00068CB8D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF6A2278430400BC7AAC /* InfoPlist.strings */; };
+		0A6996E922C12E750068CB8D /* KKLanguageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6996E822C12E750068CB8D /* KKLanguageHelper.m */; };
+		0A6996EA22C12E750068CB8D /* KKLanguageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6996E822C12E750068CB8D /* KKLanguageHelper.m */; };
 		0AA4F44622BA8A7600088493 /* KKHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44522BA8A7600088493 /* KKHomeView.m */; };
 		0AA4F44722BA8A7600088493 /* KKHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44522BA8A7600088493 /* KKHomeView.m */; };
 		0AA4F44A22BA8F9900088493 /* KKHomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F44922BA8F9900088493 /* KKHomeViewCell.m */; };
@@ -218,6 +221,14 @@
 		0A634B272270BE2A00C0D0B0 /* KKProject_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A634B292270C02300C0D0B0 /* KKProject-Objc-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "KKProject-Objc-Info.plist"; sourceTree = "<group>"; };
 		0A634B2B2270C2F100C0D0B0 /* KKProjectMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectMacros.h; sourceTree = "<group>"; };
+		0A6996E022C122BA0068CB8D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		0A6996E122C122BA0068CB8D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0A6996E222C122BA0068CB8D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		0A6996E322C122BA0068CB8D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0A6996E422C122BB0068CB8D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		0A6996E522C122BB0068CB8D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
+		0A6996E722C12E750068CB8D /* KKLanguageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKLanguageHelper.h; sourceTree = "<group>"; };
+		0A6996E822C12E750068CB8D /* KKLanguageHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKLanguageHelper.m; sourceTree = "<group>"; };
 		0AA4F44422BA8A7600088493 /* KKHomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeView.h; sourceTree = "<group>"; };
 		0AA4F44522BA8A7600088493 /* KKHomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeView.m; sourceTree = "<group>"; };
 		0AA4F44822BA8F9900088493 /* KKHomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeViewCell.h; sourceTree = "<group>"; };
@@ -678,6 +689,15 @@
 			path = KKProject_Swift;
 			sourceTree = "<group>";
 		};
+		0A6996EB22C12E7F0068CB8D /* KKLanguageHelper */ = {
+			isa = PBXGroup;
+			children = (
+				0A6996E722C12E750068CB8D /* KKLanguageHelper.h */,
+				0A6996E822C12E750068CB8D /* KKLanguageHelper.m */,
+			);
+			path = KKLanguageHelper;
+			sourceTree = "<group>";
+		};
 		0AA788FB227F42B700242C91 /* LottieResources */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,6 +797,7 @@
 				0AF1CC912280857F006487CA /* KKNetworking */,
 				0AC12BA2227A018900CF94ED /* KKErrorHelper */,
 				0AC12BA7227A02A200CF94ED /* KKAccountHelper */,
+				0A6996EB22C12E7F0068CB8D /* KKLanguageHelper */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1139,6 +1160,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 0A6349D22270B08D00C0D0B0;
 			productRefGroup = 0A6349DC2270B08D00C0D0B0 /* Products */;
@@ -1193,6 +1215,7 @@
 				0AC12C20227A107200CF94ED /* KKNavigationBar.bundle in Resources */,
 				0A12E8BB22B67CA100851FDB /* KKCategory.bundle in Resources */,
 				0AA78907227F42B700242C91 /* tab_message_animate.json in Resources */,
+				0A6996E622C122E00068CB8D /* InfoPlist.strings in Resources */,
 				0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1393,6 +1416,7 @@
 				0AC12C13227A107200CF94ED /* UIBarButtonItem+KKNavigationBar.m in Sources */,
 				0A12E8BE22B67CA100851FDB /* UIView+MBProgressHUD.m in Sources */,
 				0AC12BF5227A107200CF94ED /* KKCollectionViewCell.m in Sources */,
+				0A6996E922C12E750068CB8D /* KKLanguageHelper.m in Sources */,
 				0AC12B6D2279EE5900CF94ED /* UITextField+KKEasyReact.m in Sources */,
 				0A6349EE2270B08E00C0D0B0 /* main.m in Sources */,
 				0AC12C11227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
@@ -1475,6 +1499,7 @@
 				0AA4F44722BA8A7600088493 /* KKHomeView.m in Sources */,
 				931F648A22BB21930039FE51 /* KKWebApi.m in Sources */,
 				0AC12BA6227A029300CF94ED /* KKAccountHelper.m in Sources */,
+				0A6996EA22C12E750068CB8D /* KKLanguageHelper.m in Sources */,
 				0AC12C02227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
 				0AC12C08227A107200CF94ED /* KKCollectionView.m in Sources */,
 				0AC12C00227A107200CF94ED /* KKUIKit.m in Sources */,
@@ -1505,6 +1530,7 @@
 			children = (
 				0A6349E52270B08D00C0D0B0 /* Base */,
 				9347CF5922783F3500BC7AAC /* zh-Hans */,
+				0A6996E022C122BA0068CB8D /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1514,6 +1540,7 @@
 			children = (
 				0A6349EA2270B08E00C0D0B0 /* Base */,
 				9347CF5A22783F3600BC7AAC /* zh-Hans */,
+				0A6996E122C122BA0068CB8D /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1523,6 +1550,7 @@
 			children = (
 				0A634AF32270BD1900C0D0B0 /* Base */,
 				9347CF5B22783F3700BC7AAC /* zh-Hans */,
+				0A6996E222C122BA0068CB8D /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1532,6 +1560,7 @@
 			children = (
 				0A634AF82270BD1A00C0D0B0 /* Base */,
 				9347CF5C22783F3700BC7AAC /* zh-Hans */,
+				0A6996E322C122BA0068CB8D /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1541,6 +1570,7 @@
 			children = (
 				9347CF692278430400BC7AAC /* en */,
 				9347CF6B2278430A00BC7AAC /* zh-Hans */,
+				0A6996E422C122BB0068CB8D /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1550,6 +1580,7 @@
 			children = (
 				9347CF6F2278482100BC7AAC /* en */,
 				9347CF712278482200BC7AAC /* zh-Hans */,
+				0A6996E522C122BB0068CB8D /* zh-Hant */,
 			);
 			name = "KKProject-Objc-InfoPlist.strings";
 			sourceTree = "<group>";
