@@ -8,6 +8,18 @@
 
 #import "KKSettingsTableCell.h"
 
+static inline CGFloat KKCellMargin(){
+    return CGFloatPixelRound(16.0f);
+}
+
+static inline CGFloat KKCellContentMargin(){
+    return CGFloatPixelRound(8.0f);
+}
+
+@interface KKSettingsTableCell()
+
+@end
+
 @implementation KKSettingsTableCell
 
 - (void)awakeFromNib {
@@ -30,11 +42,13 @@
     });
     
     self.titlelabel = ({
-        YYLabel *label = YYLabel.new;
+        YYLabel *label  = YYLabel.new;
+        label.textColor = [UIColor colorWithHexString:@"#1B1B1B"];
+        label.font      = [UIFont systemFontOfSize:15.5f];
         [label setContentCompressionResistancePriority:50 forAxis:UILayoutConstraintAxisHorizontal];
         [self.contentView addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(label.superview.mas_left).offset(CGFloatPixelRound(14)).priorityLow();
+            make.left.equalTo(label.superview.mas_left).offset(KKCellMargin()).priorityHigh();
             make.centerY.equalTo(label.superview.mas_centerY);
         }];
         label;
@@ -45,14 +59,19 @@
     if (isShow) {
         self.accessoryView = ({
             YYAnimatedImageView *imgV = YYAnimatedImageView.alloc.init;
-            imgV.backgroundColor = UIColor.redColor;
-            imgV.contentMode = UIViewContentModeScaleAspectFit;
-            imgV.size = CGSizeMake(CGFloatPixelRound(6), CGFloatPixelRound(11.0f));
+            imgV.image                = [[UIImage imageNamed:@"cell_arrow_right.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            imgV.contentMode          = UIViewContentModeScaleAspectFit;
+            imgV.size                 = CGSizeMake(CGFloatPixelRound(15), CGFloatPixelRound(15));
             imgV;
         });
     }else{
         self.accessoryView = nil;
     }
+    
+    CGFloat rightMargin = isShow? KKCellContentMargin() : KKCellMargin();
+    [self.rightView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.rightView.superview.mas_right).offset(-CGFloatPixelRound(rightMargin));
+    }];
 }
 
 -(void)setRightView:(UIView *)rightView{
@@ -65,10 +84,12 @@
     }
     [self.contentView addSubview:rightView];
     [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(rightView.superview.mas_right).offset(-CGFloatPixelRound(11));
-        make.height.equalTo(rightView.superview.mas_height);
+        make.right.equalTo(rightView.superview.mas_right).offset(-KKCellContentMargin());
+        make.height.mas_greaterThanOrEqualTo(@0);
+        make.height.mas_lessThanOrEqualTo(rightView.superview.mas_height);
         make.centerY.equalTo(rightView.superview.mas_centerY);
-        make.left.mas_greaterThanOrEqualTo(self.titlelabel.mas_right).offset(CGFloatPixelRound(8));
+        make.left.mas_greaterThanOrEqualTo(self.titlelabel.mas_right).offset(KKCellContentMargin());
+        make.left.mas_greaterThanOrEqualTo(rightView.superview.mas_centerX);
     }];
 }
 
@@ -76,9 +97,9 @@
     if (image) {
         [self.contentView addSubview:self.leftImagV];
         [self.leftImagV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.leftImagV.superview.mas_left).offset(CGFloatPixelRound(16));
+            make.left.equalTo(self.leftImagV.superview.mas_left).offset(KKCellMargin()).priorityHigh();
             make.centerY.equalTo(self.leftImagV.superview.mas_centerY);
-            make.right.equalTo(self.titlelabel.mas_left).inset(CGFloatPixelRound(11)).priorityHigh();
+            make.right.equalTo(self.titlelabel.mas_left).inset(KKCellContentMargin()).priorityHigh();
             make.size.mas_equalTo([self kk_imageViewSize]);
         }];
         self.leftImagV.image = image;
@@ -91,14 +112,10 @@
 }
 
 - (CGSize)kk_imageViewSize{
-    return CGSizeMake(CGFloatPixelRound(20.0f), CGFloatPixelRound(20.0f));
+    return CGSizeMake(CGFloatPixelRound(25), CGFloatPixelRound(25));
 }
 
 @end
-
-
-
-
 
 
 
@@ -118,25 +135,16 @@
     [super kk_setupView];
     
     self.sublabel = ({
-        YYLabel *label = YYLabel.new;
+        YYLabel *label      = YYLabel.new;
+        label.font          = [UIFont systemFontOfSize:13.5f];
+        label.textColor     = [UIColor colorWithHexString:@"#5B5B5B"];
         label.textAlignment = NSTextAlignmentRight;
+        label.numberOfLines = 2;
         label;
     });
     
     self.rightView = self.sublabel;
 }
-
-
--(void)setRightView:(UIView *)rightView{
-    [super setRightView:rightView];
-    [rightView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titlelabel.mas_right).offset(CGFloatPixelRound(20));
-        make.centerY.equalTo(rightView.superview.mas_centerY);
-        make.right.mas_lessThanOrEqualTo(-CGFloatPixelRound(10));
-        make.height.mas_lessThanOrEqualTo(rightView.superview.mas_height);
-    }];
-}
-
 
 -(void)kk_setTitle:(NSString *)title subTitle:(NSString *)subtitle{
     [self kk_setImg:nil title:title subTitle:subtitle];
@@ -154,8 +162,8 @@
 -(void)kk_setupView{
     [super kk_setupView];
     self.textfield = ({
-        KKTextField *textfield = KKTextField.alloc.init;
-        textfield.textAlignment = NSTextAlignmentRight;
+        UITextField *textfield    = UITextField.alloc.init;
+        textfield.textAlignment   = NSTextAlignmentRight;
         textfield.clearButtonMode = UITextFieldViewModeWhileEditing;
         [textfield addTarget:self action:@selector(textfieldChange:) forControlEvents:UIControlEventEditingChanged];
         textfield;
@@ -166,12 +174,9 @@
 -(void)setRightView:(UIView *)rightView{
     [super setRightView:rightView];
     [rightView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titlelabel.mas_right).offset(CGFloatPixelRound(8));
+        make.left.equalTo(self.titlelabel.mas_right).offset(KKCellContentMargin());
     }];
 }
-
-
-
 
 -(void)setIndexPath:(NSIndexPath *)indexPath{
     _indexPath = indexPath;

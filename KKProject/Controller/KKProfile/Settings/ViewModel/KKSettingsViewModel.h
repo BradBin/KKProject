@@ -16,8 +16,10 @@ UIKIT_EXTERN NSString * const KKNextVCClass;
 UIKIT_EXTERN NSString * const KKNeedArrow;
 UIKIT_EXTERN NSString * const KKClickAction;
 UIKIT_EXTERN NSString * const KKCellIdentifier;
+
 UIKIT_EXTERN NSString * const KKRightLabelCellIdentifier;
 UIKIT_EXTERN NSString * const KKRightViewCellIdentifier;
+UIKIT_EXTERN NSString * const KKTextFieldCellIdentifier;
 
 @interface KKSettingsViewModel : KKViewModel
 

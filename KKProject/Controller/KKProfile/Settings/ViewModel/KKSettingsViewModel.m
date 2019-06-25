@@ -18,6 +18,7 @@ NSString * const KKCellIdentifier           = @"KK.Cell.Identifier";
 
 NSString * const KKRightLabelCellIdentifier = @"KK.Right.Label.Cell.Identifier";
 NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
+NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
 
 @interface KKSettingsViewModel()
 @property (nonatomic,strong) NSArray *dataSources;
@@ -25,7 +26,6 @@ NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
 @end
 
 @implementation KKSettingsViewModel
-
 
 -(NSArray *)dataSources{
     if (_dataSources == nil) {
@@ -36,6 +36,7 @@ NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
                                  KKTitle          :@"多语言",
                                  KKDesc           :@"多语言",
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
+                                 KKNeedArrow      :@(true),
                                  KKNextVCClass    :@"KKIdentityVerifyViewController",
                                  KKClickAction    :(^(void){
                                      @strongify(self);
@@ -45,6 +46,7 @@ NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
                              @{
                                  KKTitle          :@"身份认证",
                                  KKDesc           :@"马上认证",
+                                 KKNeedArrow      :@(false),
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
                                  KKNextVCClass    :@"KKIdentityVerifyViewController",
                                  }
@@ -71,6 +73,18 @@ NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
                                  KKNeedArrow      :@(true),
                                  KKNextVCClass    :@"KKAboutUsViewController",
+                                 }
+                             ],
+                         @[
+                             @{
+                                 KKTitle          :@"电话",
+                                 KKCellIdentifier :KKTextFieldCellIdentifier,
+                                 KKNeedArrow      :@(true),
+                                 },
+                             @{
+                                 KKTitle          :@"手机",
+                                 KKCellIdentifier :KKTextFieldCellIdentifier,
+                                 KKNeedArrow      :@(false),
                                  }
                              ]
                          ];

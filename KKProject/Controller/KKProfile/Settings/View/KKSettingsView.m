@@ -28,13 +28,18 @@
     self.tableView.rowHeight       = CGFloatPixelRound(44.0f);
     self.tableView.backgroundColor = KKDefaultBackgroundViewColor();
     [self.tableView registerClass:KKContentTableCell.class   forCellReuseIdentifier:KKRightLabelCellIdentifier];
-    [self.tableView registerClass:KKSettingsTableCell.class forCellReuseIdentifier:KKRightViewCellIdentifier];
+    [self.tableView registerClass:KKSettingsTableCell.class  forCellReuseIdentifier:KKRightViewCellIdentifier];
+    [self.tableView registerClass:KKTextFieldTableCell.class forCellReuseIdentifier:KKTextFieldCellIdentifier];
 
 }
 
 - (void)kk_bindViewModel{
     [super kk_bindViewModel];
-    
+    @weakify(self);
+    [[self.viewModel.cleanSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [UIView showTitle:@"clean cache"];
+    }];
     
 }
 
@@ -55,18 +60,31 @@
     NSDictionary *dict = ((NSArray *)self.viewModel.dataSources[indexPath.section])[indexPath.row];
     KKSettingsTableCell *settingsCell = (KKSettingsTableCell *)cell;
     
-    if ([dict objectForKey:KKNeedArrow]) {
-        [settingsCell kk_showArrow:true];
-    }
+    [settingsCell kk_showArrow:[[dict objectForKey:KKNeedArrow] boolValue]];
     
-    if ([[dict objectForKey:KKCellIdentifier] isEqualToString:KKRightLabelCellIdentifier]) {
+    NSString *cellIdentifier = [dict objectForKey:KKCellIdentifier];
+    if ([cellIdentifier isEqualToString:KKRightLabelCellIdentifier]) {
         KKContentTableCell *labelCell = (KKContentTableCell *)cell;
         [labelCell kk_setTitle:dict[KKTitle] subTitle:dict[KKDesc]];
-    }else{
+    }else if ([cellIdentifier isEqualToString:KKRightViewCellIdentifier]){
         [settingsCell kk_setImage:nil title:dict[KKTitle]];
-        
+    }else{
+        KKTextFieldTableCell *textfieldCell = (KKTextFieldTableCell *)cell;
+        [textfieldCell kk_setImage:[UIImage imageNamed:@"fishpond_highlight.png"] title:dict[KKTitle]];
     }
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    NSDictionary *dict = ((NSArray *)self.viewModel.dataSources[indexPath.section])[indexPath.row];
+
+    if ([dict objectForKey:KKClickAction]) {
+        void(^action)(void) = [dict objectForKey:KKClickAction];
+        action();
+    }
+}
+
+
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = UIView.alloc.init;
@@ -88,11 +106,11 @@
 
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

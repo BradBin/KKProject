@@ -31,7 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) YYLabel *sublabel;
 
-
 - (void)kk_setTitle:(NSString *)title subTitle:(NSString *)subtitle;
 - (void)kk_setImg:(nullable UIImage *)image title:(NSString *)title subTitle:(NSString *)subtitle;
 
@@ -41,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KKTextFieldTableCell : KKSettingsTableCell
 
-@property (nonatomic,strong) KKTextField *textfield;
+@property (nonatomic,strong) UITextField *textfield;
 @property (nonatomic,strong) NSIndexPath *indexPath;
 
 @end
