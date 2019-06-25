@@ -11,14 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKRightTableCell : KKTableViewCell
+@interface KKSettingsTableCell : KKTableViewCell
 
 @property (nonatomic,strong) YYAnimatedImageView *leftImagV;
 @property (nonatomic,strong) YYLabel             *titlelabel;
 @property (nonatomic,strong) UIView              *rightView;
 
 - (void)kk_showArrow:(BOOL)isShow;
-- (void)kk_setImage:(UIImage *)image title:(NSString *)title;
+- (void)kk_setImage:(nullable UIImage *)image title:(NSString *)title;
 
 - (CGSize)kk_imageViewSize;
 
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-@interface KKContentTableCell : KKRightTableCell
+@interface KKContentTableCell : KKSettingsTableCell
 
 @property (nonatomic,strong) YYLabel *sublabel;
 
@@ -39,9 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-
-
-@interface KKTextFieldTableCell : KKRightTableCell
+@interface KKTextFieldTableCell : KKSettingsTableCell
 
 @property (nonatomic,strong) KKTextField *textfield;
 @property (nonatomic,strong) NSIndexPath *indexPath;

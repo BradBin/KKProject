@@ -23,9 +23,13 @@
 
 -(void)kk_setupView{
     [super kk_setupView];
-    self.tableView.separatorColor = KKDefaultBackgroundViewColor();
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.rowHeight      = CGFloatPixelRound(44.0f);
+    self.tableView.separatorColor  = KKDefaultBackgroundViewColor();
+    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.rowHeight       = CGFloatPixelRound(44.0f);
+    self.tableView.backgroundColor = KKDefaultBackgroundViewColor();
+    [self.tableView registerClass:KKContentTableCell.class   forCellReuseIdentifier:KKRightLabelCellIdentifier];
+    [self.tableView registerClass:KKSettingsTableCell.class forCellReuseIdentifier:KKRightViewCellIdentifier];
+
 }
 
 - (void)kk_bindViewModel{
@@ -48,7 +52,37 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *dic = ((NSArray *)self.viewModel.dataSources[indexPath.section])[indexPath.row];
+    NSDictionary *dict = ((NSArray *)self.viewModel.dataSources[indexPath.section])[indexPath.row];
+    KKSettingsTableCell *settingsCell = (KKSettingsTableCell *)cell;
+    
+    if ([dict objectForKey:KKNeedArrow]) {
+        [settingsCell kk_showArrow:true];
+    }
+    
+    if ([[dict objectForKey:KKCellIdentifier] isEqualToString:KKRightLabelCellIdentifier]) {
+        KKContentTableCell *labelCell = (KKContentTableCell *)cell;
+        [labelCell kk_setTitle:dict[KKTitle] subTitle:dict[KKDesc]];
+    }else{
+        [settingsCell kk_setImage:nil title:dict[KKTitle]];
+        
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = UIView.alloc.init;
+    return view;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *view = UIView.alloc.init;
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 20;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 30;
 }
 
 

@@ -8,9 +8,17 @@
 
 #import "KKSettingsViewModel.h"
 
+NSString * const KKTitle                    = @"KK.Title";
+NSString * const KKDesc                     = @"KK.Desc";
+NSString * const KKNextVCClass              = @"KK.NextVC.Class";
+
+NSString * const KKNeedArrow                = @"KK.Need.Arrow";
+NSString * const KKClickAction              = @"KK.Click.Action";
 NSString * const KKCellIdentifier           = @"KK.Cell.Identifier";
+
 NSString * const KKRightLabelCellIdentifier = @"KK.Right.Label.Cell.Identifier";
 NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
+
 @interface KKSettingsViewModel()
 @property (nonatomic,strong) NSArray *dataSources;
 
@@ -25,33 +33,33 @@ NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
         _dataSources = @[
                          @[
                              @{
-                                 @"title"         :@"多语言",
-                                 @"desc"          :@"多语言",
+                                 KKTitle          :@"多语言",
+                                 KKDesc           :@"多语言",
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 @"toNextVCClass" :@"KKIdentityVerifyViewController",
-                                 @"clickAction"   :(^(void){
+                                 KKNextVCClass    :@"KKIdentityVerifyViewController",
+                                 KKClickAction    :(^(void){
                                      @strongify(self);
                                      [self.cleanSubject sendNext:nil];
                                  })
                                  },
                              @{
-                                 @"title"         :@"身份认证",
-                                 @"desc"          :@"马上认证",
+                                 KKTitle          :@"身份认证",
+                                 KKDesc           :@"马上认证",
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 @"toNextVCClass" :@"KKIdentityVerifyViewController",
+                                 KKNextVCClass    :@"KKIdentityVerifyViewController",
                                  }
                              ],
                          @[
                              @{
-                                 @"title"         :@"使用流量自动播放视频",
+                                 KKTitle          :@"使用流量自动播放视频",
                                  KKCellIdentifier :KKRightViewCellIdentifier,
-                                 @"notNeedArrow"  :@(YES),
+                                 KKNeedArrow      :@(false),
                                  },
                              @{
-                                 @"title"         :@"缓存大小",
+                                 KKTitle          :@"缓存大小",
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 @"notNeedArrow"  :@(YES),
-                                 @"clickAction"   :(^(void){
+                                 KKNeedArrow      :@(false),
+                                 KKClickAction    :(^(void){
                                      @strongify(self);
                                      [self.cleanSubject sendNext:nil];
                                  })
@@ -59,9 +67,10 @@ NSString * const KKRightViewCellIdentifier  = @"KK.Right.View.Cell.Identifier";
                              ],
                          @[
                              @{
-                                 @"title"         :@"关于我们",
+                                 KKTitle          :@"关于我们",
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 @"toNextVCClass" :@"KKAboutUsViewController",
+                                 KKNeedArrow      :@(true),
+                                 KKNextVCClass    :@"KKAboutUsViewController",
                                  }
                              ]
                          ];

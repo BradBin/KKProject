@@ -8,12 +8,7 @@
 
 #import "KKSettingsTableCell.h"
 
-
-@interface KKRightTableCell ()
-
-@end
-
-@implementation KKRightTableCell
+@implementation KKSettingsTableCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -124,11 +119,24 @@
     
     self.sublabel = ({
         YYLabel *label = YYLabel.new;
+        label.textAlignment = NSTextAlignmentRight;
         label;
     });
     
     self.rightView = self.sublabel;
 }
+
+
+-(void)setRightView:(UIView *)rightView{
+    [super setRightView:rightView];
+    [rightView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.titlelabel.mas_right).offset(CGFloatPixelRound(20));
+        make.centerY.equalTo(rightView.superview.mas_centerY);
+        make.right.mas_lessThanOrEqualTo(-CGFloatPixelRound(10));
+        make.height.mas_lessThanOrEqualTo(rightView.superview.mas_height);
+    }];
+}
+
 
 -(void)kk_setTitle:(NSString *)title subTitle:(NSString *)subtitle{
     [self kk_setImg:nil title:title subTitle:subtitle];
@@ -141,10 +149,34 @@
 
 @end
 
-
-
 @implementation KKTextFieldTableCell
 
+-(void)kk_setupView{
+    [super kk_setupView];
+    self.textfield = ({
+        KKTextField *textfield = KKTextField.alloc.init;
+        textfield.textAlignment = NSTextAlignmentRight;
+        textfield.clearButtonMode = UITextFieldViewModeWhileEditing;
+        [textfield addTarget:self action:@selector(textfieldChange:) forControlEvents:UIControlEventEditingChanged];
+        textfield;
+    });
+    self.rightView = self.textfield;
+}
 
+-(void)setRightView:(UIView *)rightView{
+    [super setRightView:rightView];
+    [rightView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.titlelabel.mas_right).offset(CGFloatPixelRound(8));
+    }];
+}
+
+
+
+
+-(void)setIndexPath:(NSIndexPath *)indexPath{
+    _indexPath = indexPath;
+}
+
+- (void)textfieldChange:(KKTextField *)textfield{}
 
 @end

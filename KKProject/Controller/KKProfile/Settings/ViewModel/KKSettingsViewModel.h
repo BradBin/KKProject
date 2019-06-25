@@ -10,6 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+UIKIT_EXTERN NSString * const KKTitle;
+UIKIT_EXTERN NSString * const KKDesc;
+UIKIT_EXTERN NSString * const KKNextVCClass;
+UIKIT_EXTERN NSString * const KKNeedArrow;
+UIKIT_EXTERN NSString * const KKClickAction;
 UIKIT_EXTERN NSString * const KKCellIdentifier;
 UIKIT_EXTERN NSString * const KKRightLabelCellIdentifier;
 UIKIT_EXTERN NSString * const KKRightViewCellIdentifier;
