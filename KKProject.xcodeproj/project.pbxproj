@@ -161,6 +161,12 @@
 		931F649722BCAAD80039FE51 /* KKShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F649522BCAAD70039FE51 /* KKShareView.m */; };
 		9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF6A2278430400BC7AAC /* InfoPlist.strings */; };
 		9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF702278482100BC7AAC /* KKProject-Objc-InfoPlist.strings */; };
+		93647C7422C1F43A008BCC23 /* KKSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7322C1F43A008BCC23 /* KKSettingsView.m */; };
+		93647C7522C1F43A008BCC23 /* KKSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7322C1F43A008BCC23 /* KKSettingsView.m */; };
+		93647C7822C1F447008BCC23 /* KKSettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */; };
+		93647C7922C1F447008BCC23 /* KKSettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */; };
+		93647C7E22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */; };
+		93647C7F22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */; };
 		93AE775022BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93AE775122BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
@@ -360,6 +366,13 @@
 		9347CF6B2278430A00BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF6F2278482100BC7AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF712278482200BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
+		93647C7122C1C810008BCC23 /* KKProjectConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectConst.h; sourceTree = "<group>"; };
+		93647C7222C1F43A008BCC23 /* KKSettingsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSettingsView.h; sourceTree = "<group>"; };
+		93647C7322C1F43A008BCC23 /* KKSettingsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsView.m; sourceTree = "<group>"; };
+		93647C7622C1F447008BCC23 /* KKSettingsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSettingsViewModel.h; sourceTree = "<group>"; };
+		93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsViewModel.m; sourceTree = "<group>"; };
+		93647C7C22C1FFDF008BCC23 /* KKSettingsTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSettingsTableCell.h; sourceTree = "<group>"; };
+		93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsTableCell.m; sourceTree = "<group>"; };
 		93AE774D22BCCD900020A2AC /* KKShareConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareConst.h; sourceTree = "<group>"; };
 		93AE774E22BCCE510020A2AC /* KKShareCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareCollectionView.h; sourceTree = "<group>"; };
 		93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKShareCollectionView.m; sourceTree = "<group>"; };
@@ -575,6 +588,8 @@
 			children = (
 				0A12E8A922B6798B00851FDB /* KKSettingsViewController.h */,
 				0A12E8AA22B6798B00851FDB /* KKSettingsViewController.m */,
+				93647C7A22C1F458008BCC23 /* View */,
+				93647C7B22C1F462008BCC23 /* ViewModel */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -992,6 +1007,7 @@
 				0AC12B632279E7F300CF94ED /* KKProjectHeader.h */,
 				0AC12B642279E81300CF94ED /* KKProjectObjcHeader.h */,
 				93D3621B228123FE00DD815F /* KKProjectAPI.h */,
+				93647C7122C1C810008BCC23 /* KKProjectConst.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1028,6 +1044,26 @@
 			children = (
 				0AF1CC9A22808D68006487CA /* KKHomeViewModel.h */,
 				0AF1CC9B22808D68006487CA /* KKHomeViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		93647C7A22C1F458008BCC23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93647C7222C1F43A008BCC23 /* KKSettingsView.h */,
+				93647C7322C1F43A008BCC23 /* KKSettingsView.m */,
+				93647C7C22C1FFDF008BCC23 /* KKSettingsTableCell.h */,
+				93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		93647C7B22C1F462008BCC23 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				93647C7622C1F447008BCC23 /* KKSettingsViewModel.h */,
+				93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1387,12 +1423,14 @@
 				0AC12BF1227A107200CF94ED /* KKButton.m in Sources */,
 				93D362282281627700DD815F /* KKChannelView.m in Sources */,
 				0AC12BF7227A107200CF94ED /* KKView.m in Sources */,
+				93647C7422C1F43A008BCC23 /* KKSettingsView.m in Sources */,
 				0AF1CC982280857F006487CA /* KKNetWorking.m in Sources */,
 				0AC12BEF227A107200CF94ED /* KKTextField.m in Sources */,
 				0AA4F44622BA8A7600088493 /* KKHomeView.m in Sources */,
 				0AC12B9B2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
 				0AC12B882279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
 				0AC12C2C227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
+				93647C7E22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */,
 				0AC12B8E2279F1BC00CF94ED /* KKLanuchViewController.m in Sources */,
 				0AC12BF9227A107200CF94ED /* KKModel.m in Sources */,
 				0AA4F44A22BA8F9900088493 /* KKHomeViewCell.m in Sources */,
@@ -1427,6 +1465,7 @@
 				0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
 				93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */,
 				0A12E8B122B67B6200851FDB /* KKForgetPwdViewController.m in Sources */,
+				93647C7822C1F447008BCC23 /* KKSettingsViewModel.m in Sources */,
 				0A12E8CC22B68A1A00851FDB /* KKAccount.m in Sources */,
 				931F648422BB214D0039FE51 /* KKWebViewController.m in Sources */,
 				0AC12BFF227A107200CF94ED /* KKUIKit.m in Sources */,
@@ -1463,6 +1502,7 @@
 				0AC12B8B2279F1BC00CF94ED /* KKTabBarController.m in Sources */,
 				0AC12C0C227A107200CF94ED /* UIScrollView+KKNavigationBar.m in Sources */,
 				0A12E8CD22B68A1A00851FDB /* KKAccount.m in Sources */,
+				93647C7522C1F43A008BCC23 /* KKSettingsView.m in Sources */,
 				0A634B1C2270BE2A00C0D0B0 /* ViewController.m in Sources */,
 				0AC12C1E227A107200CF94ED /* KKNavigationBarHelper.m in Sources */,
 				0AC12B8F2279F1BC00CF94ED /* KKLanuchViewController.m in Sources */,
@@ -1496,8 +1536,10 @@
 				0AA4F44B22BA8F9900088493 /* KKHomeViewCell.m in Sources */,
 				0AC12C10227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
 				0AC12C12227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
+				93647C7F22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */,
 				0AA4F44722BA8A7600088493 /* KKHomeView.m in Sources */,
 				931F648A22BB21930039FE51 /* KKWebApi.m in Sources */,
+				93647C7922C1F447008BCC23 /* KKSettingsViewModel.m in Sources */,
 				0AC12BA6227A029300CF94ED /* KKAccountHelper.m in Sources */,
 				0A6996EA22C12E750068CB8D /* KKLanguageHelper.m in Sources */,
 				0AC12C02227A107200CF94ED /* KKCollectionReusableView.m in Sources */,

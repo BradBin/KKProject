@@ -90,7 +90,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:YES];
     // 将自定义导航栏放置顶层
     if (self.kk_navigationBar && !self.kk_navigationBar.hidden) {

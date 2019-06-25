@@ -7,8 +7,12 @@
 //
 
 #import "KKSettingsViewController.h"
+#import "KKSettingsView.h"
+#import "KKLanguageHelper.h"
 
 @interface KKSettingsViewController ()
+@property (nonatomic,strong) KKSettingsViewModel *viewModel;
+@property (nonatomic,strong) KKSettingsView      *settingsView;
 
 @end
 
@@ -18,6 +22,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+/**
+ 系统语言
+ */
+- (void)setupLanguage{
+    KKLanguageHelper *helper = KKLanguageHelper.shared;
+    NSLog(@"系统语言------%@  ---- %ld",helper.language,helper.languageType);
+}
+
 
 - (void)kk_logOutEvent:(UIBarButtonItem *)item{
 
@@ -42,7 +55,34 @@
 }
 
 
+-(void)kk_addSubviews{
+    [super kk_addSubviews];
+    self.settingsView = ({
+        KKSettingsView *view = [[KKSettingsView alloc] initWithViewModel:self.viewModel];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.kk_navigationBar.mas_bottom);
+            make.centerX.equalTo(view.superview.mas_centerX);
+            make.width.equalTo(view.superview.mas_width);
+            make.bottom.equalTo(view.superview.mas_bottom);
+        }];
+        view;
+    });
+}
 
+
+-(void)kk_bindViewModel{
+    [super kk_bindViewModel];
+    //系统语言
+    [self setupLanguage];
+}
+
+-(KKSettingsViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = KKSettingsViewModel.alloc.init;
+    }
+    return _viewModel;
+}
 
 /*
 #pragma mark - Navigation
