@@ -37,23 +37,21 @@ NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
                                  KKDesc           :@"多语言",
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
                                  KKNeedArrow      :@(true),
-                                 KKNextVCClass    :@"KKIdentityVerifyViewController",
                                  KKClickAction    :(^(void){
                                      @strongify(self);
-                                     [self.cleanSubject sendNext:nil];
+                                     [self.changeLanguageSubject sendNext:@(true)];
                                  })
                                  },
                              @{
                                  KKTitle          :@"身份认证",
                                  KKDesc           :@"马上认证",
                                  KKNeedArrow      :@(false),
-                                 KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 KKNextVCClass    :@"KKIdentityVerifyViewController",
+                                 KKCellIdentifier :KKRightLabelCellIdentifier
                                  }
                              ],
                          @[
                              @{
-                                 KKTitle          :@"使用流量自动播放视频",
+                                 KKTitle          :@"WiFi自动播放视频",
                                  KKCellIdentifier :KKRightViewCellIdentifier,
                                  KKNeedArrow      :@(false),
                                  },
@@ -63,18 +61,20 @@ NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
                                  KKNeedArrow      :@(false),
                                  KKClickAction    :(^(void){
                                      @strongify(self);
-                                     [self.cleanSubject sendNext:nil];
+                                     [self.cleanSubject sendNext:@(KKCacheTypeImageCache)];
                                  })
                                  },
-                             ],
-                         @[
                              @{
-                                 KKTitle          :@"关于我们",
+                                 KKTitle          :@"聊天记录",
                                  KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 KKNeedArrow      :@(true),
-                                 KKNextVCClass    :@"KKAboutUsViewController",
+                                 KKNeedArrow      :@(false),
+                                 KKClickAction    :(^(void){
+                                     @strongify(self);
+                                     [self.cleanSubject sendNext:@(KKCacheTypeChatRecord)];
+                                 })
                                  }
                              ],
+                         
                          @[
                              @{
                                  KKTitle          :@"电话",
@@ -86,12 +86,33 @@ NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
                                  KKCellIdentifier :KKTextFieldCellIdentifier,
                                  KKNeedArrow      :@(false),
                                  }
+                             ],
+                         @[
+                             @{
+                                 KKTitle          :@"关于我们",
+                                 KKCellIdentifier :KKRightLabelCellIdentifier,
+                                 KKNeedArrow      :@(true),
+                                 KKNextVCClass    :@"KKAboutusViewController",
+                                 }
                              ]
                          ];
     }
     return _dataSources;
 }
 
+-(RACSubject *)pushVCSubject{
+    if (_pushVCSubject == nil) {
+        _pushVCSubject = RACSubject.subject;
+    }
+   return _pushVCSubject;
+}
+
+-(RACSubject *)changeLanguageSubject{
+    if (_changeLanguageSubject == nil) {
+        _changeLanguageSubject = RACSubject.subject;
+    }
+    return _changeLanguageSubject;
+}
 
 -(RACSubject *)cleanSubject{
     if (_cleanSubject == nil) {

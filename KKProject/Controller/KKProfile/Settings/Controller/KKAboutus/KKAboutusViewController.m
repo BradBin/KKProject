@@ -1,34 +1,22 @@
 //
-//  KKTidingViewController.m
+//  KKAboutusViewController.m
 //  KKProject
 //
-//  Created by Macbook Pro 15.4  on 2019/5/4.
+//  Created by 尤彬 on 2019/6/26.
 //  Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 //
 
-#import "KKTidingViewController.h"
+#import "KKAboutusViewController.h"
 
-@interface KKTidingViewController ()
+@interface KKAboutusViewController ()
 
 @end
 
-@implementation KKTidingViewController
+@implementation KKAboutusViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
--(void)kk_layoutNavigation{
-    [super kk_layoutNavigation];
-    self.kk_navShadowImage = UIImage.new;
-    self.kk_navShadowColor = [UIColor colorWithHexString:@"#EFEFEF"];
-    self.kk_navTitle       = @"消息";
-}
-
--(void)kk_addSubviews{
-    [super kk_addSubviews];
-
 }
 
 /*

@@ -21,11 +21,20 @@ UIKIT_EXTERN NSString * const KKRightLabelCellIdentifier;
 UIKIT_EXTERN NSString * const KKRightViewCellIdentifier;
 UIKIT_EXTERN NSString * const KKTextFieldCellIdentifier;
 
+typedef NS_ENUM(NSUInteger,KKCacheType) {
+    KKCacheTypeChatRecord = 0,
+    KKCacheTypeImageCache
+};
+
 @interface KKSettingsViewModel : KKViewModel
 
 @property (nonatomic,strong,readonly) NSArray *dataSources;
-@property (nonatomic,strong) RACSubject *cleanSubject;
 
+
+
+@property (nonatomic,strong) RACSubject *pushVCSubject;
+@property (nonatomic,strong) RACSubject *changeLanguageSubject;
+@property (nonatomic,strong) RACSubject *cleanSubject;
 
 @end
 

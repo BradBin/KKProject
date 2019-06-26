@@ -130,11 +130,11 @@
  */
 - (void)setupCustomNavBar {
     
-    if (@available(iOS 11.0, *)) {
-        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-    }else{
-       self.automaticallyAdjustsScrollViewInsets = NO;
-    }
+//    if (@available(iOS 11.0, *)) {
+//        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+//    }else{
+//       self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
 
     [self.view addSubview:self.kk_navigationBar];
     [self setupNavBarFrame];
@@ -148,8 +148,8 @@
     
     KKNavigationBarHelper *configure = [KKNavigationBarHelper sharedInstance];
     if (configure.kk_backgroundColor) self.kk_navBackgroundColor = configure.kk_backgroundColor;
-    if (configure.kk_titleColor) self.kk_navTitleColor = configure.kk_titleColor;
-    if (configure.kk_titleFont) self.kk_navTitleFont = configure.kk_titleFont;
+    if (configure.kk_titleColor)      self.kk_navTitleColor      = configure.kk_titleColor;
+    if (configure.kk_titleFont)       self.kk_navTitleFont       = configure.kk_titleFont;
     
     self.kk_statusBarHidden     = configure.kk_statusBarHidden;
     self.kk_statusBarStyle      = configure.kk_statusBarStyle;

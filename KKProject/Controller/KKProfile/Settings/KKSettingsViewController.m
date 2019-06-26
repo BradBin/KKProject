@@ -31,13 +31,13 @@
     NSLog(@"系统语言------%@  ---- %ld",helper.language,helper.languageType);
 }
 
-
 - (void)kk_logOutEvent:(UIBarButtonItem *)item{
-
-    [KKErrorHelper kk_showLoginVCWithBlock:^(UIViewController * _Nonnull vc) {
-        [vc.view showTitle:@"欢迎来到登录界面"];
-        [KKAccountHelper.shared kk_logOut];
-    }];
+    [self showAlertWithTitle:@"是否确定退出当前账号?" message:nil sureAction:@"确定" cancelAction:@"取消" confirmhHndler:^(UIAlertAction * _Nonnull action) {
+        [KKErrorHelper kk_showLoginVCWithBlock:^(UIViewController * _Nonnull vc) {
+            [vc.view showTitle:@"欢迎来到登录界面"];
+            [KKAccountHelper.shared kk_logOut];
+        }];
+    } cancelHandler:nil];
 }
 
 - (void)kk_layoutNavigation{
@@ -75,6 +75,15 @@
     [super kk_bindViewModel];
     //系统语言
     [self setupLanguage];
+    
+    @weakify(self);
+    [[self.viewModel.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:KKViewController.class]) {
+            [self.navigationController pushViewController:(KKViewController *)x animated:true];
+        }
+    }];
+    
 }
 
 -(KKSettingsViewModel *)viewModel{

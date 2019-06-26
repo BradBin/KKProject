@@ -161,12 +161,18 @@
 		931F649722BCAAD80039FE51 /* KKShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 931F649522BCAAD70039FE51 /* KKShareView.m */; };
 		9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF6A2278430400BC7AAC /* InfoPlist.strings */; };
 		9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9347CF702278482100BC7AAC /* KKProject-Objc-InfoPlist.strings */; };
+		9353DD4422C35418009217C1 /* UIViewController+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */; };
+		9353DD4522C35418009217C1 /* UIViewController+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */; };
+		9353DD4922C355EA009217C1 /* KKAboutusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4822C355EA009217C1 /* KKAboutusViewController.m */; };
+		9353DD4A22C355EA009217C1 /* KKAboutusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4822C355EA009217C1 /* KKAboutusViewController.m */; };
 		93647C7422C1F43A008BCC23 /* KKSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7322C1F43A008BCC23 /* KKSettingsView.m */; };
 		93647C7522C1F43A008BCC23 /* KKSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7322C1F43A008BCC23 /* KKSettingsView.m */; };
 		93647C7822C1F447008BCC23 /* KKSettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */; };
 		93647C7922C1F447008BCC23 /* KKSettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */; };
 		93647C7E22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */; };
 		93647C7F22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */; };
+		93647C8222C30C9B008BCC23 /* KKCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C8122C30C9B008BCC23 /* KKCacheHelper.m */; };
+		93647C8322C30C9B008BCC23 /* KKCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C8122C30C9B008BCC23 /* KKCacheHelper.m */; };
 		93AE775022BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93AE775122BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
@@ -366,6 +372,10 @@
 		9347CF6B2278430A00BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF6F2278482100BC7AAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
 		9347CF712278482200BC7AAC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/KKProject-Objc-InfoPlist.strings"; sourceTree = "<group>"; };
+		9353DD4222C35418009217C1 /* UIViewController+KKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KKAdd.h"; sourceTree = "<group>"; };
+		9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KKAdd.m"; sourceTree = "<group>"; };
+		9353DD4722C355EA009217C1 /* KKAboutusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAboutusViewController.h; sourceTree = "<group>"; };
+		9353DD4822C355EA009217C1 /* KKAboutusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKAboutusViewController.m; sourceTree = "<group>"; };
 		93647C7122C1C810008BCC23 /* KKProjectConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectConst.h; sourceTree = "<group>"; };
 		93647C7222C1F43A008BCC23 /* KKSettingsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSettingsView.h; sourceTree = "<group>"; };
 		93647C7322C1F43A008BCC23 /* KKSettingsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsView.m; sourceTree = "<group>"; };
@@ -373,6 +383,8 @@
 		93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsViewModel.m; sourceTree = "<group>"; };
 		93647C7C22C1FFDF008BCC23 /* KKSettingsTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSettingsTableCell.h; sourceTree = "<group>"; };
 		93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsTableCell.m; sourceTree = "<group>"; };
+		93647C8022C30C9B008BCC23 /* KKCacheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKCacheHelper.h; sourceTree = "<group>"; };
+		93647C8122C30C9B008BCC23 /* KKCacheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKCacheHelper.m; sourceTree = "<group>"; };
 		93AE774D22BCCD900020A2AC /* KKShareConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareConst.h; sourceTree = "<group>"; };
 		93AE774E22BCCE510020A2AC /* KKShareCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareCollectionView.h; sourceTree = "<group>"; };
 		93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKShareCollectionView.m; sourceTree = "<group>"; };
@@ -588,6 +600,7 @@
 			children = (
 				0A12E8A922B6798B00851FDB /* KKSettingsViewController.h */,
 				0A12E8AA22B6798B00851FDB /* KKSettingsViewController.m */,
+				9353DD4622C355AC009217C1 /* Controller */,
 				93647C7A22C1F458008BCC23 /* View */,
 				93647C7B22C1F462008BCC23 /* ViewModel */,
 			);
@@ -609,11 +622,13 @@
 				0A12E8B422B67CA100851FDB /* KKCategory.bundle */,
 				0A12E8B522B67CA100851FDB /* KKCategory.h */,
 				0A12E8B622B67CA100851FDB /* UIView+MBProgressHUD.h */,
+				0A12E8B922B67CA100851FDB /* UIView+MBProgressHUD.m */,
 				0A12E8B722B67CA100851FDB /* UIColor+KKAdd.h */,
 				0A12E8B822B67CA100851FDB /* UIColor+KKAdd.m */,
-				0A12E8B922B67CA100851FDB /* UIView+MBProgressHUD.m */,
 				0AA4F45022BBDE5E00088493 /* UISearchBar+KKAdd.h */,
 				0AA4F45122BBDE5E00088493 /* UISearchBar+KKAdd.m */,
+				9353DD4222C35418009217C1 /* UIViewController+KKAdd.h */,
+				9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */,
 			);
 			path = KKCategory;
 			sourceTree = "<group>";
@@ -813,6 +828,7 @@
 				0AC12BA2227A018900CF94ED /* KKErrorHelper */,
 				0AC12BA7227A02A200CF94ED /* KKAccountHelper */,
 				0A6996EB22C12E7F0068CB8D /* KKLanguageHelper */,
+				93647C8422C30CA3008BCC23 /* KKCacheHelper */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1048,6 +1064,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9353DD4622C355AC009217C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9353DD4B22C358A8009217C1 /* KKAboutus */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9353DD4B22C358A8009217C1 /* KKAboutus */ = {
+			isa = PBXGroup;
+			children = (
+				9353DD4722C355EA009217C1 /* KKAboutusViewController.h */,
+				9353DD4822C355EA009217C1 /* KKAboutusViewController.m */,
+			);
+			path = KKAboutus;
+			sourceTree = "<group>";
+		};
 		93647C7A22C1F458008BCC23 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1066,6 +1099,15 @@
 				93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		93647C8422C30CA3008BCC23 /* KKCacheHelper */ = {
+			isa = PBXGroup;
+			children = (
+				93647C8022C30C9B008BCC23 /* KKCacheHelper.h */,
+				93647C8122C30C9B008BCC23 /* KKCacheHelper.m */,
+			);
+			path = KKCacheHelper;
 			sourceTree = "<group>";
 		};
 		93D3622022812FEB00DD815F /* Model */ = {
@@ -1182,9 +1224,21 @@
 				TargetAttributes = {
 					0A6349DA2270B08D00C0D0B0 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					0A634AEB2270BD1900C0D0B0 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					0A634B1A2270BE2A00C0D0B0 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1417,6 +1471,7 @@
 				0AC12B8A2279F1BC00CF94ED /* KKTabBarController.m in Sources */,
 				0A6349E32270B08D00C0D0B0 /* ViewController.m in Sources */,
 				93AE775022BCCE510020A2AC /* KKShareCollectionView.m in Sources */,
+				93647C8222C30C9B008BCC23 /* KKCacheHelper.m in Sources */,
 				0AC12C35227A659000CF94ED /* UIScrollView+EmptyDataSet.m in Sources */,
 				931F649622BCAAD80039FE51 /* KKShareView.m in Sources */,
 				0AC12C17227A107200CF94ED /* KKPopTransitionAnimation.m in Sources */,
@@ -1432,6 +1487,7 @@
 				0AC12C2C227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
 				93647C7E22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */,
 				0AC12B8E2279F1BC00CF94ED /* KKLanuchViewController.m in Sources */,
+				9353DD4922C355EA009217C1 /* KKAboutusViewController.m in Sources */,
 				0AC12BF9227A107200CF94ED /* KKModel.m in Sources */,
 				0AA4F44A22BA8F9900088493 /* KKHomeViewCell.m in Sources */,
 				0AC12C09227A107200CF94ED /* KKTableViewCell.m in Sources */,
@@ -1458,6 +1514,7 @@
 				0AC12B6D2279EE5900CF94ED /* UITextField+KKEasyReact.m in Sources */,
 				0A6349EE2270B08E00C0D0B0 /* main.m in Sources */,
 				0AC12C11227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
+				9353DD4422C35418009217C1 /* UIViewController+KKAdd.m in Sources */,
 				0A12E8AB22B6798B00851FDB /* KKSettingsViewController.m in Sources */,
 				0AC12C0B227A107200CF94ED /* UIScrollView+KKNavigationBar.m in Sources */,
 				931F648922BB21930039FE51 /* KKWebApi.m in Sources */,
@@ -1514,6 +1571,7 @@
 				0AC12C24227A107200CF94ED /* KKTableView.m in Sources */,
 				0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */,
 				0A0D6A1D227A89AC005BA58F /* JXPagerListContainerView.m in Sources */,
+				93647C8322C30C9B008BCC23 /* KKCacheHelper.m in Sources */,
 				0A429408227CA86D00D7AF09 /* KKTidingViewController.m in Sources */,
 				0AC12C16227A107200CF94ED /* KKPushPopTransitionProtocol.m in Sources */,
 				0A0D6A1F227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
@@ -1528,6 +1586,7 @@
 				0AC12B892279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
 				931F648F22BB6D8A0039FE51 /* WKWebView+KKProgress.m in Sources */,
 				0AC12C06227A107200CF94ED /* KKLabel.m in Sources */,
+				9353DD4522C35418009217C1 /* UIViewController+KKAdd.m in Sources */,
 				93AE775122BCCE510020A2AC /* KKShareCollectionView.m in Sources */,
 				0AC12BA02279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0A12E8C922B67E6200851FDB /* KKLoginViewModel.m in Sources */,
@@ -1541,6 +1600,7 @@
 				931F648A22BB21930039FE51 /* KKWebApi.m in Sources */,
 				93647C7922C1F447008BCC23 /* KKSettingsViewModel.m in Sources */,
 				0AC12BA6227A029300CF94ED /* KKAccountHelper.m in Sources */,
+				9353DD4A22C355EA009217C1 /* KKAboutusViewController.m in Sources */,
 				0A6996EA22C12E750068CB8D /* KKLanguageHelper.m in Sources */,
 				0AC12C02227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
 				0AC12C08227A107200CF94ED /* KKCollectionView.m in Sources */,

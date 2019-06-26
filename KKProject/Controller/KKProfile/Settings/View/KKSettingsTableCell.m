@@ -112,7 +112,7 @@ static inline CGFloat KKCellContentMargin(){
 }
 
 - (CGSize)kk_imageViewSize{
-    return CGSizeMake(CGFloatPixelRound(25), CGFloatPixelRound(25));
+    return CGSizeMake(CGFloatPixelRound(20), CGFloatPixelRound(20));
 }
 
 @end
