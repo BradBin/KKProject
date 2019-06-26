@@ -33,7 +33,7 @@
     
     self.backgroundImagView = ({
         YYAnimatedImageView *imgV = YYAnimatedImageView.alloc.init;
-        imgV.contentMode          = UIViewContentModeScaleAspectFit;
+        imgV.contentMode          = UIViewContentModeScaleAspectFill;
         [self.view addSubview:imgV];
         [self.view insertSubview:imgV atIndex:0];
         [imgV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -58,7 +58,7 @@
 
 -(void)kk_bindViewModel{
     [super kk_bindViewModel];
-    NSURL *url = [NSURL URLWithString:@"http://littlesvr.ca/apng/images/BladeRunner.png"];
+    NSURL *url = [NSURL URLWithString:@"http://www.agri35.com/UploadFiles/img_2_995558030_1079414460_26.jpg"];
     @weakify(self)
     [self.backgroundImagView setImageWithURL:url
                                  placeholder:[UIImage imageNamed:@"placeHolder_avatar.png"]

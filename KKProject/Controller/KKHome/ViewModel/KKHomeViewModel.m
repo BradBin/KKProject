@@ -106,7 +106,7 @@
 
 
 
-NSUInteger const kk_home_page_pageSize = 15;
+NSUInteger const kk_home_page_pageSize = 12;
 @interface KKHomePageViewModel()
 @property (nonatomic,assign) NSUInteger pageIndex;
 @property (nonatomic,strong) NSArray   *footerArray;

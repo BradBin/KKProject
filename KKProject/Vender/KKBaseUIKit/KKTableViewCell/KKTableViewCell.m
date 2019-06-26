@@ -33,9 +33,6 @@
     return self;
 }
 
-
-
-
 -(void)kk_bindViewModel{}
 
 -(void)kk_setupConfigurate{};
@@ -43,25 +40,6 @@
 -(void)kk_setupView{}
 
 -(void)kk_setupAccessoryView{};
-
-
--(UIView *)hLineView{
-    if (_hLineView == nil) {
-        _hLineView = UIView.alloc.init;
-        _hLineView.backgroundColor = UIColor.lightGrayColor;
-        _hLineView.hidden = true;
-    }
-    return _hLineView;
-}
-
--(UIView *)vLineView{
-    if (_vLineView == nil) {
-        _vLineView = UIView.alloc.init;
-        _vLineView.backgroundColor = UIColor.lightGrayColor;
-        _vLineView.hidden = true;
-    }
-    return _vLineView;
-}
 
 /**
  创建YYLabel实例对象
@@ -82,32 +60,4 @@
     return label;
 }
 
-
-
 @end
-
-
-
-
-NSInteger const kkTableViewCellBadge = 'k' + 't' + 'c' + 'b';
-@implementation KKTableViewCell (KKBadge)
-
-
-- (void) kk_resetCell{
-    UIView *view = [self kk_getExistingBadgeValueView];
-    if (view) {
-        [view removeFromSuperview];
-    }
-}
-
-- (UIView *) kk_getExistingBadgeValueView{
-    for (UIView *subView in self.contentView.subviews) {
-        if (subView.tag == kkTableViewCellBadge) {
-            return subView;
-        }
-    }
-    return nil;
-}
-
-@end
-

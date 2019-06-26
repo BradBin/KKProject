@@ -7,10 +7,13 @@
 //
 
 #import "KKTableViewCell.h"
+#import "KKHomeLayout.h"
 
 NS_ASSUME_NONNULL_BEGIN
 UIKIT_EXTERN NSString * const KKHomeViewCellIdentifier;
 @interface KKHomeViewCell : KKTableViewCell
+
+@property (nonatomic,strong) KKHomeLayout *layout;
 
 @end
 

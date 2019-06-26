@@ -32,12 +32,12 @@ static inline CGFloat KKCellContentMargin(){
     // Configure the view for the selected state
 }
 
--(void)kk_setupView{
+- (void)kk_setupView{
     [super kk_setupView];
     
     self.leftImagV = ({
         YYAnimatedImageView *imgV = YYAnimatedImageView.alloc.init;
-        imgV.contentMode = UIViewContentModeScaleAspectFit;
+        imgV.contentMode          = UIViewContentModeScaleAspectFit;
         imgV;
     });
     
@@ -55,7 +55,7 @@ static inline CGFloat KKCellContentMargin(){
     });
 }
 
--(void)kk_showArrow:(BOOL)isShow{
+- (void)kk_showArrow:(BOOL)isShow{
     if (isShow) {
         self.accessoryView = ({
             YYAnimatedImageView *imgV = YYAnimatedImageView.alloc.init;
@@ -74,7 +74,7 @@ static inline CGFloat KKCellContentMargin(){
     }];
 }
 
--(void)setRightView:(UIView *)rightView{
+- (void)setRightView:(UIView *)rightView{
     if (_rightView) {
         [_rightView removeFromSuperview];
     }
@@ -93,7 +93,7 @@ static inline CGFloat KKCellContentMargin(){
     }];
 }
 
--(void)kk_setImage:(UIImage *)image title:(NSString *)title{
+- (void)kk_setImage:(UIImage *)image title:(NSString *)title{
     if (image) {
         [self.contentView addSubview:self.leftImagV];
         [self.leftImagV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -146,7 +146,7 @@ static inline CGFloat KKCellContentMargin(){
     self.rightView = self.sublabel;
 }
 
--(void)kk_setTitle:(NSString *)title subTitle:(NSString *)subtitle{
+- (void)kk_setTitle:(NSString *)title subTitle:(NSString *)subtitle{
     [self kk_setImg:nil title:title subTitle:subtitle];
 }
 
@@ -156,6 +156,10 @@ static inline CGFloat KKCellContentMargin(){
 }
 
 @end
+
+
+
+
 
 @implementation KKTextFieldTableCell
 
@@ -171,14 +175,14 @@ static inline CGFloat KKCellContentMargin(){
     self.rightView = self.textfield;
 }
 
--(void)setRightView:(UIView *)rightView{
+- (void)setRightView:(UIView *)rightView{
     [super setRightView:rightView];
     [rightView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titlelabel.mas_right).offset(KKCellContentMargin());
     }];
 }
 
--(void)setIndexPath:(NSIndexPath *)indexPath{
+- (void)setIndexPath:(NSIndexPath *)indexPath{
     _indexPath = indexPath;
 }
 
