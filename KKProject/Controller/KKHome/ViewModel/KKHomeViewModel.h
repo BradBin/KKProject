@@ -7,6 +7,7 @@
 //
 
 #import "KKViewModel.h"
+#import "KKHomeLayout.h"
 #import "KKHomeModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -35,10 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) RACSubject *refreshCategoryBackUISubject;
 
 /**
- 类别的详情处理ViewModel
+ push VC
  */
-@property (nonatomic,strong) KKHomePageViewModel *homePageVM;
+@property (nonatomic,strong) RACSubject *pushVCSubject;
 
+/**
+ present VC
+ */
+@property (nonatomic,strong) RACSubject *presentVCSubject;
 
 @end
 
@@ -65,22 +70,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  分页列表的数据源
  */
-@property (nonatomic,strong) NSArray     *pageDatas;
+@property (nonatomic,strong) NSMutableArray<KKHomeLayout *> *homeLayouts;
 
 /**
  刷新界面UI
  */
 @property (nonatomic,strong) RACSubject  *refreshUISubject;
 
-/**
- push VC
- */
-@property (nonatomic,strong) RACSubject *pushVCSubject;
 
-/**
- present VC
- */
-@property (nonatomic,strong) RACSubject *presentVCSubject;
 
 @end
 

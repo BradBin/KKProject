@@ -8,18 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger,KKRefreshDataStatus) {
+/**
+ 网络刷新状态
+ */
+typedef NS_ENUM(NSUInteger,KKRefreshStatus) {
+    KKRefreshStatusRefreshUI = 0,//刷新UI
+    KKRefreshStatusNoData, //暂无数据
     
-    KKRefreshDataStatusNoData = 1<<0,   //暂无数据
-    KKRefreshDataStatusRefreshUI,       //刷新界面
-    KKRefreshDataStatusRefreshError,    //错误状态
-    KKRefreshDataStatusRefreshNetworkError,//网络错误状态
+    KKRefreshStatusDataUnexpect, //数据异常
+    KKRefreshStatusDataUnexpect_Header, //数据异常_下拉刷新
+    KKRefreshStatusDataUnexpect_Footer, //数据异常_上拉刷新
     
-    KKRefreshDataStatusFooterMoreData,  //上拉加载_还有数据
-    KKRefreshDataStatusFooterNoMoreData,//上拉加载_没有数据了
+    KKRefreshStatusNetworkError, //网络错误
+    KKRefreshStatusNetworkError_Header, //网络错误_下拉刷新
+    KKRefreshStatusNetworkError_Footer, //网络错误_上拉刷新
     
-    KKRefreshDataStatusHeaderMoreData,  //下拉刷新_有数据
-    KKRefreshDataStatusHeaderNoMoreData //下拉刷洗_没有数据
+    KKRefreshStatusNoMoreData_Header,//没有数据_下拉刷新
+    KKRefreshStatusMoreData_Header,  //有数据_下拉刷新
+    
+    KKRefreshStatusNoMoreData_Footer,//没有数据_上拉刷新
+    KKRefreshStatusMoreData_Footer   //有数据_上拉刷新
 };
 
 @protocol KKViewModelProtocol <NSObject>

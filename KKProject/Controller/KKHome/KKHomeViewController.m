@@ -188,15 +188,15 @@ JXCategoryListContainerViewDelegate>
     }];
     
     //HomePage事件响应 push VC
-    [[self.viewModel.homePageVM.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+    [[self.viewModel.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:KKViewController.class]) {
             [self.navigationController pushViewController:(KKViewController *)x animated:true];
         }
     }];
-    
+
      //HomePage事件响应 present VC
-    [[self.viewModel.homePageVM.presentVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+    [[self.viewModel.presentVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:KKViewController.class]) {
             [self presentViewController:(KKViewController *)x animated:true completion:nil];

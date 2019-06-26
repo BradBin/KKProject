@@ -12,6 +12,7 @@
 
 @interface KKHomeView ()
 @property (nonatomic,strong) KKHomeViewModel *viewModel;
+@property (nonatomic,strong) KKHomePageViewModel *pageViewModel;
 
 @end
 @implementation KKHomeView
@@ -22,9 +23,9 @@
 
 //可选使用，列表显示的时候调用
 - (void)listDidAppear {
-    if (self.viewModel.homePageVM.pageDatas.count == 0) {
-        self.viewModel.homePageVM.categoryModel = self.categoryModel;
-        [self.viewModel.homePageVM.refreshCommand execute:@(true)];
+    if (self.pageViewModel.homeLayouts.count == 0) {
+        self.pageViewModel.categoryModel = self.categoryModel;
+        [self.pageViewModel.refreshCommand execute:@(true)];
         UIColor *categoryBackUIColor;
         if ([self.categoryModel.name isEqualToString:@"北京"]) {
             categoryBackUIColor = [UIColor colorWithHexString:@"#D64D31"];
@@ -54,13 +55,73 @@
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
     [self.tableView registerClass:KKHomeViewCell.class forCellReuseIdentifier:KKHomeViewCellIdentifier];
     
+    @weakify(self);
+    MJRefreshNormalHeader *mjHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self);
+        [self.pageViewModel.refreshCommand execute:@(true)];
+    }];
+    self.tableView.mj_header = mjHeader;
+    
+     MJRefreshAutoGifFooter *mjFooter = [MJRefreshAutoGifFooter footerWithRefreshingBlock:^{
+        @strongify(self);
+        [self.pageViewModel.nextRefreshCommand execute:@(true)];
+    }];
+    self.tableView.mj_footer = mjFooter;
+    
 }
 
 -(void)kk_bindViewModel{
     [super kk_bindViewModel];
-    dispatch_async_on_main_queue(^{
-        [self.tableView reloadData];
-    });
+   
+    @weakify(self);
+    [[self.pageViewModel.refreshUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:NSNumber.class] == false) return ;
+        KKRefreshStatus status = (KKRefreshStatus)[x unsignedIntegerValue];
+        switch (status) {
+            case KKRefreshStatusDataUnexpect_Header:
+                [self.tableView.mj_header endRefreshing];
+                break;
+                
+            case KKRefreshStatusDataUnexpect_Footer:
+                [self.tableView.mj_footer endRefreshing];
+                break;
+                
+            case KKRefreshStatusNetworkError_Header:
+                [self.tableView.mj_header endRefreshing];
+                break;
+                
+            case KKRefreshStatusNetworkError_Footer:
+                [self.tableView.mj_footer endRefreshing];
+                break;
+                
+            case KKRefreshStatusNoMoreData_Header:
+                [self.tableView.mj_header endRefreshing];
+                break;
+                
+            case KKRefreshStatusMoreData_Header:
+                [self.tableView.mj_footer resetNoMoreData];
+                [self.tableView.mj_header endRefreshing];
+                break;
+                
+            case KKRefreshStatusNoMoreData_Footer:
+                [self.tableView.mj_footer endRefreshing];
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                break;
+                
+            case KKRefreshStatusMoreData_Footer:
+                [self.tableView.mj_footer endRefreshing];
+                break;
+                
+            default:
+                break;
+        }
+
+        dispatch_async_on_main_queue(^{
+            [self.tableView reloadData];
+        });
+    }];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -80,12 +141,17 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
-//    [self.viewModel.homePageVM.pushVCSubject sendNext:vc];
-//    [self.viewModel.homePageVM.presentVCSubject sendNext:vc];
+    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
+    [self.viewModel.pushVCSubject sendNext:vc];
+//    [self.viewModel.presentVCSubject sendNext:vc];
 }
 
-
+-(KKHomePageViewModel *)pageViewModel{
+    if (_pageViewModel == nil) {
+        _pageViewModel = KKHomePageViewModel.alloc.init;
+    }
+    return _pageViewModel;
+}
 
 /*
  // Only override drawRect: if you perform custom drawing.

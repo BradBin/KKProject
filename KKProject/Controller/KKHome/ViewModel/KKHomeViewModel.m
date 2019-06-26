@@ -19,7 +19,7 @@
  获取类型标题数据
  */
 - (void) kk_getCategoryTitles{
-   
+    
     @weakify(self);
     [[self.categoryCommand.executionSignals.switchToLatest takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
@@ -32,7 +32,7 @@
                 //数据异常处理
             }
         }else{
-           //数据异常处理
+            //数据异常处理
         }
     }];
     [[self.categoryCommand.errors takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSError * _Nullable x) {
@@ -43,7 +43,7 @@
         @strongify(self);
         [self.categoryUISubject sendNext:x];
     }];
-     [self.categoryCommand execute:@(13)];
+    [self.categoryCommand execute:@(13)];
 }
 
 
@@ -87,24 +87,32 @@
     return _refreshCategoryBackUISubject;
 }
 
--(KKHomePageViewModel *)homePageVM{
-    if (_homePageVM == nil) {
-        _homePageVM = KKHomePageViewModel.alloc.init;
+-(RACSubject *)pushVCSubject{
+    if (_pushVCSubject == nil) {
+        _pushVCSubject = RACSubject.subject;
     }
-    return _homePageVM;
+    return _pushVCSubject;
 }
 
+-(RACSubject *)presentVCSubject{
+    if (_presentVCSubject == nil) {
+        _presentVCSubject = RACSubject.subject;
+    }
+    return _presentVCSubject;
+}
 
 @end
 
 
 
 
-
+NSUInteger const kk_home_page_pageSize = 15;
 @interface KKHomePageViewModel()
 @property (nonatomic,assign) NSUInteger pageIndex;
+@property (nonatomic,strong) NSArray   *footerArray;
 
 @end
+
 @implementation KKHomePageViewModel
 
 -(void)kk_initialize{
@@ -116,11 +124,47 @@
     @weakify(self);
     [[self.refreshCommand.executionSignals.switchToLatest takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [self.refreshUISubject sendNext:nil];
+        if ([x isKindOfClass:KKError.class]) {
+            [self.refreshUISubject sendNext:@(KKRefreshStatusNetworkError_Header)];
+        }else{
+            if ([x isKindOfClass:NSArray.class]) {
+                [self.homeLayouts insertObjects:(NSArray<KKHomeLayout *> *)x atIndex:0];
+                if ([x count] <= kk_home_page_pageSize) {
+                    [self.refreshUISubject sendNext:@(KKRefreshStatusNoMoreData_Header)];
+                }else{
+                    [self.refreshUISubject sendNext:@(KKRefreshStatusMoreData_Header)];
+                }
+            }else{
+                [self.refreshUISubject sendNext:@(KKRefreshStatusDataUnexpect_Header)];
+            }
+        }
     }];
     [[self.refreshCommand.errors takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSError * _Nullable x) {
         @strongify(self);
-        [self.refreshUISubject sendNext:@(KKRefreshDataStatusRefreshNetworkError)];
+        [self.refreshUISubject sendNext:@(KKRefreshStatusNetworkError_Header)];
+    }];
+    
+    [[self.nextRefreshCommand.executionSignals.switchToLatest takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:KKError.class]) {
+            [self.refreshUISubject sendNext:@(KKRefreshStatusNetworkError_Header)];
+        }else{
+            if ([x isKindOfClass:NSArray.class]) {
+                [self.homeLayouts addObjectsFromArray:(NSArray<KKHomeLayout *> *)x];
+                if ([x count] <= kk_home_page_pageSize) {
+                    [self.refreshUISubject sendNext:@(KKRefreshStatusNoMoreData_Footer)];
+                }else{
+                    [self.refreshUISubject sendNext:@(KKRefreshStatusMoreData_Footer)];
+                }
+            }else{
+                [self.refreshUISubject sendNext:@(KKRefreshStatusDataUnexpect_Footer)];
+            }
+        }
+    }];
+    
+    [[self.nextRefreshCommand.errors  takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSError * _Nullable x) {
+        @strongify(self);
+        [self.refreshUISubject sendNext:@(KKRefreshStatusNetworkError_Footer)];
     }];
 }
 
@@ -161,8 +205,13 @@
     [para setObject:KK_ACCOUNT_IID          forKey:@"iid"];
     [para setObject:@"6.2.7"                forKey:@"version_code"];
     [KKNetWorking kk_GetWithUrl:KK_Home_CATEGORY_LIST params:para requestHeader:nil success:^(NSURLResponse *response, id responseObject) {
-        NSArray *array = [NSArray modelArrayWithClass:KKHomePageModel.class json:responseObject];
-        [subscriber sendNext:array];
+        NSArray<KKHomeContentModel *> *array = [NSArray modelArrayWithClass:KKHomePageModel.class json:responseObject];
+        NSMutableArray *layouts = NSMutableArray.array;
+        [array enumerateObjectsUsingBlock:^(KKHomeContentModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            KKHomeLayout *layout = [KKHomeLayout kk_layoutWithModel:obj];
+            [layouts addObject:layout];
+        }];
+        [subscriber sendNext:layouts];
         [subscriber sendCompleted];
     } error:^(NSURLResponse *response, NSError *error) {
         [subscriber sendNext:error];
@@ -172,26 +221,18 @@
     }];
 }
 
+-(NSMutableArray<KKHomeLayout *> *)homeLayouts{
+    if (_homeLayouts == nil) {
+        _homeLayouts = NSMutableArray.array;
+    }
+    return _homeLayouts;
+}
+
 - (RACSubject *)refreshUISubject{
     if (_refreshUISubject == nil) {
         _refreshUISubject = RACSubject.subject;
     }
     return _refreshUISubject;
 }
-
--(RACSubject *)pushVCSubject{
-    if (_pushVCSubject == nil) {
-        _pushVCSubject = RACSubject.subject;
-    }
-    return _pushVCSubject;
-}
-
--(RACSubject *)presentVCSubject{
-    if (_presentVCSubject == nil) {
-        _presentVCSubject = RACSubject.subject;
-    }
-    return _presentVCSubject;
-}
-
 
 @end
