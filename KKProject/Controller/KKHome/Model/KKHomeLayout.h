@@ -14,10 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KKHomeLayout : KKLayout
 @property (nonatomic,assign,readonly) CGFloat height;
 @property (nonatomic,strong,readonly) TextLayout *titleLayout;
+@property (nonatomic,strong,readonly) TextLayout *abstractLayout;
+@property (nonatomic,strong,readonly) TextLayout *authorLayout;
 
-@property (nonatomic,strong,readonly) KKHomeContentModel *content;
+@property (nonatomic,strong,readonly) KKHomeDataContentModel *content;
 
-+ (instancetype)kk_layoutWithModel:(KKHomeContentModel *)content;
++ (instancetype)kk_layoutWithModel:(KKHomeDataContentModel *)content;
 
 @end
 

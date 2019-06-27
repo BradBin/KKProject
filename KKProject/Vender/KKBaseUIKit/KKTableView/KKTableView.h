@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,  copy,nullable) NSString *placerText;     //空视图提示语
 @property (nonatomic,strong,nullable) NSMutableAttributedString *placerDescAttrText; //空视图描述提示语
 @property (nonatomic,strong,nullable) UIImage  *placerImage;    //空视图占位图
+@property (nonatomic,strong,nullable) UILabel  *refreshTipLabel;
 
 @end
 

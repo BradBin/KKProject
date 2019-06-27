@@ -54,6 +54,15 @@
 
 - (void) _kk_commitInit{
     self.loading = false;
+    [self addSubview:self.refreshTipLabel];
+    [self insertSubview:self.refreshTipLabel aboveSubview:self.tableView];
+    [self.refreshTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.refreshTipLabel.superview.mas_top);
+        make.centerX.equalTo(self.refreshTipLabel.superview.mas_centerX);
+        make.width.equalTo(self.refreshTipLabel.superview.mas_width);
+        make.height.mas_equalTo(CGFloatPixelRound(30.0f));
+    }];
+
     [self addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11.0, *)) {
@@ -117,6 +126,20 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.0001f;
 }
+
+
+-(UILabel *)refreshTipLabel{
+    if (_refreshTipLabel == nil) {
+        _refreshTipLabel = UILabel.new;
+        _refreshTipLabel.backgroundColor = [UIColor colorWithRed:214/255.0 green:232/255.0 blue:248/255.0 alpha:1.0];
+        _refreshTipLabel.textColor       = [UIColor colorWithRed:0/255.0   green:135/255.0 blue:211/255.0 alpha:1.0];
+        _refreshTipLabel.font            = [UIFont systemFontOfSize:15];
+        _refreshTipLabel.textAlignment   = NSTextAlignmentCenter;
+//        _refreshTipLabel.hidden          = true;
+    }
+    return _refreshTipLabel;
+}
+
 
 /*
  // Only override drawRect: if you perform custom drawing.

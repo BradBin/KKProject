@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  获取类型标题数据源
  */
-@property (nonatomic,strong) NSArray<KKHomeCategoryModel *> *categoryTitles;
+@property (nonatomic,strong) NSArray<KKHomeCategoryTitleModel *> *categoryTitles;
 
 /**
  刷新category的背景UI
@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  类别模型
  */
-@property (nonatomic,strong) KKHomeCategoryModel *categoryModel;
+@property (nonatomic,strong) KKHomeCategoryTitleModel *categoryModel;
 
 /**
  刷新

@@ -167,6 +167,12 @@
 		9353DD4A22C355EA009217C1 /* KKAboutusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4822C355EA009217C1 /* KKAboutusViewController.m */; };
 		9353DD4E22C36BC4009217C1 /* KKHomeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4D22C36BC4009217C1 /* KKHomeLayout.m */; };
 		9353DD4F22C36BC4009217C1 /* KKHomeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4D22C36BC4009217C1 /* KKHomeLayout.m */; };
+		9353DD5222C45180009217C1 /* KKRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD5122C45180009217C1 /* KKRefreshGifHeader.m */; };
+		9353DD5322C45180009217C1 /* KKRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD5122C45180009217C1 /* KKRefreshGifHeader.m */; };
+		9353DD5622C45198009217C1 /* KKRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD5522C45198009217C1 /* KKRefreshFooter.m */; };
+		9353DD5722C45198009217C1 /* KKRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD5522C45198009217C1 /* KKRefreshFooter.m */; };
+		9353DD5A22C45365009217C1 /* KKRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9353DD5922C45365009217C1 /* KKRefresh.bundle */; };
+		9353DD5B22C45365009217C1 /* KKRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9353DD5922C45365009217C1 /* KKRefresh.bundle */; };
 		93647C7422C1F43A008BCC23 /* KKSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7322C1F43A008BCC23 /* KKSettingsView.m */; };
 		93647C7522C1F43A008BCC23 /* KKSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7322C1F43A008BCC23 /* KKSettingsView.m */; };
 		93647C7822C1F447008BCC23 /* KKSettingsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7722C1F447008BCC23 /* KKSettingsViewModel.m */; };
@@ -175,6 +181,8 @@
 		93647C7F22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */; };
 		93647C8222C30C9B008BCC23 /* KKCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C8122C30C9B008BCC23 /* KKCacheHelper.m */; };
 		93647C8322C30C9B008BCC23 /* KKCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C8122C30C9B008BCC23 /* KKCacheHelper.m */; };
+		938E6E2B22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
+		938E6E2C22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		93AE775022BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93AE775122BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
@@ -380,6 +388,12 @@
 		9353DD4822C355EA009217C1 /* KKAboutusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKAboutusViewController.m; sourceTree = "<group>"; };
 		9353DD4C22C36BC4009217C1 /* KKHomeLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeLayout.h; sourceTree = "<group>"; };
 		9353DD4D22C36BC4009217C1 /* KKHomeLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeLayout.m; sourceTree = "<group>"; };
+		9353DD5022C45180009217C1 /* KKRefreshGifHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKRefreshGifHeader.h; sourceTree = "<group>"; };
+		9353DD5122C45180009217C1 /* KKRefreshGifHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKRefreshGifHeader.m; sourceTree = "<group>"; };
+		9353DD5422C45198009217C1 /* KKRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKRefreshFooter.h; sourceTree = "<group>"; };
+		9353DD5522C45198009217C1 /* KKRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKRefreshFooter.m; sourceTree = "<group>"; };
+		9353DD5922C45365009217C1 /* KKRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KKRefresh.bundle; sourceTree = "<group>"; };
+		9353DD5C22C4551B009217C1 /* KKRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKRefresh.h; sourceTree = "<group>"; };
 		93647C7122C1C810008BCC23 /* KKProjectConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectConst.h; sourceTree = "<group>"; };
 		93647C7222C1F43A008BCC23 /* KKSettingsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSettingsView.h; sourceTree = "<group>"; };
 		93647C7322C1F43A008BCC23 /* KKSettingsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsView.m; sourceTree = "<group>"; };
@@ -389,6 +403,8 @@
 		93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsTableCell.m; sourceTree = "<group>"; };
 		93647C8022C30C9B008BCC23 /* KKCacheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKCacheHelper.h; sourceTree = "<group>"; };
 		93647C8122C30C9B008BCC23 /* KKCacheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKCacheHelper.m; sourceTree = "<group>"; };
+		938E6E2922C4C4E0005CC9AF /* KKToolsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKToolsHelper.h; sourceTree = "<group>"; };
+		938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKToolsHelper.m; sourceTree = "<group>"; };
 		93AE774D22BCCD900020A2AC /* KKShareConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareConst.h; sourceTree = "<group>"; };
 		93AE774E22BCCE510020A2AC /* KKShareCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareCollectionView.h; sourceTree = "<group>"; };
 		93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKShareCollectionView.m; sourceTree = "<group>"; };
@@ -754,6 +770,7 @@
 				0AC12B6A2279EE5900CF94ED /* EasyReact+KKAdd */,
 				0A0D69FF227A8056005BA58F /* KKLoadingPlaceHolderView */,
 				931F649822BCAAE30039FE51 /* KKShareView */,
+				9353DD5822C4519F009217C1 /* KKRefresh */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -833,6 +850,7 @@
 				0AC12BA7227A02A200CF94ED /* KKAccountHelper */,
 				0A6996EB22C12E7F0068CB8D /* KKLanguageHelper */,
 				93647C8422C30CA3008BCC23 /* KKCacheHelper */,
+				938E6E2D22C4C4E7005CC9AF /* KKToolsHelper */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1085,6 +1103,19 @@
 			path = KKAboutus;
 			sourceTree = "<group>";
 		};
+		9353DD5822C4519F009217C1 /* KKRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				9353DD5C22C4551B009217C1 /* KKRefresh.h */,
+				9353DD5922C45365009217C1 /* KKRefresh.bundle */,
+				9353DD5022C45180009217C1 /* KKRefreshGifHeader.h */,
+				9353DD5122C45180009217C1 /* KKRefreshGifHeader.m */,
+				9353DD5422C45198009217C1 /* KKRefreshFooter.h */,
+				9353DD5522C45198009217C1 /* KKRefreshFooter.m */,
+			);
+			path = KKRefresh;
+			sourceTree = "<group>";
+		};
 		93647C7A22C1F458008BCC23 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1112,6 +1143,15 @@
 				93647C8122C30C9B008BCC23 /* KKCacheHelper.m */,
 			);
 			path = KKCacheHelper;
+			sourceTree = "<group>";
+		};
+		938E6E2D22C4C4E7005CC9AF /* KKToolsHelper */ = {
+			isa = PBXGroup;
+			children = (
+				938E6E2922C4C4E0005CC9AF /* KKToolsHelper.h */,
+				938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */,
+			);
+			path = KKToolsHelper;
 			sourceTree = "<group>";
 		};
 		93D3622022812FEB00DD815F /* Model */ = {
@@ -1279,6 +1319,7 @@
 				0AA78904227F42B700242C91 /* tab_search_animate.json in Resources */,
 				9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */,
 				0AA78902227F42B700242C91 /* tab_home_animate.json in Resources */,
+				9353DD5A22C45365009217C1 /* KKRefresh.bundle in Resources */,
 				0A6349E82270B08E00C0D0B0 /* Assets.xcassets in Resources */,
 				0AA78900227F42B700242C91 /* tab_me_animate.json in Resources */,
 				0AC12C1F227A107200CF94ED /* KKNavigationBar.bundle in Resources */,
@@ -1311,6 +1352,7 @@
 				0AC12C20227A107200CF94ED /* KKNavigationBar.bundle in Resources */,
 				0A12E8BB22B67CA100851FDB /* KKCategory.bundle in Resources */,
 				0AA78907227F42B700242C91 /* tab_message_animate.json in Resources */,
+				9353DD5B22C45365009217C1 /* KKRefresh.bundle in Resources */,
 				0A6996E622C122E00068CB8D /* InfoPlist.strings in Resources */,
 				0A634B232270BE2A00C0D0B0 /* Main.storyboard in Resources */,
 			);
@@ -1470,6 +1512,7 @@
 				0AC12B9F2279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0AC12C07227A107200CF94ED /* KKCollectionView.m in Sources */,
 				0AC12C23227A107200CF94ED /* KKTableView.m in Sources */,
+				938E6E2B22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */,
 				0A0D6A20227A89AC005BA58F /* JXPagerView.m in Sources */,
 				931F648E22BB6D8A0039FE51 /* WKWebView+KKProgress.m in Sources */,
 				0A12E8C822B67E6200851FDB /* KKLoginViewModel.m in Sources */,
@@ -1490,6 +1533,7 @@
 				0AC12BEF227A107200CF94ED /* KKTextField.m in Sources */,
 				0AA4F44622BA8A7600088493 /* KKHomeView.m in Sources */,
 				0AC12B9B2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
+				9353DD5222C45180009217C1 /* KKRefreshGifHeader.m in Sources */,
 				0AC12B882279F1BC00CF94ED /* KKHomeViewController.m in Sources */,
 				0AC12C2C227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
 				93647C7E22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */,
@@ -1527,6 +1571,7 @@
 				931F648922BB21930039FE51 /* KKWebApi.m in Sources */,
 				0A429407227CA86D00D7AF09 /* KKTidingViewController.m in Sources */,
 				0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
+				9353DD5622C45198009217C1 /* KKRefreshFooter.m in Sources */,
 				93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */,
 				0A12E8B122B67B6200851FDB /* KKForgetPwdViewController.m in Sources */,
 				93647C7822C1F447008BCC23 /* KKSettingsViewModel.m in Sources */,
@@ -1601,6 +1646,7 @@
 				931F649722BCAAD80039FE51 /* KKShareView.m in Sources */,
 				0AC12BFA227A107200CF94ED /* KKModel.m in Sources */,
 				0AA4F44B22BA8F9900088493 /* KKHomeViewCell.m in Sources */,
+				9353DD5722C45198009217C1 /* KKRefreshFooter.m in Sources */,
 				0AC12C10227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
 				0AC12C12227A107200CF94ED /* UIViewController+KKNavigationBar.m in Sources */,
 				93647C7F22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */,
@@ -1609,6 +1655,7 @@
 				93647C7922C1F447008BCC23 /* KKSettingsViewModel.m in Sources */,
 				0AC12BA6227A029300CF94ED /* KKAccountHelper.m in Sources */,
 				9353DD4A22C355EA009217C1 /* KKAboutusViewController.m in Sources */,
+				9353DD5322C45180009217C1 /* KKRefreshGifHeader.m in Sources */,
 				0A6996EA22C12E750068CB8D /* KKLanguageHelper.m in Sources */,
 				0AC12C02227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
 				0AC12C08227A107200CF94ED /* KKCollectionView.m in Sources */,
@@ -1620,6 +1667,7 @@
 				0A12E8C722B67E6200851FDB /* KKLoginView.m in Sources */,
 				0AC12BF2227A107200CF94ED /* KKButton.m in Sources */,
 				0AC12C31227A62F300CF94ED /* KKLoadingPlaceHolderView.m in Sources */,
+				938E6E2C22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */,
 				0AC12C2D227A13ED00CF94ED /* UIView+KKPlaceHolder.m in Sources */,
 				0AC12BF8227A107200CF94ED /* KKView.m in Sources */,
 				0AA4F45322BBDE5E00088493 /* UISearchBar+KKAdd.m in Sources */,

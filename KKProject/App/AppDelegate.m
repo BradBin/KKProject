@@ -39,7 +39,7 @@
     //配置云信SDK
     [self setupNIM];
     //网络BASE_URL
-    [KKNetWorking updateBaseUrl:KK_BASE_URL];
+    [self setupNetwork];
     //配置主控制
     [self setupMainVC];
     
@@ -107,6 +107,16 @@
     option.apnsCername   = @"";
     option.pkCername     = @"";
     [NIMSDK.sharedSDK registerWithOption:option];
+}
+
+
+
+/**
+ 配置网络
+ */
+- (void) setupNetwork{
+    [KKNetWorking updateBaseUrl:KK_BASE_URL];
+    [KKNetWorking enableFormatterResponse:false];
 }
 
 /**

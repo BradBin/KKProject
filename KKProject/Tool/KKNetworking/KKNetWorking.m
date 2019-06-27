@@ -12,9 +12,10 @@
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 static NSString *kk_privateNetworkBaseUrl = nil;
-static BOOL kk_isEnableInterfaceDebug = YES;
-static BOOL kk_shouldAutoEncode = NO;
-static NSDictionary *kk_httpHeaders = nil;
+static BOOL kk_isEnableInterfaceDebug     = YES;
+static BOOL kk_isEnableResponse           = YES;
+static BOOL kk_shouldAutoEncode           = NO;
+static NSDictionary *kk_httpHeaders       = nil;
 static KKResponseType kk_responseType = kKKResponseTypeJSON;
 static KKRequestType  kk_requestType  = kKKRequestTypeJSON;
 static NSMutableArray *kk_requestTasks;
@@ -53,6 +54,15 @@ static BOOL kk_shoulObtainLocalWhenUnconnected = NO;
 
 + (BOOL)isDebug {
     return kk_isEnableInterfaceDebug;
+}
+
+
++ (void)enableFormatterResponse:(BOOL)isResponse{
+    kk_isEnableResponse = isResponse;
+}
+
++ (BOOL)isResponse{
+    return kk_isEnableResponse;
 }
 
 static inline NSString *cachePath() {
@@ -626,12 +636,11 @@ static inline NSString *cachePath() {
             return;
         }
         if (success) {
-            if (responseObj[@"data"] && [responseObj[@"data"] class] != [NSNull class] ) {
+            if (responseObj[@"data"] && [responseObj[@"data"] class] != [NSNull class] && [self isResponse]) {
                 success(response,responseObj[@"data"]);
             } else {
                 success(response,responseObj);
             }
-            
             return;
         }
     }

@@ -234,11 +234,11 @@ JXCategoryListContainerViewDelegate>
 #pragma mark -
 #pragma mark - JXCategoryViewDelegate
 - (void)categoryView:(JXCategoryBaseView *)categoryView didClickSelectedItemAtIndex:(NSInteger)index {
-    NSLog(@"didClickSelectedItemAtIndex-----%ld",index);
+    //NSLog(@"didClickSelectedItemAtIndex-----%ld",index);
     [self.listContainerView didClickSelectedItemAtIndex:index];
 }
 - (void)categoryView:(JXCategoryBaseView *)categoryView didScrollSelectedItemAtIndex:(NSInteger)index{
-    NSLog(@"didScrollSelectedItemAtIndex-----%ld",index);
+    //NSLog(@"didScrollSelectedItemAtIndex-----%ld",index);
 }
 
 - (void)categoryView:(JXCategoryBaseView *)categoryView scrollingFromLeftIndex:(NSInteger)leftIndex toRightIndex:(NSInteger)rightIndex ratio:(CGFloat)ratio {
@@ -252,7 +252,7 @@ JXCategoryListContainerViewDelegate>
  */
 - (NSArray *)geTitlestWithModelArray:(NSArray *)array {
     NSMutableArray *results = NSMutableArray.array;
-    for (KKHomeCategoryModel *model in array) {
+    for (KKHomeCategoryTitleModel *model in array) {
         [results addObject:model.name];
     }
     return results;

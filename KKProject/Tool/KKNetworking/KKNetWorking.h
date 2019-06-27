@@ -117,6 +117,14 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  */
 + (void)enableInterfaceDebug:(BOOL)isDebug;
 
+
+/**
+ 是否仅返回成功时,responseObject中key为data的value值(即responseObject[data])
+
+ @param isResponse 默认是true 反之则返回responseObject
+ */
++ (void)enableFormatterResponse:(BOOL)isResponse;
+
 /*!
  *
  *  配置请求格式，默认为JSON。如果要求传XML或者PLIST，请在全局配置一下

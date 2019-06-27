@@ -9,18 +9,19 @@
 #import "KKModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@class KKHomeCategoryModel;
+@class KKHomeCategoryTitleModel;
 @interface KKHomeModel : KKModel
 
-@property (nonatomic,copy) NSString *version;
-@property (nonatomic,strong) NSArray<KKHomeCategoryModel *> *categoryTitles;
+@property (nonatomic,  copy) NSString *version;
+@property (nonatomic,strong) NSArray<KKHomeCategoryTitleModel *> *categoryTitles;
 
 @end
 
 
-
-@interface KKHomeCategoryModel : KKModel
-
+/**
+ 类别标题的model
+ */
+@interface KKHomeCategoryTitleModel : KKModel
 @property (nonatomic,  copy) NSString *category;
 @property (nonatomic,  copy) NSString *concern_id;
 @property (nonatomic,strong) NSNumber *default_add;
@@ -37,20 +38,63 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+/**
+ 类别标题的中详情的model
+ */
+@class KKHomeDataModel,KKHomeTipsModel;
+@interface KKHomeCategoryContentModel : KKModel
+@property (nonatomic,  copy) NSString *has_more;
+@property (nonatomic,  copy) NSString *post_content_hint;
+@property (nonatomic,strong) NSNumber *total_number;
+@property (nonatomic,assign) BOOL      feed_flag;
 
-
-
-@class KKHomeContentModel;
-@interface KKHomePageModel : KKModel
-@property (nonatomic,  copy) NSString *code;
-@property (nonatomic,  copy) NSString *content;
-@property (nonatomic,strong) KKHomeContentModel *contentModel;
+@property (nonatomic,strong) NSArray<KKHomeDataModel *> *data;
+@property (nonatomic,strong) KKHomeTipsModel *tips;
 
 @end
 
 
+/**
+ 类别信息中tips的model
+ */
+@interface KKHomeTipsModel : KKModel
+@property (nonatomic,  copy) NSString *displayTemplate;
+@property (nonatomic,strong) NSString *displayDuration;
+@property (nonatomic,  copy) NSString *displayInfo;
+@property (nonatomic,strong) NSURL    *webUrl;
+
+@property (nonatomic,strong) NSURL    *downloadUrl;
+@property (nonatomic,  copy) NSString *type;
+@property (nonatomic,strong) NSURL    *openUrl;
+@property (nonatomic,  copy) NSString *appName;
+
+@property (nonatomic,  copy) NSString *packageName;
+
+@end
+
+
+
+
+
+/**
+ 类别信息中content的model
+ */
+@class KKHomeDataContentModel;
+@interface KKHomeDataModel : KKModel
+@property (nonatomic,  copy) NSString *code;
+@property (nonatomic,  copy) NSString *content;
+@property (nonatomic,strong) KKHomeDataContentModel *contentModel;
+
+@end
+
+
+typedef NS_ENUM(NSUInteger,KKContentSourceType){
+    KKContentSourceTypeDefault  = 0,
+    KKContentSourceTypeKeynNote = 6,
+    
+};
 @class KKHCTTFilterWordModel,KKHCTTUserInfoModel;
-@interface KKHomeContentModel : KKModel
+@interface KKHomeDataContentModel : KKModel
 @property (nonatomic,  copy) NSString *abstract;
 @property (nonatomic,strong) NSArray *action_list;
 @property (nonatomic,strong) NSNumber *aggr_type;
@@ -105,6 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *need_client_impr_recycle;
 @property (nonatomic, strong) NSNumber *preload_web;
 @property (nonatomic, strong) NSNumber *publish_time;
+@property (nonatomic, strong) NSDate   *publish_date;
 
 @property (nonatomic, strong) NSNumber *read_count;
 @property (nonatomic, strong) NSNumber *repin_count;
@@ -119,6 +164,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL show_portrait_article;
 @property (nonatomic,   copy) NSString *source;
 @property (nonatomic, strong) NSNumber *source_icon_style;
+@property (nonatomic,assign)  KKContentSourceType sourceType;
 @property (nonatomic,   copy) NSString *source_open_url;
 
 @property (nonatomic,   copy) NSString *stick_label;
@@ -154,6 +200,9 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+/**
+ 用户信息Model
+ */
 @interface KKHCTTUserInfoModel : KKModel
 @property (nonatomic, strong) NSURL *avatar_url;
 @property (nonatomic,   copy) NSString *desc;

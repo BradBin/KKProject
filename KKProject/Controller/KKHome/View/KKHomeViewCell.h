@@ -15,6 +15,19 @@ UIKIT_EXTERN NSString * const KKHomeViewCellIdentifier;
 
 @property (nonatomic,strong) KKHomeLayout *layout;
 
+@property (nonatomic,strong) UIView  *lineView;
+@property (nonatomic,strong) YYLabel *titlelabel;
+@property (nonatomic,strong) YYLabel *abstractlabel;
+@property (nonatomic,strong) YYLabel *authorlabel;
+@property (nonatomic,strong) YYAnimatedImageView *previewImgV;
+
+@end
+
+
+
+UIKIT_EXTERN NSString * const KKHomeViewImageCellIdentifier;
+@interface KKHomeViewImageCell : KKHomeViewCell
+
 @end
 
 NS_ASSUME_NONNULL_END

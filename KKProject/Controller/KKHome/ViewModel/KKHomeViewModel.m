@@ -56,7 +56,7 @@
                 [para setObject:KK_ACCOUNT_IID forKey:@"iid"];
                 [para setObject:@(13)          forKey:@"aid"];
                 [KKNetWorking kk_GetWithUrl:KK_CATEGORY_TITLE params:para requestHeader:nil success:^(NSURLResponse *response, id responseObject) {
-                    KKHomeModel *model = [KKHomeModel modelWithJSON:responseObject];
+                    KKHomeModel *model = [KKHomeModel modelWithJSON:responseObject[KKData]];
                     [subscriber sendNext:model];
                     [subscriber sendCompleted];
                 } error:^(NSURLResponse *response, NSError *error) {
@@ -199,16 +199,17 @@ NSUInteger const kk_home_page_pageSize = 12;
 
 - (void) kk_getHomeListWithSubscriber:(id<RACSubscriber>)subscriber{
     NSMutableDictionary *para = NSMutableDictionary.dictionary;
-    [para setObject:self.categoryModel.type forKey:@"category"];
-    [para setObject:kk_DEVICE_ID            forKey:@"device_id"];
-    [para setObject:@"iphone"               forKey:@"device_platform"];
-    [para setObject:KK_ACCOUNT_IID          forKey:@"iid"];
-    [para setObject:@"6.2.7"                forKey:@"version_code"];
+    [para setObject:self.categoryModel.category forKey:@"category"];
+    [para setObject:kk_DEVICE_ID                forKey:@"device_id"];
+    [para setObject:@"iphone"                   forKey:@"device_platform"];
+    [para setObject:KK_ACCOUNT_IID              forKey:@"iid"];
+    [para setObject:@"6.2.7"                    forKey:@"version_code"];
     [KKNetWorking kk_GetWithUrl:KK_Home_CATEGORY_LIST params:para requestHeader:nil success:^(NSURLResponse *response, id responseObject) {
-        NSArray<KKHomeContentModel *> *array = [NSArray modelArrayWithClass:KKHomePageModel.class json:responseObject];
+        
+        KKHomeCategoryContentModel *model = [KKHomeCategoryContentModel modelWithJSON:responseObject];
         NSMutableArray *layouts = NSMutableArray.array;
-        [array enumerateObjectsUsingBlock:^(KKHomeContentModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            KKHomeLayout *layout = [KKHomeLayout kk_layoutWithModel:obj];
+        [model.data enumerateObjectsUsingBlock:^(KKHomeDataModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            KKHomeLayout *layout = [KKHomeLayout kk_layoutWithModel:obj.contentModel];
             [layouts addObject:layout];
         }];
         [subscriber sendNext:layouts];
