@@ -54,8 +54,6 @@ static NSInteger channelCount        = 0;
     [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
-
-
 - (instancetype)kk_updateConfigure:(void (^)(KKChannelView * _Nonnull))block{
     if (block) block(self);
     return self;

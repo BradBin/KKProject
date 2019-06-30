@@ -26,20 +26,15 @@
     if (self) {
         [self.backgroundView removeFromSuperview];
         [self kk_setupView];
-        [self kk_setupConfigurate];
         [self kk_bindViewModel];
-        [self kk_setupAccessoryView];
     }
     return self;
 }
 
--(void)kk_bindViewModel{}
-
--(void)kk_setupConfigurate{};
-
 -(void)kk_setupView{}
 
--(void)kk_setupAccessoryView{};
+-(void)kk_bindViewModel{}
+
 
 /**
  创建YYLabel实例对象
@@ -59,5 +54,26 @@
     label.hidden                 = hidden;
     return label;
 }
+
+
+-(UIImageView *)setImageWithURL:(NSURL *)url imageView:(UIImageView *)imageView{
+    @weakify(imageView);
+    [imageView setImageWithURL:url placeholder:[UIImage imageWithColor:[UIColor colorWithHexString:@"#EFEFEF"]] options:YYWebImageOptionProgressiveBlur progress:nil transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+        @strongify(imageView);
+        if (imageView == nil) return;
+        if (image && stage == YYWebImageStageFinished) {
+            ((YYAnimatedImageView *)imageView).image = image;
+            if (from != YYWebImageFromMemoryCacheFast) {
+                CATransition *transition = [CATransition animation];
+                transition.duration = 0.15;
+                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+                transition.type = kCATransitionFade;
+                [imageView.layer addAnimation:transition forKey:@"contents"];
+            }
+        }
+    }];
+    return imageView;
+}
+
 
 @end

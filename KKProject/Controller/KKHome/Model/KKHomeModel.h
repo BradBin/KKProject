@@ -88,24 +88,29 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-typedef NS_ENUM(NSUInteger,KKContentSourceType){
-    KKContentSourceTypeDefault  = 0,
-    KKContentSourceTypeKeynNote = 6,
-    
+
+typedef NS_ENUM(NSUInteger,KKHomeDataFileType) {
+    KKHomeDataFileTypeImage_None        = 0,
+    KKHomeDataFileTypeImage_Video       = 1,
+    KKHomeDataFileTypeImage_Single      = 2,
+    KKHomeDataFileTypeImage_Mutli       = 3
 };
-@class KKHCTTFilterWordModel,KKHCTTUserInfoModel;
+
+@class KKHCTTFilterWordModel,
+KKHCTTUserInfoModel,
+KKHCTTImageModel,KKHCTTShareInfoModel;
 @interface KKHomeDataContentModel : KKModel
 @property (nonatomic,  copy) NSString *abstract;
-@property (nonatomic,strong) NSArray *action_list;
+@property (nonatomic,strong) NSArray  *action_list;
 @property (nonatomic,strong) NSNumber *aggr_type;
-@property (nonatomic,assign) BOOL allow_download;
+@property (nonatomic,assign) BOOL      allow_download;
 
 @property (nonatomic, strong) NSNumber *article_sub_type;
 @property (nonatomic, strong) NSNumber *article_type;
-@property (nonatomic, strong) NSURL *article_url;
+@property (nonatomic, strong) NSURL    *article_url;
 @property (nonatomic, strong) NSNumber *article_version;
 
-@property (nonatomic, strong) NSNumber *ban_comment;
+@property (nonatomic, strong) NSNumber *ban_comment;//是否禁止评论 1:禁止
 @property (nonatomic, strong) NSNumber *behot_time;
 @property (nonatomic, strong) NSNumber *bury_count;
 @property (nonatomic, strong) NSNumber *cell_flag;
@@ -123,11 +128,21 @@ typedef NS_ENUM(NSUInteger,KKContentSourceType){
 @property (nonatomic, strong) NSArray<KKHCTTFilterWordModel *> *filter_words;
 @property (nonatomic, strong) NSNumber *forward_info;
 @property (nonatomic, strong) NSNumber *group_id;
-@property (nonatomic, assign) BOOL has_m3u8_video;
 
-@property (nonatomic, strong) NSNumber *has_mp4_video;
+@property (nonatomic, assign) BOOL has_image;
+@property (nonatomic, assign) KKHomeDataFileType type;
+@property (nonatomic, strong) KKHCTTImageModel *middle_image;
+@property (nonatomic, strong) KKHCTTImageModel *large_image;
+@property (nonatomic, strong) NSArray<KKHCTTImageModel *> *large_image_list;
+@property (nonatomic, strong) NSArray<KKHCTTImageModel *> *image_list;
+@property (nonatomic, strong) NSArray<KKHCTTImageModel *> *thumb_image_list;
+@property (nonatomic, strong) NSArray<KKHCTTImageModel *> *ugc_cut_image_list;
+
+
+@property (nonatomic, assign) BOOL has_m3u8_video;
+@property (nonatomic, assign) BOOL *has_mp4_video;
 @property (nonatomic, assign) BOOL has_video;
-@property (nonatomic, strong) NSNumber *hot;
+@property (nonatomic, strong) NSNumber *hot;//是否是热门
 @property (nonatomic, strong) NSNumber *ignore_web_transform;
 
 @property (nonatomic,   copy) NSString *interaction_data;
@@ -156,7 +171,7 @@ typedef NS_ENUM(NSUInteger,KKContentSourceType){
 @property (nonatomic,   copy) NSString *rid;
 @property (nonatomic, strong) NSNumber *share_count;
 
-@property (nonatomic, strong) NSDictionary *share_info;
+@property (nonatomic, strong) KKHCTTShareInfoModel *share_info;
 @property (nonatomic, strong) NSURL *share_url;
 @property (nonatomic, assign) BOOL show_dislike;
 @property (nonatomic, assign) BOOL show_portrait;
@@ -164,7 +179,6 @@ typedef NS_ENUM(NSUInteger,KKContentSourceType){
 @property (nonatomic, assign) BOOL show_portrait_article;
 @property (nonatomic,   copy) NSString *source;
 @property (nonatomic, strong) NSNumber *source_icon_style;
-@property (nonatomic,assign)  KKContentSourceType sourceType;
 @property (nonatomic,   copy) NSString *source_open_url;
 
 @property (nonatomic,   copy) NSString *stick_label;
@@ -200,6 +214,27 @@ typedef NS_ENUM(NSUInteger,KKContentSourceType){
 @end
 
 
+
+
+/**
+ 图片信息Model
+ */
+@interface KKImageUrlList:KKModel
+@property(nonatomic,copy)NSString *url;
+@end
+
+@interface KKHCTTImageModel : KKModel
+@property (nonatomic, assign)CGFloat height;
+@property (nonatomic, assign)CGFloat width;
+//@property (nonatomic,  copy)NSString *uri;
+@property (nonatomic, strong)NSURL *url;
+@property (nonatomic,   copy)NSString *desc;
+@property (nonatomic, strong)UIImage *image;
+@property (nonatomic,   copy)NSArray<KKImageUrlList *> *url_list;//只有一个键值对，key值为url
+
+@end
+
+
 /**
  用户信息Model
  */
@@ -220,9 +255,31 @@ typedef NS_ENUM(NSUInteger,KKContentSourceType){
 @end
 
 
+@class KKHCTTWeixinCoverImageModel;
+@interface KKHCTTShareInfoModel : KKModel
+@property (nonatomic, strong) KKHCTTWeixinCoverImageModel *weixin_cover_image;
+@property (nonatomic, strong) NSNumber *width;
+@property (nonatomic, strong) NSNumber *height;
+
+@property (nonatomic, strong) NSNumber *on_suppress;
+@property (nonatomic, strong) NSNumber *token_type;
+@property (nonatomic, strong) NSURL   *cover_image;
+@property (nonatomic,   copy) NSString *title;
+
+@property (nonatomic, strong) NSURL *share_url;
+
+@end
 
 
 
 
+@interface KKHCTTWeixinCoverImageModel : KKModel
+@property (nonatomic, strong) NSNumber *width;
+@property (nonatomic, strong) NSNumber *height;
+@property (nonatomic,   copy) NSString *uri;
+@property (nonatomic, strong) NSURL    *url;
+@property (nonatomic, strong) NSArray<KKImageUrlList *> *url_list;
+
+@end
 
 NS_ASSUME_NONNULL_END

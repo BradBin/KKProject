@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong,readonly) TextLayout *abstractLayout;
 @property (nonatomic,strong,readonly) TextLayout *authorLayout;
 
+@property (nonatomic,assign,readonly) CGFloat     pictureHeight;
+@property (nonatomic,assign,readonly) CGFloat     videoHeight;
+
 @property (nonatomic,strong,readonly) KKHomeDataContentModel *content;
 
 + (instancetype)kk_layoutWithModel:(KKHomeDataContentModel *)content;

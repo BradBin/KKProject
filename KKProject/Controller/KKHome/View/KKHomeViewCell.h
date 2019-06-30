@@ -10,16 +10,22 @@
 #import "KKHomeLayout.h"
 
 NS_ASSUME_NONNULL_BEGIN
-UIKIT_EXTERN NSString * const KKHomeViewCellIdentifier;
+
 @interface KKHomeViewCell : KKTableViewCell
 
 @property (nonatomic,strong) KKHomeLayout *layout;
-
 @property (nonatomic,strong) UIView  *lineView;
 @property (nonatomic,strong) YYLabel *titlelabel;
 @property (nonatomic,strong) YYLabel *abstractlabel;
 @property (nonatomic,strong) YYLabel *authorlabel;
-@property (nonatomic,strong) YYAnimatedImageView *previewImgV;
+@property (nonatomic,strong) YYAnimatedImageView *rightImgV;
+
+@end
+
+
+
+UIKIT_EXTERN NSString * const KKHomeViewTextCellIdentifier;
+@interface KKHomeViewTextCell : KKHomeViewCell
 
 @end
 
@@ -27,6 +33,22 @@ UIKIT_EXTERN NSString * const KKHomeViewCellIdentifier;
 
 UIKIT_EXTERN NSString * const KKHomeViewImageCellIdentifier;
 @interface KKHomeViewImageCell : KKHomeViewCell
+@property (nonatomic,strong) YYAnimatedImageView *leftImgV;
+@property (nonatomic,strong) YYAnimatedImageView *midImgV;
+
+@end
+
+
+UIKIT_EXTERN NSString * const KKHomeViewRightImageCellIdentifier;
+@interface KKHomeViewRightImageCell : KKHomeViewCell
+
+@end
+
+
+
+UIKIT_EXTERN NSString * const KKHomeViewVideoCellIdentifier;
+@interface KKHomeViewVideoCell : KKHomeViewCell
+@property (nonatomic,strong) YYAnimatedImageView *coverImgV;
 
 @end
 

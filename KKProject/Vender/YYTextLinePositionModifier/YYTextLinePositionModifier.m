@@ -290,8 +290,8 @@
                                      insets:(UIEdgeInsets)insets
                                 containSize:(CGSize)containSize{
     
-    TextLayout *layout = TextLayout.layout;
-    CGFloat textHeight = 0;
+    TextLayout   *layout = TextLayout.layout;
+    CGFloat       textHeight = 0;
     YYTextLayout *textLayout = nil;
     if (attributedString.length == 0 || attributedString == nil) return layout ;
     
@@ -300,12 +300,12 @@
     
     text.font = attributedString.font;
     YYTextLinePositionModifier *modifier = [YYTextLinePositionModifier new];
-    modifier.font = attributedString.font;
-    modifier.paddingTop = paddingTop > 2.1 ? paddingTop : 2.1;
-    modifier.paddingBottom = paddingBottom> 2.1 ? paddingBottom : 2.1;
+    modifier.font          = attributedString.font;
+    modifier.paddingTop    = paddingTop    > 2.1 ? paddingTop : 2.1;
+    modifier.paddingBottom = paddingBottom > 2.1 ? paddingBottom : 2.1;
     
     YYTextContainer *container = [YYTextContainer new];
-    container.size = containSize;
+    container.size   = containSize;
     container.insets = insets;
     container.linePositionModifier = modifier;
     container.maximumNumberOfRows  = maxRows ? maxRows : 0;

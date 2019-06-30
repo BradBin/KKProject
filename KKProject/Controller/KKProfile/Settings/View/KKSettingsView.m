@@ -13,6 +13,7 @@
 @interface KKSettingsView ()
 @property (nonatomic,strong) KKSettingsViewModel *viewModel;
 @property (nonatomic,strong) UISwitch            *autoPlayWithWiFi;
+@property (nonatomic,strong) UISwitch            *showAbstract;
 
 @end
 
@@ -41,6 +42,11 @@
     [[[self.autoPlayWithWiFi rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
         @strongify(self);
         NSLog(@"autoPlayWithWiFi---------------%@",x);
+    }];
+    
+    [[[self.showAbstract rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
+        @strongify(self);
+        NSLog(@"showAbstract---------------%@",x);
     }];
     
     [[self.viewModel.changeLanguageSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
@@ -113,6 +119,8 @@
     NSString *title = [dict objectForKey:KKTitle];
     if ([title containsString:@"WiFi"]) {
         settingsCell.rightView = self.autoPlayWithWiFi;
+    }else if ([title containsString:@"摘要"]){
+        settingsCell.rightView = self.showAbstract;
     }else if ([title containsString:@"缓存"]){
         ((YYLabel *)settingsCell.rightView).text = [NSString stringWithFormat:@"%.2fM",[KKCacheHelper.shared imageCache]];
     }else if ([title containsString:@"聊天"]){
@@ -125,10 +133,10 @@
     NSDictionary *dict = ((NSArray *)self.viewModel.dataSources[indexPath.section])[indexPath.row];
     
     if (dict[KKNextVCClass]) {
-         NSString *className = dict[KKNextVCClass];
+        NSString *className = dict[KKNextVCClass];
         Class class = NSClassFromString(className);
         if (class) {
-             [self.viewModel.pushVCSubject sendNext:[[class alloc] init]];
+            [self.viewModel.pushVCSubject sendNext:[[class alloc] init]];
         }
     }else if ([dict objectForKey:KKClickAction]) {
         void(^action)(void) = [dict objectForKey:KKClickAction];
@@ -157,14 +165,20 @@
     return 30;
 }
 
-
-
 - (UISwitch *)autoPlayWithWiFi{
     if (_autoPlayWithWiFi == nil) {
         _autoPlayWithWiFi           = UISwitch.alloc.init;
         _autoPlayWithWiFi.transform = CGAffineTransformMakeScale(0.75, 0.75);
     }
     return _autoPlayWithWiFi;
+}
+
+- (UISwitch *)showAbstract{
+    if (_showAbstract == nil) {
+        _showAbstract           = UISwitch.alloc.init;
+        _showAbstract.transform = CGAffineTransformMakeScale(0.75, 0.75);
+    }
+    return _showAbstract;
 }
 
 /*

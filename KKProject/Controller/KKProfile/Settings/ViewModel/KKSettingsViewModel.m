@@ -51,6 +51,11 @@ NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
                              ],
                          @[
                              @{
+                                 KKTitle          :@"内容摘要",
+                                 KKCellIdentifier :KKRightViewCellIdentifier,
+                                 KKNeedArrow      :@(false),
+                                 },
+                             @{
                                  KKTitle          :@"WiFi自动播放视频",
                                  KKCellIdentifier :KKRightViewCellIdentifier,
                                  KKNeedArrow      :@(false),

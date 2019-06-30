@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A042E7922C7BEBB009921D6 /* KKDragableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7822C7BEBB009921D6 /* KKDragableView.m */; };
+		0A042E7A22C7BEBB009921D6 /* KKDragableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7822C7BEBB009921D6 /* KKDragableView.m */; };
+		0A042E7D22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */; };
+		0A042E7E22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */; };
+		0A042E8122C8764F009921D6 /* KKImageZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E8022C8764F009921D6 /* KKImageZoomView.m */; };
+		0A042E8222C8764F009921D6 /* KKImageZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E8022C8764F009921D6 /* KKImageZoomView.m */; };
+		0A042E8D22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E8C22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m */; };
+		0A042E8E22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E8C22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m */; };
 		0A0D6A1C227A89AC005BA58F /* JXPagerListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */; };
 		0A0D6A1D227A89AC005BA58F /* JXPagerListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */; };
 		0A0D6A1E227A89AC005BA58F /* JXPagerMainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D6A15227A89AC005BA58F /* JXPagerMainTableView.m */; };
@@ -195,6 +203,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A042E7722C7BEBB009921D6 /* KKDragableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDragableView.h; sourceTree = "<group>"; };
+		0A042E7822C7BEBB009921D6 /* KKDragableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDragableView.m; sourceTree = "<group>"; };
+		0A042E7B22C7C1E9009921D6 /* KKNormalNewsDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNormalNewsDetailView.h; sourceTree = "<group>"; };
+		0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNormalNewsDetailView.m; sourceTree = "<group>"; };
+		0A042E7F22C8764F009921D6 /* KKImageZoomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKImageZoomView.h; sourceTree = "<group>"; };
+		0A042E8022C8764F009921D6 /* KKImageZoomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKImageZoomView.m; sourceTree = "<group>"; };
+		0A042E8B22C8CC9F009921D6 /* UIView+KKGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+KKGestureRecognizer.h"; sourceTree = "<group>"; };
+		0A042E8C22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+KKGestureRecognizer.m"; sourceTree = "<group>"; };
 		0A0D69FD227A7049005BA58F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A0D6A14227A89AC005BA58F /* JXPagerListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPagerListContainerView.m; sourceTree = "<group>"; };
 		0A0D6A15227A89AC005BA58F /* JXPagerMainTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPagerMainTableView.m; sourceTree = "<group>"; };
@@ -671,6 +687,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		0A19C4B422C5CE3F0074B031 /* KKDragableView */ = {
+			isa = PBXGroup;
+			children = (
+				0A042E7722C7BEBB009921D6 /* KKDragableView.h */,
+				0A042E7822C7BEBB009921D6 /* KKDragableView.m */,
+				0A042E7F22C8764F009921D6 /* KKImageZoomView.h */,
+				0A042E8022C8764F009921D6 /* KKImageZoomView.m */,
+				0A042E8B22C8CC9F009921D6 /* UIView+KKGestureRecognizer.h */,
+				0A042E8C22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m */,
+			);
+			path = KKDragableView;
+			sourceTree = "<group>";
+		};
 		0A4293FF227CA82D00D7AF09 /* KKTiding */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +817,7 @@
 		0AC12B7F2279F17700CF94ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A19C4B422C5CE3F0074B031 /* KKDragableView */,
 				0A12E8AE22B67B6200851FDB /* KKForgetPwd */,
 				0AC12B902279F23700CF94ED /* KKLanuch */,
 				0AC12BA12279FCAF00CF94ED /* KKLogin */,
@@ -1181,6 +1211,8 @@
 				0AA4F44922BA8F9900088493 /* KKHomeViewCell.m */,
 				93D362262281627700DD815F /* KKChannelView.h */,
 				93D362272281627700DD815F /* KKChannelView.m */,
+				0A042E7B22C7C1E9009921D6 /* KKNormalNewsDetailView.h */,
+				0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1530,6 +1562,7 @@
 				0AC12BF7227A107200CF94ED /* KKView.m in Sources */,
 				93647C7422C1F43A008BCC23 /* KKSettingsView.m in Sources */,
 				0AF1CC982280857F006487CA /* KKNetWorking.m in Sources */,
+				0A042E7D22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */,
 				0AC12BEF227A107200CF94ED /* KKTextField.m in Sources */,
 				0AA4F44622BA8A7600088493 /* KKHomeView.m in Sources */,
 				0AC12B9B2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
@@ -1546,6 +1579,7 @@
 				0AC12C05227A107200CF94ED /* KKLabel.m in Sources */,
 				0AC12B8C2279F1BC00CF94ED /* KKProfileViewController.m in Sources */,
 				0A429402227CA84700D7AF09 /* KKFindViewController.m in Sources */,
+				0A042E8D22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m in Sources */,
 				0AC12C0F227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
 				0A0D6A1E227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
 				0AC12C01227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
@@ -1559,6 +1593,7 @@
 				0AA4F45222BBDE5E00088493 /* UISearchBar+KKAdd.m in Sources */,
 				0AC12C0D227A107200CF94ED /* UINavigationController+KKNavigationBar.m in Sources */,
 				0AC12C13227A107200CF94ED /* UIBarButtonItem+KKNavigationBar.m in Sources */,
+				0A042E8122C8764F009921D6 /* KKImageZoomView.m in Sources */,
 				0A12E8BE22B67CA100851FDB /* UIView+MBProgressHUD.m in Sources */,
 				0AC12BF5227A107200CF94ED /* KKCollectionViewCell.m in Sources */,
 				0A6996E922C12E750068CB8D /* KKLanguageHelper.m in Sources */,
@@ -1573,6 +1608,7 @@
 				0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
 				9353DD5622C45198009217C1 /* KKRefreshFooter.m in Sources */,
 				93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */,
+				0A042E7922C7BEBB009921D6 /* KKDragableView.m in Sources */,
 				0A12E8B122B67B6200851FDB /* KKForgetPwdViewController.m in Sources */,
 				93647C7822C1F447008BCC23 /* KKSettingsViewModel.m in Sources */,
 				0A12E8CC22B68A1A00851FDB /* KKAccount.m in Sources */,
@@ -1620,6 +1656,7 @@
 				0A12E8B222B67B6200851FDB /* KKForgetPwdViewController.m in Sources */,
 				0AC12C29227A126100CF94ED /* YYTextLinePositionModifier.m in Sources */,
 				0AC12C0A227A107200CF94ED /* KKTableViewCell.m in Sources */,
+				0A042E7E22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */,
 				0AC12C24227A107200CF94ED /* KKTableView.m in Sources */,
 				0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */,
 				0A0D6A1D227A89AC005BA58F /* JXPagerListContainerView.m in Sources */,
@@ -1674,8 +1711,11 @@
 				0AC12C0E227A107200CF94ED /* UINavigationController+KKNavigationBar.m in Sources */,
 				93D362292281627700DD815F /* KKChannelView.m in Sources */,
 				0A12E8AC22B6798B00851FDB /* KKSettingsViewController.m in Sources */,
+				0A042E8222C8764F009921D6 /* KKImageZoomView.m in Sources */,
+				0A042E8E22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m in Sources */,
 				0AC12C1C227A107200CF94ED /* KKViewController.m in Sources */,
 				0AC12C04227A107200CF94ED /* KKViewModel.m in Sources */,
+				0A042E7A22C7BEBB009921D6 /* KKDragableView.m in Sources */,
 				0AC12BFE227A107200CF94ED /* KKLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

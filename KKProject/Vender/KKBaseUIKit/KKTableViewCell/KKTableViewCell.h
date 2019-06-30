@@ -23,7 +23,9 @@ typedef void(^DidSelectedRow)(id obj,NSIndexPath *indexPath);
  @param textLayout 是否忽略除textLayout以外的属性 true:是 false:不忽略
  @return 实例对象
  */
-- (YYLabel *) createLabelWithHidden:(BOOL) hidden textLayout:(BOOL) textLayout;
+- (YYLabel *) createLabelWithHidden:(BOOL)hidden textLayout:(BOOL)textLayout;
+
+- (UIImageView *) setImageWithURL:(NSURL *)url imageView:(UIImageView *)imageView;
 
 @end
 

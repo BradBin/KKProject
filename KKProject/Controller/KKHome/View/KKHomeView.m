@@ -9,6 +9,7 @@
 #import "KKHomeView.h"
 #import "KKHomeViewCell.h"
 #import "KKWebViewController.h"
+#import "KKNormalNewsDetailView.h"
 
 @interface KKHomeView ()
 @property (nonatomic,strong) KKHomeViewModel *viewModel;
@@ -60,8 +61,10 @@
     [super kk_setupView];
     [self.tableView.backgroundView removeFromSuperview];
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
-    [self.tableView registerClass:KKHomeViewCell.class      forCellReuseIdentifier:KKHomeViewCellIdentifier];
-    [self.tableView registerClass:KKHomeViewImageCell.class forCellReuseIdentifier:KKHomeViewImageCellIdentifier];
+    [self.tableView registerClass:KKHomeViewTextCell.class       forCellReuseIdentifier:KKHomeViewTextCellIdentifier];
+    [self.tableView registerClass:KKHomeViewImageCell.class      forCellReuseIdentifier:KKHomeViewImageCellIdentifier];
+    [self.tableView registerClass:KKHomeViewRightImageCell.class forCellReuseIdentifier:KKHomeViewRightImageCellIdentifier];
+    [self.tableView registerClass:KKHomeViewVideoCell.class      forCellReuseIdentifier:KKHomeViewVideoCellIdentifier];
     
     @weakify(self);
     KKRefreshGifHeader *mjHeader = [KKRefreshGifHeader headerWithRefreshingBlock:^{
@@ -70,7 +73,7 @@
     }];
     self.tableView.mj_header = mjHeader;
     
-     KKRefreshFooter *mjFooter = [KKRefreshFooter footerWithRefreshingBlock:^{
+    KKRefreshFooter *mjFooter = [KKRefreshFooter footerWithRefreshingBlock:^{
         @strongify(self);
         [self.pageViewModel.nextRefreshCommand execute:@(true)];
     }];
@@ -80,7 +83,7 @@
 
 -(void)kk_bindViewModel{
     [super kk_bindViewModel];
-   
+    
     @weakify(self);
     [[self.pageViewModel.refreshUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
@@ -124,32 +127,9 @@
             default:
                 break;
         }
+       
         dispatch_async_on_main_queue(^{
-        
             [self.tableView reloadData];
-            
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                
-                [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(self.tableView.superview.mas_top).mas_offset(self.refreshTipLabel.height);
-                }];
-                
-                [UIView animateWithDuration:0.25 animations:^{
-                    [self layoutIfNeeded];
-                }];
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-                        make.top.equalTo(self.tableView.superview.mas_top).mas_offset(0);
-                    }];
-                    
-                    [UIView animateWithDuration:0.3 animations:^{
-                        [self layoutIfNeeded];
-                    }];
-                });
-            });
-            
-        
         });
     }];
     
@@ -160,17 +140,46 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-     KKHomeLayout *layout = self.pageViewModel.homeLayouts[indexPath.row];
-   
-    NSLog(@"source_icon_style----%@",layout.content.source_icon_style);
-    
-    return [tableView dequeueReusableCellWithIdentifier:KKHomeViewCellIdentifier];
+    KKHomeLayout *layout = self.pageViewModel.homeLayouts[indexPath.row];
+    switch (layout.content.type) {
+        case KKHomeDataFileTypeImage_Video:
+             return [tableView dequeueReusableCellWithIdentifier:KKHomeViewVideoCellIdentifier];
+            break;
+            case KKHomeDataFileTypeImage_Mutli:
+             return [tableView dequeueReusableCellWithIdentifier:KKHomeViewImageCellIdentifier];
+            break;
+        case KKHomeDataFileTypeImage_Single:
+            return [tableView dequeueReusableCellWithIdentifier:KKHomeViewRightImageCellIdentifier];
+            break;
+        default:
+            return [tableView dequeueReusableCellWithIdentifier:KKHomeViewTextCellIdentifier];
+            break;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    KKHomeViewCell *pageCell = (KKHomeViewCell *)cell;
     KKHomeLayout *layout = self.pageViewModel.homeLayouts[indexPath.row];
-    pageCell.layout = layout;
+    switch (layout.content.type) {
+        case KKHomeDataFileTypeImage_Video:
+        {
+            KKHomeViewVideoCell *videoCell = (KKHomeViewVideoCell *)cell;
+            videoCell.layout = layout;
+        }break;
+        case KKHomeDataFileTypeImage_Mutli:
+        {
+            KKHomeViewImageCell *imageCell = (KKHomeViewImageCell *)cell;
+            imageCell.layout = layout;
+        }break;
+        case KKHomeDataFileTypeImage_Single:
+        {
+            KKHomeViewRightImageCell *rightCell = (KKHomeViewRightImageCell *)cell;
+            rightCell.layout = layout;
+        }break;
+        default:{
+            KKHomeViewTextCell *textCell   = (KKHomeViewTextCell *)cell;
+            textCell.layout = layout;
+        }break;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -178,9 +187,21 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
-//    [self.viewModel.pushVCSubject sendNext:vc];
-//    [self.viewModel.presentVCSubject sendNext:vc];
+
+    KKNormalNewsDetailView *view = [[KKNormalNewsDetailView alloc] init];
+    
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
+    [view mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.top.mas_equalTo(0);
+        make.size.mas_equalTo(CGSizeMake(KKScreenWidth(), KKScreenHeight()));
+    }];
+    [view pushViewWithAnimated:true];
+    
+    
+    //    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
+    //    [self.viewModel.pushVCSubject sendNext:vc];
+    //    [self.viewModel.presentVCSubject sendNext:vc];
 }
 
 - (KKHomePageViewModel *)pageViewModel{

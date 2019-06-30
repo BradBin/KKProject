@@ -73,7 +73,7 @@ static inline UIFont *KKDefaultFont(){
  @return 字体大小
  */
 static inline UIFont *KKDefaultTitleFont(){
-    return KKDefaultFontSize(14.0f);
+    return KKDefaultFontSize(16.0f);
 }
 
 /**
@@ -124,4 +124,13 @@ static inline CGFloat KKLayoutMargin(){
  */
 static inline CGFloat KKLayoutContentWidth(){
     return (KKScreenWidth() - KKLayoutMargin() * 2);
+}
+
+/**
+ 新闻类单张图片宽度
+ 
+ @return 容器宽度
+ */
+static inline CGFloat KKLayoutContentImageWidth(){
+    return ((KKLayoutContentWidth() - KKLayoutMargin() * 0.5) * 1.0f/ 3);
 }

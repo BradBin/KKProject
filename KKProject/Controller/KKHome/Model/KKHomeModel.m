@@ -7,7 +7,6 @@
 //
 
 #import "KKHomeModel.h"
-
 @implementation KKHomeModel
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
@@ -20,27 +19,22 @@
              @"categoryTitles" : KKHomeCategoryTitleModel.class
              };
 }
-
 @end
 
 
 @implementation KKHomeCategoryTitleModel
-
 @end
 
 
 
 
 @implementation KKHomeCategoryContentModel
-
-
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
              @"data" : KKHomeDataModel.class,
              @"tips" : KKHomeTipsModel.class
              };
 }
-
 @end
 
 
@@ -60,7 +54,6 @@
              @"webUrl"          : @"web_url",
              };
 }
-
 @end
 
 
@@ -70,17 +63,22 @@
     KKHomeDataContentModel *model = [KKHomeDataContentModel modelWithJSON:self.content];
     return model;
 }
-
 @end
 
 
 @implementation KKHomeDataContentModel
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
-             @"filter_words" : KKHCTTFilterWordModel.class
+             @"share_info"   : KKHCTTShareInfoModel.class,
+             @"filter_words" : KKHCTTFilterWordModel.class,
+             @"middle_image" : KKHCTTImageModel.class,
+             @"large_image"  : KKHCTTImageModel.class,
+             @"large_image_list"   : KKHCTTImageModel.class,
+             @"image_list"         : KKHCTTImageModel.class,
+             @"thumb_image_list"   : KKHCTTImageModel.class,
+             @"ugc_cut_image_list" : KKHCTTImageModel.class
              };
 }
-
 
 -(NSDate *)publish_date{
     NSTimeInterval time = (NSTimeInterval)self.publish_time.doubleValue;
@@ -90,35 +88,19 @@
     return nil;
 }
 
--(KKContentSourceType)sourceType{
-    NSUInteger type = self.source_icon_style.unsignedIntegerValue;
-    switch (type) {
-        case 1:
-            break;
-            
-        case 2:
-            break;
-            
-        case 3:
-            break;
-            
-        case 4:
-            break;
-            
-        case 5:
-            break;
-            
-        case 6:
-            return KKContentSourceTypeKeynNote;
-            break;
-            
-        default:
-            return KKContentSourceTypeDefault;
-            break;
+-(KKHomeDataFileType)type{
+    if (!self.has_image && (self.has_video || self.has_mp4_video || self.has_m3u8_video)) {
+        return KKHomeDataFileTypeImage_Video;
+    }else if (self.has_image && (!self.has_video || !self.has_mp4_video || !self.has_m3u8_video)){
+        if (self.image_list.count >= 3) {
+            return KKHomeDataFileTypeImage_Mutli;
+        }else{
+            return KKHomeDataFileTypeImage_Single;
+        }
+    }else{
+        return KKHomeDataFileTypeImage_None;
     }
-    return KKContentSourceTypeDefault;
 }
-
 @end
 
 
@@ -128,18 +110,55 @@
              @"Id"  : @"id"
              };
 }
-
 @end
 
 
 
 
-@implementation KKHCTTUserInfoModel
+@implementation KKImageUrlList
+- (void)setUrl:(NSString *)url{
+    _url = url ;
+    if(![_url containsString:@"http:"] && ![_url containsString:@"https:"]){
+        _url = [NSString stringWithFormat:@"http:%@",_url];
+    }
+    _url = [_url stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+}
+@end
 
+@implementation KKHCTTImageModel
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"url_list" : KKImageUrlList.class
+             };
+}
+@end
+
+
+@implementation KKHCTTUserInfoModel
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
              @"desc"  : @"description"
              };
 }
+@end
 
+
+@implementation KKHCTTShareInfoModel
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"weixin_cover_image" : KKHCTTWeixinCoverImageModel.class
+             };
+}
+
+
+
+@end
+
+
+@implementation KKHCTTWeixinCoverImageModel
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"url_list" : KKImageUrlList.class
+             };
+}
 @end
