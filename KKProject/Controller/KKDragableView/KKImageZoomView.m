@@ -124,11 +124,11 @@
     
     self.imageView.frame = CGRectMake(0, (imageH > self.height) ? 0 : (self.height - imageH) / 2.0, imageW, imageH);
     
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
     [doubleTap setNumberOfTapsRequired:2];
     [self.imageView addGestureRecognizer:doubleTap];
     
-    UITapGestureRecognizer *singalTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingalTap:)];
+    UITapGestureRecognizer *singalTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingalTapGesture:)];
     [singalTap requireGestureRecognizerToFail:doubleTap]; // 加上这句话可以阻止双击事件被单击事件拦截
     [singalTap setNumberOfTapsRequired:1];
     [self addGestureRecognizer:singalTap];

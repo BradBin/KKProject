@@ -150,9 +150,6 @@ typedef NS_ENUM(NSUInteger,KKMoveDirection) {
 - (void)dragingWithPoint:(CGPoint)pt;
 - (void)dragEndWithPoint:(CGPoint)pt shouldHideView:(BOOL)hideView;
 
-
-
-
 @end
 
 NS_ASSUME_NONNULL_END
