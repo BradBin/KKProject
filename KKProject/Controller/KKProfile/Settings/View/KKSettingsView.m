@@ -40,12 +40,12 @@
     [super kk_bindViewModel];
     @weakify(self);
     [[[self.autoPlayWithWiFi rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
-        @strongify(self);
+   
         NSLog(@"autoPlayWithWiFi---------------%@",x);
     }];
     
     [[[self.showAbstract rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
-        @strongify(self);
+
         NSLog(@"showAbstract---------------%@",x);
     }];
     

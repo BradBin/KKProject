@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0A042E7922C7BEBB009921D6 /* KKDragableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7822C7BEBB009921D6 /* KKDragableView.m */; };
 		0A042E7A22C7BEBB009921D6 /* KKDragableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7822C7BEBB009921D6 /* KKDragableView.m */; };
-		0A042E7D22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */; };
-		0A042E7E22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */; };
 		0A042E8122C8764F009921D6 /* KKImageZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E8022C8764F009921D6 /* KKImageZoomView.m */; };
 		0A042E8222C8764F009921D6 /* KKImageZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E8022C8764F009921D6 /* KKImageZoomView.m */; };
 		0A042E8D22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A042E8C22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m */; };
@@ -193,6 +191,10 @@
 		938E6E2C22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		93AE775022BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
 		93AE775122BCCE510020A2AC /* KKShareCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */; };
+		93B9CB2B22CA09D0005B4F87 /* KKDragableNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */; };
+		93B9CB2C22CA09D0005B4F87 /* KKDragableNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */; };
+		93B9CB2F22CA0D84005B4F87 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */; };
+		93B9CB3022CA0D84005B4F87 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */; };
 		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D3621F22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D362282281627700DD815F /* KKChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D362272281627700DD815F /* KKChannelView.m */; };
@@ -205,8 +207,6 @@
 /* Begin PBXFileReference section */
 		0A042E7722C7BEBB009921D6 /* KKDragableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDragableView.h; sourceTree = "<group>"; };
 		0A042E7822C7BEBB009921D6 /* KKDragableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDragableView.m; sourceTree = "<group>"; };
-		0A042E7B22C7C1E9009921D6 /* KKNormalNewsDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNormalNewsDetailView.h; sourceTree = "<group>"; };
-		0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNormalNewsDetailView.m; sourceTree = "<group>"; };
 		0A042E7F22C8764F009921D6 /* KKImageZoomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKImageZoomView.h; sourceTree = "<group>"; };
 		0A042E8022C8764F009921D6 /* KKImageZoomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKImageZoomView.m; sourceTree = "<group>"; };
 		0A042E8B22C8CC9F009921D6 /* UIView+KKGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+KKGestureRecognizer.h"; sourceTree = "<group>"; };
@@ -424,6 +424,10 @@
 		93AE774D22BCCD900020A2AC /* KKShareConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareConst.h; sourceTree = "<group>"; };
 		93AE774E22BCCE510020A2AC /* KKShareCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKShareCollectionView.h; sourceTree = "<group>"; };
 		93AE774F22BCCE510020A2AC /* KKShareCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKShareCollectionView.m; sourceTree = "<group>"; };
+		93B9CB2922CA09D0005B4F87 /* KKDragableNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDragableNavigationView.h; sourceTree = "<group>"; };
+		93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDragableNavigationView.m; sourceTree = "<group>"; };
+		93B9CB2D22CA0D84005B4F87 /* KKNormalNewsDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNormalNewsDetailView.h; sourceTree = "<group>"; };
+		93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNormalNewsDetailView.m; sourceTree = "<group>"; };
 		93D3621B228123FE00DD815F /* KKProjectAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectAPI.h; sourceTree = "<group>"; };
 		93D3621C22812FE400DD815F /* KKHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeModel.h; sourceTree = "<group>"; };
 		93D3621D22812FE400DD815F /* KKHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeModel.m; sourceTree = "<group>"; };
@@ -692,6 +696,8 @@
 			children = (
 				0A042E7722C7BEBB009921D6 /* KKDragableView.h */,
 				0A042E7822C7BEBB009921D6 /* KKDragableView.m */,
+				93B9CB2922CA09D0005B4F87 /* KKDragableNavigationView.h */,
+				93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */,
 				0A042E7F22C8764F009921D6 /* KKImageZoomView.h */,
 				0A042E8022C8764F009921D6 /* KKImageZoomView.m */,
 				0A042E8B22C8CC9F009921D6 /* UIView+KKGestureRecognizer.h */,
@@ -953,17 +959,17 @@
 		0AC12BCD227A107100CF94ED /* KKNavigationBarCategory */ = {
 			isa = PBXGroup;
 			children = (
-				0AC12BCE227A107100CF94ED /* UIScrollView+KKNavigationBar.m */,
-				0AC12BCF227A107100CF94ED /* UINavigationItem+KKNavigationBar.h */,
-				0AC12BD0227A107100CF94ED /* UIViewController+KKNavigationBar.h */,
-				0AC12BD1227A107100CF94ED /* UINavigationController+KKNavigationBar.m */,
-				0AC12BD2227A107100CF94ED /* UIBarButtonItem+KKNavigationBar.h */,
-				0AC12BD3227A107100CF94ED /* UINavigationItem+KKNavigationBar.m */,
-				0AC12BD4227A107100CF94ED /* UIScrollView+KKNavigationBar.h */,
-				0AC12BD5227A107100CF94ED /* UIViewController+KKNavigationBar.m */,
-				0AC12BD6227A107100CF94ED /* UIBarButtonItem+KKNavigationBar.m */,
-				0AC12BD7227A107100CF94ED /* UINavigationController+KKNavigationBar.h */,
 				0AC12BD8227A107100CF94ED /* KKNavigationBarCategory.h */,
+				0AC12BD4227A107100CF94ED /* UIScrollView+KKNavigationBar.h */,
+				0AC12BCE227A107100CF94ED /* UIScrollView+KKNavigationBar.m */,
+				0AC12BD2227A107100CF94ED /* UIBarButtonItem+KKNavigationBar.h */,
+				0AC12BD6227A107100CF94ED /* UIBarButtonItem+KKNavigationBar.m */,
+				0AC12BCF227A107100CF94ED /* UINavigationItem+KKNavigationBar.h */,
+				0AC12BD7227A107100CF94ED /* UINavigationController+KKNavigationBar.h */,
+				0AC12BD1227A107100CF94ED /* UINavigationController+KKNavigationBar.m */,
+				0AC12BD3227A107100CF94ED /* UINavigationItem+KKNavigationBar.m */,
+				0AC12BD0227A107100CF94ED /* UIViewController+KKNavigationBar.h */,
+				0AC12BD5227A107100CF94ED /* UIViewController+KKNavigationBar.m */,
 			);
 			path = KKNavigationBarCategory;
 			sourceTree = "<group>";
@@ -1211,8 +1217,8 @@
 				0AA4F44922BA8F9900088493 /* KKHomeViewCell.m */,
 				93D362262281627700DD815F /* KKChannelView.h */,
 				93D362272281627700DD815F /* KKChannelView.m */,
-				0A042E7B22C7C1E9009921D6 /* KKNormalNewsDetailView.h */,
-				0A042E7C22C7C1E9009921D6 /* KKNormalNewsDetailView.m */,
+				93B9CB2D22CA0D84005B4F87 /* KKNormalNewsDetailView.h */,
+				93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1562,7 +1568,6 @@
 				0AC12BF7227A107200CF94ED /* KKView.m in Sources */,
 				93647C7422C1F43A008BCC23 /* KKSettingsView.m in Sources */,
 				0AF1CC982280857F006487CA /* KKNetWorking.m in Sources */,
-				0A042E7D22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */,
 				0AC12BEF227A107200CF94ED /* KKTextField.m in Sources */,
 				0AA4F44622BA8A7600088493 /* KKHomeView.m in Sources */,
 				0AC12B9B2279FAE400CF94ED /* KKErrorHelper.m in Sources */,
@@ -1580,6 +1585,7 @@
 				0AC12B8C2279F1BC00CF94ED /* KKProfileViewController.m in Sources */,
 				0A429402227CA84700D7AF09 /* KKFindViewController.m in Sources */,
 				0A042E8D22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m in Sources */,
+				93B9CB2B22CA09D0005B4F87 /* KKDragableNavigationView.m in Sources */,
 				0AC12C0F227A107200CF94ED /* UINavigationItem+KKNavigationBar.m in Sources */,
 				0A0D6A1E227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
 				0AC12C01227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
@@ -1610,6 +1616,7 @@
 				93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */,
 				0A042E7922C7BEBB009921D6 /* KKDragableView.m in Sources */,
 				0A12E8B122B67B6200851FDB /* KKForgetPwdViewController.m in Sources */,
+				93B9CB2F22CA0D84005B4F87 /* KKNormalNewsDetailView.m in Sources */,
 				93647C7822C1F447008BCC23 /* KKSettingsViewModel.m in Sources */,
 				0A12E8CC22B68A1A00851FDB /* KKAccount.m in Sources */,
 				931F648422BB214D0039FE51 /* KKWebViewController.m in Sources */,
@@ -1656,7 +1663,6 @@
 				0A12E8B222B67B6200851FDB /* KKForgetPwdViewController.m in Sources */,
 				0AC12C29227A126100CF94ED /* YYTextLinePositionModifier.m in Sources */,
 				0AC12C0A227A107200CF94ED /* KKTableViewCell.m in Sources */,
-				0A042E7E22C7C1E9009921D6 /* KKNormalNewsDetailView.m in Sources */,
 				0AC12C24227A107200CF94ED /* KKTableView.m in Sources */,
 				0A634B1E2270BE2A00C0D0B0 /* AppDelegate.m in Sources */,
 				0A0D6A1D227A89AC005BA58F /* JXPagerListContainerView.m in Sources */,
@@ -1694,11 +1700,13 @@
 				9353DD4A22C355EA009217C1 /* KKAboutusViewController.m in Sources */,
 				9353DD5322C45180009217C1 /* KKRefreshGifHeader.m in Sources */,
 				0A6996EA22C12E750068CB8D /* KKLanguageHelper.m in Sources */,
+				93B9CB2C22CA09D0005B4F87 /* KKDragableNavigationView.m in Sources */,
 				0AC12C02227A107200CF94ED /* KKCollectionReusableView.m in Sources */,
 				0AC12C08227A107200CF94ED /* KKCollectionView.m in Sources */,
 				0AC12C00227A107200CF94ED /* KKUIKit.m in Sources */,
 				0AC12C1A227A107200CF94ED /* KKPushTransitionAnimation.m in Sources */,
 				0AC12C14227A107200CF94ED /* UIBarButtonItem+KKNavigationBar.m in Sources */,
+				93B9CB3022CA0D84005B4F87 /* KKNormalNewsDetailView.m in Sources */,
 				93D3621F22812FE400DD815F /* KKHomeModel.m in Sources */,
 				0AC12BF6227A107200CF94ED /* KKCollectionViewCell.m in Sources */,
 				0A12E8C722B67E6200851FDB /* KKLoginView.m in Sources */,

@@ -12,7 +12,6 @@
 
 
 static CGFloat const shareDuration = 0.3;
-static NSInteger     shareCount    = 0;
 @interface KKShareView ()<UIGestureRecognizerDelegate>
 @property (nonatomic,strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic,  copy) KKShareBlock hideBlock;

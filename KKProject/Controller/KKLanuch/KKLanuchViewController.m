@@ -18,9 +18,14 @@
 
 @implementation KKLanuchViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+}
 -(void)kk_layoutNavigation{
     [super kk_layoutNavigation];
     self.kk_navigationBar.hidden = true;
+    self.kk_statusBarHidden = true;
 }
 
 - (void)viewDidLoad {

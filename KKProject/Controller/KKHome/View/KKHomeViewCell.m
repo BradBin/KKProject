@@ -405,7 +405,7 @@ NSString * const KKHomeViewVideoCellIdentifier = @"KK.Home.View.Video.Cell.Ident
     [super kk_bindViewModel];
     @weakify(self);
     [[[self.playerBtn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        @strongify(self);
+ 
         NSLog(@"---视频播放----");
     }];
 }

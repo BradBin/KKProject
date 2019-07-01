@@ -189,14 +189,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     KKNormalNewsDetailView *view = [[KKNormalNewsDetailView alloc] init];
-    
-    
     [[UIApplication sharedApplication].keyWindow addSubview:view];
     [view mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(0);
         make.size.mas_equalTo(CGSizeMake(KKScreenWidth(), KKScreenHeight()));
     }];
     [view pushViewWithAnimated:true];
+
     
     
     //    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];

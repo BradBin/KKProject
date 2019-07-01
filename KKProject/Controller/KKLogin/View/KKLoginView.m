@@ -105,7 +105,7 @@
     }];
     
     [self.viewModel.loginCommand.executing subscribeNext:^(NSNumber * _Nullable x) {
-        @strongify(self);
+   
         
     }];
     

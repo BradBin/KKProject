@@ -34,13 +34,22 @@ JXCategoryListContainerViewDelegate>
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.kk_statusBarStyle = UIStatusBarStyleLightContent;
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.kk_statusBarStyle = UIStatusBarStyleDefault;
+}
+
 -(void)kk_layoutNavigation{
     [super kk_layoutNavigation];
     self.kk_navShadowImage       = UIImage.new;
     self.kk_navShadowColor       = UIColor.clearColor;
     self.kk_navigationBar.hidden = true;
 }
-
 
 -(void)kk_addSubviews{
     [super kk_addSubviews];
@@ -146,7 +155,7 @@ JXCategoryListContainerViewDelegate>
     [super kk_bindViewModel];
     @weakify(self);
     [[[self.editBtn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        @strongify(self);
+//        @strongify(self);
 //        [[[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_updateConfigure:^(KKChannelView * _Nonnull channelView) {
 //            channelView.contentView.backgroundColor = UIColor.redColor;
 //            channelView.titlelabel.text = @"fasasfaffa";
@@ -257,9 +266,9 @@ JXCategoryListContainerViewDelegate>
     }
     return results;
 }
+
 #pragma mark -
 #pragma mark - initialize instance
-
 
 - (KKHomeViewModel *)viewModel{
     if (_viewModel == nil) {
@@ -267,7 +276,6 @@ JXCategoryListContainerViewDelegate>
     }
     return _viewModel;
 }
-
 
 /*
  #pragma mark - Navigation

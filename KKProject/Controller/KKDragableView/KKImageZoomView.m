@@ -87,12 +87,13 @@
 
 - (void)showImageWithUrl:(NSString *)imageUrl placeHolder:(UIImage *)placeholder {
     _imageUrl = imageUrl;
- 
-    [[SDImageCache sharedImageCache]queryCacheOperationForKey:_imageUrl done:^(UIImage * _Nullable image, NSData * _Nullable data, SDImageCacheType cacheType) {
-        if(image){
-            [self displayImage:image];
+    __weak __typeof(self) weakSelf = self;
+    [YYImageCache.sharedCache getImageForKey:imageUrl withType:YYImageCacheTypeAll withBlock:^(UIImage * _Nullable image, YYImageCacheType type) {
+        __strong typeof(weakSelf)strongSelf = weakSelf;
+        if (image) {
+            [strongSelf displayImage:image];
         }else{
-            [self loadImageWithUrl:_imageUrl placeHolder:placeholder];
+            [strongSelf loadImageWithUrl:strongSelf.imageUrl placeHolder:placeholder];
         }
     }];
 }
@@ -149,42 +150,41 @@
     [self addSubview:self.imageView];
     
     [self centerImageView:self.imageView];
-    [self showActivityViewWithImage:@"liveroom_rotate_55x55_"];
+//    [self showActivityViewWithImage:@"liveroom_rotate_55x55_"];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
-        [[SDWebImageManager sharedManager]loadImageWithURL:[NSURL URLWithString:url] options:SDWebImageScaleDownLargeImages progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [YYWebImageManager.sharedManager requestImageWithURL:[NSURL URLWithString:url] options:YYWebImageOptionProgressiveBlur progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             
-        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self hiddenActivity];
-                
-                self.imageView.image = image ;
-                
-                CGFloat imageW = self.width;
-                CGFloat rotaion = (image.size.width/(image.size.height > 0 ? image.size.height : imageW)) ;
-                if(rotaion <= 0.0f){
-                    rotaion = 1.0 ;
+        } transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
+            return image;
+        } completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+            dispatch_async_on_main_queue(^{
+//               [self hiddenActivity];
+                self.imageView.image = image;
+                CGFloat imageWidth = self.width;
+                CGFloat rotaion = image.size.width / (image.size.height > 0 ? image.size.height : imageWidth);
+                if (rotaion <= 0.0f) {
+                    rotaion = 1.0f;
                 }
-                CGFloat imageH = imageW/rotaion;
+                CGFloat imageHeight = 1.0f * imageWidth / rotaion;
+                self.contentSize = CGSizeMake(imageWidth, imageHeight);
                 
-                self.contentSize = CGSizeMake(imageW, imageH);
-                
-                [UIView animateWithDuration:0.2 animations:^{
-                    self.imageView.frame = CGRectMake(0, (imageH > self.height) ? 0 : (self.height - imageH) / 2.0, imageW, imageH);
-                }completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.imageView.frame = CGRectMake(0, (imageHeight > self.height)? 0 : (self.height - imageHeight) * 0.5, imageWidth, imageHeight);
                 }];
                 
-                UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
-                [doubleTap setNumberOfTapsRequired:2];
-                [self.imageView addGestureRecognizer:doubleTap];
+                UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTapGesture:)];
+                doubleTapGesture.numberOfTapsRequired = 2;
+                [self.imageView addGestureRecognizer:doubleTapGesture];
                 
-                UITapGestureRecognizer *singalTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingalTap:)];
-                [singalTap requireGestureRecognizerToFail:doubleTap]; // 加上这句话可以阻止双击事件被单击事件拦截
-                [singalTap setNumberOfTapsRequired:1];
-                [self addGestureRecognizer:singalTap];
+                UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingalTapGesture:)];
+                [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
+                singleTapGesture.numberOfTapsRequired = 1;
+                [self addGestureRecognizer:singleTapGesture];
             });
         }];
     });
+
 }
 
 #pragma mark -- 图片居中显示
@@ -209,7 +209,7 @@
 
 #pragma mark -- 双击
 
-- (void)handleDoubleTap:(UIGestureRecognizer *)gesture{
+- (void)handleDoubleTapGesture:(UIGestureRecognizer *)gesture{
     float newScale = self.zoomScale;
     if ([[NSString stringWithFormat:@"%f",newScale] isEqualToString:[NSString stringWithFormat:@"%f",self.minimumZoomScale]]){
         newScale = self.maximumZoomScale;
@@ -229,7 +229,7 @@
 
 #pragma mark -- 单击事件
 
-- (void)handleSingalTap:(UIGestureRecognizer *)theGesture{
+- (void)handleSingalTapGesture:(UIGestureRecognizer *)theGesture{
     if(self.zoomViewDelegate && [self.zoomViewDelegate respondsToSelector:@selector(tapImageZoomView)]){
         [self.zoomViewDelegate tapImageZoomView];
     }
@@ -242,7 +242,7 @@
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView{
-    CGSize boundsSize = self.bounds.size;
+    CGSize boundsSize    = self.bounds.size;
     CGRect frameToCenter = self.imageView.frame;
     
     if (frameToCenter.size.width < boundsSize.width){

@@ -50,35 +50,98 @@ typedef NS_ENUM(NSUInteger,KKMoveDirection) {
 
 @interface KKDragableView : UIView
 
-@property(nonatomic,strong,readonly) UIView *dragViewBg ;//用户设置整个视图的背景
-@property(nonatomic,strong,readonly) UIView *dragContentView ;//需要显示的视图都加到dragContentView里面
+/**
+ 拖动手势的方向
+ */
+@property(nonatomic,assign,readonly) KKMoveDirection dragDirection;
+
+/**
+ 视图显示的类型
+ */
+@property(nonatomic,assign,readonly) KKShowViewType showViewType;
+
+/**
+ 背景视图
+ */
+@property(nonatomic,strong,readonly) UIView *dragBackgroundView;
+
+/**
+ 内容容器视图
+ */
+@property(nonatomic,strong,readonly) UIView *dragContentView;
 
 @property(nonatomic,assign) CGFloat topSpace ;//dragContentView的顶部距离屏幕上方的距离
 @property(nonatomic,assign) CGFloat contentViewCornerRadius;//dragContentView的圆角
 @property(nonatomic,assign) UIRectCorner cornerEdge;//设定dragContentView的哪些边需要圆角
-@property(nonatomic,assign,readonly) KKMoveDirection dragDirection;//拖动的方向
+
 @property(nonatomic,assign) BOOL enableHorizonDrag;//是否允许水平拖拽，默认为YES
 @property(nonatomic,assign) BOOL enableVerticalDrag;//是否允许垂直拖拽，默认为YES
 @property(nonatomic,assign) BOOL enableFreedomDrag;//允许自由拖拽,默认为NO,设为YES，则enableHorizonDrag、enableVerticalDrag自动失效
 @property(nonatomic,assign) BOOL defaultHideAnimateWhenDragFreedom;//自由拖拽时，是否使用默认的隐藏动画，默认为YES
-@property(nonatomic,assign) KKShowViewType showViewType;//pop push
 
 
-#pragma mark -- 视图显示/消失
 
+- (void)setupView;
+
+/**
+ 视图将要显示时,执行的方法
+ */
 - (void)viewWillAppear;
+
+/**
+ 视图显示已完成,执行的方法
+ */
 - (void)viewDidAppear;
+
+/**
+ 视图将要消失时,执行的方法
+ */
 - (void)viewWillDisappear;
+
+/**
+ 视图已经消失,执行的方法
+ */
 - (void)viewDidDisappear;
+
+/**
+ 更新视图的属性
+
+ @param block block
+ */
+- (void)updateBackgroundView:(void(^)(KKDragableView *view))block;
 
 #pragma mark -- 显示与隐藏动画
 
 - (void)startShow;
 - (void)startHide;
 
-- (void)popIn;
+
+/**
+ popup视图
+
+ @param animated true:开启动画  otherwise:关闭动画
+ */
+- (void)popUpViewWithAnimated:(BOOL)animated;
+
+/**
+ 是否允许popup视图,可以向上popOut
+
+ @param toTop  true:允许 otherwise:不允许
+ */
 - (void)popOutToTop:(BOOL)toTop;
+
+/**
+ push视图
+
+ @param animated true:开启动画  otherwise:关闭动画
+ */
 - (void)pushViewWithAnimated:(BOOL)animated;
+
+/**
+ 是否允许向右pushOut视图
+
+ @param toRight true:允许 otherwise:不允许
+ */
 - (void)pushOutToRight:(BOOL)toRight;
 
 #pragma mark -- 开始、拖拽中、结束拖拽

@@ -11,22 +11,22 @@
 #import "UIView+KKGestureRecognizer.h"
 
 CGFloat const gestureMinimumTranslation = 5.0;
-CGFloat const kkDuration = 0.3f;//动画持续时长
+CGFloat const kkDuration                = 0.3f;//动画持续时长
 @interface KKDragableView()<UIGestureRecognizerDelegate,CAAnimationDelegate>
-@property(nonatomic,strong) UIView *dragViewBg ;//用户设置整个视图的背景
-@property(nonatomic,strong) UIView *dragContentView ;//需要显示的视图都加到contentView里面
-@property(nonatomic,strong) UIPanGestureRecognizer *panRecognizer;//拖动视图的手势
-@property(nonatomic,assign) KKMoveDirection dragDirection;//拖动的方向
+@property(nonatomic,strong) UIView                 *dragBackgroundView;
+@property(nonatomic,strong) UIView                 *dragContentView;
+@property(nonatomic,strong) UIPanGestureRecognizer *panRecognizer;
+@property(nonatomic,assign) KKMoveDirection         dragDirection;
+@property(nonatomic,assign) KKShowViewType          showViewType;
 
 @end
 
 @implementation KKDragableView
 
-
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        [self initDragableBaseView];
+        [self setupView];
     }
     return self;
 }
@@ -40,26 +40,26 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
     NSLog(@"%@ dealloc",NSStringFromClass([self class]));
 }
 
-- (void)initDragableBaseView{
-    self.topSpace = 0;
+- (void)setupView{
+    self.topSpace                = 0;
     self.contentViewCornerRadius = 0 ;
-    self.cornerEdge = UIRectCornerAllCorners;
-    self.enableHorizonDrag = YES ;
-    self.enableVerticalDrag = YES ;
-    self.enableFreedomDrag = NO ;
+    self.cornerEdge              = UIRectCornerAllCorners;
+    self.enableHorizonDrag       = YES;
+    self.enableVerticalDrag      = YES;
+    self.enableFreedomDrag       = NO;
     self.defaultHideAnimateWhenDragFreedom = YES ;
     [self addGestureRecognizer:self.panRecognizer];
-    [self addSubview:self.dragViewBg];
+    [self addSubview:self.dragBackgroundView];
     [self addSubview:self.dragContentView];
     
     self.dragContentView.frame = CGRectMake(0, self.topSpace,self.width, self.height - self.topSpace);
     
-    [self.dragViewBg mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.dragBackgroundView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self);
     }];
     
     @weakify(self);
-    [self.dragViewBg addTapGestureWithBlock:^(UIView *gestureView) {
+    [self.dragBackgroundView addTapGestureWithBlock:^(UIView *gestureView) {
         @strongify(self);
         [self startHide];
     }];
@@ -77,13 +77,13 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
                 self.dragDirection = [self determineDirection:point];
                 return ;
             }
-            CGFloat top = fabs(self.dragContentView.top);
+            CGFloat top  = fabs(self.dragContentView.top);
             CGFloat left = fabs(self.dragContentView.left);
             self.dragContentView.centerY = self.dragContentView.centerY + point.y;
             self.dragContentView.centerX = self.dragContentView.centerX + point.x;
-            CGFloat alphaTop = (1.0 - (top - self.topSpace) / self.dragContentView.height) ;
+            CGFloat alphaTop  = (1.0 - (top - self.topSpace) / self.dragContentView.height) ;
             CGFloat alphaLeft = (1.0 - left / self.dragContentView.width) ;
-            self.dragViewBg.alpha = MAX(MIN(alphaTop,alphaLeft),0);
+            self.dragBackgroundView.alpha = MAX(MIN(alphaTop,alphaLeft),0);
             
             [panRecognizer setTranslation:CGPointMake(0, 0) inView:self];
             
@@ -97,7 +97,7 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
                self.dragDirection == KKMoveDirectionDown){
                 if(!self.enableVerticalDrag){
                     self.dragDirection = KKMoveDirectionNone ;
-                    self.dragViewBg.alpha = 1.0 ;
+                    self.dragBackgroundView.alpha = 1.0 ;
                     self.dragContentView.top = self.topSpace;
                     self.dragContentView.layer.transform = CATransform3DIdentity;
                     return ;
@@ -107,9 +107,9 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
                     self.dragContentView.top = self.topSpace ;
                     return ;
                 }
-                self.dragContentView.centerY = self.dragContentView.centerY + point.y;
-                CGFloat alpha = (1.0 - (top - self.topSpace) / self.dragContentView.height) ;
-                self.dragViewBg.alpha = MAX(alpha,0);
+                self.dragContentView.centerY  = self.dragContentView.centerY + point.y;
+                CGFloat alpha                 = (1.0 - (top - self.topSpace) / self.dragContentView.height) ;
+                self.dragBackgroundView.alpha = MAX(alpha,0);
                 
                 [panRecognizer setTranslation:CGPointMake(0, 0) inView:self];
                 
@@ -118,19 +118,18 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
             }else if(self.dragDirection == KKMoveDirectionLeft ||
                      self.dragDirection == KKMoveDirectionRight){
                 if(!self.enableHorizonDrag){
-                    self.dragDirection = KKMoveDirectionNone ;
-                    self.dragViewBg.alpha = 1.0 ;
-                    self.dragContentView.left = 0;
+                    self.dragDirection                   = KKMoveDirectionNone ;
+                    self.dragBackgroundView.alpha        = 1.0 ;
+                    self.dragContentView.left            = 0;
                     self.dragContentView.layer.transform = CATransform3DIdentity;
                     return ;
                 }
                 CGFloat left = self.dragContentView.left;
-                self.dragContentView.centerX = self.dragContentView.centerX + point.x;
-                CGFloat alpha = (1.0 - left / self.dragContentView.width) ;
-                self.dragViewBg.alpha = MAX(alpha,0);
+                self.dragContentView.centerX  = self.dragContentView.centerX + point.x;
+                CGFloat alpha                 = (1.0 - left / self.dragContentView.width) ;
+                self.dragBackgroundView.alpha = MAX(alpha,0);
                 
                 [panRecognizer setTranslation:CGPointMake(0, 0) inView:self];
-                
                 [self dragingWithPoint:[panRecognizer locationInView:self]];
             }
         }
@@ -138,8 +137,8 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
              state == UIGestureRecognizerStateFailed ||
              state == UIGestureRecognizerStateCancelled){
         BOOL shouldHideView = NO ;
-        CGFloat top = self.dragContentView.top;
-        CGFloat left = self.dragContentView.left;
+        CGFloat top        = self.dragContentView.top;
+        CGFloat left       = self.dragContentView.left;
         CGFloat maxOffsetY = self.dragContentView.height / 6 ;
         CGFloat maxOffsetX = self.dragContentView.width / 6 ;
         if(self.enableFreedomDrag){
@@ -185,7 +184,6 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
                 }
             }
         }
-        
         [self dragEndWithPoint:[panRecognizer locationInView:self] shouldHideView:shouldHideView];
         
     }else if(state == UIGestureRecognizerStateBegan){
@@ -233,15 +231,15 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
 #pragma mark -- 恢复视图的正确位置
 
 - (void)restoreView{
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:kkDuration
                           delay:0
          usingSpringWithDamping:0.8
           initialSpringVelocity:2.0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.dragViewBg.alpha = 1.0 ;
-                         self.dragContentView.left = 0;
-                         self.dragContentView.top = self.topSpace;
+                         self.dragBackgroundView.alpha = 1.0 ;
+                         self.dragContentView.left     = 0;
+                         self.dragContentView.top      = self.topSpace;
                          self.dragContentView.layer.transform = CATransform3DIdentity;
                      }completion:^(BOOL finished) {
                          
@@ -251,18 +249,17 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
 #pragma mark -- 显示与隐藏动画
 
 - (void)startShow{
-    
     [self viewWillAppear];
-    self.showViewType = KKShowViewTypeNone;
-    self.dragViewBg.alpha = 0 ;
-    self.dragContentView.top = KKScreenHeight();
+    self.showViewType             = KKShowViewTypeNone;
+    self.dragBackgroundView.alpha = 0 ;
+    self.dragContentView.top      = KKScreenHeight();
     [UIView animateWithDuration:0.4
                           delay:0
          usingSpringWithDamping:0.85
           initialSpringVelocity:5.0
                         options:UIViewAnimationOptionTransitionNone
                      animations:^{
-                         self.dragViewBg.alpha = 1.0 ;
+                         self.dragBackgroundView.alpha = 1.0 ;
                          self.dragContentView.top = self.topSpace;
                      }completion:^(BOOL finished) {
                          [self viewDidAppear];
@@ -272,8 +269,8 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
 - (void)startHide{
     [self viewWillDisappear];
     [UIView animateWithDuration:0.2 animations:^{
-        self.dragViewBg.alpha = 0.0 ;
-        self.dragContentView.top = KKScreenHeight();
+        self.dragBackgroundView.alpha = 0.0 ;
+        self.dragContentView.top      = KKScreenHeight();
     } completion:^(BOOL finished) {
         [self removeGestureRecognizer:self.panRecognizer];
         [self viewDidDisappear];
@@ -281,14 +278,15 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
     }];
 }
 
-- (void)popIn{
+- (void)popUpViewWithAnimated:(BOOL)animated{
     [self viewWillAppear];
-    self.showViewType = KKShowViewTypePopup;
-    self.dragContentView.top = KKScreenHeight();
-    self.dragViewBg.alpha = 0.0;
-    [UIView animateWithDuration:0.3 animations:^{
-        self.dragContentView.top = self.topSpace ;
-        self.dragViewBg.alpha = 1.0;
+    self.showViewType             = KKShowViewTypePopup;
+    self.dragContentView.top      = KKScreenHeight();
+    self.dragBackgroundView.alpha = 0.0;
+    CGFloat duration              = animated ? kkDuration : 0.0;
+    [UIView animateWithDuration:duration animations:^{
+        self.dragContentView.top      = self.topSpace ;
+        self.dragBackgroundView.alpha = 1.0;
     }completion:^(BOOL finished) {
         [self viewDidAppear];
     }];
@@ -296,29 +294,28 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
 
 - (void)popOutToTop:(BOOL)toTop{
     [self viewWillDisappear];
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:kkDuration animations:^{
         if(toTop){
             self.dragContentView.top = -KKScreenHeight() ;
         }else{
             self.dragContentView.top = KKScreenHeight() ;
         }
-        self.dragViewBg.alpha = 0.0 ;
+        self.dragBackgroundView.alpha = 0.0 ;
     }completion:^(BOOL finished) {
         [self viewDidDisappear];
         [self removeFromSuperview];
     }];
 }
 
-
-
 - (void)pushViewWithAnimated:(BOOL)animated{
     [self viewWillAppear];
-    self.showViewType = KKShowViewTypePush;
-    self.dragContentView.left = KKScreenWidth() ;
-    self.dragViewBg.alpha = 0.0;
-    [UIView animateWithDuration:0.3 animations:^{
-        self.dragContentView.left = 0 ;
-        self.dragViewBg.alpha = 1.0;
+    self.showViewType             = KKShowViewTypePush;
+    self.dragContentView.left     = KKScreenWidth() ;
+    self.dragBackgroundView.alpha = 0.0;
+    CGFloat duration              = animated ? kkDuration : 0.0;
+    [UIView animateWithDuration:duration animations:^{
+        self.dragContentView.left     = 0 ;
+        self.dragBackgroundView.alpha = 1.0;
     }completion:^(BOOL finished) {
         [self viewDidAppear];
     }];
@@ -326,13 +323,13 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
 
 - (void)pushOutToRight:(BOOL)toRight{
     [self viewWillDisappear];
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:kkDuration animations:^{
         if(toRight){
             self.dragContentView.left = KKScreenWidth() ;
         }else{
             self.dragContentView.left = -KKScreenWidth() ;
         }
-        self.dragViewBg.alpha = 0.0 ;
+        self.dragBackgroundView.alpha = 0.0 ;
     }completion:^(BOOL finished) {
         [self viewDidDisappear];
         [self removeFromSuperview];
@@ -346,13 +343,13 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
     //与KKImageZoomView的点击、双击手势冲突
     if([view isKindOfClass:[KKImageZoomView class]] &&
        [otherGestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]){
-        return NO ;
+        return false ;
     }else{
         //与上下滚动的视图有冲突
         if ([view isKindOfClass:[UIScrollView class]]) {
             UIScrollView *view = (UIScrollView *)otherGestureRecognizer.view;
             if(view.contentOffset.y > 0.0){
-                return NO ;
+                return false ;
             }
             if(view.tag == KKViewTagPersonInfoArtical ||
                view.tag == KKViewTagPersonInfoVideo ||
@@ -365,54 +362,48 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
                view.tag == KKViewTagPersonInfoMatrix ||
                view.tag == KKViewTagImageDetailView ||
                view.tag == KKViewTagImageDetailDescView){
-                return NO ;
+                return false ;
             }
-            return YES;
+            return true;
         }
     }
-    
-    return NO;
+    return false;
 }
 
 #pragma mark -- 开始、结束拖拽
 
 - (void)dragBeginWithPoint:(CGPoint)pt{
-    
 }
 
 - (void)dragingWithPoint:(CGPoint)pt{
-    
 }
 
 - (void)dragEndWithPoint:(CGPoint)pt shouldHideView:(BOOL)hideView{
-    
 }
 
 #pragma mark -- 视图显示/消失
 
-- (void)viewWillAppear{
-    
-}
+- (void)viewWillAppear{}
 
-- (void)viewDidAppear{
-    
-}
+- (void)viewDidAppear{}
 
-- (void)viewWillDisappear{
-    
-}
+- (void)viewWillDisappear{}
 
-- (void)viewDidDisappear{
-    
+- (void)viewDidDisappear{}
+
+- (void)updateBackgroundView:(void (^)(KKDragableView * _Nonnull))block{
+    if (block) block(self);
 }
 
 #pragma mark -- 设置圆角
 
 - (void)adjustCornerRadius{
-    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, KKScreenWidth(), KKScreenHeight()) byRoundingCorners:self.cornerEdge cornerRadii:CGSizeMake(self.contentViewCornerRadius, self.contentViewCornerRadius)];
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-    maskLayer.frame = CGRectMake(0, 0, KKScreenWidth(), KKScreenHeight());
-    maskLayer.path = maskPath.CGPath;
+    UIBezierPath *maskPath  = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, KKScreenWidth(), KKScreenHeight())
+                                                            byRoundingCorners:self.cornerEdge
+                                                                  cornerRadii:CGSizeMake(self.contentViewCornerRadius, self.contentViewCornerRadius)];
+    CAShapeLayer *maskLayer = CAShapeLayer.layer;
+    maskLayer.frame         = CGRectMake(0, 0, KKScreenWidth(), KKScreenHeight());
+    maskLayer.path          = maskPath.CGPath;
     self.dragContentView.layer.mask = maskLayer;
 }
 
@@ -430,23 +421,23 @@ CGFloat const kkDuration = 0.3f;//动画持续时长
 
 #pragma mark -- @property getter
 
-- (UIView *)dragViewBg{
-    if(!_dragViewBg){
-        _dragViewBg = ({
-            UIView *view = [[UIView alloc]init];
-            view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.5];
+- (UIView *)dragBackgroundView{
+    if(!_dragBackgroundView){
+        _dragBackgroundView = ({
+            UIView *view         = UIView.alloc.init;
+            view.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
             view ;
         });
     }
-    return _dragViewBg;
+    return _dragBackgroundView;
 }
 
 - (UIView *)dragContentView{
     if(!_dragContentView){
         _dragContentView = ({
-            UIView *view = [[UIView alloc]init];
-            view.clipsToBounds = YES ;
-            view.backgroundColor = [UIColor whiteColor];
+            UIView *view         = UIView.alloc.init;
+            view.clipsToBounds   = true ;
+            view.backgroundColor = UIColor.whiteColor;
             view ;
         });
     }
