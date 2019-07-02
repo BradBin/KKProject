@@ -189,7 +189,7 @@
 
 - (void)bindViewModel{
     
-    self.title = @"推片";
+   
     
 }
 
@@ -215,7 +215,7 @@
 #pragma mark - KKDragableHeaderDetailView
 
 @interface KKDragableHeaderDetailView()
-@property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,strong) YYLabel *titleLabel;
 
 @end
 
@@ -233,17 +233,38 @@
 - (void)setupView{
     
     self.titleLabel = ({
-        UILabel *label = UILabel.new;
+        YYLabel *label = YYLabel.new;
+        label.numberOfLines = 5;
         [self addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(label.superview.mas_top);
             make.left.equalTo(label.superview.mas_left);
             make.right.equalTo(label.superview.mas_right);
             make.height.mas_greaterThanOrEqualTo(@0);
-            make.height.lessThanOrEqualTo(label.superview.mas_height);
         }];
         label;
     });
+    
+    self.authorView = ({
+        UIView *view = UIView.alloc.init;
+        view.backgroundColor = UIColor.redColor;
+        [self addSubview:view];
+        [view mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.titleLabel.mas_bottom).offset(CGFloatPixelRound(8.0f));
+            make.centerX.equalTo(view.superview.mas_centerX);
+            make.width.equalTo(view.superview.mas_width);
+            make.height.mas_equalTo(CGFloatPixelRound(60.0));
+        }];
+        view;
+    });
+}
+
+- (void)setTitle:(NSString *)title{
+   self.titleLabel.text = title;
+    [self layoutIfNeeded];
+    if (self.ajustHeight) {
+        self.ajustHeight(self.authorView.bottom + CGFloatPixelRound(10));
+    }
 }
 
 

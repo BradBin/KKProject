@@ -47,7 +47,6 @@ typedef NS_ENUM(NSUInteger, KKDragableBackType) {
 @property (nonatomic,strong) UIView              *titleView;
 @property (nonatomic,strong) YYAnimatedImageView *bottomLineView;
 
-
 @property(nonatomic,assign) CGFloat              contentOffsetY;
 
 @property (nonatomic,  copy) NSString            *title;
@@ -57,6 +56,7 @@ typedef NS_ENUM(NSUInteger, KKDragableBackType) {
 
 
 @interface KKDragableHeaderDetailView : UIView
+@property (nonatomic,strong) UIView *authorView;
 @property (nonatomic,  copy) NSString *title;
 @property (nonatomic,  copy) void(^ajustHeight)(CGFloat height);
 

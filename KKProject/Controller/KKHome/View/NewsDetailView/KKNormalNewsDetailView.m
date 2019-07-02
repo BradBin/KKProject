@@ -72,6 +72,17 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 -(void)setupView{
     [super setupView];
+    
+    self.headerDetailView = ({
+        KKDragableHeaderDetailView *view = KKDragableHeaderDetailView.alloc.init;
+        @weakify(view);
+        view.ajustHeight = ^(CGFloat height) {
+            @strongify(view);
+            view.frame = CGRectMake(0, 0, KKScreenWidth(), height);
+        };
+        view;
+    });
+    
     self.tableView = ({
         UITableView *view    = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         view.delegate        = self;
@@ -80,7 +91,7 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
         view.estimatedRowHeight           = 0.0f;
         view.estimatedSectionFooterHeight = 0.0f;
         view.estimatedSectionHeaderHeight = 0.0f;
-        
+        view.tableHeaderView              = self.headerDetailView;
         [view registerClass:UITableViewCell.class        forCellReuseIdentifier:KKWebViewTableCellIdentifier];
         [view registerClass:KKNewsCommentTableCell.class forCellReuseIdentifier:KKNewsCommentTableCellIdentifier];
 
@@ -163,6 +174,11 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 -(void)viewDidAppear{
     [super viewDidAppear];
+    self.headerDetailView.title = @"泛彼柏舟，亦泛其流。耿耿不寐，如有隐忧。微我无酒，以敖以游。\
+    我心匪鉴，不可以茹。亦有兄弟，不可以据。薄言往诉，逢彼之怒。\
+    我心匪石，不可转也。我心匪席，不可卷也。威仪棣棣，不可选也。\
+    忧心悄悄，愠于群小。觏闵既多，受侮不少。静言思之，寤辟有摽。\
+    日居月诸，胡迭而微？心之忧矣，如匪浣衣。静言思之，不能奋飞。";
 }
 
 -(void)viewWillDisappear{
@@ -302,13 +318,14 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.0;
+    return 0.0001f;
 }
 
 #pragma mark -
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat offsetY = scrollView.contentOffset.y;
+    NSLog(@"offsetY----------%.2f",offsetY);
     if (offsetY >= self.headerDetailView.height) {
         
     }else{

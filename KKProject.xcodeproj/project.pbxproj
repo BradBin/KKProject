@@ -805,6 +805,7 @@
 		0AC12B692279EE5900CF94ED /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				0A19C4B422C5CE3F0074B031 /* KKDragableView */,
 				0A12E8B322B67CA100851FDB /* KKCategory */,
 				0A0D6A13227A89AC005BA58F /* JXPagerView */,
 				0AC12C32227A658F00CF94ED /* DZNEmptyDataSet */,
@@ -932,7 +933,6 @@
 		0AC12BA8227A107100CF94ED /* KKBaseUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				0A19C4B422C5CE3F0074B031 /* KKDragableView */,
 				0A0D6A00227A8164005BA58F /* KKTextField */,
 				0A0D6A01227A81AB005BA58F /* KKButton */,
 				0A0D6A05227A8267005BA58F /* KKTableViewHeaderFooterView */,
