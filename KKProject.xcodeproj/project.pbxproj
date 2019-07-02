@@ -195,6 +195,10 @@
 		93B9CB2C22CA09D0005B4F87 /* KKDragableNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */; };
 		93B9CB2F22CA0D84005B4F87 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */; };
 		93B9CB3022CA0D84005B4F87 /* KKNormalNewsDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */; };
+		93B9CB3222CAE7CD005B4F87 /* KKDragableView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93B9CB3122CAE7CD005B4F87 /* KKDragableView.bundle */; };
+		93B9CB3322CAE7CD005B4F87 /* KKDragableView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93B9CB3122CAE7CD005B4F87 /* KKDragableView.bundle */; };
+		93B9CB3B22CB405B005B4F87 /* KKNewsCommentTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB3A22CB405B005B4F87 /* KKNewsCommentTableCell.m */; };
+		93B9CB3C22CB405B005B4F87 /* KKNewsCommentTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9CB3A22CB405B005B4F87 /* KKNewsCommentTableCell.m */; };
 		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D3621F22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D362282281627700DD815F /* KKChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D362272281627700DD815F /* KKChannelView.m */; };
@@ -428,6 +432,9 @@
 		93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDragableNavigationView.m; sourceTree = "<group>"; };
 		93B9CB2D22CA0D84005B4F87 /* KKNormalNewsDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNormalNewsDetailView.h; sourceTree = "<group>"; };
 		93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNormalNewsDetailView.m; sourceTree = "<group>"; };
+		93B9CB3122CAE7CD005B4F87 /* KKDragableView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KKDragableView.bundle; sourceTree = "<group>"; };
+		93B9CB3922CB405B005B4F87 /* KKNewsCommentTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNewsCommentTableCell.h; sourceTree = "<group>"; };
+		93B9CB3A22CB405B005B4F87 /* KKNewsCommentTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNewsCommentTableCell.m; sourceTree = "<group>"; };
 		93D3621B228123FE00DD815F /* KKProjectAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectAPI.h; sourceTree = "<group>"; };
 		93D3621C22812FE400DD815F /* KKHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeModel.h; sourceTree = "<group>"; };
 		93D3621D22812FE400DD815F /* KKHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeModel.m; sourceTree = "<group>"; };
@@ -659,6 +666,8 @@
 		0A12E8B322B67CA100851FDB /* KKCategory */ = {
 			isa = PBXGroup;
 			children = (
+				0A042E8B22C8CC9F009921D6 /* UIView+KKGestureRecognizer.h */,
+				0A042E8C22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m */,
 				0A12E8B422B67CA100851FDB /* KKCategory.bundle */,
 				0A12E8B522B67CA100851FDB /* KKCategory.h */,
 				0A12E8B622B67CA100851FDB /* UIView+MBProgressHUD.h */,
@@ -694,14 +703,13 @@
 		0A19C4B422C5CE3F0074B031 /* KKDragableView */ = {
 			isa = PBXGroup;
 			children = (
+				93B9CB3122CAE7CD005B4F87 /* KKDragableView.bundle */,
 				0A042E7722C7BEBB009921D6 /* KKDragableView.h */,
 				0A042E7822C7BEBB009921D6 /* KKDragableView.m */,
 				93B9CB2922CA09D0005B4F87 /* KKDragableNavigationView.h */,
 				93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */,
 				0A042E7F22C8764F009921D6 /* KKImageZoomView.h */,
 				0A042E8022C8764F009921D6 /* KKImageZoomView.m */,
-				0A042E8B22C8CC9F009921D6 /* UIView+KKGestureRecognizer.h */,
-				0A042E8C22C8CC9F009921D6 /* UIView+KKGestureRecognizer.m */,
 			);
 			path = KKDragableView;
 			sourceTree = "<group>";
@@ -823,7 +831,6 @@
 		0AC12B7F2279F17700CF94ED /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0A19C4B422C5CE3F0074B031 /* KKDragableView */,
 				0A12E8AE22B67B6200851FDB /* KKForgetPwd */,
 				0AC12B902279F23700CF94ED /* KKLanuch */,
 				0AC12BA12279FCAF00CF94ED /* KKLogin */,
@@ -925,6 +932,7 @@
 		0AC12BA8227A107100CF94ED /* KKBaseUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				0A19C4B422C5CE3F0074B031 /* KKDragableView */,
 				0A0D6A00227A8164005BA58F /* KKTextField */,
 				0A0D6A01227A81AB005BA58F /* KKButton */,
 				0A0D6A05227A8267005BA58F /* KKTableViewHeaderFooterView */,
@@ -1190,6 +1198,17 @@
 			path = KKToolsHelper;
 			sourceTree = "<group>";
 		};
+		93B9CB3422CB3F77005B4F87 /* NewsDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				93B9CB2D22CA0D84005B4F87 /* KKNormalNewsDetailView.h */,
+				93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */,
+				93B9CB3922CB405B005B4F87 /* KKNewsCommentTableCell.h */,
+				93B9CB3A22CB405B005B4F87 /* KKNewsCommentTableCell.m */,
+			);
+			path = NewsDetailView;
+			sourceTree = "<group>";
+		};
 		93D3622022812FEB00DD815F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1217,8 +1236,7 @@
 				0AA4F44922BA8F9900088493 /* KKHomeViewCell.m */,
 				93D362262281627700DD815F /* KKChannelView.h */,
 				93D362272281627700DD815F /* KKChannelView.m */,
-				93B9CB2D22CA0D84005B4F87 /* KKNormalNewsDetailView.h */,
-				93B9CB2E22CA0D84005B4F87 /* KKNormalNewsDetailView.m */,
+				93B9CB3422CB3F77005B4F87 /* NewsDetailView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1357,6 +1375,7 @@
 				0AA78904227F42B700242C91 /* tab_search_animate.json in Resources */,
 				9347CF682278430400BC7AAC /* InfoPlist.strings in Resources */,
 				0AA78902227F42B700242C91 /* tab_home_animate.json in Resources */,
+				93B9CB3222CAE7CD005B4F87 /* KKDragableView.bundle in Resources */,
 				9353DD5A22C45365009217C1 /* KKRefresh.bundle in Resources */,
 				0A6349E82270B08E00C0D0B0 /* Assets.xcassets in Resources */,
 				0AA78900227F42B700242C91 /* tab_me_animate.json in Resources */,
@@ -1385,6 +1404,7 @@
 				0AA78905227F42B700242C91 /* tab_search_animate.json in Resources */,
 				0A634B2C2270C8C200C0D0B0 /* Assets.xcassets in Resources */,
 				0AA78903227F42B700242C91 /* tab_home_animate.json in Resources */,
+				93B9CB3322CAE7CD005B4F87 /* KKDragableView.bundle in Resources */,
 				9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */,
 				0AA78901227F42B700242C91 /* tab_me_animate.json in Resources */,
 				0AC12C20227A107200CF94ED /* KKNavigationBar.bundle in Resources */,
@@ -1610,6 +1630,7 @@
 				0A12E8AB22B6798B00851FDB /* KKSettingsViewController.m in Sources */,
 				0AC12C0B227A107200CF94ED /* UIScrollView+KKNavigationBar.m in Sources */,
 				931F648922BB21930039FE51 /* KKWebApi.m in Sources */,
+				93B9CB3B22CB405B005B4F87 /* KKNewsCommentTableCell.m in Sources */,
 				0A429407227CA86D00D7AF09 /* KKTidingViewController.m in Sources */,
 				0A0D6A22227A89AC005BA58F /* JXPagerListRefreshView.m in Sources */,
 				9353DD5622C45198009217C1 /* KKRefreshFooter.m in Sources */,
@@ -1669,6 +1690,7 @@
 				93647C8322C30C9B008BCC23 /* KKCacheHelper.m in Sources */,
 				0A429408227CA86D00D7AF09 /* KKTidingViewController.m in Sources */,
 				0AC12C16227A107200CF94ED /* KKPushPopTransitionProtocol.m in Sources */,
+				93B9CB3C22CB405B005B4F87 /* KKNewsCommentTableCell.m in Sources */,
 				0A0D6A1F227A89AC005BA58F /* JXPagerMainTableView.m in Sources */,
 				0AC12C22227A107200CF94ED /* KKNavigationBar.m in Sources */,
 				0AC12C36227A659000CF94ED /* UIScrollView+EmptyDataSet.m in Sources */,

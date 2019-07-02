@@ -7,10 +7,11 @@
 //
 
 #import "KKDragableNavigationView.h"
+#import "KKViewProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKNormalNewsDetailView : KKDragableNavigationView
+@interface KKNormalNewsDetailView : KKDragableNavigationView<KKViewProtocol>
 
 @end
 

@@ -12,6 +12,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+
+
+/**
+ 获取KKDragable.bundle中的图片
+
+ @param imageName 图片名称
+ @return UIImage实例对象
+ */
+static inline UIImage* KKDragableImage(NSString *imageName){
+    NSString *imagename = [NSString stringWithFormat:@"KKDragableView.bundle/%@",imageName];
+    return [[UIImage imageNamed:imagename] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
+
 typedef NS_ENUM(NSUInteger, KKViewTag) {
     KKViewTagPersonInfoScrollView = 100000 ,//他人信息(动态，文章等视图的父视图)scrollview的tag，主要用于解决手势冲突
     KKViewTagRecognizeSimultaneousTableView,//他人信息最外层tableview的tag，主要用于解决手势冲突
@@ -63,12 +77,12 @@ typedef NS_ENUM(NSUInteger,KKMoveDirection) {
 /**
  背景视图
  */
-@property(nonatomic,strong,readonly) UIView *dragBackgroundView;
+@property(nonatomic,strong,readonly) UIView *backgroundView;
 
 /**
  内容容器视图
  */
-@property(nonatomic,strong,readonly) UIView *dragContentView;
+@property(nonatomic,strong,readonly) UIView *contentView;
 
 @property(nonatomic,assign) CGFloat topSpace ;//dragContentView的顶部距离屏幕上方的距离
 @property(nonatomic,assign) CGFloat contentViewCornerRadius;//dragContentView的圆角
@@ -81,6 +95,9 @@ typedef NS_ENUM(NSUInteger,KKMoveDirection) {
 
 
 
+/**
+ 创建/添加子控件时,执行的方法
+ */
 - (void)setupView;
 
 /**
