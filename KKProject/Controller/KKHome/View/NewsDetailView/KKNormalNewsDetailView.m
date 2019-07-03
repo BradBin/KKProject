@@ -49,6 +49,11 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property (nonatomic,strong) KKDragableHeaderDetailView *headerDetailView;
 
 /**
+ 展示导航栏上作者的详细信息的视图
+ */
+@property (nonatomic,strong) KKDragableAuthorView *naviAuthorView;
+
+/**
  展示底部操作工具条的视图
  */
 @property (nonatomic,strong) KKDragableBottomBarView *bottomBarView;
@@ -72,6 +77,13 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 -(void)setupView{
     [super setupView];
+    self.navigationBar.title = @"新闻详情";
+    self.naviAuthorView = ({
+        KKDragableAuthorView *view = [[KKDragableAuthorView alloc] initWithType:KKDragableAuthorTypeDefault];
+        view.hidden = true;
+        self.navigationBar.titleView= view;
+        view;
+    });
     
     self.headerDetailView = ({
         KKDragableHeaderDetailView *view = KKDragableHeaderDetailView.alloc.init;
@@ -161,7 +173,6 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
         [self.scrollView addSubview:view];
         view;
     });
-    
 
     self.webURLString = @"http://world.people.com.cn/n1/2019/0702/c1002-31207007.html";
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLString]]];
@@ -325,11 +336,12 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat offsetY = scrollView.contentOffset.y;
-    NSLog(@"offsetY----------%.2f",offsetY);
     if (offsetY >= self.headerDetailView.height) {
-        
+        self.navigationBar.titleView.hidden  = false;
+        self.navigationBar.title   = nil;
     }else{
-        
+        self.navigationBar.titleView.hidden  = true;
+        self.navigationBar.title    = @"新闻详情";
     }
 }
 

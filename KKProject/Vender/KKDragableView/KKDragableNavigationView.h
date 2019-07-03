@@ -48,15 +48,31 @@ typedef NS_ENUM(NSUInteger, KKDragableBackType) {
 @property (nonatomic,strong) YYAnimatedImageView *bottomLineView;
 
 @property(nonatomic,assign) CGFloat              contentOffsetY;
-
-@property (nonatomic,  copy) NSString            *title;
+@property (nonatomic,  copy,nullable) NSString            *title;
 
 @end
 
 
 
+typedef NS_ENUM(NSUInteger,KKDragableAuthorType) {
+    KKDragableAuthorTypeDefault = 0,
+    KKDragableAuthorTypeDetail
+};
+@interface KKDragableAuthorView : UIView
+@property (nonatomic,strong) YYAnimatedImageView *avatorImgV;
+@property (nonatomic,strong) YYLabel             *nameLabel;
+@property (nonatomic,strong) YYLabel             *detailLabel;
+
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+-(instancetype)initWithFrame:(CGRect)frame UNAVAILABLE_ATTRIBUTE;
++(instancetype)new UNAVAILABLE_ATTRIBUTE;
+- (instancetype)initWithType:(KKDragableAuthorType)type;
+
+@end
+
+
 @interface KKDragableHeaderDetailView : UIView
-@property (nonatomic,strong) UIView *authorView;
+@property (nonatomic,strong) KKDragableAuthorView *authorView;
 @property (nonatomic,  copy) NSString *title;
 @property (nonatomic,  copy) void(^ajustHeight)(CGFloat height);
 

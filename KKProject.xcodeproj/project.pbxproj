@@ -708,8 +708,6 @@
 				0A042E7822C7BEBB009921D6 /* KKDragableView.m */,
 				93B9CB2922CA09D0005B4F87 /* KKDragableNavigationView.h */,
 				93B9CB2A22CA09D0005B4F87 /* KKDragableNavigationView.m */,
-				0A042E7F22C8764F009921D6 /* KKImageZoomView.h */,
-				0A042E8022C8764F009921D6 /* KKImageZoomView.m */,
 			);
 			path = KKDragableView;
 			sourceTree = "<group>";
@@ -805,6 +803,7 @@
 		0AC12B692279EE5900CF94ED /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				93B9CB3D22CC3837005B4F87 /* KKImageZoomView */,
 				0A19C4B422C5CE3F0074B031 /* KKDragableView */,
 				0A12E8B322B67CA100851FDB /* KKCategory */,
 				0A0D6A13227A89AC005BA58F /* JXPagerView */,
@@ -1207,6 +1206,15 @@
 				93B9CB3A22CB405B005B4F87 /* KKNewsCommentTableCell.m */,
 			);
 			path = NewsDetailView;
+			sourceTree = "<group>";
+		};
+		93B9CB3D22CC3837005B4F87 /* KKImageZoomView */ = {
+			isa = PBXGroup;
+			children = (
+				0A042E7F22C8764F009921D6 /* KKImageZoomView.h */,
+				0A042E8022C8764F009921D6 /* KKImageZoomView.m */,
+			);
+			path = KKImageZoomView;
 			sourceTree = "<group>";
 		};
 		93D3622022812FEB00DD815F /* Model */ = {
