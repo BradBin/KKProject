@@ -40,17 +40,14 @@
     [super kk_bindViewModel];
     @weakify(self);
     [[[self.autoPlayWithWiFi rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
-   
         NSLog(@"autoPlayWithWiFi---------------%@",x);
     }];
     
     [[[self.showAbstract rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
-
         NSLog(@"showAbstract---------------%@",x);
     }];
     
     [[self.viewModel.changeLanguageSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
-        
         NSLog(@"多语言---------------%@",x);
     }];
     

@@ -872,6 +872,7 @@
 				0A12E8AD22B679A900851FDB /* Settings */,
 				0AC12B862279F1BB00CF94ED /* KKProfileViewController.h */,
 				0AC12B842279F1BB00CF94ED /* KKProfileViewController.m */,
+				93B9CB4622CDA48F005B4F87 /* View */,
 			);
 			path = KKProfile;
 			sourceTree = "<group>";
@@ -1215,6 +1216,13 @@
 				0A042E8022C8764F009921D6 /* KKImageZoomView.m */,
 			);
 			path = KKImageZoomView;
+			sourceTree = "<group>";
+		};
+		93B9CB4622CDA48F005B4F87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		93D3622022812FEB00DD815F /* Model */ = {

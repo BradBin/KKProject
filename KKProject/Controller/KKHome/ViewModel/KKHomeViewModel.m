@@ -7,6 +7,13 @@
 //
 
 #import "KKHomeViewModel.h"
+/**
+ 数据缓存方案:
+    1.先去缓存中取数据
+    2.显示数据
+    3.网络请求数据
+    4.网络请求完成-->更新数据
+ */
 
 @implementation KKHomeViewModel
 
@@ -228,6 +235,25 @@ NSUInteger const kk_home_page_pageSize = 12;
     }
     return _homeLayouts;
 }
+
+- (RACSubject *)refreshUISubject{
+    if (_refreshUISubject == nil) {
+        _refreshUISubject = RACSubject.subject;
+    }
+    return _refreshUISubject;
+}
+
+@end
+
+
+
+
+@implementation KKHomeDetailViewModel
+
+- (void)kk_initialize{
+    [super kk_initialize];
+}
+
 
 - (RACSubject *)refreshUISubject{
     if (_refreshUISubject == nil) {

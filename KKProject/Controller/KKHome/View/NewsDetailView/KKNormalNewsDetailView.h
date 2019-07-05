@@ -7,11 +7,12 @@
 //
 
 #import "KKDragableNavigationView.h"
-#import "KKViewProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
+@class KKHomeDataContentModel;
+@interface KKNormalNewsDetailView : KKDragableNavigationView
 
-@interface KKNormalNewsDetailView : KKDragableNavigationView<KKViewProtocol>
+- (instancetype)initWithContentModel:(KKHomeDataContentModel *)contentModel;
 
 @end
 

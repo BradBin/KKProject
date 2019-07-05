@@ -7,6 +7,8 @@
 //
 
 #import "KKNormalNewsDetailView.h"
+#import "KKHomeModel.h"
+#import "KKHomeViewModel.h"
 #import <dsBridge/dsbridge.h>
 #import "KKNewsCommentTableCell.h"
 
@@ -58,12 +60,22 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
  */
 @property (nonatomic,strong) KKDragableBottomBarView *bottomBarView;
 
+
+/**
+ 数据处理ViewModel
+ */
+@property (nonatomic,strong) KKHomeDetailViewModel *viewModel;
+
 @end
 
 @implementation KKNormalNewsDetailView
 
-- (instancetype)initWithViewModel:(id<KKViewModelProtocol>)viewModel{
+- (instancetype)initWithContentModel:(id)contentModel{
     self = [super init];
+    if (self) {
+        _viewModel = KKHomeDetailViewModel.alloc.init;
+        _viewModel.contentModel = contentModel;
+    }
     return self;
 }
 
@@ -178,6 +190,12 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.webURLString]]];
 }
 
+- (void)bindViewModel{
+    
+    self.headerDetailView.title = self.viewModel.contentModel.title;
+    
+}
+
 
 -(void)viewWillAppear{
     [super viewWillAppear];
@@ -185,11 +203,7 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 -(void)viewDidAppear{
     [super viewDidAppear];
-    self.headerDetailView.title = @"泛彼柏舟，亦泛其流。耿耿不寐，如有隐忧。微我无酒，以敖以游。\
-    我心匪鉴，不可以茹。亦有兄弟，不可以据。薄言往诉，逢彼之怒。\
-    我心匪石，不可转也。我心匪席，不可卷也。威仪棣棣，不可选也。\
-    忧心悄悄，愠于群小。觏闵既多，受侮不少。静言思之，寤辟有摽。\
-    日居月诸，胡迭而微？心之忧矣，如匪浣衣。静言思之，不能奋飞。";
+    [self bindViewModel];
 }
 
 -(void)viewWillDisappear{
@@ -246,6 +260,7 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
     [self.tableView setHidden:false];
+  
 }
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
@@ -344,6 +359,7 @@ UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
         self.navigationBar.title    = @"新闻详情";
     }
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -60,4 +60,18 @@
 }
 
 
+
+-(void)htmlStringWithURL:(NSURL *)url completion:(void (^)(NSString * _Nonnull))completion{
+    if (!url && url.absoluteString.isNotBlank == false) {
+        if (completion) completion(@"");
+    }
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    
+    
+}
+
+
+
 @end

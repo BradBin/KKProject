@@ -77,11 +77,38 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,strong) RACSubject  *refreshUISubject;
 
-
-
 @end
 
 
+
+/**
+ 新闻类请求详情ViewModel
+ */
+@interface KKHomeDetailViewModel : KKViewModel
+
+/**
+ 新闻类简介Model
+ */
+@property (nonatomic,strong) KKHomeDataContentModel *contentModel;
+
+/**
+ 刷新
+ */
+@property (nonatomic,strong) RACCommand *refreshCommand;
+
+/**
+ 加载更多
+ */
+@property (nonatomic,strong) RACCommand *nextRefreshCommand;
+
+/**
+ 刷新界面UI
+ */
+@property (nonatomic,strong) RACSubject  *refreshUISubject;
+
+
+
+@end
 
 
 

@@ -23,6 +23,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSString *)timelineWithDate:(NSDate *)date;
 
+
+/**
+ 对网络文章的url进一步解析,获取新闻的正文
+
+ @param url 网络正文的url
+ @param completion 解析完成后的block
+ */
+- (void)htmlStringWithURL:(NSURL *)url completion:(void(^)(NSString *htmlString))completion;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
