@@ -10,12 +10,19 @@
 #define KKProjectMacros_h
 
 
-#define IM_AppKey @"45c6af3c98409b18a84451215d0bdd6e"
-#define ACCOUNT   @"youbin1992"
-#define PASSWORD  @"864bf8f37c6710845857585b9cd04407"
+#define IM_AppKey          @"45c6af3c98409b18a84451215d0bdd6e"
+#define ACCOUNT            @"youbin1992"
+#define PASSWORD           @"864bf8f37c6710845857585b9cd04407"
 
 #define UMengKey           @"5c36e5a7f1f5561a92000ab8"
 #define UMengMasterSecret  @"dyg5aaww2udea3fw9uelvmghmr8zg6z9"
+
+#define weChatAppId        @"5c36e5a7f1f5561a92000ab8"
+#define weChatAppSecret    @"dyg5aaww2udea3fw9uelvmghmr8zg6z9"
+
+#define QQAppKey           @"5c36e5a7f1f5561a92000ab8"
+#define QQAppSecret        @"dyg5aaww2udea3fw9uelvmghmr8zg6z9"
+
 
 
 #define ENV_PROJECT      0

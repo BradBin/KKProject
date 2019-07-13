@@ -30,9 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param url 网络正文的url
  @param completion 解析完成后的block
  */
-- (void)htmlStringWithURL:(NSURL *)url completion:(void(^)(NSString *htmlString))completion;
+- (void)htmlStringWithURL:(NSURL *)url completion:(void(^)(NSString * _Nullable htmlString,NSError * _Nullable error))completion;
 
-
+//- (void)imageWithURL:(NSURL *)url completion:(void (^)(NSArray<UIImage *> * _Nullable images, NSError * _Nullable error))completion;
 
 @end
 

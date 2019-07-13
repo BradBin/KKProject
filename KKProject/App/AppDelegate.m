@@ -18,6 +18,7 @@
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
 #import <UMCommonLog/UMCommonLogHeaders.h>
+#import <UMAnalytics/MobClick.h>
 #endif
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -77,21 +78,25 @@
  友盟配置
  */
 - (void)setupUMeng{
-#if   ENV_CODE == ENV_PROJECT
     
-#elif ENV_CODE == ENV_PROJECT_OBJC
-    [UMCommonLogManager setUpUMCommonLogManager];
-    [UMConfigure setLogEnabled:true];
-    [UMConfigure initWithAppkey:UMengKey channel:@"App Store"];
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession|UMSocialPlatformType_WechatSession
-//                                          appKey:weChatAppId
-//                                       appSecret:weChatAppSecret
-//                                     redirectURL:nil];
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
-//                                          appKey:QQAppKey
-//                                       appSecret:QQAppSecret
-//                                     redirectURL:nil];
-#endif
+    KKSetupBlock(^{
+     
+        
+    }, ^{
+        [UMCommonLogManager setUpUMCommonLogManager];
+        [UMConfigure setLogEnabled:true];
+        [UMConfigure initWithAppkey:UMengKey channel:@"App Store"];
+        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession|UMSocialPlatformType_WechatSession
+                                              appKey:weChatAppId
+                                           appSecret:weChatAppSecret
+                                         redirectURL:nil];
+        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
+                                              appKey:QQAppKey
+                                           appSecret:QQAppSecret
+                                         redirectURL:nil];
+        
+        [MobClick setScenarioType:E_UM_NORMAL];
+    });
 }
 
 /**

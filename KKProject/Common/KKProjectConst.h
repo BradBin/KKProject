@@ -134,3 +134,18 @@ static inline CGFloat KKLayoutContentWidth(){
 static inline CGFloat KKLayoutContentImageWidth(){
     return ((KKLayoutContentWidth() - KKLayoutMargin() * 0.5) * 1.0f/ 3);
 }
+
+
+/**
+ 依据运行环境执行不同的block代码块
+
+ @param block KKProject环境中执行的代码块
+ @param objC_block KKProject_Objc环境中执行的代码块
+ */
+static inline void KKSetupBlock(dispatch_block_t block,dispatch_block_t objC_block){
+#if   ENV_CODE == ENV_PROJECT
+    block();
+#elif ENV_CODE == ENV_PROJECT_OBJC
+    objC_block();
+#endif
+}

@@ -190,12 +190,14 @@
 
     KKHomeLayout *layout = self.pageViewModel.homeLayouts[indexPath.row];
     KKNormalNewsDetailView *view = [[KKNormalNewsDetailView alloc] initWithContentModel:layout.content];
+    view.enableHorizonRightDrag  = false;
     [[UIApplication sharedApplication].keyWindow addSubview:view];
     [view mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(0);
         make.size.mas_equalTo(CGSizeMake(KKScreenWidth(), KKScreenHeight()));
     }];
     [view pushViewWithAnimated:true];
+
 
     //    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
     //    [self.viewModel.pushVCSubject sendNext:vc];

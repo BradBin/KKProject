@@ -84,14 +84,45 @@ typedef NS_ENUM(NSUInteger,KKMoveDirection) {
  */
 @property(nonatomic,strong,readonly) UIView *contentView;
 
-@property(nonatomic,assign) CGFloat topSpace ;//dragContentView的顶部距离屏幕上方的距离
-@property(nonatomic,assign) CGFloat contentViewCornerRadius;//dragContentView的圆角
-@property(nonatomic,assign) UIRectCorner cornerEdge;//设定dragContentView的哪些边需要圆角
+/**
+ dragContentView的顶部距离屏幕上方的距离
+ */
+@property(nonatomic,assign) CGFloat topSpace ;
 
-@property(nonatomic,assign) BOOL enableHorizonDrag;//是否允许水平拖拽，默认为YES
-@property(nonatomic,assign) BOOL enableVerticalDrag;//是否允许垂直拖拽，默认为YES
-@property(nonatomic,assign) BOOL enableFreedomDrag;//允许自由拖拽,默认为NO,设为YES，则enableHorizonDrag、enableVerticalDrag自动失效
-@property(nonatomic,assign) BOOL defaultHideAnimateWhenDragFreedom;//自由拖拽时，是否使用默认的隐藏动画，默认为YES
+/**
+ dragContentView的圆角
+ */
+@property(nonatomic,assign) CGFloat contentViewCornerRadius;
+
+/**
+ dragContentView的哪些边需要圆角
+ */
+@property(nonatomic,assign) UIRectCorner cornerEdge;
+
+/**
+ 是否允许水平拖拽，默认为true
+ */
+@property(nonatomic,assign) BOOL enableHorizonDrag;
+
+/**
+ 是否允许垂直拖拽，默认为true
+ */
+@property(nonatomic,assign) BOOL enableVerticalDrag;
+
+/**
+ 是否允许水平向右拖拽,默认为true
+ */
+@property (nonatomic,assign) BOOL enableHorizonRightDrag;
+
+/**
+ 允许自由拖拽,默认为NO,设为YES，则enableHorizonDrag、enableVerticalDrag自动失效
+ */
+@property(nonatomic,assign) BOOL enableFreedomDrag;
+
+/**
+ 自由拖拽时，是否使用默认的隐藏动画，默认为true
+ */
+@property(nonatomic,assign) BOOL defaultHideAnimateWhenDragFreedom;
 
 
 

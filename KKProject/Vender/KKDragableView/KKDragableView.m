@@ -45,6 +45,7 @@ CGFloat const kkDuration                = 0.3f;//动画持续时长
     self.contentViewCornerRadius = 0 ;
     self.cornerEdge              = UIRectCornerAllCorners;
     self.enableHorizonDrag       = true;
+    self.enableHorizonRightDrag  = true;
     self.enableVerticalDrag      = true;
     self.enableFreedomDrag       = false;
     self.defaultHideAnimateWhenDragFreedom = true ;
@@ -124,9 +125,15 @@ CGFloat const kkDuration                = 0.3f;//动画持续时长
                     self.contentView.layer.transform = CATransform3DIdentity;
                     return ;
                 }
+                
+                if (self.enableHorizonRightDrag == false && self.dragDirection == KKMoveDirectionLeft) {
+                    return;
+                }
+                
                 CGFloat left = self.contentView.left;
+                
                 self.contentView.centerX  = self.contentView.centerX + point.x;
-                CGFloat alpha                 = (1.0 - left / self.contentView.width) ;
+                CGFloat alpha             = (1.0 - left / self.contentView.width) ;
                 self.backgroundView.alpha = MAX(alpha,0);
                 
                 [panRecognizer setTranslation:CGPointMake(0, 0) inView:self];
