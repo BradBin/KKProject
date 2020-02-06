@@ -84,7 +84,13 @@
         }
     }];
     
+    [[self.viewModel.changeAppLogoSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+         [KKThemeHelper.shared setAlternateIcon:@"iPhone_Violet_App_60" completionHandler:^(NSError * _Nullable error) {
+             NSLog(@"更新AppLogo  %@", error);
+         }];
+     }];
 }
+
 
 -(KKSettingsViewModel *)viewModel{
     if (_viewModel == nil) {

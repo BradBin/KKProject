@@ -316,7 +316,7 @@ CGFloat const kkDuration                = 0.3f;//动画持续时长
 
 - (void)pushViewWithAnimated:(BOOL)animated{
     [self viewWillAppear];
-    self.showViewType             = KKShowViewTypePush;
+    self.showViewType         = KKShowViewTypePush;
     self.contentView.left     = KKScreenWidth() ;
     self.backgroundView.alpha = 0.0;
     CGFloat duration              = animated ? kkDuration : 0.0;

@@ -60,7 +60,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param key key
  @param block 保存完成后执行的block
  */
-- (void)setObject:(NSArray<id<NSCoding>> *)objects forKey:(nonnull NSString *)key withBlock:(void(^)(void))block;
+- (void)setObject:(NSArray<id<NSCoding>> *)objects forKey:(nonnull NSString *)key withBlock:(void(^_Nullable)(void))block;
 
 /**
  通过key获取本地Disk上缓存的数据
@@ -69,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
  @return 缓存的数据
  */
 - (id<NSCoding>)objectFromDiskWithKey:(NSString *)key;
+
+- (void)objectFromDiskWithKey:(NSString *)key withBlock:(void(^)(NSString *key, id<NSCoding> object))block;
 
 /**
  通过key删除本地缓存的数据

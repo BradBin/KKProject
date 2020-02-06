@@ -30,10 +30,9 @@ typedef NS_ENUM(NSUInteger,KKCacheType) {
 
 @property (nonatomic,strong,readonly) NSArray *dataSources;
 
-
-
 @property (nonatomic,strong) RACSubject *pushVCSubject;
 @property (nonatomic,strong) RACSubject *changeLanguageSubject;
+@property (nonatomic,strong) RACSubject *changeAppLogoSubject;
 @property (nonatomic,strong) RACSubject *cleanSubject;
 
 @end

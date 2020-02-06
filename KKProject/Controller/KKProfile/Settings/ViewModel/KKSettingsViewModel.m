@@ -31,76 +31,88 @@ NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
     if (_dataSources == nil) {
         @weakify(self);
         _dataSources = @[
-                         @[
-                             @{
-                                 KKTitle          :@"多语言",
-                                 KKDesc           :@"多语言",
-                                 KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 KKNeedArrow      :@(true),
-                                 KKClickAction    :(^(void){
-                                     @strongify(self);
-                                     [self.changeLanguageSubject sendNext:@(true)];
-                                 })
-                                 },
-                             @{
-                                 KKTitle          :@"身份认证",
-                                 KKDesc           :@"马上认证",
-                                 KKNeedArrow      :@(false),
-                                 KKCellIdentifier :KKRightLabelCellIdentifier
-                                 }
-                             ],
-                         @[
-                             @{
-                                 KKTitle          :@"内容摘要",
-                                 KKCellIdentifier :KKRightViewCellIdentifier,
-                                 KKNeedArrow      :@(false),
-                                 },
-                             @{
-                                 KKTitle          :@"WiFi自动播放视频",
-                                 KKCellIdentifier :KKRightViewCellIdentifier,
-                                 KKNeedArrow      :@(false),
-                                 },
-                             @{
-                                 KKTitle          :@"缓存大小",
-                                 KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 KKNeedArrow      :@(false),
-                                 KKClickAction    :(^(void){
-                                     @strongify(self);
-                                     [self.cleanSubject sendNext:@(KKCacheTypeImageCache)];
-                                 })
-                                 },
-                             @{
-                                 KKTitle          :@"聊天记录",
-                                 KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 KKNeedArrow      :@(false),
-                                 KKClickAction    :(^(void){
-                                     @strongify(self);
-                                     [self.cleanSubject sendNext:@(KKCacheTypeChatRecord)];
-                                 })
-                                 }
-                             ],
-                         
-                         @[
-                             @{
-                                 KKTitle          :@"电话",
-                                 KKCellIdentifier :KKTextFieldCellIdentifier,
-                                 KKNeedArrow      :@(true),
-                                 },
-                             @{
-                                 KKTitle          :@"手机",
-                                 KKCellIdentifier :KKTextFieldCellIdentifier,
-                                 KKNeedArrow      :@(false),
-                                 }
-                             ],
-                         @[
-                             @{
-                                 KKTitle          :@"关于我们",
-                                 KKCellIdentifier :KKRightLabelCellIdentifier,
-                                 KKNeedArrow      :@(true),
-                                 KKNextVCClass    :@"KKAboutusViewController",
-                                 }
-                             ]
-                         ];
+            @[
+                @{
+                    KKTitle          :@"多语言",
+                    KKDesc           :@"多语言",
+                    KKCellIdentifier :KKRightLabelCellIdentifier,
+                    KKNeedArrow      :@(true),
+                    KKClickAction    :(^(void){
+                        @strongify(self);
+                        [self.changeLanguageSubject sendNext:@(true)];
+                    })
+                },
+                @{
+                    KKTitle          :@"身份认证",
+                    KKDesc           :@"马上认证",
+                    KKNeedArrow      :@(false),
+                    KKCellIdentifier :KKRightLabelCellIdentifier
+                }
+            ],
+            @[
+                @{
+                    KKTitle          :@"Change AppLogo",
+                    KKDesc           :@"多语言",
+                    KKCellIdentifier :KKRightLabelCellIdentifier,
+                    KKNeedArrow      :@(true),
+                    KKClickAction    :(^(void){
+                        @strongify(self);
+                        [self.changeAppLogoSubject sendNext:@(true)];
+                    })
+                }
+            ],
+            @[
+                @{
+                    KKTitle          :@"内容摘要",
+                    KKCellIdentifier :KKRightViewCellIdentifier,
+                    KKNeedArrow      :@(false),
+                },
+                @{
+                    KKTitle          :@"WiFi自动播放视频",
+                    KKCellIdentifier :KKRightViewCellIdentifier,
+                    KKNeedArrow      :@(false),
+                },
+                @{
+                    KKTitle          :@"缓存大小",
+                    KKCellIdentifier :KKRightLabelCellIdentifier,
+                    KKNeedArrow      :@(false),
+                    KKClickAction    :(^(void){
+                        @strongify(self);
+                        [self.cleanSubject sendNext:@(KKCacheTypeImageCache)];
+                    })
+                },
+                @{
+                    KKTitle          :@"聊天记录",
+                    KKCellIdentifier :KKRightLabelCellIdentifier,
+                    KKNeedArrow      :@(false),
+                    KKClickAction    :(^(void){
+                        @strongify(self);
+                        [self.cleanSubject sendNext:@(KKCacheTypeChatRecord)];
+                    })
+                }
+            ],
+            
+            @[
+                @{
+                    KKTitle          :@"电话",
+                    KKCellIdentifier :KKTextFieldCellIdentifier,
+                    KKNeedArrow      :@(true),
+                },
+                @{
+                    KKTitle          :@"手机",
+                    KKCellIdentifier :KKTextFieldCellIdentifier,
+                    KKNeedArrow      :@(false),
+                }
+            ],
+            @[
+                @{
+                    KKTitle          :@"关于我们",
+                    KKCellIdentifier :KKRightLabelCellIdentifier,
+                    KKNeedArrow      :@(true),
+                    KKNextVCClass    :@"KKAboutusViewController",
+                }
+            ]
+        ];
     }
     return _dataSources;
 }
@@ -109,7 +121,7 @@ NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
     if (_pushVCSubject == nil) {
         _pushVCSubject = RACSubject.subject;
     }
-   return _pushVCSubject;
+    return _pushVCSubject;
 }
 
 -(RACSubject *)changeLanguageSubject{
@@ -117,6 +129,13 @@ NSString * const KKTextFieldCellIdentifier  = @"KK.TextField.Cell.Identifier";
         _changeLanguageSubject = RACSubject.subject;
     }
     return _changeLanguageSubject;
+}
+
+-(RACSubject *)changeAppLogoSubject{
+    if (_changeAppLogoSubject == nil) {
+        _changeAppLogoSubject = RACSubject.subject;
+    }
+    return _changeAppLogoSubject;
 }
 
 -(RACSubject *)cleanSubject{

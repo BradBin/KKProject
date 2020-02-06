@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 FOUNDATION_EXTERN  CGFloat const marginText;
 
-@interface KKLayout : NSObject
+@interface KKLayout : NSObject<NSCoding>
 
 /**
  默认上边界距离 5.15

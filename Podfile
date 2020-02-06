@@ -1,4 +1,4 @@
-platform :ios,'9.0'
+platform :ios,'12.2'
 inhibit_all_warnings!
 
 #多个target的pod引入
@@ -8,7 +8,7 @@ def commonPods
   pod 'YYKit'
   pod 'AFNetworking'
   pod 'IQKeyboardManager'
-
+  
   pod 'EasyReact'
   pod 'ReactiveObjC'
   pod 'FFRouter'
@@ -23,14 +23,14 @@ def commonPods
   #图像处理库
   pod 'GPUImage'
   #tabBar标签控制器
-  pod 'CYLTabBarController'
+  pod 'CYLTabBarController', '~> 1.28.5'
   #昼夜模式切换
   pod 'DKNightVersion'
   #滚动标签
   pod 'JXCategoryView'
-
+  
   #网易云信sdk
-  pod 'NIMSDK', '~> 6.5.5'
+  pod 'NIMSDK'
   
 end
 
@@ -61,8 +61,9 @@ target 'KKProject_Objc' do
   pod 'UMCShare/Social/ReducedWeChat'
   pod 'UMCShare/Social/QQ'
   
+  #视频播放器
+  #  pod 'SGPlayer'
   
- 
 end
 
 
@@ -82,20 +83,41 @@ target 'KKProject_Swift' do
   
   pod 'SwiftLint'
   
-  
-  pod 'SnapKit'
-  pod 'SwiftyJSON'
+  #auto layout
+  pod 'SnapKit', '~> 5.0.1'
   pod 'Alamofire'
+  #对Alamofire的二次封装
   pod 'Moya'
-  pod 'Then'
+  
+  pod 'Then', '~> 2.6.0'
+  pod 'thenPromise'
+  
+  #数据模型解析
+  pod 'HandyJSON', '~> 5.0.1'
+  pod 'SwiftyJSON', '~> 5.0.0'
+  
+  #组件化工具库
+  pod 'BeeHive'
   
   pod 'IQKeyboardManagerSwift'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'ReactiveCocoa'
   
-  pod 'Kingfisher'
   
+  pod 'RxSwift', '~> 5.0.1'
+  pod 'RxCocoa', '~> 5.0.1'
+  
+  pod 'ReactiveCocoa', '~> 10.2.0'
+  
+  #资源引用工具
+  pod 'R.swift', '~> 5.1.0'
+  
+  #图片加载处理框架
+  pod 'Kingfisher', '~> 5.13.0'
+  
+  #定时器
+  pod 'Repeat', '~> 0.6.0'
+  
+  #queue manager
+  pod 'Queuer', '~> 2.1.1'
   
   pod 'Material'
   pod 'Atributika'
@@ -107,19 +129,31 @@ target 'KKProject_Swift' do
   pod 'KeychainAccess'
   pod 'SwiftyUserDefaults'
   
-  pod 'SQLite.swift'
-  pod 'R.swift'
+  pod 'SQLite.swift', '~> 0.12.2'
+  
   pod 'ReachabilitySwift'
   pod 'SwiftDate'
   
   pod 'SwiftMessages'
   pod 'SwiftEntryKit'
-  pod 'Advance'
+  
+  #pod 'Advance'
   
   pod 'SwiftyStoreKit'
   pod 'Instructions'
-  #滚动标签
-  pod 'JXSegmentedView'
+  
+  #颜色
+  pod 'DynamicColor'
+  
+  #自定义导航栏
+  pod 'EachNavigationBar', '~> 1.14.3'
+  
+  #TabBar
+  pod 'RAMAnimatedTabBarController'
+  pod 'ESTabBarController-swift', '~> 2.8.0'
+  
+  #滚动标签 segmented view
+  pod 'JXSegmentedView', '~> 1.0.4'
   
   pod 'AnimatedCollectionViewLayout'
   pod 'CollectionKit'
@@ -128,7 +162,7 @@ target 'KKProject_Swift' do
   pod 'SwipeCellKit'
   pod 'ViewAnimator'
   pod 'XLPagerTabStrip'
-  pod 'RAMAnimatedTabBarController'
+  
   pod 'Eureka'
   pod 'FoldingCell'
   pod 'NVActivityIndicatorView'

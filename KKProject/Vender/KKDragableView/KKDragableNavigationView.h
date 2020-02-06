@@ -20,13 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-static inline UIEdgeInsets KKSafeAreaInsets(){
-    UIEdgeInsets safeAreaInsets = UIEdgeInsetsZero;
-    if(@available(iOS 11, *)){
-       safeAreaInsets = UIApplication.sharedApplication.keyWindow.safeAreaInsets;
-    }
-    return safeAreaInsets;
-}
 
 static inline CGFloat KKDragableStatusBarHeight(){
     return KKSafeAreaInsets().bottom ? 44.0f : 20.0f;

@@ -23,11 +23,21 @@ public enum JXSegmentedViewItemSelectedType {
     case scroll
 }
 
+public protocol JXSegmentedViewListContainer {
+    var defaultSelectedIndex: Int { set get }
+    func contentScrollView() -> UIScrollView
+    func reloadData()
+    func scrolling(from leftIndex: Int, to rightIndex: Int, percent: CGFloat, selectedIndex: Int)
+    func didClickSelectedItem(at index: Int)
+}
+
 public protocol JXSegmentedViewDataSource: AnyObject {
     var isItemWidthZoomEnabled: Bool { get }
     var selectedAnimationDuration: TimeInterval { get }
     var itemSpacing: CGFloat { get }
     var isItemSpacingAverageEnabled: Bool { get }
+
+    func reloadData(selectedIndex: Int)
 
     /// 返回数据源数组，数组元素必须是JXSegmentedBaseItemModel及其子类
     ///
@@ -134,7 +144,11 @@ public extension JXSegmentedViewDelegate {
 
 /// 内部会自己找到父UIViewController，然后将其automaticallyAdjustsScrollViewInsets设置为false，这一点请知晓。
 open class JXSegmentedView: UIView {
-    open weak var dataSource: JXSegmentedViewDataSource?
+    open weak var dataSource: JXSegmentedViewDataSource? {
+        didSet {
+            dataSource?.reloadData(selectedIndex: selectedIndex)
+        }
+    }
     open weak var delegate: JXSegmentedViewDelegate?
     open private(set) var collectionView: JXSegmentedCollectionView!
     open var contentScrollView: UIScrollView? {
@@ -144,6 +158,12 @@ open class JXSegmentedView: UIView {
         didSet {
             contentScrollView?.scrollsToTop = false
             contentScrollView?.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
+        }
+    }
+    public var listContainer: JXSegmentedViewListContainer? = nil {
+        didSet {
+            listContainer?.defaultSelectedIndex = defaultSelectedIndex
+            contentScrollView = listContainer?.contentScrollView()
         }
     }
     /// indicators的元素必须是遵从JXSegmentedIndicatorProtocol协议的UIView及其子类
@@ -156,6 +176,9 @@ open class JXSegmentedView: UIView {
     open var defaultSelectedIndex: Int = 0 {
         didSet {
             selectedIndex = defaultSelectedIndex
+            if listContainer != nil {
+                listContainer?.defaultSelectedIndex = defaultSelectedIndex
+            }
         }
     }
     open private(set) var selectedIndex: Int = 0
@@ -171,6 +194,7 @@ open class JXSegmentedView: UIView {
     private var lastContentOffset: CGPoint = CGPoint.zero
     /// 正在滚动中的目标index。用于处理正在滚动列表的时候，立即点击item，会导致界面显示异常。
     private var scrollingTargetIndex: Int = -1
+    private var isFirstLayoutSubviews = true
 
     deinit {
         contentScrollView?.removeObserver(self, forKeyPath: "contentOffset")
@@ -225,8 +249,18 @@ open class JXSegmentedView: UIView {
 
         //部分使用者为了适配不同的手机屏幕尺寸，JXSegmentedView的宽高比要求保持一样。所以它的高度就会因为不同宽度的屏幕而不一样。计算出来的高度，有时候会是位数很长的浮点数，如果把这个高度设置给UICollectionView就会触发内部的一个错误。所以，为了规避这个问题，在这里对高度统一向下取整。
         //如果向下取整导致了你的页面异常，请自己重新设置JXSegmentedView的高度，保证为整数即可。
-        collectionView.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: floor(bounds.size.height))
-        reloadData()
+        let targetFrame = CGRect(x: 0, y: 0, width: bounds.size.width, height: floor(bounds.size.height))
+        if isFirstLayoutSubviews {
+            isFirstLayoutSubviews = false
+            collectionView.frame = targetFrame
+            reloadDataWithoutListContainer()
+        }else {
+            if collectionView.frame != targetFrame {
+                collectionView.frame = targetFrame
+                collectionView.collectionViewLayout.invalidateLayout()
+                collectionView.reloadData()
+            }
+        }
     }
 
     //MARK: - Public
@@ -240,6 +274,12 @@ open class JXSegmentedView: UIView {
     }
 
     open func reloadData() {
+        reloadDataWithoutListContainer()
+        listContainer?.reloadData()
+    }
+
+    open func reloadDataWithoutListContainer() {
+        dataSource?.reloadData(selectedIndex: selectedIndex)
         dataSource?.registerCellClass(in: self)
         if let itemSource = dataSource?.itemDataSource(in: self) {
             itemDataSource = itemSource
@@ -339,8 +379,8 @@ open class JXSegmentedView: UIView {
                 }
             }
         }
-        collectionView.collectionViewLayout.invalidateLayout()
         collectionView.reloadData()
+        collectionView.collectionViewLayout.invalidateLayout()
     }
 
     open func reloadItem(at index: Int) {
@@ -353,6 +393,11 @@ open class JXSegmentedView: UIView {
         cell?.reloadData(itemModel: itemDataSource[index], selectedType: .unknown)
     }
 
+
+    /// 代码选中指定index
+    /// 如果要同时触发列表容器对应index的列表加载，请再调用`listContainerView.didClickSelectedItem(at: index)`方法
+    ///
+    /// - Parameter index: 目标index
     open func selectItemAt(index: Int) {
         selectItemAt(index: index, selectedType: .code)
     }
@@ -435,6 +480,7 @@ open class JXSegmentedView: UIView {
                     let rightCell = collectionView.cellForItem(at: IndexPath(item: baseIndex + 1, section: 0)) as? JXSegmentedBaseCell
                     rightCell?.reloadData(itemModel: itemDataSource[baseIndex + 1], selectedType: .unknown)
 
+                    listContainer?.scrolling(from: baseIndex, to: baseIndex + 1, percent: remainderProgress, selectedIndex: selectedIndex)
                     delegate?.segmentedView(self, scrollingFrom: baseIndex, to: baseIndex + 1, percent: remainderProgress)
                 }
             }
@@ -444,7 +490,7 @@ open class JXSegmentedView: UIView {
 
     //MARK: - Private
     private func clickSelectItemAt(index: Int) {
-        guard delegate?.segmentedView(self, canClickItemAt: index) == true else {
+        guard delegate?.segmentedView(self, canClickItemAt: index) != false else {
             return
         }
         selectItemAt(index: index, selectedType: .click)
@@ -460,8 +506,11 @@ open class JXSegmentedView: UIView {
         }
 
         if index == selectedIndex {
-            if selectedType == .click {
+            if selectedType == .code {
+                listContainer?.didClickSelectedItem(at: index)
+            }else if selectedType == .click {
                 delegate?.segmentedView(self, didClickSelectedItemAt: index)
+                listContainer?.didClickSelectedItem(at: index)
             }else if selectedType == .scroll {
                 delegate?.segmentedView(self, didScrollSelectedItemAt: index)
             }
@@ -509,13 +558,6 @@ open class JXSegmentedView: UIView {
 
         let lastSelectedIndex = selectedIndex
         selectedIndex = index
-        if selectedType == .click {
-            delegate?.segmentedView(self, didClickSelectedItemAt: index)
-        }else if selectedType == .scroll {
-            delegate?.segmentedView(self, didScrollSelectedItemAt: index)
-        }
-        delegate?.segmentedView(self, didSelectedItemAt: index)
-        scrollingTargetIndex = -1
 
         let currentSelectedItemFrame = getItemFrameAt(index: selectedIndex)
         for indicator in indicators {
@@ -533,6 +575,17 @@ open class JXSegmentedView: UIView {
                 willSelectedCell?.reloadData(itemModel: willSelectedItemModel, selectedType: selectedType)
             }
         }
+
+        scrollingTargetIndex = -1
+        if selectedType == .code {
+            listContainer?.didClickSelectedItem(at: index)
+        }else if selectedType == .click {
+            delegate?.segmentedView(self, didClickSelectedItemAt: index)
+            listContainer?.didClickSelectedItem(at: index)
+        }else if selectedType == .scroll {
+            delegate?.segmentedView(self, didScrollSelectedItemAt: index)
+        }
+        delegate?.segmentedView(self, didSelectedItemAt: index)
     }
 
     private func getItemFrameAt(index: Int) -> CGRect {

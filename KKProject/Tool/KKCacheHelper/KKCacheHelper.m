@@ -8,11 +8,10 @@
 
 #import "KKCacheHelper.h"
 
-
 @interface KKCacheHelper ()
-@property (nonatomic,assign) CGFloat imageCacheSize;
+@property (nonatomic,assign) CGFloat              imageCacheSize;
 @property (nonatomic,strong) NSMutableDictionary *cacheKeyDictionary;
-@property (nonatomic,strong) YYDiskCache *diskCache;
+@property (nonatomic,strong) YYDiskCache         *diskCache;
 @end
 
 @implementation KKCacheHelper
@@ -72,18 +71,21 @@
     if (self.cacheKeyDictionary[key]) {
         objects =  [self trimArray:(NSArray *)objects toTargetCount:[self.cacheKeyDictionary[key] integerValue]];
     }
-    [self.diskCache setObject:objects forKey:key withBlock:^{
-        if (block)  block();
-    }];
+    [self.diskCache setObject:objects forKey:key withBlock:block];
 }
 
 -(id<NSCoding>)objectFromDiskWithKey:(NSString *)key{
     return [self.diskCache objectForKey:key];
 }
 
+-(void)objectFromDiskWithKey:(NSString *)key withBlock:(void (^)(NSString * _Nonnull, id<NSCoding> _Nonnull))block{
+    [self.diskCache objectForKey:key withBlock:block];
+}
+
 - (void)removeObjectFromDiskWithKey:(NSString *)key{
     [self.diskCache removeObjectForKey:key];
 }
+
 
 - (void)setMaxCount:(NSUInteger)maxCount forKey:(NSString *)key{
     self.cacheKeyDictionary[key] = @(maxCount);

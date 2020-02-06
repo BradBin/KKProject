@@ -8,15 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "KKTableViewProtocol.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class _KKTableView;
 @interface KKTableView : UIView<KKTableViewProtocol,
-                                UITableViewDelegate,
-                                UITableViewDataSource>
+UITableViewDelegate,
+UITableViewDataSource,
+DZNEmptyDataSetSource,
+DZNEmptyDataSetDelegate>
 
+
+/// 默认是tableView的类型UITableViewStylePlain
 @property (nonatomic,strong) _KKTableView *tableView;
 
 /**空视图相关设置***/
@@ -25,6 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong,nullable) NSMutableAttributedString *placerDescAttrText; //空视图描述提示语
 @property (nonatomic,strong,nullable) UIImage  *placerImage;    //空视图占位图
 @property (nonatomic,strong,nullable) UILabel  *refreshTipLabel;
+
+
+/// 设置tableView的类型
+/// @param tableViewStyle tableViewStyle
+-(void)kk_setTableViewStyle:(UITableViewStyle)tableViewStyle;
 
 @end
 

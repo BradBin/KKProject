@@ -12,7 +12,8 @@
 #import "KKFindViewController.h"
 #import "KKProfileViewController.h"
 
-@interface KKTabBarController ()<UITabBarControllerDelegate,CYLTabBarControllerDelegate>
+@interface KKTabBarController ()<UITabBarControllerDelegate,
+CYLTabBarControllerDelegate>
 
 @end
 
@@ -32,6 +33,7 @@
                                                                    titlePositionAdjustment:titlePositionAdjustment
                                                                                    context:nil];
     [self customizeTabBarAppearance:tabBar];
+    self.delegate = self;
     
     return  (self = (KKTabBarController*)tabBar);
     
@@ -82,19 +84,19 @@
 - (void)customizeTabBarAppearance:(CYLTabBarController *)tabBarController {
     // Customize UITabBar height
     // 自定义 TabBar 高度
-    //        tabBarController.tabBarHeight = CYL_IS_IPHONE_X ? 65 : 40;
+    
     [tabBarController rootWindow].backgroundColor = [UIColor whiteColor];
     
     // set the text color for unselected state
     // 普通状态下的文字属性
+
     NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
-    
-    normalAttrs[NSForegroundColorAttributeName] = [UIColor grayColor] ;
+    normalAttrs[NSForegroundColorAttributeName] = [UIColor redColor] ;
     
     // set the text color for selected state
     // 选中状态下的文字属性
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSForegroundColorAttributeName] =  [UIColor blackColor] ;
+    selectedAttrs[NSForegroundColorAttributeName] =  [UIColor orangeColor] ;
     
     // set the text Attributes
     // 设置文字属性
@@ -102,22 +104,13 @@
     [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
     [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
-    // Set the dark color to selected tab (the dimmed background)
-    // TabBarItem选中后的背景颜色
-    //     [self customizeTabBarSelectionIndicatorImage];
-    
-    // update TabBar when TabBarItem width did update
-    // If your app need support UIDeviceOrientationLandscapeLeft or UIDeviceOrientationLandscapeRight，
-    // remove the comment '//'
-    // 如果你的App需要支持横竖屏，请使用该方法移除注释 '//'
-    
-    
-    // set the bar shadow image
-    // This shadow image attribute is ignored if the tab bar does not also have a custom background image.So at least set somthing.
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:UIColor.clearColor]];
     [[UITabBar appearance] setBackgroundColor:UIColor.whiteColor];
-    [[UITabBar appearance] setTintColor:[UIColor blackColor]];
-    //        [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tapbar_top_line"]];
+ 
+    [[UITabBar appearance] setShadowImage:[UIImage imageWithColor:UIColor.clearColor]];
+    [[UITabBar appearance] setTranslucent:false];
+
 }
 
 

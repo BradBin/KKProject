@@ -149,3 +149,12 @@ static inline void KKSetupBlock(dispatch_block_t block,dispatch_block_t objC_blo
     objC_block();
 #endif
 }
+
+
+static inline UIEdgeInsets KKSafeAreaInsets(){
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    if (@available(iOS 11.0, *)) {
+        insets = UIApplication.sharedApplication.keyWindow.safeAreaInsets;
+    }
+    return insets;
+}

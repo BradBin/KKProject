@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor    = .white
-        window?.rootViewController = KKTabBarController.init()
+        window?.rootViewController = KKLanuchViewController()
         window?.makeKeyAndVisible()
-        
+
         return true
     }
 
@@ -46,7 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    
+    func kk_setupNavigationBar() -> Void {
+        
+        
+    }
 
 
 }
-

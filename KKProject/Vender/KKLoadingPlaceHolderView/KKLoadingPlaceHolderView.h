@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger,KKLoadingPlaceHolderType) {
     KKLoadingPlaceHolderTypeLoading = 0,
     KKLoadingPlaceHolderTypeFailed,
-    
+    KKLoadingPlaceHolderTypeNoData,
     KKLoadingPlaceHolderTypeBadNetwork = 9,
     KKLoadingPlaceHolderTypeBase       = 99
 };

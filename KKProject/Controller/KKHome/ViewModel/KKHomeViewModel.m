@@ -7,6 +7,7 @@
 //
 
 #import "KKHomeViewModel.h"
+
 /**
  数据缓存方案:
     1.先去缓存中取数据
@@ -15,11 +16,24 @@
     4.网络请求完成-->更新数据
  */
 
+@interface KKHomeViewModel ()
+
+@property (nonatomic, strong) NSMutableArray *cacheCategoryTitles;
+@property (nonatomic,   copy) NSString       *cacheKey;
+
+@end
+
 @implementation KKHomeViewModel
 
 -(void)kk_initialize{
     [super kk_initialize];
+    [self kk_getCacheCategoryTitles];
     [self kk_getCategoryTitles];
+}
+
+-(void)kk_getCacheCategoryTitles{
+    self.cacheKey = [NSString stringWithFormat:@"%@%@",KK_BASE_URL,KK_CATEGORY_TITLE];
+    self.categoryTitles = [NSArray arrayWithArray:(NSArray *)[KKCacheHelper.shared objectFromDiskWithKey:self.cacheKey]];
 }
 
 /**
@@ -33,6 +47,7 @@
         if ([x isKindOfClass:KKHomeModel.class]) {
             KKHomeModel *home = (KKHomeModel *)x;
             if (home.categoryTitles.count) {
+                [self kk_setCacheCategoryTitles:home.categoryTitles refresh:true];
                 self.categoryTitles = [NSArray arrayWithArray:home.categoryTitles];
                 [self.categoryUISubject sendNext:home.categoryTitles];
             }else{
@@ -56,8 +71,10 @@
 
 -(RACCommand *)categoryCommand{
     if (_categoryCommand == nil) {
+        @weakify(self);
         _categoryCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+                @strongify(self);
                 NSMutableDictionary *para = NSMutableDictionary.dictionary;
                 [para setObject:kk_DEVICE_ID   forKey:@"device_id"];
                 [para setObject:KK_ACCOUNT_IID forKey:@"iid"];
@@ -77,6 +94,23 @@
         }];
     }
     return _categoryCommand;
+}
+
+-(void)kk_setCacheCategoryTitles:(NSArray *)titles refresh:(BOOL)isRefresh{
+    if (isRefresh) {
+        [self.cacheCategoryTitles removeAllObjects];
+        [self.cacheCategoryTitles addObjectsFromArray:titles];
+    }else{
+        [self.cacheCategoryTitles addObjectsFromArray:titles];
+    }
+    [KKCacheHelper.shared setObject:self.cacheCategoryTitles forKey:self.cacheKey withBlock:nil];
+}
+
+-(NSMutableArray *)cacheCategoryTitles{
+    if (_cacheCategoryTitles == nil) {
+        _cacheCategoryTitles = NSMutableArray.array;
+    }
+    return _cacheCategoryTitles;
 }
 
 

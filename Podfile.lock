@@ -1,5 +1,4 @@
 PODS:
-  - Advance (2.2.0)
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
     - AFNetworking/Reachability (= 3.2.1)
@@ -19,6 +18,7 @@ PODS:
   - AnimatedCollectionViewLayout (0.6.0)
   - AsyncSwift (2.0.4)
   - Atributika (4.8.2)
+  - BeeHive (1.6.0)
   - BlockHook (1.2.3)
   - Bugly (2.5.0)
   - Cards (1.4.0):
@@ -30,9 +30,9 @@ PODS:
     - CollectionKit/Core (= 2.4.0)
   - CollectionKit/Core (2.4.0)
   - CryptoSwift (1.0.0)
-  - CYLTabBarController (1.24.1):
-    - CYLTabBarController/Core (= 1.24.1)
-  - CYLTabBarController/Core (1.24.1)
+  - CYLTabBarController (1.28.5):
+    - CYLTabBarController/Core (= 1.28.5)
+  - CYLTabBarController/Core (1.28.5)
   - DKNightVersion (2.4.3):
     - DKNightVersion/Core (= 2.4.3)
     - DKNightVersion/CoreAnimation (= 2.4.3)
@@ -47,6 +47,8 @@ PODS:
   - DKNightVersion/UIKit (2.4.3):
     - DKNightVersion/Core
   - dsBridge (3.0.6)
+  - DynamicColor (4.2.0)
+  - EachNavigationBar (1.14.3)
   - EasyFoundation (1.0.0):
     - EasySequence (~> 1.3.0)
     - EasyTuple (~> 1.1.0)
@@ -54,19 +56,23 @@ PODS:
     - EasyFoundation (~> 1.0.0)
   - EasySequence (1.3.1)
   - EasyTuple (1.1.2)
+  - ESTabBarController-swift (2.8.0)
   - Eureka (4.3.1)
   - expanding-collection (3.1.0)
   - FBRetainCycleDetector (0.1.4)
   - FFRouter (1.1.1)
   - FoldingCell (5.0.1)
   - GPUImage (0.1.7)
+  - HandyJSON (5.0.1)
   - Instructions (1.3.0)
   - IQKeyboardManager (6.3.0)
   - IQKeyboardManagerSwift (6.2.1)
   - JXCategoryView (1.3.3)
-  - JXSegmentedView (0.0.11)
+  - JXSegmentedView (1.0.4)
   - KeychainAccess (3.2.0)
-  - Kingfisher (4.10.1)
+  - Kingfisher (5.13.0):
+    - Kingfisher/Core (= 5.13.0)
+  - Kingfisher/Core (5.13.0)
   - LTMorphingLabel (0.7.0)
   - Masonry (1.1.0)
   - Material (2.16.4):
@@ -99,26 +105,30 @@ PODS:
   - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
   - Protobuf (3.7.0)
+  - Queuer (2.1.1)
   - QuickLayout (3.0.0)
-  - R.swift (5.0.3):
-    - R.swift.Library (~> 5.0.0)
-  - R.swift.Library (5.0.1)
-  - RAMAnimatedTabBarController (5.0.0)
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
+  - RAMAnimatedTabBarController (5.1.0)
   - ReachabilitySwift (4.3.1)
-  - ReactiveCocoa (9.0.0):
-    - ReactiveSwift (~> 5.0)
+  - ReactiveCocoa (10.2.0):
+    - ReactiveSwift (~> 6.2)
   - ReactiveObjC (3.1.0)
-  - ReactiveSwift (5.0.1):
-    - Result (~> 4.1)
+  - ReactiveSwift (6.2.0)
+  - Repeat (0.6.0)
   - Result (4.1.0)
-  - RxCocoa (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.5.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
   - SkeletonView (1.5)
-  - SnapKit (4.2.0)
-  - SQLite.swift (0.12.0):
-    - SQLite.swift/standard (= 0.12.0)
-  - SQLite.swift/standard (0.12.0)
+  - SnapKit (5.0.1)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
   - SSZipArchive (2.1.5)
   - Surge (2.2.0)
   - SVGAPlayer (2.3.3):
@@ -138,11 +148,12 @@ PODS:
   - SwiftMessages (6.0.2):
     - SwiftMessages/App (= 6.0.2)
   - SwiftMessages/App (6.0.2)
-  - SwiftyJSON (4.2.0)
+  - SwiftyJSON (5.0.0)
   - SwiftyStoreKit (0.14.2)
   - SwiftyUserDefaults (4.0.0)
   - SwipeCellKit (2.6.0)
-  - Then (2.4.0)
+  - Then (2.6.0)
+  - thenPromise (5.1.2)
   - UMCAnalytics (6.0.3):
     - UMCCommon
   - UMCCommon (2.0.1)
@@ -172,54 +183,60 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
-  - Advance
   - AFNetworking
   - Alamofire
   - AnimatedCollectionViewLayout
   - AsyncSwift
   - Atributika
+  - BeeHive
   - BlockHook
   - Bugly
   - Cards
   - CollectionKit
   - CryptoSwift
-  - CYLTabBarController
+  - CYLTabBarController (~> 1.28.5)
   - DKNightVersion
   - dsBridge
+  - DynamicColor
+  - EachNavigationBar (~> 1.14.3)
   - EasyReact
+  - ESTabBarController-swift (~> 2.8.0)
   - Eureka
   - expanding-collection
   - FBRetainCycleDetector
   - FFRouter
   - FoldingCell
   - GPUImage
+  - HandyJSON (~> 5.0.1)
   - Instructions
   - IQKeyboardManager
   - IQKeyboardManagerSwift
   - JXCategoryView
-  - JXSegmentedView
+  - JXSegmentedView (~> 1.0.4)
   - KeychainAccess
-  - Kingfisher
+  - Kingfisher (~> 5.13.0)
   - LTMorphingLabel
   - Masonry
   - Material
   - MBProgressHUD
   - MJRefresh
   - Moya
-  - NIMSDK (~> 6.5.5)
+  - NIMSDK
   - NVActivityIndicatorView
   - OpenShare
   - PromiseKit
-  - R.swift
+  - Queuer (~> 2.1.1)
+  - R.swift (~> 5.1.0)
   - RAMAnimatedTabBarController
   - ReachabilitySwift
-  - ReactiveCocoa
+  - ReactiveCocoa (~> 10.2.0)
   - ReactiveObjC
-  - RxCocoa
-  - RxSwift
+  - Repeat (~> 0.6.0)
+  - RxCocoa (~> 5.0.1)
+  - RxSwift (~> 5.0.1)
   - SkeletonView
-  - SnapKit
-  - SQLite.swift
+  - SnapKit (~> 5.0.1)
+  - SQLite.swift (~> 0.12.2)
   - Surge
   - SVGAPlayer
   - SVGKit
@@ -227,11 +244,12 @@ DEPENDENCIES:
   - SwiftEntryKit
   - SwiftLint
   - SwiftMessages
-  - SwiftyJSON
+  - SwiftyJSON (~> 5.0.0)
   - SwiftyStoreKit
   - SwiftyUserDefaults
   - SwipeCellKit
-  - Then
+  - Then (~> 2.6.0)
+  - thenPromise
   - UMCAnalytics
   - UMCCommon
   - UMCCommonLog
@@ -246,12 +264,12 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Advance
     - AFNetworking
     - Alamofire
     - AnimatedCollectionViewLayout
     - AsyncSwift
     - Atributika
+    - BeeHive
     - BlockHook
     - Bugly
     - Cards
@@ -261,16 +279,20 @@ SPEC REPOS:
     - CYLTabBarController
     - DKNightVersion
     - dsBridge
+    - DynamicColor
+    - EachNavigationBar
     - EasyFoundation
     - EasyReact
     - EasySequence
     - EasyTuple
+    - ESTabBarController-swift
     - Eureka
     - expanding-collection
     - FBRetainCycleDetector
     - FFRouter
     - FoldingCell
     - GPUImage
+    - HandyJSON
     - Instructions
     - IQKeyboardManager
     - IQKeyboardManagerSwift
@@ -291,6 +313,7 @@ SPEC REPOS:
     - Player
     - PromiseKit
     - Protobuf
+    - Queuer
     - QuickLayout
     - R.swift
     - R.swift.Library
@@ -299,8 +322,10 @@ SPEC REPOS:
     - ReactiveCocoa
     - ReactiveObjC
     - ReactiveSwift
+    - Repeat
     - Result
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SkeletonView
     - SnapKit
@@ -318,6 +343,7 @@ SPEC REPOS:
     - SwiftyUserDefaults
     - SwipeCellKit
     - Then
+    - thenPromise
     - UMCAnalytics
     - UMCCommon
     - UMCCommonLog
@@ -329,38 +355,42 @@ SPEC REPOS:
     - YYKit
 
 SPEC CHECKSUMS:
-  Advance: b7ac04b777e4f03aed11b04f474ce182724c7360
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   Atributika: 7b3631032cf11f2197b352343e0bd1b783d8ca88
+  BeeHive: 64c01ddec33b9ef8813701e075eeb732327d0f75
   BlockHook: d7dd31830c3cacd602bb6928a71eaa97b777a9d6
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
   Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   CollectionKit: 8f01e7629185bb81072c4aa734d105df5c2d1c8b
   CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
-  CYLTabBarController: 46fa053a2fb165095e04792431ad91a759bb7f9f
+  CYLTabBarController: edd9fecba9afa3f2e9e44ed50ca6dde69941f25f
   DKNightVersion: eaa80cc4014b4bae7d4b535fd87ecc6a3c2767b3
   dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+  DynamicColor: c475f66bda1cabf602f2c54ac1171c0c07148a5a
+  EachNavigationBar: 9809ab93fe5d3b821d34ddf6159a9634fdc18005
   EasyFoundation: a4bb86dd4ba01cb720f5320c314c5628ee237acd
   EasyReact: 39fdf743eab448b1c3f61622a2bddc7c6ec71af2
   EasySequence: 78462a0b839cb6b8a18e30a5adc37055bac0b929
   EasyTuple: a6a068ab3aa47e899a0c9f9ee23ddb394542ea9e
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
   expanding-collection: 7eb1fc48c6ec5e00c8887fe46c595c31b81b578a
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FFRouter: dfda137b8f6817ca92dc9a1151727449548abfd3
   FoldingCell: 9197b915a415af9e52a857964066797af6a51c2b
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
   Instructions: fbbb0544d166d5c101c25b1ae58ff6da492cdddb
   IQKeyboardManager: 2ca9d64893247556f53523dcd8d78641f0ba7c23
   IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   JXCategoryView: 25e379fa1e8f5577f878e2446207bb869ec97228
-  JXSegmentedView: cb5f8841f64255ba86c68a8cbab24da72a75b11c
+  JXSegmentedView: b278b4c5d4c4c2982b4e084cef76ff1ddd37c6a5
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
   LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
@@ -374,20 +404,23 @@ SPEC CHECKSUMS:
   Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  Queuer: 65c5f6b821417bc62da23d63d570ec9d22bee4de
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
-  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
-  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
-  RAMAnimatedTabBarController: 6736db7bec2ec74d64059ee9cb40cb9bd281338e
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  RAMAnimatedTabBarController: b5c821298071fded801532216ad8a24394f89859
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
-  ReactiveCocoa: 29709cf0cc7502ddd04a51220e10ee0336d8bec8
+  ReactiveCocoa: a123c42f449c552460a4ee217dd49c76a17c8204
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
-  ReactiveSwift: cac20a5bbe560c5806bd29c0fccf90d03b996ac1
+  ReactiveSwift: 3dc8800378110b13d40b46ab362afa9f6bcffc6c
+  Repeat: fd80848f4b3d6f133b18fdee04fd193aff6b31ff
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   SkeletonView: 6cbb80f82f8bdee3f9093e2fa03b84819b4bd826
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SQLite.swift: 7cad9db150a03716336e69469ec9559c85aece5b
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
   Surge: 51fbaf8020dc2bc6416c07ed540f21536ba5a98b
   SVGAPlayer: cf93c1761209c478003951fa23376e7ed7dedc96
@@ -396,11 +429,12 @@ SPEC CHECKSUMS:
   SwiftEntryKit: 3f55c0b8e676afe24a3703237bcac68372891c56
   SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwiftyStoreKit: cc399645796b094022fb650c148a0aed25995873
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
-  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
+  Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
+  thenPromise: c1a319348c6052652b071d8dd4c6db9984860209
   UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
   UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
@@ -411,6 +445,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 8fa8cac811a50f81e5b677e1c18668b3cf31d9c6
+PODFILE CHECKSUM: 42577064ac4e30be545556d887fc9344effd8247
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.7.5

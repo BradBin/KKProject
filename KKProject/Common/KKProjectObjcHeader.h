@@ -21,6 +21,8 @@
 #import "KKErrorHelper.h"
 #import "KKAccountHelper.h"
 #import "KKToolsHelper.h"
+#import "KKThemeHelper.h"
+#import "KKCacheHelper.h"
 
 
 #import "KKRefresh.h"

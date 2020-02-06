@@ -83,19 +83,19 @@
      
         
     }, ^{
-        [UMCommonLogManager setUpUMCommonLogManager];
-        [UMConfigure setLogEnabled:true];
-        [UMConfigure initWithAppkey:UMengKey channel:@"App Store"];
-        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession|UMSocialPlatformType_WechatSession
-                                              appKey:weChatAppId
-                                           appSecret:weChatAppSecret
-                                         redirectURL:nil];
-        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
-                                              appKey:QQAppKey
-                                           appSecret:QQAppSecret
-                                         redirectURL:nil];
-        
-        [MobClick setScenarioType:E_UM_NORMAL];
+//        [UMCommonLogManager setUpUMCommonLogManager];
+//        [UMConfigure setLogEnabled:true];
+//        [UMConfigure initWithAppkey:UMengKey channel:@"App Store"];
+//        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession|UMSocialPlatformType_WechatSession
+//                                              appKey:weChatAppId
+//                                           appSecret:weChatAppSecret
+//                                         redirectURL:nil];
+//        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
+//                                              appKey:QQAppKey
+//                                           appSecret:QQAppSecret
+//                                         redirectURL:nil];
+//        
+//        [MobClick setScenarioType:E_UM_NORMAL];
     });
 }
 

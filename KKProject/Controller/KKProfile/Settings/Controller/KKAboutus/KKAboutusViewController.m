@@ -7,8 +7,12 @@
 //
 
 #import "KKAboutusViewController.h"
+#import "KKAboutusView.h"
 
 @interface KKAboutusViewController ()
+
+@property (nonatomic, strong) KKAboutusViewModel *viewModel;
+@property (nonatomic, strong) KKAboutusView *aboutusView;
 
 @end
 
@@ -17,6 +21,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)kk_layoutNavigation{
+    [super kk_layoutNavigation];
+    self.kk_navBackgroundColor = UIColor.clearColor;
+    self.kk_navTintColor       = [UIColor colorWithHexString:@"#FC3E4B"];
+}
+
+-(void)kk_addSubviews{
+    [super kk_addSubviews];
+    self.aboutusView = ({
+        KKAboutusView *view = [[KKAboutusView alloc] initWithViewModel:self.viewModel];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(view.superview);
+        }];
+        [view.superview layoutIfNeeded];
+        view;
+    });
+}
+
+
+-(KKAboutusViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = KKAboutusViewModel.new;
+    }
+    return _viewModel;
 }
 
 /*

@@ -7,9 +7,32 @@
 //
 
 #import "UIViewController+KKAdd.h"
+#import <objc/runtime.h>
 #import "AppDelegate.h"
 
 @implementation UIViewController (KKAdd)
+
++(void)load{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Method presentM = class_getInstanceMethod(self.class, @selector(presentViewController:animated:completion:));
+        Method presentSwizzlingM = class_getInstanceMethod(self.class, @selector(_kk_presentViewController:animated:completion:));
+        method_exchangeImplementations(presentM, presentSwizzlingM);
+    });
+}
+
+- (void)_kk_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
+    if ([viewControllerToPresent isKindOfClass:[UIAlertController class]]) {
+        UIAlertController *alertController = (UIAlertController *)viewControllerToPresent;
+        if (alertController.title == nil && alertController.message == nil) {
+            return;
+        }
+    }
+    [self _kk_presentViewController:viewControllerToPresent animated:flag completion:completion];
+}
+
+
+
 
 /**
  弹出警戒框,并显示提示信息和block的"确定"和""按钮提响应回调
@@ -104,11 +127,11 @@
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:sureTitle
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction * _Nonnull action) {
-                                                           UITextField *textfield = alertContr.textFields.firstObject;
-                                                           if (confirmhandler) {
-                                                               confirmhandler(textfield);
-                                                           }
-                                                       }];
+        UITextField *textfield = alertContr.textFields.firstObject;
+        if (confirmhandler) {
+            confirmhandler(textfield);
+        }
+    }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle
                                                            style:UIAlertActionStyleCancel
@@ -179,12 +202,12 @@
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:sureTitle
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction * _Nonnull action) {
-                                                           UITextField *user = alertContr.textFields.firstObject;
-                                                           UITextField *pwd = alertContr.textFields.lastObject;
-                                                           if (confirmhandler) {
-                                                               confirmhandler(user,pwd);
-                                                           }
-                                                       }];
+        UITextField *user = alertContr.textFields.firstObject;
+        UITextField *pwd = alertContr.textFields.lastObject;
+        if (confirmhandler) {
+            confirmhandler(user,pwd);
+        }
+    }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelTitle
                                                            style:UIAlertActionStyleCancel

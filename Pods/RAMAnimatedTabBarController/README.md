@@ -1,4 +1,4 @@
-<a href="https://dev.ramotion.com?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar"><img src="https://github.com/Ramotion/animated-tab-bar/blob/master/header.png"></a>
+<a href="https://www.ramotion.com/agency/app-development?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar"><img src="https://github.com/Ramotion/animated-tab-bar/blob/master/header.png"></a>
 
 <a href="https://github.com/Ramotion/animated-tab-bar">
 <img align="left" src="https://github.com/Ramotion/animated-tab-bar/blob/master/Screenshots/animatedTabBar.gif" width="480" height="360" /></a>
@@ -13,20 +13,19 @@ ___
 
 
 <p><h6>We specialize in the designing and coding of custom UI for Mobile Apps and Websites.</h6>
-<a href="https://dev.ramotion.com?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar">
+<a href="https://www.ramotion.com/agency/app-development?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar">
 <img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
 </p>
 <p><h6>Stay tuned for the latest updates:</h6>
 <a href="https://goo.gl/rPFpid" >
 <img src="https://i.imgur.com/ziSqeSo.png/" width="156" height="28"></a></p>
-<h6><a href="https://store.ramotion.com/product/iphone-x-clay-mockups?utm_source=gthb&utm_medium=special&utm_campaign=animated-tab-bar#demo">Get Free Mockup For your project →</a></h6>
 
 </br>
 
 [![CocoaPods](https://img.shields.io/cocoapods/p/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/RAMAnimatedTabBarController.svg)](http://cocoapods.org/pods/RAMAnimatedTabBarController)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Ramotion/animated-tab-bar)
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-green.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 4.0](https://img.shields.io/badge/Swift-5.0-green.svg?style=flat)](https://developer.apple.com/swift/)
 [![Twitter](https://img.shields.io/badge/Twitter-@Ramotion-blue.svg?style=flat)](http://twitter.com/Ramotion)
 [![Travis](https://img.shields.io/travis/Ramotion/animated-tab-bar.svg)](https://travis-ci.org/Ramotion/animated-tab-bar)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/Ramotion)
@@ -34,7 +33,7 @@ ___
 ## Requirements
 
 - iOS 9.0+
-- xCode 9
+- Xcode 10.2
 
 ## Installation
 
@@ -157,7 +156,7 @@ Try this UI component and more like this in our iOS app. Contact us if intereste
 <a href="https://itunes.apple.com/app/apple-store/id1182360240?pt=550053&ct=animated-tab-bar&mt=8" >
 <img src="https://github.com/ramotion/gliding-collection/raw/master/app_store@2x.png" width="117" height="34"></a>
 
-<a href="https://dev.ramotion.com?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar">
+<a href="https://www.ramotion.com/agency/app-development?utm_source=gthb&utm_medium=repo&utm_campaign=animated-tab-bar">
 <img src="https://github.com/ramotion/gliding-collection/raw/master/contact_our_team@2x.png" width="187" height="34"></a>
 <br>
 <br>

@@ -40,16 +40,21 @@
     [super kk_bindViewModel];
     @weakify(self);
     [[[self.autoPlayWithWiFi rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
+        @strongify(self);
         NSLog(@"autoPlayWithWiFi---------------%@",x);
     }];
     
     [[[self.showAbstract rac_newOnChannel] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNumber * _Nullable x) {
+        @strongify(self);
         NSLog(@"showAbstract---------------%@",x);
     }];
     
     [[self.viewModel.changeLanguageSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
         NSLog(@"多语言---------------%@",x);
     }];
+    
+ 
     
     //缓存处理
     [[self.viewModel.cleanSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
@@ -72,8 +77,7 @@
                             [self.tableView reloadData];
                         }
                     }];
-                }
-                    break;
+                } break;
                     
                 default:
                     break;

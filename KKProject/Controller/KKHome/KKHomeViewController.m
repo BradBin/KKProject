@@ -12,7 +12,7 @@
 #import "KKHomeView.h"
 #import "KKHomeViewModel.h"
 #import "KKTextField.h"
-#import "KKShareView.h"
+
 
 @interface KKHomeViewController ()<JXCategoryViewDelegate,
 JXCategoryListContainerViewDelegate>
@@ -147,38 +147,31 @@ JXCategoryListContainerViewDelegate>
         }];
         view;
     });
-    
-    [self kk_categoryReloadData];
 }
 
 -(void)kk_bindViewModel{
     [super kk_bindViewModel];
+    [self kk_refreshCategory];
     @weakify(self);
     [[[self.editBtn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//        @strongify(self);
-//        [[[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_updateConfigure:^(KKChannelView * _Nonnull channelView) {
-//            channelView.contentView.backgroundColor = UIColor.redColor;
-//            channelView.titlelabel.text = @"fasasfaffa";
-//            channelView.titlelabel.numberOfLines = 0;
-//            channelView.closeBtn.backgroundColor = UIColor.orangeColor;
-//            channelView.showDuration             = 5;
-//        }] kk_showBlock:^{
-//             NSLog(@"kk_showBlock");
-//        } hideBlock:^{
-//            NSLog(@"kk_hideBlock");
-//        }];
-        [KKShareView.shared kk_shareWithItems:nil functions:nil showBlock:^{
-            NSLog(@"kk_showBlock");
-        } hideBlock:^{
-             NSLog(@"kk_hideBlock");
-        }];
+        //        @strongify(self);
+        //        [[[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_updateConfigure:^(KKChannelView * _Nonnull channelView) {
+        //            channelView.contentView.backgroundColor = UIColor.redColor;
+        //            channelView.titlelabel.text = @"fasasfaffa";
+        //            channelView.titlelabel.numberOfLines = 0;
+        //            channelView.closeBtn.backgroundColor = UIColor.orangeColor;
+        //            channelView.showDuration             = 5;
+        //        }] kk_showBlock:^{
+        //             NSLog(@"kk_showBlock");
+        //        } hideBlock:^{
+        //            NSLog(@"kk_hideBlock");
+        //        }];
     }];
     
     [[self.viewModel.categoryUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:NSArray.class]) {
-            self.categoryTitles = [self geTitlestWithModelArray:(NSArray *)x];
-            [self kk_categoryReloadData];
+            [self kk_refreshCategory];
         }else if([x isKindOfClass:NSNumber.class]){
             
         }else{
@@ -203,8 +196,8 @@ JXCategoryListContainerViewDelegate>
             [self.navigationController pushViewController:(KKViewController *)x animated:true];
         }
     }];
-
-     //HomePage事件响应 present VC
+    
+    //HomePage事件响应 present VC
     [[self.viewModel.presentVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:KKViewController.class]) {
@@ -212,6 +205,13 @@ JXCategoryListContainerViewDelegate>
         }
     }];
     
+}
+
+
+/// 刷新头部分类标题UI
+-(void)kk_refreshCategory{
+    self.categoryTitles = [self geTitlestWithModelArray:self.viewModel.categoryTitles];
+    [self kk_categoryReloadData];
 }
 
 /**

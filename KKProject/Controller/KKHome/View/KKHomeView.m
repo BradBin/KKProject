@@ -27,7 +27,7 @@
     if (self.pageViewModel.homeLayouts.count == 0) {
         self.pageViewModel.categoryModel = self.categoryModel;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.tableView.mj_header beginRefreshing];
+            [self.pageViewModel.refreshCommand execute:@(true)];
         });
         UIColor *categoryBackUIColor;
         if ([self.categoryModel.name isEqualToString:@"北京"]) {
@@ -59,6 +59,7 @@
 
 -(void)kk_setupView{
     [super kk_setupView];
+    [self kk_setTableViewStyle:UITableViewStyleGrouped];
     [self.tableView.backgroundView removeFromSuperview];
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.0];
     [self.tableView registerClass:KKHomeViewTextCell.class       forCellReuseIdentifier:KKHomeViewTextCellIdentifier];
@@ -83,10 +84,10 @@
 
 -(void)kk_bindViewModel{
     [super kk_bindViewModel];
-    
+    [self kk_refreshUI];
     @weakify(self);
     [[self.pageViewModel.refreshUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
+        @strongify(self);   
         if ([x isKindOfClass:NSNumber.class] == false) return ;
         KKRefreshStatus status = (KKRefreshStatus)[x unsignedIntegerValue];
         switch (status) {
@@ -99,8 +100,19 @@
                 break;
                 
             case KKRefreshStatusNetworkError_Header:
+            {
+           
+                KKLoadingPlaceHolderView *placeHolderView = KKLoadingPlaceHolderView.new;
+                placeHolderView.imageView.image = [UIImage imageNamed:@"post_highlight.png"];
+                placeHolderView.messageLabel.text = @"正在加载中...";
+                placeHolderView.type = KKLoadingPlaceHolderTypeLoading;
+                self.placeHolderView = placeHolderView;
+                            
+                [self kk_showPlaceHolderWithType:KKLoadingPlaceHolderTypeFailed callBack:^{
+                    NSLog(@"加载指示器回调");
+                }];
                 [self.tableView.mj_header endRefreshing];
-                break;
+            } break;
                 
             case KKRefreshStatusNetworkError_Footer:
                 [self.tableView.mj_footer endRefreshing];
@@ -127,12 +139,15 @@
             default:
                 break;
         }
-       
-        dispatch_async_on_main_queue(^{
-            [self.tableView reloadData];
-        });
+        [self kk_refreshUI];
     }];
     
+}
+
+- (void)kk_refreshUI{
+    dispatch_async_on_main_queue(^{
+        [self.tableView reloadData];
+    });
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -183,7 +198,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [(KKHomeLayout *)self.pageViewModel.homeLayouts[indexPath.row] height];
+    KKHomeLayout *layout = (KKHomeLayout *)self.pageViewModel.homeLayouts[indexPath.row];
+    return [layout height];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
