@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KKVideoViewController: KKBaseViewController {
+class KKVideoViewController: KKViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KKMessageViewController: KKBaseViewController {
+class KKMessageViewController: KKViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

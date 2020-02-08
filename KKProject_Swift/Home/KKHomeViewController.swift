@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import DynamicColor
 
-class KKHomeViewController: KKBaseViewController {
+class KKHomeViewController: KKViewController {
     
     // 懒加载
     private lazy var viewModel : KKHomeViewModel = {
@@ -27,17 +27,24 @@ class KKHomeViewController: KKBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.view.addSubview(homeView)
-//        homeView.snp.makeConstraints { (snp) in
-//            snp.edges.equalToSuperview()
-//        }
-        
         // Do any additional setup after loading the view.
     }
     
-   
-
+    override func kk_addSubView(){
+        super.kk_addSubView()
+        self.view.addSubview(homeView)
+        homeView.snp.makeConstraints { (snp) in
+            snp.edges.equalToSuperview()
+        }
+    }
+    
+    override func kk_bindViewModel() {
+        super.kk_bindViewModel()
+        
+        print("kk_bindViewModel\(self.viewModel)")
+    }
+    
+    
     /*
      // MARK: - Navigation
      

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KKPostViewController: KKBaseViewController {
+class KKPostViewController: KKViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

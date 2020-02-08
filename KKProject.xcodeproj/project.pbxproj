@@ -73,7 +73,6 @@
 		0AA78905227F42B700242C91 /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FE227F42B700242C91 /* tab_search_animate.json */; };
 		0AA78906227F42B700242C91 /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FF227F42B700242C91 /* tab_message_animate.json */; };
 		0AA78907227F42B700242C91 /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AA788FF227F42B700242C91 /* tab_message_animate.json */; };
-		0ABB2611227755CD00397661 /* KKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB2610227755CD00397661 /* KKBaseViewController.swift */; };
 		0ABB26132277560400397661 /* KKHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB26122277560400397661 /* KKHomeViewController.swift */; };
 		0AC12B6D2279EE5900CF94ED /* UITextField+KKEasyReact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC12B6C2279EE5900CF94ED /* UITextField+KKEasyReact.m */; };
 		0AC12B882279F1BC00CF94ED /* KKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC12B812279F1BB00CF94ED /* KKHomeViewController.m */; };
@@ -210,6 +209,11 @@
 		938E6E2B22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		938E6E2C22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		938F231F23E84AFB00C56C43 /* KKLanuchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F231E23E84AFB00C56C43 /* KKLanuchViewController.swift */; };
+		9399BB8323ED911600895C41 /* UIImageView+KKAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399BB8223ED911600895C41 /* UIImageView+KKAdd.swift */; };
+		9399BB8523ED951B00895C41 /* KKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399BB8423ED951B00895C41 /* KKNavigationController.swift */; };
+		9399BB8723ED963C00895C41 /* KKHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399BB8623ED963C00895C41 /* KKHomeDetailViewController.swift */; };
+		9399BB8923ED9B8F00895C41 /* KKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399BB8823ED9B8F00895C41 /* KKViewController.swift */; };
+		9399BB8C23EDACE500895C41 /* KKViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399BB8B23EDACE500895C41 /* KKViewControllerProtocol.swift */; };
 		93B05A1E23E3193A005C9B5A /* KKRxSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B05A1D23E3193A005C9B5A /* KKRxSwiftView.swift */; };
 		93B8D90323D7447C002F291C /* iPhone_Red_Settings_29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B8D8FB23D7447C002F291C /* iPhone_Red_Settings_29@3x.png */; };
 		93B8D90423D7447C002F291C /* iPhone_Red_Settings_29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B8D8FB23D7447C002F291C /* iPhone_Red_Settings_29@3x.png */; };
@@ -345,7 +349,6 @@
 		0AA788FD227F42B700242C91 /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
 		0AA788FE227F42B700242C91 /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
 		0AA788FF227F42B700242C91 /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
-		0ABB2610227755CD00397661 /* KKBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBaseViewController.swift; sourceTree = "<group>"; };
 		0ABB26122277560400397661 /* KKHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKHomeViewController.swift; sourceTree = "<group>"; };
 		0AC12B632279E7F300CF94ED /* KKProjectHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectHeader.h; sourceTree = "<group>"; };
 		0AC12B642279E81300CF94ED /* KKProjectObjcHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectObjcHeader.h; sourceTree = "<group>"; };
@@ -512,6 +515,11 @@
 		938E6E2922C4C4E0005CC9AF /* KKToolsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKToolsHelper.h; sourceTree = "<group>"; };
 		938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKToolsHelper.m; sourceTree = "<group>"; };
 		938F231E23E84AFB00C56C43 /* KKLanuchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKLanuchViewController.swift; sourceTree = "<group>"; };
+		9399BB8223ED911600895C41 /* UIImageView+KKAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+KKAdd.swift"; sourceTree = "<group>"; };
+		9399BB8423ED951B00895C41 /* KKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKNavigationController.swift; sourceTree = "<group>"; };
+		9399BB8623ED963C00895C41 /* KKHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKHomeDetailViewController.swift; sourceTree = "<group>"; };
+		9399BB8823ED9B8F00895C41 /* KKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKViewController.swift; sourceTree = "<group>"; };
+		9399BB8B23EDACE500895C41 /* KKViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKViewControllerProtocol.swift; sourceTree = "<group>"; };
 		93B05A1D23E3193A005C9B5A /* KKRxSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKRxSwiftView.swift; sourceTree = "<group>"; };
 		93B8D8FB23D7447C002F291C /* iPhone_Red_Settings_29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone_Red_Settings_29@3x.png"; sourceTree = "<group>"; };
 		93B8D8FC23D7447C002F291C /* iPhone_Red_App_60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone_Red_App_60@2x.png"; sourceTree = "<group>"; };
@@ -884,6 +892,7 @@
 		0A634AED2270BD1900C0D0B0 /* KKProject_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				9399BB7F23ED8C3500895C41 /* Vender */,
 				93F472E823E8681A00AAB8F6 /* R.generated.swift */,
 				93B8D93123D89FE4002F291C /* KKConstantAPI.swift */,
 				93B8D92F23D898F0002F291C /* KKConstant.swift */,
@@ -894,7 +903,6 @@
 				0A634AF52270BD1A00C0D0B0 /* Assets.xcassets */,
 				0A634AF72270BD1A00C0D0B0 /* LaunchScreen.storyboard */,
 				0A634AFA2270BD1A00C0D0B0 /* Info.plist */,
-				0ABB2610227755CD00397661 /* KKBaseViewController.swift */,
 				938F232023E84B0B00C56C43 /* Launch */,
 				93B8D93523D8A631002F291C /* Home */,
 				93B8D93823D8A64F002F291C /* TabBarVC */,
@@ -1417,6 +1425,28 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		9399BB7F23ED8C3500895C41 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				9399BB8223ED911600895C41 /* UIImageView+KKAdd.swift */,
+				9399BB8A23EDACD200895C41 /* KKViewController */,
+				93BC255123DC555E00F445DB /* KKView */,
+				93BC254E23DC54D700F445DB /* KKViewModel */,
+				93BC255423DC57A700F445DB /* KKTableView */,
+				9399BB8423ED951B00895C41 /* KKNavigationController.swift */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		9399BB8A23EDACD200895C41 /* KKViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9399BB8823ED9B8F00895C41 /* KKViewController.swift */,
+				9399BB8B23EDACE500895C41 /* KKViewControllerProtocol.swift */,
+			);
+			path = KKViewController;
+			sourceTree = "<group>";
+		};
 		93B8D8FA23D7447C002F291C /* iPhone_Red */ = {
 			isa = PBXGroup;
 			children = (
@@ -1450,15 +1480,13 @@
 		93B8D93523D8A631002F291C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				93BC255123DC555E00F445DB /* KKView */,
-				93BC254E23DC54D700F445DB /* KKViewModel */,
-				93BC255423DC57A700F445DB /* KKTableView */,
 				93BC254A23DC52AC00F445DB /* KKHomeViewModel.swift */,
 				0ABB26122277560400397661 /* KKHomeViewController.swift */,
 				93BC255723DC599800F445DB /* KKHomeView.swift */,
 				934829AD23E5B75D00AB9B3C /* KKHomeViewCell.swift */,
 				934829A823E5B08200AB9B3C /* KKReactiveCocoaView */,
 				934829A423E5944B00AB9B3C /* RxSwiftView */,
+				9399BB8623ED963C00895C41 /* KKHomeDetailViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2038,10 +2066,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				93BC255323DC579400F445DB /* KKTableView.swift in Sources */,
+				9399BB8C23EDACE500895C41 /* KKViewControllerProtocol.swift in Sources */,
+				9399BB8923ED9B8F00895C41 /* KKViewController.swift in Sources */,
+				9399BB8523ED951B00895C41 /* KKNavigationController.swift in Sources */,
 				935791CD23E078CF00559D79 /* KKReactiveCocoaView.swift in Sources */,
 				93BC255823DC599800F445DB /* KKHomeView.swift in Sources */,
 				93BC254D23DC54BA00F445DB /* KKView.swift in Sources */,
 				938F231F23E84AFB00C56C43 /* KKLanuchViewController.swift in Sources */,
+				9399BB8323ED911600895C41 /* UIImageView+KKAdd.swift in Sources */,
 				93BC255023DC554A00F445DB /* KKViewProtocol.swift in Sources */,
 				934829A723E59CC100AB9B3C /* KKRxSwiftViewModel.swift in Sources */,
 				0A634AF12270BD1900C0D0B0 /* ViewController.swift in Sources */,
@@ -2051,7 +2083,6 @@
 				9337AFCA23EC447900CED3F5 /* KKTabBarItemContentView.swift in Sources */,
 				934829AC23E5B56500AB9B3C /* KKTableViewCellProtocol.swift in Sources */,
 				0A634AEF2270BD1900C0D0B0 /* AppDelegate.swift in Sources */,
-				0ABB2611227755CD00397661 /* KKBaseViewController.swift in Sources */,
 				0ABB26132277560400397661 /* KKHomeViewController.swift in Sources */,
 				934829AE23E5B75D00AB9B3C /* KKHomeViewCell.swift in Sources */,
 				93B8D93223D89FE4002F291C /* KKConstantAPI.swift in Sources */,
@@ -2059,6 +2090,7 @@
 				9337AFC623EC3B7100CED3F5 /* KKMessageViewController.swift in Sources */,
 				93BC254B23DC52AC00F445DB /* KKHomeViewModel.swift in Sources */,
 				93F472E923E8681A00AAB8F6 /* R.generated.swift in Sources */,
+				9399BB8723ED963C00895C41 /* KKHomeDetailViewController.swift in Sources */,
 				93F86F8923D5449A00628ED1 /* KKProfileViewController.swift in Sources */,
 				93B05A1E23E3193A005C9B5A /* KKRxSwiftView.swift in Sources */,
 				93B8D93C23D8AACF002F291C /* KKViewModelProtocol.swift in Sources */,

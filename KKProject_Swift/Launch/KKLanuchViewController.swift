@@ -9,7 +9,7 @@
 import UIKit
 import Rswift
 
-class KKLanuchViewController: UIViewController {
+class KKLanuchViewController: KKViewController {
     
     lazy var launchImgV: UIImageView = {
         let view = UIImageView()
@@ -38,7 +38,7 @@ class KKLanuchViewController: UIViewController {
     /// 进入主界面
     func kk_enterTabBar() -> Void {
         let app : AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let navVC : UINavigationController = UINavigationController.init(rootViewController: KKTabBarController())
+        let navVC : KKNavigationController = KKNavigationController.init(rootViewController: KKTabBarController())
         app.window?.rootViewController = navVC
         UIView.transition(with: app.window!, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }

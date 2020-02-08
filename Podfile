@@ -12,7 +12,7 @@ def commonPods
   pod 'EasyReact'
   pod 'ReactiveObjC'
   pod 'FFRouter'
-  pod 'BlockHook'
+  pod 'BlockHook', '~> 1.5.6'
   
   pod 'MBProgressHUD'
   
@@ -85,9 +85,10 @@ target 'KKProject_Swift' do
   
   #auto layout
   pod 'SnapKit', '~> 5.0.1'
-  pod 'Alamofire'
+  
+  pod 'Alamofire', '~> 5.0.0-rc.3'
   #对Alamofire的二次封装
-  pod 'Moya'
+  pod 'Moya', '~> 14.0.0-beta.6'
   
   pod 'Then', '~> 2.6.0'
   pod 'thenPromise'
@@ -119,7 +120,7 @@ target 'KKProject_Swift' do
   #queue manager
   pod 'Queuer', '~> 2.1.1'
   
-  pod 'Material'
+  pod 'Material', '~> 3.1.8'
   pod 'Atributika'
   pod 'PromiseKit'
   
@@ -149,7 +150,7 @@ target 'KKProject_Swift' do
   pod 'EachNavigationBar', '~> 1.14.3'
   
   #TabBar
-  pod 'RAMAnimatedTabBarController'
+  pod 'RAMAnimatedTabBarController', '~> 5.1.0'
   pod 'ESTabBarController-swift', '~> 2.8.0'
   
   #滚动标签 segmented view
@@ -160,10 +161,12 @@ target 'KKProject_Swift' do
   pod 'Cards'
   
   pod 'SwipeCellKit'
-  pod 'ViewAnimator'
+  pod 'ViewAnimator', '~> 2.7.0'
   pod 'XLPagerTabStrip'
   
-  pod 'Eureka'
+  #Elegant iOS forms
+#  pod 'Eureka', '~> 5.2.0'
+  
   pod 'FoldingCell'
   pod 'NVActivityIndicatorView'
   pod 'SkeletonView'
