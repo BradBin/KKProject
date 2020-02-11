@@ -1,5 +1,5 @@
-import Foundation
 import ReactiveSwift
+import enum Result.NoError
 
 internal class DelegateProxy<Delegate: NSObjectProtocol>: NSObject {
 	internal weak var forwardee: Delegate? {
@@ -22,13 +22,13 @@ internal class DelegateProxy<Delegate: NSObjectProtocol>: NSObject {
 		return interceptedSelectors.contains(selector) ? nil : forwardee
 	}
 
-	func intercept(_ selector: Selector) -> Signal<(), Never> {
+	func intercept(_ selector: Selector) -> Signal<(), NoError> {
 		interceptedSelectors.insert(selector)
 		originalSetter(self)
 		return self.reactive.trigger(for: selector).take(during: lifetime)
 	}
 
-	func intercept(_ selector: Selector) -> Signal<[Any?], Never> {
+	func intercept(_ selector: Selector) -> Signal<[Any?], NoError> {
 		interceptedSelectors.insert(selector)
 		originalSetter(self)
 		return self.reactive.signal(for: selector).take(during: lifetime)

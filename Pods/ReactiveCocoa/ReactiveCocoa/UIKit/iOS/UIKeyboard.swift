@@ -1,6 +1,6 @@
-#if canImport(UIKit) && !os(tvOS) && !os(watchOS)
 import UIKit
 import ReactiveSwift
+import enum Result.NoError
 
 /// The type of system keyboard events.
 public enum KeyboardEvent {
@@ -81,7 +81,7 @@ extension Reactive where Base: NotificationCenter {
 	///   - event:  The type of system keyboard event to observe.
 	///
 	/// - returns: A `Signal` that emits the context of system keyboard event.
-	public func keyboard(_ event: KeyboardEvent) -> Signal<KeyboardChangeContext, Never> {
+	public func keyboard(_ event: KeyboardEvent) -> Signal<KeyboardChangeContext, NoError> {
 		return notifications(forName: event.notificationName)
 			.map { notification in KeyboardChangeContext(userInfo: notification.userInfo!, event: event) }
 	}
@@ -94,7 +94,7 @@ extension Reactive where Base: NotificationCenter {
 	///   - tail: Rest of the types of system keyboard events to observe.
 	///
 	/// - returns: A `Signal` that emits the context of system keyboard events.
-	public func keyboard(_ first: KeyboardEvent, _ second: KeyboardEvent, _ tail: KeyboardEvent...) -> Signal<KeyboardChangeContext, Never> {
+	public func keyboard(_ first: KeyboardEvent, _ second: KeyboardEvent, _ tail: KeyboardEvent...) -> Signal<KeyboardChangeContext, NoError> {
 		let events = [first, second] + tail
 		return .merge(events.map(keyboard))
 	}
@@ -104,8 +104,7 @@ extension Reactive where Base: NotificationCenter {
 	///
 	/// - returns: A `Signal` that emits the context of every change in the
 	///            system keyboard's frame.
-	public var keyboardChange: Signal<KeyboardChangeContext, Never> {
+	public var keyboardChange: Signal<KeyboardChangeContext, NoError> {
 		return keyboard(.willChangeFrame)
 	}
 }
-#endif

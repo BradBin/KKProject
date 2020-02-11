@@ -7,75 +7,27 @@
 //
 
 import UIKit
-import Moya
 
 import RxSwift
-import RxCocoa
-
 import ReactiveCocoa
 
 
-
-/// 枚举 存储网络请求
-enum KKHomeApi {
-    case categoryTitle( params : NSMutableDictionary)
-}
-
-extension KKHomeApi : TargetType{
-    
-    var baseURL: URL {
-        return URL.init(string: "www.baidu.com")!
-    }
-    
-    var path: String {
-        switch self {
-            
-        case .categoryTitle(params : _):
-            return "categoryTitle/"
-        default:
-            return ""
-        }
-    }
-    
-    var method: Moya.Method {
-        switch self {
-        case .categoryTitle(params : _):
-            return .post
-        default:
-            return .get
-        }
-    }
-    
-    var headers: [String : String]? {
-        return ["token" : "21nn3eewmnqnemnmeqm"]
-    }
-    
-    var task: Task {
-        return .requestPlain
-    }
-    
-    var sampleData: Data {
-        return Data.init()
-    }
-}
-
-
-
-/// RxSwift
 class KKHomeViewModel: KKViewModel{
     
-
-    let provider : MoyaProvider  = MoyaProvider<KKHomeApi>()
-    
-
-
-    
+    func categoryTitle(params : NSMutableDictionary) -> Observable<Any> {
+        return homeProvider.rx.request(.categoryTitle(params: params)).filterSuccessfulStatusCodes().mapJSON().asObservable()
+    }
 }
 
 
+/// RxSwift 首页的VM
+class KKHomeRxSwiftViewModel: KKViewModel{
+    
+    
+    
+}
 
+/// Reactive 首页的VM
 class KKHomeReactiveCocoaViewModel: KKViewModel {
     
 }
-
-

@@ -42,6 +42,20 @@ class KKHomeViewController: KKViewController {
         super.kk_bindViewModel()
         
         print("kk_bindViewModel\(self.viewModel)")
+   
+        
+        self.viewModel.categoryTitle(params: ["device_id":deviceID , "iid":accountIID, "aid":13]).subscribe(onNext: { (any) in
+            
+            print("categoryTitle success:\(any)")
+            
+        }, onError: { (error) in
+            print("categoryTitle error:\(error)")
+                     
+        }, onCompleted: {
+            
+        }) {
+            
+        }
     }
     
     

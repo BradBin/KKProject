@@ -1,12 +1,12 @@
-#if canImport(UIKit) && !os(watchOS)
 import ReactiveSwift
 import UIKit
+import enum Result.NoError
 
 extension Reactive where Base: UIGestureRecognizer {
 	/// Create a signal which sends a `next` event for each gesture event
 	///
 	/// - returns: A trigger signal.
-	public var stateChanged: Signal<Base, Never> {
+	public var stateChanged: Signal<Base, NoError> {
 		return Signal { observer, signalLifetime in
 			let receiver = CocoaTarget<Base>(observer) { gestureRecognizer in
 				return gestureRecognizer as! Base
@@ -22,4 +22,3 @@ extension Reactive where Base: UIGestureRecognizer {
 		}
 	}
 }
-#endif

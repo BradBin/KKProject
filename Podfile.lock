@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Alamofire (5.0.0-rc.3)
+  - Alamofire (4.9.1)
   - AnimatedCollectionViewLayout (0.6.0)
   - AsyncSwift (2.0.4)
   - Atributika (4.8.2)
@@ -83,10 +83,15 @@ PODS:
   - Motion (3.1.3):
     - Motion/Core (= 3.1.3)
   - Motion/Core (3.1.3)
-  - Moya (14.0.0-beta.6):
-    - Moya/Core (= 14.0.0-beta.6)
-  - Moya/Core (14.0.0-beta.6):
-    - Alamofire (= 5.0.0-rc.3)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Moya/ReactiveSwift (13.0.1):
+    - Moya/Core
+    - ReactiveSwift (~> 5.0)
+  - Moya/RxSwift (13.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
   - NIMSDK (6.5.5)
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
@@ -110,17 +115,14 @@ PODS:
   - R.swift.Library (5.1.0)
   - RAMAnimatedTabBarController (5.1.0)
   - ReachabilitySwift (4.3.1)
-  - ReactiveCocoa (10.2.0):
-    - ReactiveSwift (~> 6.2)
+  - ReactiveCocoa (9.0.0):
+    - ReactiveSwift (~> 5.0)
   - ReactiveObjC (3.1.0)
-  - ReactiveSwift (6.2.0)
+  - ReactiveSwift (5.0.1):
+    - Result (~> 4.1)
   - Repeat (0.6.0)
-  - RxCocoa (5.0.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.0.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - Result (4.1.0)
+  - RxSwift (4.5.0)
   - SkeletonView (1.5)
   - SnapKit (5.0.1)
   - SQLite.swift (0.12.2):
@@ -181,7 +183,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - Alamofire (~> 5.0.0-rc.3)
   - AnimatedCollectionViewLayout
   - AsyncSwift
   - Atributika
@@ -216,7 +217,8 @@ DEPENDENCIES:
   - Material (~> 3.1.8)
   - MBProgressHUD
   - MJRefresh
-  - Moya (~> 14.0.0-beta.6)
+  - Moya/ReactiveSwift
+  - Moya/RxSwift
   - NIMSDK
   - NVActivityIndicatorView
   - OpenShare
@@ -225,11 +227,9 @@ DEPENDENCIES:
   - R.swift (~> 5.1.0)
   - RAMAnimatedTabBarController (~> 5.1.0)
   - ReachabilitySwift
-  - ReactiveCocoa (~> 10.2.0)
+  - ReactiveCocoa
   - ReactiveObjC
   - Repeat (~> 0.6.0)
-  - RxCocoa (~> 5.0.1)
-  - RxSwift (~> 5.0.1)
   - SkeletonView
   - SnapKit (~> 5.0.1)
   - SQLite.swift (~> 0.12.2)
@@ -318,8 +318,7 @@ SPEC REPOS:
     - ReactiveObjC
     - ReactiveSwift
     - Repeat
-    - RxCocoa
-    - RxRelay
+    - Result
     - RxSwift
     - SkeletonView
     - SnapKit
@@ -350,7 +349,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AnimatedCollectionViewLayout: f2c4e8dda4e3f1678ad6c0b39273a31b19bc935d
   AsyncSwift: 65775a7b32e740609b24969ece3de58723b9dc3e
   Atributika: 7b3631032cf11f2197b352343e0bd1b783d8ca88
@@ -390,7 +389,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
-  Moya: d4821fbcb3e784f34d2f82869e6855057a0b85d1
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   NIMSDK: 76cebc468e91e5f51095de8e78ce4d698f432bfd
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   OpenShare: a560580dbb729d5c0c3cc1ee84cd6aa4a07e94c6
@@ -403,13 +402,12 @@ SPEC CHECKSUMS:
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   RAMAnimatedTabBarController: b5c821298071fded801532216ad8a24394f89859
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
-  ReactiveCocoa: a123c42f449c552460a4ee217dd49c76a17c8204
+  ReactiveCocoa: 29709cf0cc7502ddd04a51220e10ee0336d8bec8
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
-  ReactiveSwift: 3dc8800378110b13d40b46ab362afa9f6bcffc6c
+  ReactiveSwift: cac20a5bbe560c5806bd29c0fccf90d03b996ac1
   Repeat: fd80848f4b3d6f133b18fdee04fd193aff6b31ff
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SkeletonView: 6cbb80f82f8bdee3f9093e2fa03b84819b4bd826
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
@@ -437,6 +435,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 31e7381a0c9c5eaa7fbd352d1e6236ad0bfa18cd
+PODFILE CHECKSUM: a24ad64609a72784992c557ab3905460b45b2c80
 
 COCOAPODS: 1.7.5

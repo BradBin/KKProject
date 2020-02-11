@@ -1,5 +1,5 @@
-import Foundation
 import ReactiveSwift
+import enum Result.NoError
 
 extension Action {
 	@available(*, unavailable, message:"Use the `CocoaAction` initializers instead.")
@@ -8,17 +8,7 @@ extension Action {
 
 extension Reactive where Base: NSObject {
 	@available(*, deprecated, renamed: "producer(forKeyPath:)")
-	public func values(forKeyPath keyPath: String) -> SignalProducer<Any?, Never> {
+	public func values(forKeyPath keyPath: String) -> SignalProducer<Any?, NoError> {
 		return producer(forKeyPath: keyPath)
 	}
 }
-
-#if os(watchOS)
-import WatchKit
-extension Reactive where Base: WKInterfaceButton {
-	@available(*, deprecated, renamed: "title")
-	public var text: BindingTarget<String?> {
-		return title
-	}
-}
-#endif

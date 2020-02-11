@@ -1,3 +1,4 @@
+import Result
 import Foundation
 import Dispatch
 
@@ -163,7 +164,7 @@ extension Signal.Event: CustomStringConvertible {
 public protocol EventProtocol {
 	/// The value type of an event.
 	associatedtype Value
-	/// The error type of an event. If errors aren't possible then `Never` can
+	/// The error type of an event. If errors aren't possible then `NoError` can
 	/// be used.
 	associatedtype Error: Swift.Error
 	/// Extracts the event from the receiver.
@@ -229,7 +230,7 @@ extension Signal.Event {
 		}
 	}
 
-	internal static func compactMap<U>(_ transform: @escaping (Value) -> U?) -> Transformation<U, Error> {
+	internal static func filterMap<U>(_ transform: @escaping (Value) -> U?) -> Transformation<U, Error> {
 		return { action, _ in
 			return { event in
 				switch event {
@@ -291,7 +292,7 @@ extension Signal.Event {
 		}
 	}
 
-	internal static var materialize: Transformation<Signal<Value, Error>.Event, Never> {
+	internal static var materialize: Transformation<Signal<Value, Error>.Event, NoError> {
 		return { action, _ in
 			return { event in
 				action(.value(event))
@@ -310,15 +311,15 @@ extension Signal.Event {
 		}
 	}
 
-	internal static var materializeResults: Transformation<Result<Value, Error>, Never> {
+	internal static var materializeResults: Transformation<Result<Value, Error>, NoError> {
 		return { action, _ in
 			return { event in
 				switch event {
 				case .value(let value):
-					action(.value(Result(success: value)))
+					action(.value(Result(value: value)))
 
 				case .failed(let error):
-					action(.value(Result(failure: error)))
+					action(.value(Result(error: error)))
 					action(.completed)
 
 				case .completed:
@@ -360,15 +361,15 @@ extension Signal.Event {
 	}
 }
 
-extension Signal.Event where Error == Swift.Error {
-	internal static func attempt(_ action: @escaping (Value) throws -> Void) -> Transformation<Value, Error> {
+extension Signal.Event where Error == AnyError {
+	internal static func attempt(_ action: @escaping (Value) throws -> Void) -> Transformation<Value, AnyError> {
 		return attemptMap { value in
 			try action(value)
 			return value
 		}
 	}
 
-	internal static func attemptMap<U>(_ transform: @escaping (Value) throws -> U) -> Transformation<U, Error> {
+	internal static func attemptMap<U>(_ transform: @escaping (Value) throws -> U) -> Transformation<U, AnyError> {
 		return attemptMap { value in
 			Result { try transform(value) }
 		}
@@ -476,7 +477,7 @@ extension Signal.Event {
 	}
 }
 
-extension Signal.Event where Value: EventProtocol, Error == Never {
+extension Signal.Event where Value: EventProtocol, Error == NoError {
 	internal static var dematerialize: Transformation<Value.Value, Value.Error> {
 		return { action, _ in
 			return { event in
@@ -485,7 +486,7 @@ extension Signal.Event where Value: EventProtocol, Error == Never {
 					action(innerEvent.event)
 
 				case .failed:
-					fatalError("Never is impossible to construct")
+					fatalError("NoError is impossible to construct")
 
 				case .completed:
 					action(.completed)
@@ -498,8 +499,8 @@ extension Signal.Event where Value: EventProtocol, Error == Never {
 	}
 }
 
-extension Signal.Event where Value: ResultProtocol, Error == Never {
-	internal static var dematerializeResults: Transformation<Value.Success, Value.Failure> {
+extension Signal.Event where Value: ResultProtocol, Error == NoError {
+	internal static var dematerializeResults: Transformation<Value.Value, Value.Error> {
 		return { action, _ in
 			return { event in
 				let event = event.map { $0.result }
@@ -512,7 +513,7 @@ extension Signal.Event where Value: ResultProtocol, Error == Never {
 					action(.failed(error))
 
 				case .failed:
-					fatalError("Never is impossible to construct")
+					fatalError("NoError is impossible to construct")
 
 				case .completed:
 					action(.completed)
@@ -527,7 +528,7 @@ extension Signal.Event where Value: ResultProtocol, Error == Never {
 
 extension Signal.Event where Value: OptionalProtocol {
 	internal static var skipNil: Transformation<Value.Wrapped, Error> {
-		return compactMap { $0.optional }
+		return filterMap { $0.optional }
 	}
 }
 
@@ -992,7 +993,7 @@ private struct ThrottleState<Value> {
 	}
 }
 
-extension Signal.Event where Error == Never {
+extension Signal.Event where Error == NoError {
 	internal static func promoteError<F>(_: F.Type) -> Transformation<Value, F> {
 		return { action, _ in
 			return { event in
@@ -1000,7 +1001,7 @@ extension Signal.Event where Error == Never {
 				case let .value(value):
 					action(.value(value))
 				case .failed:
-					fatalError("Never is impossible to construct")
+					fatalError("NoError is impossible to construct")
 				case .completed:
 					action(.completed)
 				case .interrupted:
@@ -1015,23 +1016,17 @@ extension Signal.Event where Value == Never {
 	internal static func promoteValue<U>(_: U.Type) -> Transformation<U, Error> {
 		return { action, _ in
 			return { event in
-				action(event.promoteValue())
+				switch event {
+				case .value:
+					fatalError("Never is impossible to construct")
+				case let .failed(error):
+					action(.failed(error))
+				case .completed:
+					action(.completed)
+				case .interrupted:
+					action(.interrupted)
+				}
 			}
 		}
 	}
-}
-
-extension Signal.Event where Value == Never {
-	internal func promoteValue<U>() -> Signal<U, Error>.Event {
-        switch event {
-        case .value:
-            fatalError("Never is impossible to construct")
-        case let .failed(error):
-            return .failed(error)
-        case .completed:
-            return .completed
-        case .interrupted:
-            return .interrupted
-        }
-    }
 }

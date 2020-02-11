@@ -13,7 +13,7 @@ let KKHomeCellIdentifier = "KK.Home.Cell.Identitifer"
 
 class KKHomeViewCell: KKTableViewCell {
     
-    
+
     lazy var nameLabel : UILabel = {
        let view = UILabel()
         return view

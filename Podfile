@@ -85,11 +85,7 @@ target 'KKProject_Swift' do
   
   #auto layout
   pod 'SnapKit', '~> 5.0.1'
-  
-  pod 'Alamofire', '~> 5.0.0-rc.3'
-  #对Alamofire的二次封装
-  pod 'Moya', '~> 14.0.0-beta.6'
-  
+
   pod 'Then', '~> 2.6.0'
   pod 'thenPromise'
   
@@ -103,10 +99,15 @@ target 'KKProject_Swift' do
   pod 'IQKeyboardManagerSwift'
   
   
-  pod 'RxSwift', '~> 5.0.1'
-  pod 'RxCocoa', '~> 5.0.1'
+  #对Alamofire的二次封装
+  pod 'Moya/RxSwift'
   
-  pod 'ReactiveCocoa', '~> 10.2.0'
+#  pod 'RxSwift', '~> 5.0.1'
+#  pod 'RxCocoa', '~> 5.0.1'
+  
+  pod 'Moya/ReactiveSwift'
+  pod 'ReactiveCocoa'
+#  pod 'ReactiveCocoa', '~> 10.2.0'
   
   #资源引用工具
   pod 'R.swift', '~> 5.1.0'
