@@ -206,6 +206,10 @@
 		93647C7F22C1FFDF008BCC23 /* KKSettingsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */; };
 		93647C8222C30C9B008BCC23 /* KKCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C8122C30C9B008BCC23 /* KKCacheHelper.m */; };
 		93647C8322C30C9B008BCC23 /* KKCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93647C8122C30C9B008BCC23 /* KKCacheHelper.m */; };
+		9373A284240BACF400C8DD2E /* KKTTTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A283240BACF400C8DD2E /* KKTTTViewController.m */; };
+		9373A285240BAD0B00C8DD2E /* KKTTTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A283240BACF400C8DD2E /* KKTTTViewController.m */; };
+		9373A287240BAF7800C8DD2E /* Life.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9373A286240BAF7800C8DD2E /* Life.mp3 */; };
+		9373A288240BAF7800C8DD2E /* Life.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9373A286240BAF7800C8DD2E /* Life.mp3 */; };
 		938E6E2B22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		938E6E2C22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		938F231F23E84AFB00C56C43 /* KKLanuchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F231E23E84AFB00C56C43 /* KKLanuchViewController.swift */; };
@@ -506,6 +510,7 @@
 		9358BE9E23F2C16F00552D91 /* KKModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKModel.swift; sourceTree = "<group>"; };
 		9358BEA023F2C18A00552D91 /* KKCategoryTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKCategoryTitleModel.swift; sourceTree = "<group>"; };
 		9358BEA223F2D35F00552D91 /* Response+ HandyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ HandyJSON.swift"; sourceTree = "<group>"; };
+		9358BEA623F2DB9400552D91 /* SwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		93647C7122C1C810008BCC23 /* KKProjectConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectConst.h; sourceTree = "<group>"; };
 		93647C7222C1F43A008BCC23 /* KKSettingsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSettingsView.h; sourceTree = "<group>"; };
 		93647C7322C1F43A008BCC23 /* KKSettingsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsView.m; sourceTree = "<group>"; };
@@ -515,6 +520,9 @@
 		93647C7D22C1FFDF008BCC23 /* KKSettingsTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSettingsTableCell.m; sourceTree = "<group>"; };
 		93647C8022C30C9B008BCC23 /* KKCacheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKCacheHelper.h; sourceTree = "<group>"; };
 		93647C8122C30C9B008BCC23 /* KKCacheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKCacheHelper.m; sourceTree = "<group>"; };
+		9373A282240BACF400C8DD2E /* KKTTTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKTTTViewController.h; sourceTree = "<group>"; };
+		9373A283240BACF400C8DD2E /* KKTTTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKTTTViewController.m; sourceTree = "<group>"; };
+		9373A286240BAF7800C8DD2E /* Life.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Life.mp3; sourceTree = "<group>"; };
 		938E6E2922C4C4E0005CC9AF /* KKToolsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKToolsHelper.h; sourceTree = "<group>"; };
 		938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKToolsHelper.m; sourceTree = "<group>"; };
 		938F231E23E84AFB00C56C43 /* KKLanuchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKLanuchViewController.swift; sourceTree = "<group>"; };
@@ -912,6 +920,7 @@
 				93B8D93723D8A646002F291C /* Video */,
 				9337AFC723EC3B8600CED3F5 /* Post */,
 				9337AFC823EC3B8D00CED3F5 /* Message */,
+				9358BEA623F2DB9400552D91 /* SwiftPlayground.playground */,
 			);
 			path = KKProject_Swift;
 			sourceTree = "<group>";
@@ -985,6 +994,8 @@
 			children = (
 				0AC12B802279F1BB00CF94ED /* KKLanuchViewController.h */,
 				0AC12B852279F1BB00CF94ED /* KKLanuchViewController.m */,
+				9373A282240BACF400C8DD2E /* KKTTTViewController.h */,
+				9373A283240BACF400C8DD2E /* KKTTTViewController.m */,
 			);
 			path = KKLanuch;
 			sourceTree = "<group>";
@@ -1286,6 +1297,7 @@
 		9347CF5822783A7100BC7AAC /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9373A286240BAF7800C8DD2E /* Life.mp3 */,
 				0AA788FB227F42B700242C91 /* LottieResources */,
 				0A0D69FD227A7049005BA58F /* Info.plist */,
 				0A6349E12270B08D00C0D0B0 /* ViewController.h */,
@@ -1759,6 +1771,7 @@
 				93B8D90523D7447C002F291C /* iPhone_Red_App_60@2x.png in Resources */,
 				93B8D91C23D74548002F291C /* iPhone_Violet_Notification_20@2x.png in Resources */,
 				93B8D92A23D74548002F291C /* iPhone_Violet_App_60@3x.png in Resources */,
+				9373A287240BAF7800C8DD2E /* Life.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1788,6 +1801,7 @@
 				0AA78903227F42B700242C91 /* tab_home_animate.json in Resources */,
 				93B8D90423D7447C002F291C /* iPhone_Red_Settings_29@3x.png in Resources */,
 				93B8D91223D7447C002F291C /* iPhone_Red_Notification_20@2x.png in Resources */,
+				9373A288240BAF7800C8DD2E /* Life.mp3 in Resources */,
 				93B8D92123D74548002F291C /* iPhone_Violet_Spotlight_40@2x.png in Resources */,
 				93B9CB3322CAE7CD005B4F87 /* KKDragableView.bundle in Resources */,
 				9347CF6E2278482100BC7AAC /* KKProject-Objc-InfoPlist.strings in Resources */,
@@ -1977,6 +1991,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AC12C03227A107200CF94ED /* KKViewModel.m in Sources */,
+				9373A284240BACF400C8DD2E /* KKTTTViewController.m in Sources */,
 				0AF1CC9C22808D68006487CA /* KKHomeViewModel.m in Sources */,
 				0AC12B9F2279FCA700CF94ED /* KKLoginViewController.m in Sources */,
 				0AC12C07227A107200CF94ED /* KKCollectionView.m in Sources */,
@@ -2127,6 +2142,7 @@
 				930BD98723D6850000736380 /* KKThemeHelper.m in Sources */,
 				0A634B1D2270BE2A00C0D0B0 /* main.m in Sources */,
 				9357CB35238AD59D00D524AE /* KKAboutusView.m in Sources */,
+				9373A285240BAD0B00C8DD2E /* KKTTTViewController.m in Sources */,
 				0AF1CC992280857F006487CA /* KKNetWorking.m in Sources */,
 				933814F323DB35D90082E8BF /* KKLoadingPlaceHolderView.m in Sources */,
 				0A12E8B222B67B6200851FDB /* KKForgetPwdViewController.m in Sources */,

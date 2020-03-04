@@ -42,6 +42,12 @@ target 'KKProject' do
   pod 'Bugly'
   #循环引用检测工具
   pod 'FBRetainCycleDetector'
+  
+  #3体云SDK-声音
+  pod 'TTTRtcEngineVoiceKit_iOS'
+  pod 'TTTPlayerKit_iOS'
+    
+  
 end
 
 
@@ -153,6 +159,9 @@ target 'KKProject_Swift' do
   #TabBar
   pod 'RAMAnimatedTabBarController', '~> 5.1.0'
   pod 'ESTabBarController-swift', '~> 2.8.0'
+  
+  #占位视图
+  pod 'EmptyDataSet-Swift', '~> 5.0.0'
   
   #滚动标签 segmented view
   pod 'JXSegmentedView', '~> 1.0.4'

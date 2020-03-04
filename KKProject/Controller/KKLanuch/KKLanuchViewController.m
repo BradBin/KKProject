@@ -7,6 +7,7 @@
 //
 
 #import "KKLanuchViewController.h"
+#import "KKTTTViewController.h"
 #import "AppDelegate.h"
 
 
@@ -90,8 +91,23 @@
     [self.loadingView startAnimating];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.loadingView stopAnimating];
-        [KKErrorHelper kk_enterApp];
+//        [KKErrorHelper kk_enterApp];
+        [self kk_EnterTTT];
     });
+}
+
+
+-(void)kk_EnterTTT{
+    
+    AppDelegate *app     = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    app.window.rootViewController = KKTTTViewController.new;
+    [UIView transitionWithView:app.window
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:nil
+                    completion:nil];
+    
+    
 }
 
 /*

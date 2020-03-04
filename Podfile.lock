@@ -56,6 +56,7 @@ PODS:
     - EasyFoundation (~> 1.0.0)
   - EasySequence (1.3.1)
   - EasyTuple (1.1.2)
+  - EmptyDataSet-Swift (5.0.0)
   - ESTabBarController-swift (2.8.0)
   - expanding-collection (3.1.0)
   - FBRetainCycleDetector (0.1.4)
@@ -153,6 +154,8 @@ PODS:
   - SwipeCellKit (2.6.0)
   - Then (2.6.0)
   - thenPromise (5.1.2)
+  - TTTPlayerKit_iOS (1.5.0)
+  - TTTRtcEngineVoiceKit_iOS (2.7.0)
   - UMCAnalytics (6.0.3):
     - UMCCommon
   - UMCCommon (2.0.1)
@@ -198,6 +201,7 @@ DEPENDENCIES:
   - DynamicColor
   - EachNavigationBar (~> 1.14.3)
   - EasyReact
+  - EmptyDataSet-Swift (~> 5.0.0)
   - ESTabBarController-swift (~> 2.8.0)
   - expanding-collection
   - FBRetainCycleDetector
@@ -246,6 +250,8 @@ DEPENDENCIES:
   - SwipeCellKit
   - Then (~> 2.6.0)
   - thenPromise
+  - TTTPlayerKit_iOS
+  - TTTRtcEngineVoiceKit_iOS
   - UMCAnalytics
   - UMCCommon
   - UMCCommonLog
@@ -259,7 +265,7 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Alamofire
     - AnimatedCollectionViewLayout
@@ -281,6 +287,7 @@ SPEC REPOS:
     - EasyReact
     - EasySequence
     - EasyTuple
+    - EmptyDataSet-Swift
     - ESTabBarController-swift
     - expanding-collection
     - FBRetainCycleDetector
@@ -346,6 +353,9 @@ SPEC REPOS:
     - ViewAnimator
     - XLPagerTabStrip
     - YYKit
+  trunk:
+    - TTTPlayerKit_iOS
+    - TTTRtcEngineVoiceKit_iOS
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -369,6 +379,7 @@ SPEC CHECKSUMS:
   EasyReact: 39fdf743eab448b1c3f61622a2bddc7c6ec71af2
   EasySequence: 78462a0b839cb6b8a18e30a5adc37055bac0b929
   EasyTuple: a6a068ab3aa47e899a0c9f9ee23ddb394542ea9e
+  EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   expanding-collection: 7eb1fc48c6ec5e00c8887fe46c595c31b81b578a
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
@@ -425,6 +436,8 @@ SPEC CHECKSUMS:
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   thenPromise: c1a319348c6052652b071d8dd4c6db9984860209
+  TTTPlayerKit_iOS: c257a03780d5f26919bd9a2e71edbdc65854e3eb
+  TTTRtcEngineVoiceKit_iOS: 93a3bf3a6accac0cb7cbb1a118ef1ccfc7982df9
   UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
   UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
@@ -435,6 +448,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a24ad64609a72784992c557ab3905460b45b2c80
+PODFILE CHECKSUM: 2b38a884c0eeab662936aa77710e915bcd64633f
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
