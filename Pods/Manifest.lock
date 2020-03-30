@@ -154,8 +154,6 @@ PODS:
   - SwipeCellKit (2.6.0)
   - Then (2.6.0)
   - thenPromise (5.1.2)
-  - TTTPlayerKit_iOS (1.5.0)
-  - TTTRtcEngineVoiceKit_iOS (2.7.0)
   - UMCAnalytics (6.0.3):
     - UMCCommon
   - UMCCommon (2.0.1)
@@ -250,8 +248,6 @@ DEPENDENCIES:
   - SwipeCellKit
   - Then (~> 2.6.0)
   - thenPromise
-  - TTTPlayerKit_iOS
-  - TTTRtcEngineVoiceKit_iOS
   - UMCAnalytics
   - UMCCommon
   - UMCCommonLog
@@ -353,9 +349,6 @@ SPEC REPOS:
     - ViewAnimator
     - XLPagerTabStrip
     - YYKit
-  trunk:
-    - TTTPlayerKit_iOS
-    - TTTRtcEngineVoiceKit_iOS
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -436,8 +429,6 @@ SPEC CHECKSUMS:
   SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
   thenPromise: c1a319348c6052652b071d8dd4c6db9984860209
-  TTTPlayerKit_iOS: c257a03780d5f26919bd9a2e71edbdc65854e3eb
-  TTTRtcEngineVoiceKit_iOS: 93a3bf3a6accac0cb7cbb1a118ef1ccfc7982df9
   UMCAnalytics: ff58714ada407682c4a07548156f94bcec92f055
   UMCCommon: 0263a057a2e1ae1da4c8308541e56904a493ce13
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
@@ -448,6 +439,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 2b38a884c0eeab662936aa77710e915bcd64633f
+PODFILE CHECKSUM: e8a54f46daca55b05738485f863f1a7a8cc195ec
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

@@ -44,8 +44,8 @@ target 'KKProject' do
   pod 'FBRetainCycleDetector'
   
   #3体云SDK-声音
-  pod 'TTTRtcEngineVoiceKit_iOS'
-  pod 'TTTPlayerKit_iOS'
+#  pod 'TTTRtcEngineVoiceKit_iOS'
+#  pod 'TTTPlayerKit_iOS'
     
   
 end
