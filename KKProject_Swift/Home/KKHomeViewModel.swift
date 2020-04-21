@@ -14,20 +14,8 @@ import ReactiveCocoa
 
 class KKHomeViewModel: KKViewModel{
     
-    func categoryTitle(params : NSMutableDictionary) -> Observable<Any> {
-        return homeProvider.rx.request(.categoryTitle(params: params)).filterSuccessfulStatusCodes().mapJSON().asObservable()
+    func recommand(sex : Int) -> Observable<KKResponseData<KKHomeModel>> {
+        return homeProvider.rx.request(.recommand(sex: sex)).asObservable().mapResponseToObject(type: KKResponseData.self)
     }
 }
 
-
-/// RxSwift 首页的VM
-class KKHomeRxSwiftViewModel: KKViewModel{
-    
-    
-    
-}
-
-/// Reactive 首页的VM
-class KKHomeReactiveCocoaViewModel: KKViewModel {
-    
-}

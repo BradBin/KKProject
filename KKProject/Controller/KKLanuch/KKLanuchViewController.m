@@ -91,8 +91,8 @@
     [self.loadingView startAnimating];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.loadingView stopAnimating];
-//        [KKErrorHelper kk_enterApp];
-        [self kk_EnterTTT];
+        [KKErrorHelper kk_enterApp];
+//        [self kk_EnterTTT];
     });
 }
 

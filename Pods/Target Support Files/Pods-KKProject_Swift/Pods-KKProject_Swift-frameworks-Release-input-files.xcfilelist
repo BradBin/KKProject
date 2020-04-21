@@ -4,7 +4,6 @@ ${BUILT_PRODUCTS_DIR}/AnimatedCollectionViewLayout/AnimatedCollectionViewLayout.
 ${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework
 ${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework
 ${BUILT_PRODUCTS_DIR}/BeeHive/BeeHive.framework
-${BUILT_PRODUCTS_DIR}/Cards/Cards.framework
 ${BUILT_PRODUCTS_DIR}/CollectionKit/CollectionKit.framework
 ${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework
 ${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework
@@ -23,7 +22,6 @@ ${BUILT_PRODUCTS_DIR}/Material/Material.framework
 ${BUILT_PRODUCTS_DIR}/Motion/Motion.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
-${BUILT_PRODUCTS_DIR}/Player/Player.framework
 ${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework
 ${BUILT_PRODUCTS_DIR}/Queuer/Queuer.framework
 ${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework
@@ -33,7 +31,6 @@ ${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework
 ${BUILT_PRODUCTS_DIR}/Repeat/Repeat.framework
-${BUILT_PRODUCTS_DIR}/Result/Result.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
 ${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework
 ${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework
@@ -46,7 +43,6 @@ ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework
 ${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework
-${BUILT_PRODUCTS_DIR}/Then/Then.framework
 ${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework
 ${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework
 ${BUILT_PRODUCTS_DIR}/expanding-collection/expanding_collection.framework

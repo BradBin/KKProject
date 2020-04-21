@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import HandyJSON
 
-class KKModel: NSObject {
-
+class KKModel<T: HandyJSON>: HandyJSON {
+    var code    : Int = -1
+    var message : String?
+    var data    : T?
+    required init(){}
 }

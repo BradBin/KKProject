@@ -34,6 +34,7 @@ def commonPods
   
 end
 
+
 target 'KKProject' do
   commonPods
   #社交软件
@@ -44,9 +45,8 @@ target 'KKProject' do
   pod 'FBRetainCycleDetector'
   
   #3体云SDK-声音
-#  pod 'TTTRtcEngineVoiceKit_iOS'
-#  pod 'TTTPlayerKit_iOS'
-    
+  #  pod 'TTTRtcEngineVoiceKit_iOS'
+  #  pod 'TTTPlayerKit_iOS'
   
 end
 
@@ -84,104 +84,107 @@ end
 #end
 
 
-target 'KKProject_Swift' do
-  use_frameworks!
-  
-  pod 'SwiftLint'
-  
-  #auto layout
-  pod 'SnapKit', '~> 5.0.1'
+targets = ['KKProject_Swift','KKProject_Swift_Release']
+targets.each do |t|
+  target t do
+    
+    use_frameworks!
+    
+    pod 'SwiftLint'
 
-  pod 'Then', '~> 2.6.0'
-  pod 'thenPromise'
-  
-  #数据模型解析
-  pod 'HandyJSON', '~> 5.0.1'
-  pod 'SwiftyJSON', '~> 5.0.0'
-  
-  #组件化工具库
-  pod 'BeeHive'
-  
-  pod 'IQKeyboardManagerSwift'
-  
-  
-  #对Alamofire的二次封装
-  pod 'Moya/RxSwift'
-  
-#  pod 'RxSwift', '~> 5.0.1'
-#  pod 'RxCocoa', '~> 5.0.1'
-  
-  pod 'Moya/ReactiveSwift'
-  pod 'ReactiveCocoa'
-#  pod 'ReactiveCocoa', '~> 10.2.0'
-  
-  #资源引用工具
-  pod 'R.swift', '~> 5.1.0'
-  
-  #图片加载处理框架
-  pod 'Kingfisher', '~> 5.13.0'
-  
-  #定时器
-  pod 'Repeat', '~> 0.6.0'
-  
-  #queue manager
-  pod 'Queuer', '~> 2.1.1'
-  
-  pod 'Material', '~> 3.1.8'
-  pod 'Atributika'
-  pod 'PromiseKit'
-  
-  pod 'AsyncSwift'
-  pod 'Surge'
-  pod 'CryptoSwift'
-  pod 'KeychainAccess'
-  pod 'SwiftyUserDefaults'
-  
-  pod 'SQLite.swift', '~> 0.12.2'
-  
-  pod 'ReachabilitySwift'
-  pod 'SwiftDate'
-  
-  pod 'SwiftMessages'
-  pod 'SwiftEntryKit'
-  
-  #pod 'Advance'
-  
-  pod 'SwiftyStoreKit'
-  pod 'Instructions'
-  
-  #颜色
-  pod 'DynamicColor'
-  
-  #自定义导航栏
-  pod 'EachNavigationBar', '~> 1.14.3'
-  
-  #TabBar
-  pod 'RAMAnimatedTabBarController', '~> 5.1.0'
-  pod 'ESTabBarController-swift', '~> 2.8.0'
-  
-  #占位视图
-  pod 'EmptyDataSet-Swift', '~> 5.0.0'
-  
-  #滚动标签 segmented view
-  pod 'JXSegmentedView', '~> 1.0.4'
-  
-  pod 'AnimatedCollectionViewLayout'
-  pod 'CollectionKit'
-  pod 'Cards'
-  
-  pod 'SwipeCellKit'
-  pod 'ViewAnimator', '~> 2.7.0'
-  pod 'XLPagerTabStrip'
-  
-  #Elegant iOS forms
-#  pod 'Eureka', '~> 5.2.0'
-  
-  pod 'FoldingCell'
-  pod 'NVActivityIndicatorView'
-  pod 'SkeletonView'
-  pod 'expanding-collection'
-  pod 'LTMorphingLabel'
+    #auto layout
+    pod 'SnapKit'
+
+#    pod 'Then', '~> 2.6.0'
+    pod 'thenPromise'
+
+    #数据模型解析
+    pod 'HandyJSON'
+    pod 'SwiftyJSON'
+
+    #组件化工具库
+    pod 'BeeHive'
+
+    pod 'IQKeyboardManagerSwift'
+
+    #对Alamofire的二次封装
+    pod 'Moya/RxSwift'
+
+    #  pod 'RxSwift', '~> 5.0.1'
+    #  pod 'RxCocoa', '~> 5.0.1'
+
+    #  pod 'Moya/ReactiveSwift'
+    pod 'ReactiveCocoa'
+    #  pod 'ReactiveCocoa', '~> 10.2.0'
+
+    #资源引用工具
+    pod 'R.swift'
+
+    #图片加载处理框架
+    pod 'Kingfisher'
+
+    #定时器
+    pod 'Repeat'
+
+    #queue manager
+    pod 'Queuer'
+
+    pod 'Material'
+    pod 'Atributika'
+    pod 'PromiseKit'
+
+    pod 'AsyncSwift'
+    pod 'Surge'
+    pod 'CryptoSwift'
+    pod 'KeychainAccess'
+    pod 'SwiftyUserDefaults'
+
+    pod 'SQLite.swift'
+
+    pod 'ReachabilitySwift'
+    pod 'SwiftDate'
+
+    pod 'SwiftMessages'
+    pod 'SwiftEntryKit'
+
+    #pod 'Advance'
+
+    pod 'SwiftyStoreKit'
+    pod 'Instructions'
+
+    #颜色
+    pod 'DynamicColor'
+
+    #自定义导航栏
+    pod 'EachNavigationBar'
+
+    #TabBar
+    pod 'RAMAnimatedTabBarController'
+    pod 'ESTabBarController-swift'
+
+    #占位视图
+    pod 'EmptyDataSet-Swift'
+
+    #滚动标签 segmented view
+    pod 'JXSegmentedView'
+
+    pod 'AnimatedCollectionViewLayout'
+    pod 'CollectionKit'
+    #  pod 'Cards', '~> 1.4.0'
+
+    pod 'SwipeCellKit'
+    pod 'ViewAnimator'
+    pod 'XLPagerTabStrip'
+
+    #Elegant iOS forms
+    #  pod 'Eureka', '~> 5.2.0'
+
+    pod 'FoldingCell'
+    pod 'NVActivityIndicatorView'
+    pod 'SkeletonView'
+    pod 'expanding-collection'
+    pod 'LTMorphingLabel'
+  end
   
 end
 

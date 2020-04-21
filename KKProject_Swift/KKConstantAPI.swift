@@ -10,76 +10,118 @@ import Foundation
 import Moya
 
 
-let KKBaseURL        = "https://is.snssdk.com/"
-let categoryTitleAPI = "article/category/get_subscribed/v1/?"
-let categoryListAPI  = "article/category/get_subscribed/v1/?"
-
-let accountIID = "17769976909"
-let deviceID   = "41312231473"
-
-let headerFields: [String: String] = ["system": "iOS","sys_ver": String(UIDevice.version())]
-let publicParameters: [String: String] = ["language": "_zh_CN"]
-
 enum API {
-    case categoryTitle(params : NSMutableDictionary)
-    case categoryTitleList(params : NSMutableDictionary)
+    case recommand(sex:Int)
+    case searchResult(dict:[String : Any])
 }
 
-extension API: TargetType {
+extension API : TargetType{
+    
+    ///服务器地址
     var baseURL: URL {
-        return URL.init(string: KKBaseURL)!
+        #if KK_SWIFT
+        
+        switch self {
+        case .recommand:
+            fallthrough
+        default:
+            return URL(string: "http://app.u17.com/v3/appV3_3/ios/phone")!
+        }
+        
+        #elseif KK_SWIFT_RELEASE
+        
+        switch self {
+        case .recommand:
+            fallthrough
+        default:
+            return URL(string: "http://app.u17.com/v3/appV3_3/ios/phone")!
+        }
+        
+        #endif
     }
     
+    ///服务请求具体路径
     var path: String {
         switch self {
-        case .categoryTitle(params: _):
-            return categoryTitleAPI
-        default:
-            return ""
+        case .recommand:
+            return "comic/boutiqueListNew"
+        case .searchResult:
+            return "search/searchResult"
         }
     }
     
-    var method: Moya.Method  {
+    ///请求类型
+    var method: Moya.Method {
         switch self {
-        case .categoryTitle(params: _):
+        case .recommand:
             return .get
         default:
-            return .get
+            return .post
         }
     }
     
-    var parameters: [String : Any] {
-        switch self {
-        case .categoryTitle(params: _):
-            return ["device_id":deviceID , "iid":accountIID, "aid":13]
-        default:
-            return [:]
-        }
-    }
-    
+    /// 单元测试模拟数据,在单元测试文件中有作用
     var sampleData: Data {
         return "".data(using: String.Encoding.utf8)!
     }
     
-    var parameterEncoding: ParameterEncoding {
-         return URLEncoding.default
-     }
-    
+    ///请求任务事件
     var task: Task {
-        return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+        switch self {
+        case .recommand(let sex):
+            return .requestParameters(parameters: ["sexType":sex], encoding: URLEncoding.default)
+        case .searchResult(let dict):
+            return .requestParameters(parameters: dict, encoding: URLEncoding.default)
+        }
     }
     
+    ///是否执行Alamofire验证
+    var validate: Bool {
+        return false
+    }
+    
+    /// 请求头
     var headers: [String : String]? {
-        return [:]
+        switch self {
+        default:
+            return [:]
+        }
     }
 }
 
-//private let endPointClosure = {( target : API) ->Endpoint in
-//    let defaultEndPoint = MoyaProvider<API>.defaultEndpointMapping(for: target)
-//    return defaultEndPoint.adding(newHTTPHeaderFields: headerFields)
-//}
 
 
 /// 首页的请求对象Provider
-let homeProvider = MoyaProvider<API>.init()
+let homeProvider = MoyaProvider<API>.init(requestClosure:timeoutClosure ,plugins: [NetPlugin()])
 
+
+/// 设置请求超时时长
+let timeoutClosure = {(endpoint: Endpoint, closure: MoyaProvider<API>.RequestResultClosure) -> Void in
+    if var urlRequest = try? endpoint.urlRequest() {
+        urlRequest.timeoutInterval = 20
+        closure(.success(urlRequest))
+    } else {
+        closure(.failure(MoyaError.requestMapping(endpoint.url)))
+    }
+}
+
+class NetPlugin: PluginType {
+    
+    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        print("NetPlugin prepare")
+        return request
+    }
+    
+    func willSend(_ request: RequestType, target: TargetType) {
+        print("NetPlugin willSend")
+    }
+    
+    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+        print("NetPlugin didReceive")
+    }
+    
+    func process(_ result: Result<Response, MoyaError>, target: TargetType) -> Result<Response, MoyaError> {
+        print("NetPlugin process")
+        return result
+    }
+}

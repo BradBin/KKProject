@@ -43,19 +43,19 @@ class KKHomeViewController: KKViewController {
         
         print("kk_bindViewModel\(self.viewModel)")
    
-        
-        self.viewModel.categoryTitle(params: ["device_id":deviceID , "iid":accountIID, "aid":13]).subscribe(onNext: { (any) in
+        self.viewModel.recommand(sex: 1).subscribe(onNext: { (result) in
             
-            print("categoryTitle success:\(any)")
-            
+            print(result.data?.returnData?.galleryItems ?? [])
         }, onError: { (error) in
-            print("categoryTitle error:\(error)")
-                     
+            
+            print(error)
         }, onCompleted: {
             
+            print("推荐列表网络请求完成")
         }) {
             
         }
+        
     }
     
     

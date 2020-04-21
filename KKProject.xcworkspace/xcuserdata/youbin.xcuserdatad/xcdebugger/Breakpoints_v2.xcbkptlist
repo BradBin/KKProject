@@ -7,272 +7,305 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "589B2B07-B0A7-4BEE-A6A4-D3329C7C4D3A"
-            shouldBeEnabled = "Yes"
+            uuid = "ADBA6D0B-B69F-485A-A051-8F1D6DBAFD80"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
+            filePath = "KKProject_Swift/Vender/KKViewController/KKViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "589B2B07-B0A7-4BEE-A6A4-D3329C7C4D3A - e19ca218d618d7fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 ((RxSwift.SingleEvent&lt;Moya.Response&gt;) -&gt; ()) -&gt; RxSwift.Disposable in (extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "281">
-               </Location>
-               <Location
-                  uuid = "589B2B07-B0A7-4BEE-A6A4-D3329C7C4D3A - bc052d8ba14dfff6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in closure #1 ((RxSwift.SingleEvent&lt;Moya.Response&gt;) -&gt; ()) -&gt; RxSwift.Disposable in (extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "281">
-               </Location>
-            </Locations>
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0614EBB-9802-44B6-918E-8C79DB432C26"
+            uuid = "CB86A6BF-A2EC-4473-8087-B0E5B622F83B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
+            filePath = "KKProject_Swift/KKConstant.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D0614EBB-9802-44B6-918E-8C79DB432C26 - e59d27dcdb9e5f96"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "141">
-               </Location>
-               <Location
-                  uuid = "D0614EBB-9802-44B6-918E-8C79DB432C26 - e59d27dcdb9e5f96"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "211">
-               </Location>
-               <Location
-                  uuid = "D0614EBB-9802-44B6-918E-8C79DB432C26 - e19ca218d618d7fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 ((RxSwift.SingleEvent&lt;Moya.Response&gt;) -&gt; ()) -&gt; RxSwift.Disposable in (extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "232">
-               </Location>
-            </Locations>
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9D110B99-9AD2-46AA-BB5B-1A9981614641"
+            uuid = "B73778A6-D100-4076-B342-AF74B1D26666"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "89030D4C-D9F2-4935-B05B-2A77B24E8421"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
+            filePath = "KKProject_Swift/KKConstant.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2085EC8-AEF5-41A6-9126-C9266F949A64"
+            uuid = "3DC9675D-8F73-4DA6-827E-B1DFA474FBEC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
+            filePath = "KKProject_Swift/KKConstant.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C49CC99E-C6D5-48A6-A576-2062D754D6AE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject_Swift/KKConstant.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "C49CC99E-C6D5-48A6-A576-2062D754D6AE - 1730b70d13447356"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_73403B438F8144620F453A0DE4D4D6AA_func0"
+                  moduleName = "KKProject_Swift_Release"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youbin/KKProject/KKProject_Swift/KKConstant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "C49CC99E-C6D5-48A6-A576-2062D754D6AE - 5822f445d8a962ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KKProject_Swift_Release.ENV_SWIFT.unsafeMutableAddressor : Swift.Int"
+                  moduleName = "KKProject_Swift_Release"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youbin/KKProject/KKProject_Swift/KKConstant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D45AC339-F2E5-45F7-91C8-E87FFBF7002B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject_Swift/KKConstant.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "D45AC339-F2E5-45F7-91C8-E87FFBF7002B - 1730b70d13547355"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_73403B438F8144620F453A0DE4D4D6AA_func1"
+                  moduleName = "KKProject_Swift_Release"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youbin/KKProject/KKProject_Swift/KKConstant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "D45AC339-F2E5-45F7-91C8-E87FFBF7002B - 207be19db85f8232"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KKProject_Swift_Release.ENV_SWIFT_RELEASE.unsafeMutableAddressor : Swift.Int"
+                  moduleName = "KKProject_Swift_Release"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youbin/KKProject/KKProject_Swift/KKConstant.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC4A9F88-7926-4582-9F0E-D6F72C94244E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject_Swift/KKConstant.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "KKIsPhoneSeries()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60BA25A4-6B26-4956-9670-B1EAB9EA4CE3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject_Swift/KKConstant.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "KKIsPhoneSeries()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08EF8231-D3F2-4CF1-AC9E-6C0DE65FFC1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject_Swift/KKConstant.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F2085EC8-AEF5-41A6-9126-C9266F949A64 - bc052d8ba14dfff6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in closure #1 ((RxSwift.SingleEvent&lt;Moya.Response&gt;) -&gt; ()) -&gt; RxSwift.Disposable in (extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "281">
-               </Location>
-               <Location
-                  uuid = "F2085EC8-AEF5-41A6-9126-C9266F949A64 - bc052d8ba14dfff6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in closure #1 ((RxSwift.SingleEvent&lt;Moya.Response&gt;) -&gt; ()) -&gt; RxSwift.Disposable in (extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "335">
-               </Location>
-            </Locations>
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC5A4078-6644-446F-907F-B7FC2BB7AA5C"
+            uuid = "03256381-2979-49A0-B5BE-D7830B6B21D8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
+            filePath = "KKProject_Swift/KKConstant.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9784CE10-DDC9-4E07-8272-6F4827A9CA3A"
+            uuid = "C2ADC2EF-6E59-42ED-BC18-86FA60547F5A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
+            filePath = "KKProject_Swift/KKConstant.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5B51313D-820F-49BB-AAC9-84D666B2326E"
+            uuid = "5E72DE8B-DC0A-4489-BDF9-D5F03FDE6549"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
+            filePath = "KKProject/Common/KKProjectMacros.h"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "request(_:callbackQueue:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5B51313D-820F-49BB-AAC9-84D666B2326E - bc052d8ba14dfff6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in closure #1 ((RxSwift.SingleEvent&lt;Moya.Response&gt;) -&gt; ()) -&gt; RxSwift.Disposable in (extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "281">
-               </Location>
-               <Location
-                  uuid = "5B51313D-820F-49BB-AAC9-84D666B2326E - bc052d8ba14dfff6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Result.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in closure #1 ((RxSwift.SingleEvent&lt;Moya.Response&gt;) -&gt; ()) -&gt; RxSwift.Disposable in (extension in Moya):RxSwift.Reactive&lt;A where A: Moya.MoyaProviderType&gt;.request(_: A.Target, callbackQueue: Swift.Optional&lt;__C.OS_dispatch_queue&gt;) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.SingleTrait, Moya.Response&gt;"
-                  moduleName = "Moya"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/youbin/KKProject/Pods/Moya/Sources/RxMoya/MoyaProvider+Rx.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "335">
-               </Location>
-            </Locations>
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB0FFECE-7063-4B95-BA63-018FEF7F0C8D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject/Common/KKProjectMacros.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A2A8917-0E04-41A1-984A-6B0007F2035A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject/Common/KKProjectMacros.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61D43001-4E06-477E-B74A-3448FBC99776"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KKProject_Swift/KKConstantAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "baseURL"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

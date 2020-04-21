@@ -9,10 +9,33 @@
 import UIKit
 import Foundation
 
+/************************
+ This usually can be resolved by moving the
+ target's Headers build phase before Compile Sources.
+ 
+ 解决方法:将Run Script调整到Complie Sources之前
+
+ ***********************/
+
+#if ENV_CODE && true
+
+let ENV_SWIFT         = 0
+
+#elseif ENV_CODE && true
+
+let ENV_SWIFT         = 1
+
+#endif
+//
+let ENV_SWIFT         = 0
+let ENV_SWIFT_RELEASE = 1
+
+
 
 let KKScreenSize   = UIScreen.main.bounds.size;
 let KKScreenWidth  = UIScreen.main.bounds.size.width
 let KKScreenHeight = UIScreen.main.bounds.size.height
+
 
 
 

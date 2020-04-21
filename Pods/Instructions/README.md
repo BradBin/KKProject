@@ -40,8 +40,8 @@ Add customizable coach marks into your iOS project. Available for both iPhone an
 - [ ] Multiple coach marks support
 
 ## Requirements
-- Xcode 10 / Swift 4+
-- iOS 10.0+
+- Xcode 11 / Swift 5+
+- iOS 11.0+
 
 ## Asking Questions / Contributing
 
@@ -57,10 +57,6 @@ If you want to contribute, be sure to take a look at [the contributing guide].
 
 ## Installation
 
-⚠️ [Git LFS] is required to clone Instructions or build it through your favorite package manager (all the snapshots used in the tests are stored in a submodule through LFS).
-
-[Git LFS]: https://git-lfs.github.com/
-
 ### CocoaPods
 Add Instructions to your Podfile:
 
@@ -69,7 +65,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 use_frameworks!
 
-pod 'Instructions', '~> 1.2.2'
+pod 'Instructions', '~> 1.4.0'
 ```
 
 Then, run the following command:
@@ -82,7 +78,7 @@ $ pod install
 Add Instructions to your Cartfile:
 
 ```
-github "ephread/Instructions" ~> 1.2.2
+github "ephread/Instructions" ~> 1.4.0
 ```
 
 You can then update, build and drag the generated framework into your project:
@@ -453,7 +449,7 @@ Instructions provide two methods to deal with frame changes.
   to show the coach mark and the cutout again.
 
 Although you can call these methods at any time while Instructions is idle, the result will not
-look smooth if the coach mark is already displayed. It's make the changes occur between
+look smooth if the coach mark is already displayed. It's better to perform the changes between
 two coach marks, by pausing and resuming the flow. [`KeyboardViewController`] shows an
 example of this technique.
 
