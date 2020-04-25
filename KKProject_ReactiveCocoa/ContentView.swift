@@ -1,20 +1,18 @@
 //
 //  ContentView.swift
-//  KKProject_RxSwift
+//  KKProject_ReactiveCocoa
 //
-//  Created by youbin on 2020/4/25.
+//  Created by youbin on 2020/4/26.
 //  Copyright © 2020 Macbook Pro 15.4 . All rights reserved.
 //
 
 import SwiftUI
-import RxSwift
 
 
 struct ContentView: View {
     var body: some View {
         Text("Hello, World!")
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

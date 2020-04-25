@@ -17,7 +17,7 @@
 		<key>KKProject_ReactiveCocoa.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>98</integer>
 		</dict>
 		<key>KKProject_RxSwift.xcscheme_^#shared#^_</key>
 		<dict>
@@ -43,6 +43,21 @@
 			<true/>
 		</dict>
 		<key>931FBDC024549345008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBDF0245493DE008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBE082454AA03008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBE202454AA21008475A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
