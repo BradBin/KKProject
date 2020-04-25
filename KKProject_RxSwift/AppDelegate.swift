@@ -1,15 +1,12 @@
 //
 //  AppDelegate.swift
-//  RxSwift
+//  KKProject_RxSwift
 //
 //  Created by youbin on 2020/4/25.
 //  Copyright © 2020 Macbook Pro 15.4 . All rights reserved.
 //
 
 import UIKit
-
-
-/// 没有使用swiftUI,使用的storyboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

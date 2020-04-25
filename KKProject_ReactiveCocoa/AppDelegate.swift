@@ -1,14 +1,12 @@
 //
 //  AppDelegate.swift
-//  ReactiveCocoa
+//  KKProject_ReactiveCocoa
 //
 //  Created by youbin on 2020/4/25.
 //  Copyright © 2020 Macbook Pro 15.4 . All rights reserved.
 //
 
 import UIKit
-
-/// 没有使用storyboard,使用的swiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

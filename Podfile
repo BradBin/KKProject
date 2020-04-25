@@ -84,6 +84,37 @@ end
 #end
 
 
+
+target 'KKProject_RxSwift' do
+  
+  use_frameworks!
+  
+  pod 'RxSwift'
+  #auto layout
+  pod 'SnapKit'
+  #图片加载处理框架
+  pod 'Kingfisher'
+  #颜色
+  pod 'DynamicColor'
+  
+end
+
+
+target 'KKProject_ReactiveCocoa' do
+  
+  use_frameworks!
+  
+  pod 'ReactiveCocoa'
+  #auto layout
+  pod 'SnapKit'
+  #图片加载处理框架
+  pod 'Kingfisher'
+  #颜色
+  pod 'DynamicColor'
+  
+end
+
+
 targets = ['KKProject_Swift','KKProject_Swift_Release']
 targets.each do |t|
   target t do
@@ -190,32 +221,6 @@ end
 
 
 
-target 'RxSwift' do
-  use_frameworks!
-  
-  pod 'RxSwift'
-  #auto layout
-  pod 'SnapKit'
-  #图片加载处理框架
-  pod 'Kingfisher'
-  #颜色
-  pod 'DynamicColor'
-  
-end
-
-
-target 'ReactiveCocoa' do
-  use_frameworks!
-  
-  pod 'ReactiveCocoa'
-  #auto layout
-  pod 'SnapKit'
-  #图片加载处理框架
-  pod 'Kingfisher'
-  #颜色
-  pod 'DynamicColor'
-  
-end
 
 
 

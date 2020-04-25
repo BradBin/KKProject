@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "933FFF452454141F00790786"
-               BuildableName = "RxSwift.app"
-               BlueprintName = "RxSwift"
+               BlueprintIdentifier = "931FBDC024549345008475A4"
+               BuildableName = "KKProject_ReactiveCocoa.app"
+               BlueprintName = "KKProject_ReactiveCocoa"
                ReferencedContainer = "container:KKProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "933FFF452454141F00790786"
-            BuildableName = "RxSwift.app"
-            BlueprintName = "RxSwift"
+            BlueprintIdentifier = "931FBDC024549345008475A4"
+            BuildableName = "KKProject_ReactiveCocoa.app"
+            BlueprintName = "KKProject_ReactiveCocoa"
             ReferencedContainer = "container:KKProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +61,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "933FFF452454141F00790786"
-            BuildableName = "RxSwift.app"
-            BlueprintName = "RxSwift"
+            BlueprintIdentifier = "931FBDC024549345008475A4"
+            BuildableName = "KKProject_ReactiveCocoa.app"
+            BlueprintName = "KKProject_ReactiveCocoa"
             ReferencedContainer = "container:KKProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
