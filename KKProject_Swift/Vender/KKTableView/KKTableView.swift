@@ -8,7 +8,22 @@
 
 import UIKit
 
-class KKTableView : UIView , KKTableViewProtocol, UITableViewDelegate,UITableViewDataSource{
+class KKTableView : UIView , KKViewProtocol, UITableViewDelegate,UITableViewDataSource{
+   
+    required init(viewModel: KKViewModelProtocol?) {
+        super.init(frame: CGRect.zero)
+        kk_setupView()
+        kk_bindViewModel()
+    }
+    
+     override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     public lazy var tableView : UITableView = {
         let view = UITableView.init(frame: CGRect.zero, style: .plain)
@@ -19,17 +34,8 @@ class KKTableView : UIView , KKTableViewProtocol, UITableViewDelegate,UITableVie
         return view
     }()
     
-    var viewModel : KKViewModelProtocol?
-    
-    init(viewmodel : KKViewModelProtocol) {
-        super.init(frame: CGRect.zero)
-        viewModel = viewmodel
-        kk_setupView()
-        kk_bindViewModel()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func kk_initialzie() {
+        
     }
     
     func kk_setupView() {
@@ -76,6 +82,6 @@ extension KKTableView{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-         return 0.000001
+        return 0.000001
     }
 }

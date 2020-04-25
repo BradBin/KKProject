@@ -91,94 +91,94 @@ targets.each do |t|
     use_frameworks!
     
     pod 'SwiftLint'
-
+    
     #auto layout
     pod 'SnapKit'
-
-#    pod 'Then', '~> 2.6.0'
+    
+    #    pod 'Then', '~> 2.6.0'
     pod 'thenPromise'
-
+    
     #数据模型解析
     pod 'HandyJSON'
     pod 'SwiftyJSON'
-
+    
     #组件化工具库
     pod 'BeeHive'
-
+    
     pod 'IQKeyboardManagerSwift'
-
+    
     #对Alamofire的二次封装
     pod 'Moya/RxSwift'
-
+    
     #  pod 'RxSwift', '~> 5.0.1'
     #  pod 'RxCocoa', '~> 5.0.1'
-
+    
     #  pod 'Moya/ReactiveSwift'
     pod 'ReactiveCocoa'
     #  pod 'ReactiveCocoa', '~> 10.2.0'
-
+    
     #资源引用工具
     pod 'R.swift'
-
+    
     #图片加载处理框架
     pod 'Kingfisher'
-
+    
     #定时器
     pod 'Repeat'
-
+    
     #queue manager
     pod 'Queuer'
-
+    
     pod 'Material'
     pod 'Atributika'
     pod 'PromiseKit'
-
+    
     pod 'AsyncSwift'
     pod 'Surge'
     pod 'CryptoSwift'
     pod 'KeychainAccess'
     pod 'SwiftyUserDefaults'
-
+    
     pod 'SQLite.swift'
-
+    
     pod 'ReachabilitySwift'
     pod 'SwiftDate'
-
+    
     pod 'SwiftMessages'
     pod 'SwiftEntryKit'
-
+    
     #pod 'Advance'
-
+    
     pod 'SwiftyStoreKit'
     pod 'Instructions'
-
+    
     #颜色
     pod 'DynamicColor'
-
+    
     #自定义导航栏
     pod 'EachNavigationBar'
-
+    
     #TabBar
     pod 'RAMAnimatedTabBarController'
     pod 'ESTabBarController-swift'
-
+    
     #占位视图
     pod 'EmptyDataSet-Swift'
-
+    
     #滚动标签 segmented view
     pod 'JXSegmentedView'
-
+    
     pod 'AnimatedCollectionViewLayout'
     pod 'CollectionKit'
     #  pod 'Cards', '~> 1.4.0'
-
+    
     pod 'SwipeCellKit'
     pod 'ViewAnimator'
     pod 'XLPagerTabStrip'
-
+    
     #Elegant iOS forms
     #  pod 'Eureka', '~> 5.2.0'
-
+    
     pod 'FoldingCell'
     pod 'NVActivityIndicatorView'
     pod 'SkeletonView'
@@ -187,6 +187,37 @@ targets.each do |t|
   end
   
 end
+
+
+
+target 'RxSwift' do
+  use_frameworks!
+  
+  pod 'RxSwift'
+  #auto layout
+  pod 'SnapKit'
+  #图片加载处理框架
+  pod 'Kingfisher'
+  #颜色
+  pod 'DynamicColor'
+  
+end
+
+
+target 'ReactiveCocoa' do
+  use_frameworks!
+  
+  pod 'ReactiveCocoa'
+  #auto layout
+  pod 'SnapKit'
+  #图片加载处理框架
+  pod 'Kingfisher'
+  #颜色
+  pod 'DynamicColor'
+  
+end
+
+
 
 
 #***********

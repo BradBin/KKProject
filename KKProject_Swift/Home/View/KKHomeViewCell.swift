@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-let KKHomeCellIdentifier = "KK.Home.Cell.Identitifer"
+internal let KKHomeCellIdentifier = "KK.Home.Cell.Identitifer"
 
 class KKHomeViewCell: KKTableViewCell {
     

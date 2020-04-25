@@ -9,6 +9,20 @@
 import UIKit
 
 class KKHomeView: KKTableView {
+
+    var viewModel : KKHomeViewModel?
+    
+    var count : Int?
+    
+    
+    required init(viewModel: KKViewModelProtocol?) {
+        self.viewModel = viewModel as? KKHomeViewModel
+        super.init(viewModel: viewModel)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func kk_setupView() {
         super.kk_setupView()
@@ -17,12 +31,21 @@ class KKHomeView: KKTableView {
     
     override func kk_bindViewModel() {
         super.kk_bindViewModel()
-        print(self.viewModel!)
+        
+        self.viewModel?.recommand(sex: 1).subscribe(onNext: { (result) in
+            
+            print(result.data?.returnData?.comicLists ?? [])
+        }, onError: { (error) in
+            
+            print(error)
+        }, onCompleted: {
+            
+        }, onDisposed: {
+            
+        })
+       
     }
     
-    
-  
-
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -38,7 +61,8 @@ class KKHomeView: KKTableView {
 extension KKHomeView{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+    
+        return self.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

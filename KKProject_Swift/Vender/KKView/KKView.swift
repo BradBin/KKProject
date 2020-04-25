@@ -8,13 +8,10 @@
 
 import UIKit
 
-class KKView: UIView, KKViewProtocol{
+class KKView: UIView , KKViewProtocol{
     
-    var viewModel : KKViewModelProtocol?
-    
-    init(viewmodel : KKViewModelProtocol) {
+    required init(viewModel: KKViewModelProtocol?) {
         super.init(frame: CGRect.zero)
-        viewModel = viewmodel
         kk_setupView()
         kk_bindViewModel()
     }
@@ -23,6 +20,9 @@ class KKView: UIView, KKViewProtocol{
         fatalError("init(coder:) has not been implemented")
     }
     
+    func kk_initialzie() {
+        
+    }
     func kk_setupView() {
         
     }
@@ -30,7 +30,7 @@ class KKView: UIView, KKViewProtocol{
     func kk_bindViewModel() {
         
     }
-
+    
     /*
      // Only ov@objc e@objc rride draw() if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.

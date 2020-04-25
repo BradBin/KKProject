@@ -9,9 +9,8 @@
 import Foundation
 
 
-public protocol KKViewProtocol{
-//    
-//    func kk_setupView()     -> Void
-//    func kk_bindViewModel() -> Void
-    
+public protocol KKViewProtocol : KKViewModelProtocol{
+
+    init(viewModel : KKViewModelProtocol?)
+
 }

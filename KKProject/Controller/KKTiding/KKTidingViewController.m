@@ -7,8 +7,12 @@
 //
 
 #import "KKTidingViewController.h"
+#import "KKTidingView.h"
 
 @interface KKTidingViewController ()
+
+@property (nonatomic, strong) KKTidingViewModel *viewModel;
+@property (nonatomic, strong) KKTidingView       *tidingView;
 
 @end
 
@@ -28,7 +32,26 @@
 
 -(void)kk_addSubviews{
     [super kk_addSubviews];
+    
+    self.tidingView = ({
+        KKTidingView *view = [[KKTidingView alloc] initWithViewModel:self.viewModel];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.kk_navigationBar.mas_bottom);
+            make.centerX.equalTo(view.superview.mas_centerX);
+            make.width.equalTo(view.superview.mas_width);
+            make.bottom.equalTo(view.superview.mas_bottom);
+        }];
+        view;
+    });
 
+}
+
+-(KKTidingViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = KKTidingViewModel.new;
+    }
+    return _viewModel;
 }
 
 /*

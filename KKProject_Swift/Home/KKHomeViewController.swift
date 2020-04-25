@@ -20,7 +20,8 @@ class KKHomeViewController: KKViewController {
     
     // 懒加载
     private lazy var homeView : KKHomeView = {
-        let view = KKHomeView(viewmodel: self.viewModel)
+        
+        let view = KKHomeView(viewModel: self.viewModel)
         view.backgroundColor = UIColor.init(hexString: "#78FCA6")
         return view
     }()
@@ -40,21 +41,10 @@ class KKHomeViewController: KKViewController {
     
     override func kk_bindViewModel() {
         super.kk_bindViewModel()
+
         
-        print("kk_bindViewModel\(self.viewModel)")
+        
    
-        self.viewModel.recommand(sex: 1).subscribe(onNext: { (result) in
-            
-            print(result.data?.returnData?.galleryItems ?? [])
-        }, onError: { (error) in
-            
-            print(error)
-        }, onCompleted: {
-            
-            print("推荐列表网络请求完成")
-        }) {
-            
-        }
         
     }
     

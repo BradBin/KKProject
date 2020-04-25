@@ -105,6 +105,8 @@ let timeoutClosure = {(endpoint: Endpoint, closure: MoyaProvider<API>.RequestRes
     }
 }
 
+
+/// 网络请求插件
 class NetPlugin: PluginType {
     
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {

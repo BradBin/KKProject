@@ -8,16 +8,9 @@
 
 import Foundation
 
-class KKViewModel : NSObject , KKViewModelProtocol {
-   
-    override init() {
-        super.init()
-        kk_init()
-    }
+class KKViewModel : KKViewModelProtocol {
     
-
-    func kk_init() {
+    func kk_initialzie() {
         
     }
-
 }

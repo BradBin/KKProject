@@ -14,6 +14,10 @@ import ReactiveCocoa
 
 class KKHomeViewModel: KKViewModel{
     
+    override func kk_initialzie() {
+        
+    }
+    
     func recommand(sex : Int) -> Observable<KKResponseData<KKHomeModel>> {
         return homeProvider.rx.request(.recommand(sex: sex)).asObservable().mapResponseToObject(type: KKResponseData.self)
     }

@@ -220,6 +220,7 @@ DEPENDENCIES:
   - ReactiveCocoa
   - ReactiveObjC
   - Repeat
+  - RxSwift
   - SkeletonView
   - SnapKit
   - SQLite.swift
@@ -419,6 +420,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 495dee17469f6b56b1489418228f8f194841101d
+PODFILE CHECKSUM: b4880c539392cb689a801d1bb1949cf40b807060
 
 COCOAPODS: 1.9.1
