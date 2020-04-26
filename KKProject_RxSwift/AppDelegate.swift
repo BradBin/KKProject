@@ -8,6 +8,19 @@
 
 import UIKit
 
+/****************************************
+     WWDC2019：Optimizing App Launch
+
+ 
+ iOS 13之前:Appdelegate的职责全权处理app声明周期和UI生命周期
+ 
+ iOS 13之后:Appdelegate的职责是
+    1.处理APP生命周期
+    2.新的Scene Session生命周期(处理UI生命周期)
+ 
+ 
+*****************************************/
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

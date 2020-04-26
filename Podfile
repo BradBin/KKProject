@@ -84,9 +84,22 @@ end
 #end
 
 
+target 'KKProject_ReactiveObjC' do
+  #iOS 13 Xcode11新建的项目
+  
+  pod 'ReactiveObjC'
+  pod 'Masonry'
+  pod 'YYKit'
+  #昼夜模式切换
+  pod 'DKNightVersion'
+  pod 'IQKeyboardManager'
+  
+end
+
+
 
 target 'KKProject_RxSwift' do
-  
+  #iOS 13 Xcode11新建的项目
   use_frameworks!
   
   pod 'RxSwift'
@@ -101,7 +114,7 @@ end
 
 
 target 'KKProject_ReactiveCocoa' do
-  
+  #iOS 13 Xcode11新建的项目
   use_frameworks!
   
   pod 'ReactiveCocoa'
