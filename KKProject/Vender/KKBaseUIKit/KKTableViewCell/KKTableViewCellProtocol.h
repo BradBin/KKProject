@@ -20,20 +20,8 @@
 - (void) kk_setupView;
 
 /**
- 配置控件的属性
- */
-- (void) kk_setupConfigurate;
-
-
-/**
  绑定
  */
 - (void) kk_bindViewModel;
-
-
-/**
- 设置右边的AccessoryView
- */
-- (void) kk_setupAccessoryView;
 
 @end

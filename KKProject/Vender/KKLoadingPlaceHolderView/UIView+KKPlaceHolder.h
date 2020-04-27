@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIView (KKPlaceHolder)
 @property (nonatomic,strong) KKLoadingPlaceHolderView *_Nullable placeHolderView;
 
-- (void)kk_showPlaceHolderWithType:(KKLoadingPlaceHolderType)type callBack:(void(^)(void))callBack;
-- (void)kk_showBadNetWorkWithRefreshCallBack:(void(^)(void))callBack;
+- (void)kk_showPlaceHolderWithType:(KKLoadingPlaceHolderType)type callBack:(void(^ _Nullable)(void))callBack;
+- (void)kk_showBadNetWorkWithRefreshCallBack:(void(^ _Nullable)(void))callBack;
     
 - (void)kk_closePlaceHolder;
 - (void)kk_closePlaceHolderAnimation:(BOOL)animation;

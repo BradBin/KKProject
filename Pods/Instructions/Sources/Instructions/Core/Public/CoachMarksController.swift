@@ -117,7 +117,7 @@ public class CoachMarksController {
 // MARK: - Forwarded Properties
 public extension CoachMarksController {
     /// Control or control wrapper used to skip the flow.
-    var skipView: CoachMarkSkipView? {
+    var skipView: (UIView & CoachMarkSkipView)? {
         get { return coachMarksViewController.skipView }
         set { coachMarksViewController.skipView = newValue }
     }
@@ -131,8 +131,7 @@ public extension CoachMarksController {
 
     func start(in presentationContext: PresentationContext) {
         guard let dataSource = self.dataSource else {
-            print("startOn: snap! you didn't setup any datasource, the" +
-                "coach mark manager won't do anything.")
+            print("[WARNING] dataSource is nil.")
             return
         }
 
@@ -140,9 +139,10 @@ public extension CoachMarksController {
         if flow.started { return }
 
         let numberOfCoachMarks = dataSource.numberOfCoachMarks(for: self)
-        if numberOfCoachMarks <= 0 {
-            print("startOn: the dataSource returned an invalid value for " +
-                "numberOfCoachMarksForCoachMarksController(_:)")
+        if numberOfCoachMarks < 0 {
+            fatalError("dataSource.numberOfCoachMarks(for:) returned a negative number.")
+        } else if numberOfCoachMarks == 0 {
+            print("[WARNING] dataSource.numberOfCoachMarks(for:) returned 0.")
             return
         }
 
@@ -166,18 +166,6 @@ public extension CoachMarksController {
                                        configureOrnamentsOfOverlay: overlay.overlayView.ornaments)
 
         flow.startFlow(withNumberOfCoachMarks: numberOfCoachMarks)
-    }
-
-    /// Start displaying the coach marks.
-    ///
-    /// - Parameter parentViewController: View Controller to which attach self.
-    @available(iOS, deprecated: 1.2.1, message: "use start(in:) instead.")
-    func start(on parentViewController: UIViewController) {
-#if INSTRUCTIONS_APP_EXTENSIONS
-        start(in: .currentWindow(of: parentViewController))
-#else
-        start(in: .newWindow(over: parentViewController, at: nil))
-#endif
     }
 
     /// Stop the flow of coach marks. Don't forget to call this method in viewDidDisappear or

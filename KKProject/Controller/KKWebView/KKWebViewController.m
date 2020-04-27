@@ -67,7 +67,7 @@
         DWKWebView *view        = [[DWKWebView alloc] initWithFrame:CGRectZero configuration:config];
         view.DSUIDelegate       = self;
         view.navigationDelegate = self;
-        
+        [view setDebugMode:true];
         [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(view.superview);
@@ -79,6 +79,7 @@
     if (self.webApis) {
         for (KKWebApi *weabApi in self.webApis) {
             weabApi.delegate = self;
+            //注册API
             [self.webView addJavascriptObject:weabApi namespace:nil];
         }
     }
@@ -156,6 +157,36 @@
  */
 -(void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     NSLog(@"didFailProvisionalNavigation页面加载失败时调用: %@",error.localizedDescription);
+    
+#if 0
+    if (self.navigationController.topViewController == self) {
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self.navigationController popViewControllerAnimated:true];
+        }
+    }else{
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self dismissViewControllerAnimated:true completion:nil];
+        }
+    }
+#else
+    if (self.presentingViewController) {
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self dismissViewControllerAnimated:true completion:nil];
+        }
+    }else{
+        if ([webView canGoBack]) {
+            [webView canGoBack];
+        }else{
+            [self.navigationController popViewControllerAnimated:true];
+        }
+    }
+#endif
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{

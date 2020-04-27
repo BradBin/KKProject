@@ -1,6 +1,0 @@
-framework module Advance {
-  umbrella header "Advance-umbrella.h"
-
-  export *
-  module * { export * }
-}

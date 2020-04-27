@@ -12,17 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger,KKLoadingPlaceHolderType) {
     KKLoadingPlaceHolderTypeLoading = 0,
-    KKLoadingPlaceHolderTypeFailed = 1,
-    
+    KKLoadingPlaceHolderTypeFailed,
+    KKLoadingPlaceHolderTypeNoData,
     KKLoadingPlaceHolderTypeBadNetwork = 9,
-    KKLoadingPlaceHolderTypeBase = 99,
+    KKLoadingPlaceHolderTypeBase       = 99
 };
 
 @interface KKLoadingPlaceHolderView : UIView
     
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UILabel *messageLabel;
-@property (nonatomic, strong) UIButton *failedButton;
+@property (nonatomic, strong) UILabel     *messageLabel;
+@property (nonatomic, strong) UIButton    *failedButton;
 @property (nonatomic, assign) KKLoadingPlaceHolderType type;
     
 - (void)kk_setRefreshCB:(void(^)(void))callBack;

@@ -18,7 +18,6 @@
                            action:(SEL)action{
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.adjustsImageWhenHighlighted = false;
     button.titleLabel.font = [UIFont systemFontOfSize:15.5];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     title = [title stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];

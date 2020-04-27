@@ -9,6 +9,13 @@
 #import "KKTableView.h"
 #import "AppDelegate.h"
 
+@interface KKTableView ()
+
+@property (nonatomic,strong) _KKTableView *plainTableView;
+@property (nonatomic,strong) _KKTableView *groupTableView;
+
+@end
+
 
 @implementation KKTableView
 
@@ -54,6 +61,16 @@
 
 - (void) _kk_commitInit{
     self.loading = false;
+    [self addSubview:self.refreshTipLabel];
+    [self insertSubview:self.refreshTipLabel aboveSubview:self.tableView];
+    [self.refreshTipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.refreshTipLabel.superview.mas_top);
+        make.centerX.equalTo(self.refreshTipLabel.superview.mas_centerX);
+        make.width.equalTo(self.refreshTipLabel.superview.mas_width);
+        make.height.mas_equalTo(CGFloatPixelRound(30.0f));
+    }];
+    
+    self.tableView = self.plainTableView;
     [self addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11.0, *)) {
@@ -64,19 +81,75 @@
     }];
 }
 
-
--(_KKTableView *)tableView{
-    if (_tableView == nil) {
-        _tableView = [[_KKTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate   = self;
-        _tableView.dataSource = self;
-        _tableView.estimatedRowHeight             = 0;
-        _tableView.estimatedSectionHeaderHeight   = 0;
-        _tableView.estimatedSectionFooterHeight   = 0;
-        _tableView.separatorStyle                 = UITableViewCellSeparatorStyleNone;
-        _tableView.showsHorizontalScrollIndicator = false;
+-(void)kk_setTableViewStyle:(UITableViewStyle)tableViewStyle{
+    if (tableViewStyle == UITableViewStylePlain) {
+        if (self.plainTableView.superview) {
+            
+        }else{
+            if (self.groupTableView.superview) {
+                [self.groupTableView removeFromSuperview];
+            }
+            self.tableView = self.plainTableView;
+            [self addSubview:self.tableView];
+            [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                if (@available(iOS 11.0, *)) {
+                    make.edges.equalTo(self.tableView.superview).insets(self.safeAreaInsets);
+                } else {
+                    make.edges.equalTo(self.tableView.superview);
+                }
+            }];
         }
-    return _tableView;
+    }else{
+        if (self.groupTableView.superview) {
+            
+        }else{
+            if (self.plainTableView.superview) {
+                [self.plainTableView removeFromSuperview];
+            }
+            self.tableView = self.groupTableView;
+            [self addSubview:self.tableView];
+            [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                if (@available(iOS 11.0, *)) {
+                    make.edges.equalTo(self.tableView.superview).insets(self.safeAreaInsets);
+                } else {
+                    make.edges.equalTo(self.tableView.superview);
+                }
+            }];
+        }
+    }
+}
+
+
+-(_KKTableView *)plainTableView{
+    if (_plainTableView == nil) {
+        _plainTableView = [[_KKTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _plainTableView.delegate                       = self;
+        _plainTableView.dataSource                     = self;
+        _plainTableView.estimatedRowHeight             = 0;
+        _plainTableView.estimatedSectionHeaderHeight   = 0;
+        _plainTableView.estimatedSectionFooterHeight   = 0;
+        _plainTableView.emptyDataSetSource             = self;
+        _plainTableView.emptyDataSetDelegate           = self;
+        _plainTableView.separatorStyle                 = UITableViewCellSeparatorStyleNone;
+        _plainTableView.showsHorizontalScrollIndicator = false;
+    }
+    return _plainTableView;
+}
+
+-(_KKTableView *)groupTableView{
+    if (_groupTableView == nil) {
+        _groupTableView = [[_KKTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _groupTableView.delegate                       = self;
+        _groupTableView.dataSource                     = self;
+        _groupTableView.estimatedRowHeight             = 0;
+        _groupTableView.estimatedSectionHeaderHeight   = 0;
+        _groupTableView.estimatedSectionFooterHeight   = 0;
+        _groupTableView.emptyDataSetSource             = self;
+        _groupTableView.emptyDataSetDelegate           = self;
+        _groupTableView.separatorStyle                 = UITableViewCellSeparatorStyleNone;
+        _groupTableView.showsHorizontalScrollIndicator = false;
+    }
+    return _groupTableView;
 }
 
 
@@ -117,6 +190,20 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.0001f;
 }
+
+
+-(UILabel *)refreshTipLabel{
+    if (_refreshTipLabel == nil) {
+        _refreshTipLabel = UILabel.new;
+        _refreshTipLabel.backgroundColor = [UIColor colorWithRed:214/255.0 green:232/255.0 blue:248/255.0 alpha:1.0];
+        _refreshTipLabel.textColor       = [UIColor colorWithRed:0/255.0   green:135/255.0 blue:211/255.0 alpha:1.0];
+        _refreshTipLabel.font            = [UIFont systemFontOfSize:15];
+        _refreshTipLabel.textAlignment   = NSTextAlignmentCenter;
+        //        _refreshTipLabel.hidden          = true;
+    }
+    return _refreshTipLabel;
+}
+
 
 /*
  // Only override drawRect: if you perform custom drawing.

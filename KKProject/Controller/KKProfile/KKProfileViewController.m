@@ -11,6 +11,7 @@
 
 @interface KKProfileViewController ()
 
+
 @end
 
 @implementation KKProfileViewController
@@ -28,9 +29,9 @@
 
 - (void)kk_layoutNavigation{
     [super kk_layoutNavigation];
-    self.kk_navShadowImage     = UIImage.new;
-    self.kk_navShadowColor     = [UIColor clearColor];
-    self.kk_navBackgroundColor = UIColor.clearColor;
+    self.kk_navShadowImage        = UIImage.new;
+    self.kk_navShadowColor        = [UIColor clearColor];
+    self.kk_navBackgroundColor    = UIColor.clearColor;
     self.kk_navRightBarButtonItem = [UIBarButtonItem kk_itemWithTitle:nil
                                                            titleColor:nil
                                                             imageName:[UIImage imageNamed:@"profile_settings.png"]
@@ -38,6 +39,8 @@
                                                                target:self
                                                                action:@selector(kk_settingsEvent:)];
 }
+
+
 
 /*
 #pragma mark - Navigation

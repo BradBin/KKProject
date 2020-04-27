@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+FOUNDATION_EXTERN NSString * const KKData;
 @interface KKViewModel : NSObject<KKViewModelProtocol>
 
 @end

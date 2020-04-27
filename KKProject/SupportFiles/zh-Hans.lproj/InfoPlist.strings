@@ -5,3 +5,18 @@
   Created by 尤彬 on 2019/4/30.
   Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 */
+
+/************TabBar**************/
+"Home"    = "首页";
+"Message" = "消息";
+"Find"    = "发现";
+"Profile" = "我的";
+
+
+/***********navigation************/
+"Home_add"         = "home_edit.png";
+
+"Profile_settings" = "设置";
+"Profile_LogOut"   = "退出";
+
+

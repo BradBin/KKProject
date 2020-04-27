@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "YYTextLinePositionModifier.h"
+#import "KKProjectConst.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 /**
  默认边界距离 5.15
  */
 FOUNDATION_EXTERN  CGFloat const marginText;
 
-@interface KKLayout : NSObject
+@interface KKLayout : NSObject<NSCoding>
 
 /**
  默认上边界距离 5.15

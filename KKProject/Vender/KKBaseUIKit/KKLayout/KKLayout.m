@@ -22,4 +22,14 @@ CGFloat const marginText = 5.15;
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [self modelEncodeWithCoder:aCoder];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    return [self modelInitWithCoder:aDecoder];
+}
+
+
 @end

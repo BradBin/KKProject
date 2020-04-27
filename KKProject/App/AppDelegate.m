@@ -18,6 +18,7 @@
 #import <UMCommon/UMCommon.h>
 #import <UMShare/UMShare.h>
 #import <UMCommonLog/UMCommonLogHeaders.h>
+#import <UMAnalytics/MobClick.h>
 #endif
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -39,12 +40,13 @@
     //配置云信SDK
     [self setupNIM];
     //网络BASE_URL
-    [KKNetWorking updateBaseUrl:KK_BASE_URL];
+    [self setupNetwork];
     //配置主控制
     [self setupMainVC];
     
     return YES;
 }
+
 
 /**
  导航栏配置
@@ -54,13 +56,12 @@
     keyboardManager.shouldResignOnTouchOutside          = true;
     keyboardManager.shouldToolbarUsesTextFieldTintColor = true;
     keyboardManager.enableAutoToolbar                   = false;
-    keyboardManager.toolbarManageBehaviour              = IQAutoToolbarByTag;
+    keyboardManager.toolbarManageBehaviour              = IQAutoToolbarByPosition;
     keyboardManager.shouldResignOnTouchOutside          = true;
     [[IQKeyboardManager sharedManager] registerTextFieldViewClass:[YYTextView class]
                                   didBeginEditingNotificationName:YYTextViewTextDidBeginEditingNotification
                                     didEndEditingNotificationName:YYTextViewTextDidEndEditingNotification];
 }
-
 
 /**
  导航栏配置
@@ -73,28 +74,30 @@
     }];
 }
 
-
 /**
  友盟配置
  */
 - (void)setupUMeng{
-#if   ENV_CODE == ENV_PROJECT
     
-#elif ENV_CODE == ENV_PROJECT_OBJC
-    [UMCommonLogManager setUpUMCommonLogManager];
-    [UMConfigure setLogEnabled:true];
-    [UMConfigure initWithAppkey:UMengKey channel:@"App Store"];
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession|UMSocialPlatformType_WechatSession
-//                                          appKey:weChatAppId
-//                                       appSecret:weChatAppSecret
-//                                     redirectURL:nil];
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
-//                                          appKey:QQAppKey
-//                                       appSecret:QQAppSecret
-//                                     redirectURL:nil];
-#endif
+    KKSetupBlock(^{
+     
+        
+    }, ^{
+//        [UMCommonLogManager setUpUMCommonLogManager];
+//        [UMConfigure setLogEnabled:true];
+//        [UMConfigure initWithAppkey:UMengKey channel:@"App Store"];
+//        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession|UMSocialPlatformType_WechatSession
+//                                              appKey:weChatAppId
+//                                           appSecret:weChatAppSecret
+//                                         redirectURL:nil];
+//        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ
+//                                              appKey:QQAppKey
+//                                           appSecret:QQAppSecret
+//                                         redirectURL:nil];
+//        
+//        [MobClick setScenarioType:E_UM_NORMAL];
+    });
 }
-
 
 /**
  配置云信SDK
@@ -109,6 +112,16 @@
     option.apnsCername   = @"";
     option.pkCername     = @"";
     [NIMSDK.sharedSDK registerWithOption:option];
+}
+
+
+
+/**
+ 配置网络
+ */
+- (void) setupNetwork{
+    [KKNetWorking updateBaseUrl:KK_BASE_URL];
+    [KKNetWorking enableFormatterResponse:false];
 }
 
 /**

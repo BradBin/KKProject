@@ -6,3 +6,17 @@
   Copyright © 2019 Macbook Pro 15.4 . All rights reserved.
 */
 
+/************TabBar**************/
+"Home"    = "Home";
+"Message" = "Message";
+"Find"    = "Find";
+"Profile" = "Profile";
+
+
+/***********navigation************/
+"Home_add"         = "home_edit.png";
+
+"Profile_settings" = "settings";
+"Profile_LogOut"   = "LogOut";
+
+

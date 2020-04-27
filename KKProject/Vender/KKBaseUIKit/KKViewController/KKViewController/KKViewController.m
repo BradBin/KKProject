@@ -84,14 +84,13 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars = false;
     self.navigationController.navigationBar.translucent = false;
-    self.view.backgroundColor = UIColor.whiteColor;
     [self setupCustomNavBar];
     [self setupNavBarAppearance];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:YES];
     // 将自定义导航栏放置顶层
     if (self.kk_navigationBar && !self.kk_navigationBar.hidden) {
@@ -131,11 +130,11 @@
  */
 - (void)setupCustomNavBar {
     
-    if (@available(iOS 11.0, *)) {
-        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-    }else{
-       self.automaticallyAdjustsScrollViewInsets = NO;
-    }
+//    if (@available(iOS 11.0, *)) {
+//        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+//    }else{
+//       self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
 
     [self.view addSubview:self.kk_navigationBar];
     [self setupNavBarFrame];
@@ -149,8 +148,8 @@
     
     KKNavigationBarHelper *configure = [KKNavigationBarHelper sharedInstance];
     if (configure.kk_backgroundColor) self.kk_navBackgroundColor = configure.kk_backgroundColor;
-    if (configure.kk_titleColor) self.kk_navTitleColor = configure.kk_titleColor;
-    if (configure.kk_titleFont) self.kk_navTitleFont = configure.kk_titleFont;
+    if (configure.kk_titleColor)      self.kk_navTitleColor      = configure.kk_titleColor;
+    if (configure.kk_titleFont)       self.kk_navTitleFont       = configure.kk_titleFont;
     
     self.kk_statusBarHidden     = configure.kk_statusBarHidden;
     self.kk_statusBarStyle      = configure.kk_statusBarStyle;

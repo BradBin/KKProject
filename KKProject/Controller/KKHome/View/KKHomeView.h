@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface KKHomeView : KKTableView<JXCategoryListContentViewDelegate>
-@property (nonatomic,strong) KKHomeCategoryModel *categoryModel;
+@property (nonatomic,strong) KKHomeCategoryTitleModel *categoryModel;
 
 @end
 

@@ -59,8 +59,10 @@
     [self kk_navLineHideOrShow];
     
     // 设置导航item偏移量
-    
-    if (@available(iOS 11.0, *)) {
+    if (@available(iOS 13.0, *)) {
+#warning mark -iOS13上，不允许更改私有视图的布局边距。扩展框架以消除布局边距可以作为替代解决
+    }else
+        if (@available(iOS 11.0, *)) {
         if (![KKNavigationBarHelper sharedInstance].kk_disableFixSpace) {
             self.layoutMargins = UIEdgeInsetsZero;
             

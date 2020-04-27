@@ -10,7 +10,7 @@
 #import "KKAccountHelper.h"
 #import "KKErrorHelper.h"
 
-//NS_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN
 
 /*!
  *
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, KKRequestType) {
 typedef void(^KKResponseSuccess)(NSURLResponse * response, id responseObject);
 typedef void(^KKResponseError)(NSURLResponse * response, NSError *error);
 typedef void(^KKResponseFail)(NSError *error);
-typedef NSDictionary *(^KKRequestHeader)(void);
+typedef NSDictionary *_Nullable(^KKRequestHeader)(void);
 
 @interface KKNetWorking : NSObject
 
@@ -117,6 +117,14 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  */
 + (void)enableInterfaceDebug:(BOOL)isDebug;
 
+
+/**
+ 是否仅返回成功时,responseObject中key为data的value值(即responseObject[data])
+
+ @param isResponse 默认是true 反之则返回responseObject
+ */
++ (void)enableFormatterResponse:(BOOL)isResponse;
+
 /*!
  *
  *  配置请求格式，默认为JSON。如果要求传XML或者PLIST，请在全局配置一下
@@ -151,7 +159,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  *
  *    @param url                URL，可以是绝对URL，也可以是path（也就是不包括baseurl）
  */
-+ (void)cancelRequestWithURL:(NSString *)url;
++ (void)cancelRequestWithURL:(NSString *_Nonnull)url;
 
 
 
@@ -166,7 +174,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_GetDefauleHeaderWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_GetDefauleHeaderWithUrl:(NSString *_Nonnull)url
                                           params:(NSDictionary *)params
                                          success:(KKResponseSuccess)success
                                            error:(KKResponseError)error
@@ -184,7 +192,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_GetWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_GetWithUrl:(NSString *_Nonnull)url
                              params:(NSDictionary *)params
                       requestHeader:(KKRequestHeader)requestHeader
                             success:(KKResponseSuccess)success
@@ -205,7 +213,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_GetWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_GetWithUrl:(NSString *_Nonnull)url
                        refreshCache:(BOOL)refreshCache
                              params:(NSDictionary *)params
                       requestHeader:(KKRequestHeader)requestHeader
@@ -224,7 +232,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_PostDefauleHeaderWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostDefauleHeaderWithUrl:(NSString *_Nonnull)url
                                            params:(NSDictionary *)params
                                           success:(KKResponseSuccess)success
                                             error:(KKResponseError)error
@@ -241,7 +249,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_PostWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostWithUrl:(NSString *_Nonnull)url
                               params:(NSDictionary *)params
                        requestHeader:(KKRequestHeader)requestHeader
                              success:(KKResponseSuccess)success
@@ -261,7 +269,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_PostWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostWithUrl:(NSString *_Nonnull)url
                         refreshCache:(BOOL)refreshCache
                               params:(NSDictionary *)params
                        requestHeader:(KKRequestHeader)requestHeader
@@ -282,7 +290,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_PostDefaultHeaderFormDataWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostDefaultHeaderFormDataWithUrl:(NSString *_Nonnull)url
                                                    params:(NSDictionary *)params
                                                   success:(KKResponseSuccess)success
                                                     error:(KKResponseError)errorCB
@@ -301,7 +309,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_PostDefaultHeaderFormDataWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostDefaultHeaderFormDataWithUrl:(NSString *_Nonnull)url
                                                    params:(NSDictionary *)params
                                                  fileData:(NSData *)fileData
                                                  fileName:(NSString *)fileName
@@ -324,7 +332,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_PostFormDataWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostFormDataWithUrl:(NSString *_Nonnull)url
                                       params:(NSDictionary *)params
                                requestHeader:(KKRequestHeader)requestHeader
                                     fileData:(NSData *)fileData
@@ -349,7 +357,7 @@ typedef NSDictionary *(^KKRequestHeader)(void);
  @param fail 失败回调
  @return 请求
  */
-+ (NSURLSessionTask *)kk_PostFormDataWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostFormDataWithUrl:(NSString *_Nonnull)url
                                       params:(NSDictionary *)params
                                requestHeader:(KKRequestHeader)requestHeader
                                     fileData:(NSData *)fileData
@@ -367,4 +375,4 @@ typedef NSDictionary *(^KKRequestHeader)(void);
 
 @end
 
-//NS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END

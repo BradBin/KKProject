@@ -8,6 +8,11 @@
 
 #import "KKLoadingPlaceHolderView.h"
 
+NSString *const KKPlacerLoading    = @"loading";
+NSString *const KKPlacerFailure    = @"failure";
+NSString *const KKPlacerNoData     = @"no data";
+NSString *const KKPlacerBadNetwork = @"bad network";
+
 @interface KKLoadingPlaceHolderView ()
     
 @property (nonatomic, copy) void (^callBack)(void);
@@ -37,10 +42,10 @@
     self.messageLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.layer.opacity = 0.8;
-        label.text = @"Loading...";
+        label.text = KKPlacerLoading;
         label.font = [UIFont systemFontOfSize:15];
         label.backgroundColor = [UIColor clearColor];
-        label.textColor = [UIColor blackColor];
+        label.textColor = [UIColor.blackColor colorWithAlphaComponent:0.75];
         label;
     });
     
@@ -64,7 +69,7 @@
         UIButton *button = [[UIButton alloc] init];
         button.layer.opacity = 0.8;
         [button setTitle:@"加载失败，点击重试" forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor colorWithHexString:@"#EFEFEF"] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithHexString:@"#1783D6"] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         [button addTarget:self action:@selector(refreshAction:) forControlEvents:UIControlEventTouchUpInside];
         button.hidden = YES;
@@ -98,18 +103,25 @@
 - (void)setType:(KKLoadingPlaceHolderType)type {
     switch (type) {
         case KKLoadingPlaceHolderTypeLoading: {
-            self.imageView.image = nil;
+            self.imageView.image     = nil;
             self.failedButton.hidden = YES;
-            self.messageLabel.text = @"loading";
+            self.messageLabel.text = KKPlacerLoading;
             [self startAnimation];
             break;
         }
         case KKLoadingPlaceHolderTypeFailed: {
             [self stopAnimation];
             self.failedButton.hidden = NO;
-            self.messageLabel.text = @"页面加载失败";
-            self.imageView.image = [UIImage imageNamed:@"placeholder_sever_error"];
+            self.messageLabel.text   = nil;
+            self.imageView.image     = [UIImage imageNamed:@"placer_NoNetwork"];
             break;
+        }
+        case KKLoadingPlaceHolderTypeNoData:{
+            [self stopAnimation];
+            self.failedButton.hidden = true;
+            self.messageLabel.text   = nil;
+            self.imageView.image     = [UIImage imageNamed:@"placer_NoData"];
+           break;
         }
         case KKLoadingPlaceHolderTypeBadNetwork: {
             break;

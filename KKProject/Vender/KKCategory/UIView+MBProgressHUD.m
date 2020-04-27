@@ -7,7 +7,6 @@
 //
 
 #import "UIView+MBProgressHUD.h"
-#import "MBProgressHUD.h"
 #import <objc/message.h>
 
 static inline UIFont *kkFont(){
@@ -119,6 +118,8 @@ static void *contentType = &contentType;
     }
     [hud showAnimated:YES];
 }
+
+
 
 /**
  *  透明菊花

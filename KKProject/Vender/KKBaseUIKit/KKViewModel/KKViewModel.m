@@ -8,6 +8,7 @@
 
 #import "KKViewModel.h"
 
+NSString * const KKData = @"data";
 @implementation KKViewModel
 
 /**

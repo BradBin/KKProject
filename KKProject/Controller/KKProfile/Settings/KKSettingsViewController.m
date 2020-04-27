@@ -7,8 +7,12 @@
 //
 
 #import "KKSettingsViewController.h"
+#import "KKSettingsView.h"
+#import "KKLanguageHelper.h"
 
 @interface KKSettingsViewController ()
+@property (nonatomic,strong) KKSettingsViewModel *viewModel;
+@property (nonatomic,strong) KKSettingsView      *settingsView;
 
 @end
 
@@ -19,12 +23,21 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)kk_logOutEvent:(UIBarButtonItem *)item{
+/**
+ 系统语言
+ */
+- (void)setupLanguage{
+    KKLanguageHelper *helper = KKLanguageHelper.shared;
+    NSLog(@"系统语言------%@  ---- %ld",helper.language,helper.languageType);
+}
 
-    [KKErrorHelper kk_showLoginVCWithBlock:^(UIViewController * _Nonnull vc) {
-        [vc.view showTitle:@"欢迎来到登录界面"];
-        [KKAccountHelper.shared kk_logOut];
-    }];
+- (void)kk_logOutEvent:(UIBarButtonItem *)item{
+    [self showAlertWithTitle:@"是否确定退出当前账号?" message:nil sureAction:@"确定" cancelAction:@"取消" confirmhHndler:^(UIAlertAction * _Nonnull action) {
+        [KKErrorHelper kk_showLoginVCWithBlock:^(UIViewController * _Nonnull vc) {
+            [vc.view showTitle:@"欢迎来到登录界面"];
+            [KKAccountHelper.shared kk_logOut];
+        }];
+    } cancelHandler:nil];
 }
 
 - (void)kk_layoutNavigation{
@@ -42,7 +55,49 @@
 }
 
 
+-(void)kk_addSubviews{
+    [super kk_addSubviews];
+    self.settingsView = ({
+        KKSettingsView *view = [[KKSettingsView alloc] initWithViewModel:self.viewModel];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.kk_navigationBar.mas_bottom);
+            make.centerX.equalTo(view.superview.mas_centerX);
+            make.width.equalTo(view.superview.mas_width);
+            make.bottom.equalTo(view.superview.mas_bottom);
+        }];
+        view;
+    });
+}
 
+
+-(void)kk_bindViewModel{
+    [super kk_bindViewModel];
+    //系统语言
+    [self setupLanguage];
+    
+    @weakify(self);
+    [[self.viewModel.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:KKViewController.class]) {
+            [self.navigationController pushViewController:(KKViewController *)x animated:true];
+        }
+    }];
+    
+    [[self.viewModel.changeAppLogoSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+         [KKThemeHelper.shared setAlternateIcon:@"iPhone_Violet_App_60" completionHandler:^(NSError * _Nullable error) {
+             NSLog(@"更新AppLogo  %@", error);
+         }];
+     }];
+}
+
+
+-(KKSettingsViewModel *)viewModel{
+    if (_viewModel == nil) {
+        _viewModel = KKSettingsViewModel.alloc.init;
+    }
+    return _viewModel;
+}
 
 /*
 #pragma mark - Navigation

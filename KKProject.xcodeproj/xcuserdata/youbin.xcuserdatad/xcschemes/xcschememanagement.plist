@@ -14,10 +14,78 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>KKProject_ReactiveCocoa.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>98</integer>
+		</dict>
+		<key>KKProject_ReactiveObjC.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>100</integer>
+		</dict>
+		<key>KKProject_RxSwift.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>99</integer>
+		</dict>
 		<key>KKProject_Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>90</integer>
+			<integer>2</integer>
+		</dict>
+		<key>KKProject_Swift_Release.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0A634AEB2270BD1900C0D0B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBDC024549345008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBDF0245493DE008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBE082454AA03008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBE202454AA21008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931FBE3A2455CBA2008475A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>933FFF452454141F00790786</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>933FFF5D245414F300790786</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93D033F3244EE0D7005B563C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

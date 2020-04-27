@@ -12,9 +12,10 @@
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 static NSString *kk_privateNetworkBaseUrl = nil;
-static BOOL kk_isEnableInterfaceDebug = YES;
-static BOOL kk_shouldAutoEncode = NO;
-static NSDictionary *kk_httpHeaders = nil;
+static BOOL kk_isEnableInterfaceDebug     = YES;
+static BOOL kk_isEnableResponse           = YES;
+static BOOL kk_shouldAutoEncode           = NO;
+static NSDictionary *kk_httpHeaders       = nil;
 static KKResponseType kk_responseType = kKKResponseTypeJSON;
 static KKRequestType  kk_requestType  = kKKRequestTypeJSON;
 static NSMutableArray *kk_requestTasks;
@@ -53,6 +54,15 @@ static BOOL kk_shoulObtainLocalWhenUnconnected = NO;
 
 + (BOOL)isDebug {
     return kk_isEnableInterfaceDebug;
+}
+
+
++ (void)enableFormatterResponse:(BOOL)isResponse{
+    kk_isEnableResponse = isResponse;
+}
+
++ (BOOL)isResponse{
+    return kk_isEnableResponse;
 }
 
 static inline NSString *cachePath() {
@@ -164,8 +174,8 @@ static inline NSString *cachePath() {
             return @{};
         }
         return @{
-                 @"user_token":KKAccountHelper.shared.token
-                 };
+            @"user_token":KKAccountHelper.shared.token
+        };
         
     };
 }
@@ -277,7 +287,7 @@ static inline NSString *cachePath() {
 }
 
 
-+ (NSURLSessionTask *)_requestWithUrl:(NSString *)url
++ (NSURLSessionTask *)_requestWithUrl:(NSString *_Nonnull)url
                          refreshCache:(BOOL)refreshCache
                             httpMedth:(NSUInteger)httpMethod
                                params:(NSDictionary *)params
@@ -479,7 +489,7 @@ static inline NSString *cachePath() {
     
 }
 
-+ (NSURLSessionTask *)kk_PostDefaultHeaderFormDataWithUrl:(NSString *)url
++ (NSURLSessionTask *)kk_PostDefaultHeaderFormDataWithUrl:(NSString *_Nonnull)url
                                                    params:(NSDictionary *)params
                                                  fileData:(NSData *)fileData
                                                  fileName:(NSString *)fileName
@@ -626,12 +636,13 @@ static inline NSString *cachePath() {
             return;
         }
         if (success) {
-            if (responseObj[@"data"] && [responseObj[@"data"] class] != [NSNull class] ) {
+            if (responseObj[@"data"] &&
+                [responseObj[@"data"] class] != [NSNull class] &&
+                [self isResponse]) {
                 success(response,responseObj[@"data"]);
             } else {
                 success(response,responseObj);
             }
-            
             return;
         }
     }
@@ -675,7 +686,7 @@ static inline NSString *cachePath() {
             manager = [AFHTTPSessionManager manager];
             [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
             manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
-              manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain",@"text/json",@"application/json",@"text/javascript",@"text/html",nil];
+            manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain",@"text/json",@"application/json",@"text/javascript",@"text/html",nil];
         }
     });
     return manager;
@@ -763,9 +774,9 @@ static inline NSString *cachePath() {
 + (void)logWithSuccessResponse:(id)response url:(NSString *)url params:(NSDictionary *)params {
     NSLog(@"\n");
     NSLog(@"\nRequest success, URL: %@\n params:%@\n response:%@\n\n",
-         [self generateGETAbsoluteURL:url params:params],
-         params,
-         [[self tryToParseData:response] modelToJSONString]);
+          [self generateGETAbsoluteURL:url params:params],
+          params,
+          [[self tryToParseData:response] modelToJSONString]);
 }
 
 + (void)logWithFailError:(NSError *)error url:(NSString *)url params:(id)params {
@@ -778,16 +789,16 @@ static inline NSString *cachePath() {
     NSLog(@"\n");
     if ([error code] == NSURLErrorCancelled) {
         NSLog(@"\nRequest was canceled mannully, URL: %@ %@%@\n\n",
-             [self generateGETAbsoluteURL:url params:params],
-             format,
-             params);
+              [self generateGETAbsoluteURL:url params:params],
+              format,
+              params);
     } else {
         NSLog(@"\nRequest error, URL: %@ %@%@\n errorInfos:%@\n\n errorCode:%@\n\n",
-             [self generateGETAbsoluteURL:url params:params],
-             format,
-             params,
-             [error localizedDescription],
-             @([error code]));
+              [self generateGETAbsoluteURL:url params:params],
+              format,
+              params,
+              [error localizedDescription],
+              @([error code]));
     }
 }
 
@@ -920,18 +931,15 @@ static inline NSString *cachePath() {
     if (path == nil || path.length == 0) {
         return @"";
     }
-    
     if ([self baseUrl] == nil || [[self baseUrl] length] == 0) {
         return path;
     }
-    
     NSString *absoluteUrl = path;
     
     if (![path hasPrefix:@"http://"] && ![path hasPrefix:@"https://"]) {
         absoluteUrl = [NSString stringWithFormat:@"%@%@",
                        [self baseUrl], path];
     }
-    
     return absoluteUrl;
 }
 

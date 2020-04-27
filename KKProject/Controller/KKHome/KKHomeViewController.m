@@ -13,6 +13,7 @@
 #import "KKHomeViewModel.h"
 #import "KKTextField.h"
 
+
 @interface KKHomeViewController ()<JXCategoryViewDelegate,
 JXCategoryListContainerViewDelegate>
 @property (nonatomic,strong) KKHomeViewModel             *viewModel;
@@ -33,13 +34,22 @@ JXCategoryListContainerViewDelegate>
     // Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.kk_statusBarStyle = UIStatusBarStyleLightContent;
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.kk_statusBarStyle = UIStatusBarStyleDefault;
+}
+
 -(void)kk_layoutNavigation{
     [super kk_layoutNavigation];
     self.kk_navShadowImage       = UIImage.new;
     self.kk_navShadowColor       = UIColor.clearColor;
     self.kk_navigationBar.hidden = true;
 }
-
 
 -(void)kk_addSubviews{
     [super kk_addSubviews];
@@ -137,27 +147,31 @@ JXCategoryListContainerViewDelegate>
         }];
         view;
     });
-    
-    [self kk_categoryReloadData];
 }
 
 -(void)kk_bindViewModel{
     [super kk_bindViewModel];
+    [self kk_refreshCategory];
     @weakify(self);
     [[[self.editBtn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        @strongify(self);
-        [[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_showBlock:^{
-            NSLog(@"kk_showBlock");
-        } hideBlock:^{
-            NSLog(@"kk_hideBlock");
-        }];
+        //        @strongify(self);
+        //        [[[KKChannelView kk_channelViewWithViewModel:self.viewModel] kk_updateConfigure:^(KKChannelView * _Nonnull channelView) {
+        //            channelView.contentView.backgroundColor = UIColor.redColor;
+        //            channelView.titlelabel.text = @"fasasfaffa";
+        //            channelView.titlelabel.numberOfLines = 0;
+        //            channelView.closeBtn.backgroundColor = UIColor.orangeColor;
+        //            channelView.showDuration             = 5;
+        //        }] kk_showBlock:^{
+        //             NSLog(@"kk_showBlock");
+        //        } hideBlock:^{
+        //            NSLog(@"kk_hideBlock");
+        //        }];
     }];
     
     [[self.viewModel.categoryUISubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:NSArray.class]) {
-            self.categoryTitles = [self geTitlestWithModelArray:(NSArray *)x];
-            [self kk_categoryReloadData];
+            [self kk_refreshCategory];
         }else if([x isKindOfClass:NSNumber.class]){
             
         }else{
@@ -176,21 +190,28 @@ JXCategoryListContainerViewDelegate>
     }];
     
     //HomePage事件响应 push VC
-    [[self.viewModel.homePageVM.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+    [[self.viewModel.pushVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:KKViewController.class]) {
             [self.navigationController pushViewController:(KKViewController *)x animated:true];
         }
     }];
     
-     //HomePage事件响应 present VC
-    [[self.viewModel.homePageVM.presentVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
+    //HomePage事件响应 present VC
+    [[self.viewModel.presentVCSubject takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:KKViewController.class]) {
             [self presentViewController:(KKViewController *)x animated:true completion:nil];
         }
     }];
     
+}
+
+
+/// 刷新头部分类标题UI
+-(void)kk_refreshCategory{
+    self.categoryTitles = [self geTitlestWithModelArray:self.viewModel.categoryTitles];
+    [self kk_categoryReloadData];
 }
 
 /**
@@ -222,11 +243,11 @@ JXCategoryListContainerViewDelegate>
 #pragma mark -
 #pragma mark - JXCategoryViewDelegate
 - (void)categoryView:(JXCategoryBaseView *)categoryView didClickSelectedItemAtIndex:(NSInteger)index {
-    NSLog(@"didClickSelectedItemAtIndex-----%ld",index);
+    //NSLog(@"didClickSelectedItemAtIndex-----%ld",index);
     [self.listContainerView didClickSelectedItemAtIndex:index];
 }
 - (void)categoryView:(JXCategoryBaseView *)categoryView didScrollSelectedItemAtIndex:(NSInteger)index{
-    NSLog(@"didScrollSelectedItemAtIndex-----%ld",index);
+    //NSLog(@"didScrollSelectedItemAtIndex-----%ld",index);
 }
 
 - (void)categoryView:(JXCategoryBaseView *)categoryView scrollingFromLeftIndex:(NSInteger)leftIndex toRightIndex:(NSInteger)rightIndex ratio:(CGFloat)ratio {
@@ -240,14 +261,14 @@ JXCategoryListContainerViewDelegate>
  */
 - (NSArray *)geTitlestWithModelArray:(NSArray *)array {
     NSMutableArray *results = NSMutableArray.array;
-    for (KKHomeCategoryModel *model in array) {
+    for (KKHomeCategoryTitleModel *model in array) {
         [results addObject:model.name];
     }
     return results;
 }
+
 #pragma mark -
 #pragma mark - initialize instance
-
 
 - (KKHomeViewModel *)viewModel{
     if (_viewModel == nil) {
@@ -255,7 +276,6 @@ JXCategoryListContainerViewDelegate>
     }
     return _viewModel;
 }
-
 
 /*
  #pragma mark - Navigation
