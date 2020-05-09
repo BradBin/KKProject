@@ -11,31 +11,14 @@ import RxSwift
 import SnapKit
 import DynamicColor
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
     
-    lazy var rxswiftList: [String]? = {
-        let data = ["RxSwift基础", "核心逻辑源码分析"]
-        return data
-    }()
-    
-    lazy var rxswiftListView: UITableView = {
-        let view = UITableView.init(frame: CGRect.zero, style: .plain)
-        view.delegate = self
-        view.dataSource = self
-        view.separatorStyle = .none
-        view.register(UITableViewCell.self, forCellReuseIdentifier: "cell.Identifier")
-        return view
-    }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(rxswiftListView)
-        rxswiftListView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
-     
+        
         // Do any additional setup after loading the view.
     }
     
@@ -137,24 +120,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 }
 
 
-
-extension ViewController{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.rxswiftList?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell : UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "cell.Identifier", for: indexPath)
-        if cell == nil {
-            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: "cell.Identifier")
-            
-        }
-        cell?.textLabel?.text = self.rxswiftList?[indexPath.row]
-        return cell ?? UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-}

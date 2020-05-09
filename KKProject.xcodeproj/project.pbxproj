@@ -239,6 +239,10 @@
 		936A25982451F0D200A679AF /* KKTidingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 936A25962451F0D200A679AF /* KKTidingViewModel.m */; };
 		9373A284240BACF400C8DD2E /* KKTTTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A283240BACF400C8DD2E /* KKTTTViewController.m */; };
 		9373A285240BAD0B00C8DD2E /* KKTTTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A283240BACF400C8DD2E /* KKTTTViewController.m */; };
+		9374DC412464681C006DE969 /* KKEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374DC402464681C006DE969 /* KKEventView.m */; };
+		9374DC4424646B99006DE969 /* KKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374DC4324646B99006DE969 /* KKViewController.m */; };
+		9374DC4724646BB0006DE969 /* KKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9374DC4624646BB0006DE969 /* KKHomeViewController.m */; };
+		9384693A2465941600806D88 /* KKMsgForward.m in Sources */ = {isa = PBXBuildFile; fileRef = 938469392465941600806D88 /* KKMsgForward.m */; };
 		938E6E2B22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		938E6E2C22C4C4E0005CC9AF /* KKToolsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */; };
 		938F231F23E84AFB00C56C43 /* KKLanuchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F231E23E84AFB00C56C43 /* KKLanuchViewController.swift */; };
@@ -332,6 +336,9 @@
 		93D0341D244EE0D7005B563C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A634AF72270BD1A00C0D0B0 /* LaunchScreen.storyboard */; };
 		93D0341E244EE0D7005B563C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A634AF52270BD1A00C0D0B0 /* Assets.xcassets */; };
 		93D0341F244EE0D7005B563C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A634AF22270BD1900C0D0B0 /* Main.storyboard */; };
+		93D0D10F2456A90A003F305B /* KKRxSwiftBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0D10E2456A90A003F305B /* KKRxSwiftBaseController.swift */; };
+		93D0D1122457092A003F305B /* KKPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0D1112457092A003F305B /* KKPerson.swift */; };
+		93D0D11424572698003F305B /* KKObserveableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0D11324572698003F305B /* KKObserveableController.swift */; };
 		93D3621E22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D3621F22812FE400DD815F /* KKHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D3621D22812FE400DD815F /* KKHomeModel.m */; };
 		93D362282281627700DD815F /* KKChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D362272281627700DD815F /* KKChannelView.m */; };
@@ -639,8 +646,16 @@
 		936A25962451F0D200A679AF /* KKTidingViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKTidingViewModel.m; sourceTree = "<group>"; };
 		9373A282240BACF400C8DD2E /* KKTTTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKTTTViewController.h; sourceTree = "<group>"; };
 		9373A283240BACF400C8DD2E /* KKTTTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKTTTViewController.m; sourceTree = "<group>"; };
+		9374DC3F2464681C006DE969 /* KKEventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKEventView.h; sourceTree = "<group>"; };
+		9374DC402464681C006DE969 /* KKEventView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKEventView.m; sourceTree = "<group>"; };
+		9374DC4224646B99006DE969 /* KKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKViewController.h; sourceTree = "<group>"; };
+		9374DC4324646B99006DE969 /* KKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKViewController.m; sourceTree = "<group>"; };
+		9374DC4524646BB0006DE969 /* KKHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeViewController.h; sourceTree = "<group>"; };
+		9374DC4624646BB0006DE969 /* KKHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeViewController.m; sourceTree = "<group>"; };
 		9375985D244EF61D00921ABE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9375985F244F4C6D00921ABE /* KKProject_Swift-Release-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KKProject_Swift-Release-Info.plist"; sourceTree = "<group>"; };
+		938469382465941600806D88 /* KKMsgForward.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKMsgForward.h; sourceTree = "<group>"; };
+		938469392465941600806D88 /* KKMsgForward.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKMsgForward.m; sourceTree = "<group>"; };
 		938E6E2922C4C4E0005CC9AF /* KKToolsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKToolsHelper.h; sourceTree = "<group>"; };
 		938E6E2A22C4C4E0005CC9AF /* KKToolsHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKToolsHelper.m; sourceTree = "<group>"; };
 		938F231E23E84AFB00C56C43 /* KKLanuchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKLanuchViewController.swift; sourceTree = "<group>"; };
@@ -682,11 +697,16 @@
 		93BC255723DC599800F445DB /* KKHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKHomeView.swift; sourceTree = "<group>"; };
 		93D033F1244ED23B005B563C /* MoyaParameterEncoding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaParameterEncoding+Extension.swift"; sourceTree = "<group>"; };
 		93D03425244EE0D7005B563C /* KKProject_Swift_Release.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKProject_Swift_Release.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93D0D10E2456A90A003F305B /* KKRxSwiftBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKRxSwiftBaseController.swift; sourceTree = "<group>"; };
+		93D0D1112457092A003F305B /* KKPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKPerson.swift; sourceTree = "<group>"; };
+		93D0D11324572698003F305B /* KKObserveableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKObserveableController.swift; sourceTree = "<group>"; };
 		93D3621B228123FE00DD815F /* KKProjectAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKProjectAPI.h; sourceTree = "<group>"; };
 		93D3621C22812FE400DD815F /* KKHomeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHomeModel.h; sourceTree = "<group>"; };
 		93D3621D22812FE400DD815F /* KKHomeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHomeModel.m; sourceTree = "<group>"; };
 		93D362262281627700DD815F /* KKChannelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKChannelView.h; sourceTree = "<group>"; };
 		93D362272281627700DD815F /* KKChannelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKChannelView.m; sourceTree = "<group>"; };
+		93EDE3E82461116100C2CC3B /* KKConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKConstant.h; sourceTree = "<group>"; };
+		93EDE3E92461118E00C2CC3B /* KKCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKCommon.h; sourceTree = "<group>"; };
 		93F472E823E8681A00AAB8F6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		93F50B1424531610008E5F94 /* KKRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKRxSwiftViewController.swift; sourceTree = "<group>"; };
 		93F50B18245336F3008E5F94 /* KKRxSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKRxSwiftView.swift; sourceTree = "<group>"; };
@@ -1440,7 +1460,7 @@
 				931FBE2C2454AA22008475A4 /* Assets.xcassets */,
 				931FBE2E2454AA22008475A4 /* LaunchScreen.storyboard */,
 				931FBE312454AA22008475A4 /* Info.plist */,
-				931FBE3524557B2F008475A4 /* KKHomeViewController.swift */,
+				93D0D10D2456A7CD003F305B /* Home */,
 			);
 			path = KKProject_RxSwift;
 			sourceTree = "<group>";
@@ -1459,6 +1479,16 @@
 				931FBE4B2455CBA4008475A4 /* LaunchScreen.storyboard */,
 				931FBE4E2455CBA4008475A4 /* Info.plist */,
 				931FBE4F2455CBA4008475A4 /* main.m */,
+				93EDE3E82461116100C2CC3B /* KKConstant.h */,
+				93EDE3E92461118E00C2CC3B /* KKCommon.h */,
+				9374DC3F2464681C006DE969 /* KKEventView.h */,
+				9374DC402464681C006DE969 /* KKEventView.m */,
+				9374DC4224646B99006DE969 /* KKViewController.h */,
+				9374DC4324646B99006DE969 /* KKViewController.m */,
+				9374DC4524646BB0006DE969 /* KKHomeViewController.h */,
+				9374DC4624646BB0006DE969 /* KKHomeViewController.m */,
+				938469382465941600806D88 /* KKMsgForward.h */,
+				938469392465941600806D88 /* KKMsgForward.m */,
 			);
 			path = KKProject_ReactiveObjC;
 			sourceTree = "<group>";
@@ -1828,6 +1858,17 @@
 				934829AB23E5B56500AB9B3C /* KKTableViewCellProtocol.swift */,
 			);
 			path = KKTableView;
+			sourceTree = "<group>";
+		};
+		93D0D10D2456A7CD003F305B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				931FBE3524557B2F008475A4 /* KKHomeViewController.swift */,
+				93D0D10E2456A90A003F305B /* KKRxSwiftBaseController.swift */,
+				93D0D1112457092A003F305B /* KKPerson.swift */,
+				93D0D11324572698003F305B /* KKObserveableController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		93D3622022812FEB00DD815F /* Model */ = {
@@ -2808,6 +2849,9 @@
 				931FBE282454AA21008475A4 /* ViewController.swift in Sources */,
 				931FBE242454AA21008475A4 /* AppDelegate.swift in Sources */,
 				931FBE262454AA21008475A4 /* SceneDelegate.swift in Sources */,
+				93D0D10F2456A90A003F305B /* KKRxSwiftBaseController.swift in Sources */,
+				93D0D11424572698003F305B /* KKObserveableController.swift in Sources */,
+				93D0D1122457092A003F305B /* KKPerson.swift in Sources */,
 				931FBE3624557B2F008475A4 /* KKHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2816,8 +2860,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9374DC4424646B99006DE969 /* KKViewController.m in Sources */,
 				931FBE452455CBA2008475A4 /* ViewController.m in Sources */,
 				931FBE3F2455CBA2008475A4 /* AppDelegate.m in Sources */,
+				9384693A2465941600806D88 /* KKMsgForward.m in Sources */,
+				9374DC4724646BB0006DE969 /* KKHomeViewController.m in Sources */,
+				9374DC412464681C006DE969 /* KKEventView.m in Sources */,
 				931FBE502455CBA4008475A4 /* main.m in Sources */,
 				931FBE422455CBA2008475A4 /* SceneDelegate.m in Sources */,
 			);
@@ -3356,8 +3404,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)//KKProject_ReactiveObjC/KKCommon.h";
 				INFOPLIST_FILE = KKProject_ReactiveObjC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3374,8 +3423,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)//KKProject_ReactiveObjC/KKCommon.h";
 				INFOPLIST_FILE = KKProject_ReactiveObjC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -103,6 +103,7 @@ target 'KKProject_RxSwift' do
   use_frameworks!
   
   pod 'RxSwift'
+  pod 'RxCocoa'
   #auto layout
   pod 'SnapKit'
   #图片加载处理框架
