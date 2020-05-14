@@ -1,0 +1,91 @@
+//
+//  KKHomeViewController.m
+//  KKProject_ReactiveObjC
+//
+//  Created by youbin on 2020/5/8.
+//  Copyright © 2020 Macbook Pro 15.4 . All rights reserved.
+//
+
+#import "KKHomeViewController.h"
+
+@interface KKHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataList;
+
+@end
+
+@implementation KKHomeViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.tableView = ({
+        UITableView *view = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        view.delegate = self;
+        view.dataSource = self;
+        view.sectionHeaderHeight = 10.0;
+        view.sectionFooterHeight = 10.0;
+        [view registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell.Identifier"];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(view.superview);
+        }];
+        view;
+    });
+       
+    // Do any additional setup after loading the view.
+}
+
+
+#pragma mark -UITableViewDelegate/UITableViewDatasource
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.dataList.count;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell.Identifier"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell.Identifier"];
+    }
+    
+    cell.textLabel.text = [self.dataList[indexPath.section] objectForKey:@"title"];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    NSDictionary *dict = self.dataList[indexPath.section];
+    NSString *className = [dict objectForKey:@"controller"];
+    if (className.length) {
+        UIViewController *vc = [[[NSClassFromString(className) class] alloc] init];
+        vc.title = [dict objectForKey:@"title"];
+        [self.navigationController pushViewController:vc animated:true];
+    }
+}
+
+#pragma mark -Lazy Instance
+
+-(NSMutableArray *)dataList{
+    if (_dataList == nil) {
+        _dataList = [NSMutableArray arrayWithObjects:@{@"title":@"ReativeObjC",@"controller":@"KKReactiveObjCController"},@{@"title":@"事件响应/传递",@"controller":@"KKEventResponseController"},@{@"title":@"Lock",@"controller":@"KKLockViewController"},@{@"title":@"Thread",@"controller":@"KKThreadViewController"},@{@"title":@"RunLoop",@"controller":@"KKRunLoopController"},@{@"title":@"运行时RunTime",@"controller":@"KKRuntimeController"}, nil];
+    }
+    return _dataList;
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
