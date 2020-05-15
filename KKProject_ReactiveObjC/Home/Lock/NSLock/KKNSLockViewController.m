@@ -7,7 +7,7 @@
 //
 
 #import "KKNSLockViewController.h"
-#import "KKNSLockTest.h"
+#import "KKNSLockSellTicket.h"
 
 @interface KKNSLockViewController ()
 
@@ -48,7 +48,7 @@
     // Do any additional setup after loading the view.
    
   //火车站卖票
-    //[[[KKNSLockTest alloc] init] forTest];
+    //[[[KKNSLockSellTicket alloc] init] forTest];
     
     /***
      运行该程序会崩溃，这是因为，我们在不断地

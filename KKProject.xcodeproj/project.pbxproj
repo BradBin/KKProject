@@ -210,6 +210,8 @@
 		934829AA23E5B0D200AB9B3C /* KKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934829A923E5B0D200AB9B3C /* KKTableViewCell.swift */; };
 		934829AC23E5B56500AB9B3C /* KKTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934829AB23E5B56500AB9B3C /* KKTableViewCellProtocol.swift */; };
 		934829AE23E5B75D00AB9B3C /* KKHomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934829AD23E5B75D00AB9B3C /* KKHomeViewCell.swift */; };
+		935122AC246D03A700815DA2 /* KKGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935122AB246D03A700815DA2 /* KKGCDViewController.m */; };
+		935122B0246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 935122AF246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m */; };
 		9353DD4422C35418009217C1 /* UIViewController+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */; };
 		9353DD4522C35418009217C1 /* UIViewController+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */; };
 		9353DD4922C355EA009217C1 /* KKAboutusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4822C355EA009217C1 /* KKAboutusViewController.m */; };
@@ -267,7 +269,7 @@
 		93A1A273246BA2D400371FB3 /* KKOSSpinLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A1A272246BA2D400371FB3 /* KKOSSpinLockViewController.m */; };
 		93A1A276246BA2DE00371FB3 /* KKdispatch_semaphoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A1A275246BA2DE00371FB3 /* KKdispatch_semaphoreViewController.m */; };
 		93A1A279246BA2EE00371FB3 /* KKSynchronizedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A1A278246BA2EE00371FB3 /* KKSynchronizedViewController.m */; };
-		93A1A283246BE63900371FB3 /* KKNSLockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A1A282246BE63900371FB3 /* KKNSLockTest.m */; };
+		93A1A283246BE63900371FB3 /* KKNSLockSellTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A1A282246BE63900371FB3 /* KKNSLockSellTicket.m */; };
 		93B8D90323D7447C002F291C /* iPhone_Red_Settings_29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B8D8FB23D7447C002F291C /* iPhone_Red_Settings_29@3x.png */; };
 		93B8D90423D7447C002F291C /* iPhone_Red_Settings_29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B8D8FB23D7447C002F291C /* iPhone_Red_Settings_29@3x.png */; };
 		93B8D90523D7447C002F291C /* iPhone_Red_App_60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93B8D8FC23D7447C002F291C /* iPhone_Red_App_60@2x.png */; };
@@ -368,6 +370,8 @@
 		93F50B1A245336F3008E5F94 /* KKRxSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F50B18245336F3008E5F94 /* KKRxSwiftView.swift */; };
 		93F86F8923D5449A00628ED1 /* KKProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F86F8823D5449A00628ED1 /* KKProfileViewController.swift */; };
 		93F86F8B23D544AB00628ED1 /* KKVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F86F8A23D544AB00628ED1 /* KKVideoViewController.swift */; };
+		93F936F3246EA4B7008EA4DB /* KKOPerationQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F936F2246EA4B7008EA4DB /* KKOPerationQueueViewController.m */; };
+		93F936F7246EDA4D008EA4DB /* KKOperationQueueSellTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F936F6246EDA4D008EA4DB /* KKOperationQueueSellTicket.m */; };
 		BB188698CA7ACBD3B030606E /* libPods-KKProject_ReactiveObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE237A760FA290E877BD0567 /* libPods-KKProject_ReactiveObjC.a */; };
 		C0E3CDB08138B2ABB9393EE9 /* libPods-KKProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D98E7F2EC6A41977A257D /* libPods-KKProject.a */; };
 		DAB117A6C4ABC672D923BBD8 /* libPods-KKProject_Objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */; };
@@ -643,6 +647,10 @@
 		934829A923E5B0D200AB9B3C /* KKTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKTableViewCell.swift; sourceTree = "<group>"; };
 		934829AB23E5B56500AB9B3C /* KKTableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKTableViewCellProtocol.swift; sourceTree = "<group>"; };
 		934829AD23E5B75D00AB9B3C /* KKHomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKHomeViewCell.swift; sourceTree = "<group>"; };
+		935122AA246D03A700815DA2 /* KKGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKGCDViewController.h; sourceTree = "<group>"; };
+		935122AB246D03A700815DA2 /* KKGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKGCDViewController.m; sourceTree = "<group>"; };
+		935122AE246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDispatchSemaphoreSellTicket.h; sourceTree = "<group>"; };
+		935122AF246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDispatchSemaphoreSellTicket.m; sourceTree = "<group>"; };
 		9353DD4222C35418009217C1 /* UIViewController+KKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KKAdd.h"; sourceTree = "<group>"; };
 		9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KKAdd.m"; sourceTree = "<group>"; };
 		9353DD4722C355EA009217C1 /* KKAboutusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAboutusViewController.h; sourceTree = "<group>"; };
@@ -715,8 +723,8 @@
 		93A1A275246BA2DE00371FB3 /* KKdispatch_semaphoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKdispatch_semaphoreViewController.m; sourceTree = "<group>"; };
 		93A1A277246BA2EE00371FB3 /* KKSynchronizedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSynchronizedViewController.h; sourceTree = "<group>"; };
 		93A1A278246BA2EE00371FB3 /* KKSynchronizedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSynchronizedViewController.m; sourceTree = "<group>"; };
-		93A1A281246BE63900371FB3 /* KKNSLockTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNSLockTest.h; sourceTree = "<group>"; };
-		93A1A282246BE63900371FB3 /* KKNSLockTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNSLockTest.m; sourceTree = "<group>"; };
+		93A1A281246BE63900371FB3 /* KKNSLockSellTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKNSLockSellTicket.h; sourceTree = "<group>"; };
+		93A1A282246BE63900371FB3 /* KKNSLockSellTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKNSLockSellTicket.m; sourceTree = "<group>"; };
 		93B8D8FB23D7447C002F291C /* iPhone_Red_Settings_29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone_Red_Settings_29@3x.png"; sourceTree = "<group>"; };
 		93B8D8FC23D7447C002F291C /* iPhone_Red_App_60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone_Red_App_60@2x.png"; sourceTree = "<group>"; };
 		93B8D8FD23D7447C002F291C /* iPhone_Red_Spotlight_40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone_Red_Spotlight_40@3x.png"; sourceTree = "<group>"; };
@@ -767,6 +775,10 @@
 		93F549E32379CF06009F6BA0 /* KKProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KKProject.entitlements; sourceTree = "<group>"; };
 		93F86F8823D5449A00628ED1 /* KKProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKProfileViewController.swift; sourceTree = "<group>"; };
 		93F86F8A23D544AB00628ED1 /* KKVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKVideoViewController.swift; sourceTree = "<group>"; };
+		93F936F1246EA4B7008EA4DB /* KKOPerationQueueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKOPerationQueueViewController.h; sourceTree = "<group>"; };
+		93F936F2246EA4B7008EA4DB /* KKOPerationQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKOPerationQueueViewController.m; sourceTree = "<group>"; };
+		93F936F5246EDA4D008EA4DB /* KKOperationQueueSellTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKOperationQueueSellTicket.h; sourceTree = "<group>"; };
+		93F936F6246EDA4D008EA4DB /* KKOperationQueueSellTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKOperationQueueSellTicket.m; sourceTree = "<group>"; };
 		9A231405B48427159F078F02 /* Pods-KKProject_ReactiveCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_ReactiveCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_ReactiveCocoa/Pods-KKProject_ReactiveCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		B12B31BA8575659E169A4242 /* Pods-KKProject_ReactiveObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_ReactiveObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_ReactiveObjC/Pods-KKProject_ReactiveObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		B481E0B9A648E9B17C3A032C /* Pods-KKProject_ReactiveCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_ReactiveCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_ReactiveCocoa/Pods-KKProject_ReactiveCocoa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1460,6 +1472,8 @@
 				930AABCA24681A39003A3B77 /* Runtime */,
 				933D70EB246AE5C2000E00FA /* Thread */,
 				93A1A264246B9E7B00371FB3 /* Lock */,
+				935122AD246D03B300815DA2 /* GCD */,
+				93F936F4246EA503008EA4DB /* Queue */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1773,6 +1787,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		935122AD246D03B300815DA2 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				935122AA246D03A700815DA2 /* KKGCDViewController.h */,
+				935122AB246D03A700815DA2 /* KKGCDViewController.m */,
+				935122AE246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.h */,
+				935122AF246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
 		9353DD4622C355AC009217C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1975,8 +2000,8 @@
 			children = (
 				93A1A265246BA2A400371FB3 /* KKNSLockViewController.h */,
 				93A1A266246BA2A400371FB3 /* KKNSLockViewController.m */,
-				93A1A281246BE63900371FB3 /* KKNSLockTest.h */,
-				93A1A282246BE63900371FB3 /* KKNSLockTest.m */,
+				93A1A281246BE63900371FB3 /* KKNSLockSellTicket.h */,
+				93A1A282246BE63900371FB3 /* KKNSLockSellTicket.m */,
 			);
 			path = NSLock;
 			sourceTree = "<group>";
@@ -2145,6 +2170,17 @@
 				933FFF3F2453396A00790786 /* KKRxSwiftViewModel.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		93F936F4246EA503008EA4DB /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				93F936F1246EA4B7008EA4DB /* KKOPerationQueueViewController.h */,
+				93F936F2246EA4B7008EA4DB /* KKOPerationQueueViewController.m */,
+				93F936F5246EDA4D008EA4DB /* KKOperationQueueSellTicket.h */,
+				93F936F6246EDA4D008EA4DB /* KKOperationQueueSellTicket.m */,
+			);
+			path = Queue;
 			sourceTree = "<group>";
 		};
 		F3E9ACCC91B3EC9457AB7448 /* Frameworks */ = {
@@ -3108,18 +3144,22 @@
 				931FBE3F2455CBA2008475A4 /* AppDelegate.m in Sources */,
 				9384693A2465941600806D88 /* KKMsgForward.m in Sources */,
 				93A1A279246BA2EE00371FB3 /* KKSynchronizedViewController.m in Sources */,
+				93F936F3246EA4B7008EA4DB /* KKOPerationQueueViewController.m in Sources */,
 				9374DC4724646BB0006DE969 /* KKHomeViewController.m in Sources */,
 				93A1A270246BA2CB00371FB3 /* KKPthread_mutexViewController.m in Sources */,
 				9374DC412464681C006DE969 /* KKEventView.m in Sources */,
 				931FBE502455CBA4008475A4 /* main.m in Sources */,
+				93F936F7246EDA4D008EA4DB /* KKOperationQueueSellTicket.m in Sources */,
 				931FBE422455CBA2008475A4 /* SceneDelegate.m in Sources */,
 				930AABC124681958003A3B77 /* KKEventResponseController.m in Sources */,
 				930AABC924681A32003A3B77 /* KKRuntimeController.m in Sources */,
 				93A1A263246B9E7400371FB3 /* KKLockViewController.m in Sources */,
 				930AABCD24681CA5003A3B77 /* KKPerson.m in Sources */,
 				930AABC52468198D003A3B77 /* KKRunLoopController.m in Sources */,
+				935122B0246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m in Sources */,
+				935122AC246D03A700815DA2 /* KKGCDViewController.m in Sources */,
 				93A1A276246BA2DE00371FB3 /* KKdispatch_semaphoreViewController.m in Sources */,
-				93A1A283246BE63900371FB3 /* KKNSLockTest.m in Sources */,
+				93A1A283246BE63900371FB3 /* KKNSLockSellTicket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3615,6 +3655,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LR3Z96539F;
 				INFOPLIST_FILE = KKProject_RxSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3636,6 +3677,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LR3Z96539F;
 				INFOPLIST_FILE = KKProject_RxSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3656,6 +3698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)//KKProject_ReactiveObjC/Common/KKCommon.h";
 				INFOPLIST_FILE = "$(SRCROOT)/KKProject_ReactiveObjC/Support files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -3675,6 +3718,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LR3Z96539F;
 				GCC_PREFIX_HEADER = "$(SRCROOT)//KKProject_ReactiveObjC/Common/KKCommon.h";
 				INFOPLIST_FILE = "$(SRCROOT)/KKProject_ReactiveObjC/Support files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

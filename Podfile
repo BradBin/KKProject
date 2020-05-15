@@ -112,8 +112,9 @@ target 'KKProject_ReactiveObjC' do
   #facebook的循环引用库
   pod 'FBMemoryProfiler'
   
-  #微信循环引用库
-  pod 'MLeaksFinder'
+  #微信循环引用库 iOS导致崩溃'UIAlertView is depr
+  #ecated and unavailable for UIScene based applications, please use UIAlertController!'
+  #  pod 'MLeaksFinder'
   
 end
 

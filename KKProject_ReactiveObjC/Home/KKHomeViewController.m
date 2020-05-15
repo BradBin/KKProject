@@ -10,6 +10,7 @@
 
 @interface KKHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataList;
 
@@ -19,6 +20,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+#warning mark -应用之间跳转
+    /*****
+     1.应用之间的跳转
+     2.应用之间跳转到对应的页面
+     ****/
+    self.rightButton = ({
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(0, 0, 44, 44);
+        [button setTitle:@"切应用" forState:UIControlStateNormal];
+        [button setTitleColor:UIColor.redColor forState:UIControlStateNormal];
+        button;
+    });
+    [[self.rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        //获取应用程序URL Scheme
+        NSURL *appURL = [NSURL URLWithString:@"RxSwift://?"];
+        //判断是否安装对应的应用程序
+        if ([UIApplication.sharedApplication canOpenURL:appURL]) {
+            [UIApplication.sharedApplication openURL:appURL options:@{} completionHandler:^(BOOL success) {
+                NSLog(@"安装了程序 : %@",success? @"调用成功":@"调用失败");
+            }];
+        }else{
+            NSLog(@"没有安装程序");
+        }
+    }];
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
 
     self.tableView = ({
         UITableView *view = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
@@ -33,6 +60,7 @@
         }];
         view;
     });
+    
        
     // Do any additional setup after loading the view.
 }
@@ -73,10 +101,12 @@
 
 -(NSMutableArray *)dataList{
     if (_dataList == nil) {
-        _dataList = [NSMutableArray arrayWithObjects:@{@"title":@"ReativeObjC",@"controller":@"KKReactiveObjCController"},@{@"title":@"事件响应/传递",@"controller":@"KKEventResponseController"},@{@"title":@"Lock",@"controller":@"KKLockViewController"},@{@"title":@"Thread",@"controller":@"KKThreadViewController"},@{@"title":@"RunLoop",@"controller":@"KKRunLoopController"},@{@"title":@"运行时RunTime",@"controller":@"KKRuntimeController"}, nil];
+        _dataList = [NSMutableArray arrayWithObjects:@{@"title":@"ReativeObjC",@"controller":@"KKReactiveObjCController"},@{@"title":@"事件响应/传递",@"controller":@"KKEventResponseController"},@{@"title":@"Lock",@"controller":@"KKLockViewController"},@{@"title":@"Thread",@"controller":@"KKThreadViewController"},@{@"title":@"GCD",@"controller":@"KKGCDViewController"},@{@"title":@"NSOPerationQueue",@"controller":@"KKOPerationQueueViewController"},@{@"title":@"RunLoop",@"controller":@"KKRunLoopController"},@{@"title":@"运行时RunTime",@"controller":@"KKRuntimeController"}, nil];
     }
     return _dataList;
 }
+
+
 
 /*
 #pragma mark - Navigation

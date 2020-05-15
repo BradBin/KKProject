@@ -1,5 +1,5 @@
 //
-//  KKNSLockTest.h
+//  KKNSLockSellTicket.h
 //  KKProject_ReactiveObjC
 //
 //  Created by youbin on 2020/5/13.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KKNSLockTest : NSObject
+@interface KKNSLockSellTicket : NSObject
 
 - (void)forTest;
 

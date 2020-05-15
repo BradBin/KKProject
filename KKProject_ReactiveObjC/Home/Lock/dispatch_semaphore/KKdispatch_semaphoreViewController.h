@@ -20,9 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
  1.信号量的初始化值,可以用来控制线程并发访问的最大数量.
  2.信号量的初始值为1,代表同时只允许1条线程访问资源,保证
  线程同步.
+ 3.注意:信号量的初始值决定 wait和signal的调用顺序
  For example:
  //表示最多开启5条线程
  dispatch_semaphore_create(5)
+ 
+ //让信号量的值+1
+ //发送信号量
+ dispatch_semaphore_signal(self.semaphore)
  
  //信号量>0,就让信号量值减1,然后继续执行代码
  //信号量<=0,就会休眠等待,直到信号量的值变成>0,就
@@ -30,9 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  //等待信号量
  dispatch_semaphore_wait(self.semaphore,DISPATCH_TIME_FOREVER)
  
- //让信号量的值+1
- //发送信号量
- dispatch_semaphore_signal(self.semaphore)
+ 
  
  
  

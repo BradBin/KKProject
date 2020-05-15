@@ -16,6 +16,9 @@
 @property (nonatomic, strong) UIButton *dispatchSemaphoreButton;
 @property (nonatomic, strong) UIButton *semaphoreNetworkingButton;
 
+
+@property (nonatomic, strong) dispatch_semaphore_t semaphore;
+
 @end
 
 @implementation KKdispatch_semaphoreViewController
@@ -60,6 +63,7 @@
     
     [[self.dispatchSemaphoreButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
+        self.semaphore = dispatch_semaphore_create(0);
         [self dispatch_semaphore];
     }];
     
@@ -87,44 +91,56 @@
 
 /// 异步线程同步
 -(void)dispatch_semaphore{
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-   
+
+    ///注意信号量的初始值决定wait和signal函数的调用关系
+#if 0
+    
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"1 : %@",NSThread.currentThread);
-        dispatch_semaphore_signal(semaphore);
+        dispatch_semaphore_signal(self.semaphore);
     });
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
     
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"2 : %@",NSThread.currentThread);
-        dispatch_semaphore_signal(semaphore);
+        dispatch_semaphore_signal(self.semaphore);
     });
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
     
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"3 : %@",NSThread.currentThread);
-        dispatch_semaphore_signal(semaphore);
+        dispatch_semaphore_signal(self.semaphore);
     });
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     
+#else
+    
+
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"1 : %@",NSThread.currentThread.name);
+        dispatch_semaphore_signal(self.semaphore);
+    });
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"2 : %@",NSThread.currentThread.name);
+        dispatch_semaphore_signal(self.semaphore);
+    });
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"3 : %@",NSThread.currentThread.name);
+        dispatch_semaphore_signal(self.semaphore);
+    });
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    
+#endif
 }
 
-
-- (void)dispatch_semaphore_networking{
-    NSString *urlString = @"http://b-ssl.duitang.com/uploads/item/201601/08/20160108120227_WJmyk.thumb.700_0.jpeg";
-    NSString *urlString1 = @"http://img.mp.sohu.com/upload/20170610/799d31ebeb4c48749f45b7122d9a2b4f_th.png";
-    
-    
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-    });
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-    });
-}
 
 /*
  #pragma mark - Navigation
