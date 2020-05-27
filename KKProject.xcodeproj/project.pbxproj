@@ -212,6 +212,17 @@
 		934829AE23E5B75D00AB9B3C /* KKHomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934829AD23E5B75D00AB9B3C /* KKHomeViewCell.swift */; };
 		935122AC246D03A700815DA2 /* KKGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935122AB246D03A700815DA2 /* KKGCDViewController.m */; };
 		935122B0246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 935122AF246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m */; };
+		9352C94C246F7F95000DA1B8 /* KKFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C94B246F7F95000DA1B8 /* KKFileTransfer.m */; };
+		9352C94F246F9EF3000DA1B8 /* KKFileTransfer+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C94E246F9EF3000DA1B8 /* KKFileTransfer+KKAdd.m */; };
+		9352C955246FE9CB000DA1B8 /* KKDownLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C954246FE9CB000DA1B8 /* KKDownLoadTask.m */; };
+		9352C95824718E65000DA1B8 /* KKURLSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C95724718E65000DA1B8 /* KKURLSessionView.m */; };
+		9352C95B2472487A000DA1B8 /* KKURLSessionBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C95A2472487A000DA1B8 /* KKURLSessionBaseView.m */; };
+		9352C95E24724916000DA1B8 /* KKURLSessionView_Normal.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C95D24724916000DA1B8 /* KKURLSessionView_Normal.m */; };
+		9352C96424724976000DA1B8 /* KKURLSessionView_Upload.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C96324724976000DA1B8 /* KKURLSessionView_Upload.m */; };
+		9352C9672472498A000DA1B8 /* KKURLSessionView_Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C9662472498A000DA1B8 /* KKURLSessionView_Download.m */; };
+		9352C96D2472D867000DA1B8 /* KKFileHandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C96C2472D867000DA1B8 /* KKFileHandleViewController.m */; };
+		9352C9702472D918000DA1B8 /* tu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9352C96F2472D918000DA1B8 /* tu.gif */; };
+		9352C97324739F28000DA1B8 /* KKURLSessionView_offlineDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 9352C97224739F28000DA1B8 /* KKURLSessionView_offlineDown.m */; };
 		9353DD4422C35418009217C1 /* UIViewController+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */; };
 		9353DD4522C35418009217C1 /* UIViewController+KKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */; };
 		9353DD4922C355EA009217C1 /* KKAboutusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9353DD4822C355EA009217C1 /* KKAboutusViewController.m */; };
@@ -372,6 +383,7 @@
 		93F86F8B23D544AB00628ED1 /* KKVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F86F8A23D544AB00628ED1 /* KKVideoViewController.swift */; };
 		93F936F3246EA4B7008EA4DB /* KKOPerationQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F936F2246EA4B7008EA4DB /* KKOPerationQueueViewController.m */; };
 		93F936F7246EDA4D008EA4DB /* KKOperationQueueSellTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F936F6246EDA4D008EA4DB /* KKOperationQueueSellTicket.m */; };
+		93F936FA246EF59F008EA4DB /* KKURLSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F936F9246EF59F008EA4DB /* KKURLSessionController.m */; };
 		BB188698CA7ACBD3B030606E /* libPods-KKProject_ReactiveObjC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE237A760FA290E877BD0567 /* libPods-KKProject_ReactiveObjC.a */; };
 		C0E3CDB08138B2ABB9393EE9 /* libPods-KKProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 822D98E7F2EC6A41977A257D /* libPods-KKProject.a */; };
 		DAB117A6C4ABC672D923BBD8 /* libPods-KKProject_Objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA44D9FB83B89B51C33862 /* libPods-KKProject_Objc.a */; };
@@ -651,6 +663,27 @@
 		935122AB246D03A700815DA2 /* KKGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKGCDViewController.m; sourceTree = "<group>"; };
 		935122AE246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDispatchSemaphoreSellTicket.h; sourceTree = "<group>"; };
 		935122AF246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDispatchSemaphoreSellTicket.m; sourceTree = "<group>"; };
+		9352C94A246F7F95000DA1B8 /* KKFileTransfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKFileTransfer.h; sourceTree = "<group>"; };
+		9352C94B246F7F95000DA1B8 /* KKFileTransfer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKFileTransfer.m; sourceTree = "<group>"; };
+		9352C94D246F9EF3000DA1B8 /* KKFileTransfer+KKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKFileTransfer+KKAdd.h"; sourceTree = "<group>"; };
+		9352C94E246F9EF3000DA1B8 /* KKFileTransfer+KKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KKFileTransfer+KKAdd.m"; sourceTree = "<group>"; };
+		9352C953246FE9CB000DA1B8 /* KKDownLoadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKDownLoadTask.h; sourceTree = "<group>"; };
+		9352C954246FE9CB000DA1B8 /* KKDownLoadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKDownLoadTask.m; sourceTree = "<group>"; };
+		9352C95624718E65000DA1B8 /* KKURLSessionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKURLSessionView.h; sourceTree = "<group>"; };
+		9352C95724718E65000DA1B8 /* KKURLSessionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKURLSessionView.m; sourceTree = "<group>"; };
+		9352C9592472487A000DA1B8 /* KKURLSessionBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKURLSessionBaseView.h; sourceTree = "<group>"; };
+		9352C95A2472487A000DA1B8 /* KKURLSessionBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKURLSessionBaseView.m; sourceTree = "<group>"; };
+		9352C95C24724916000DA1B8 /* KKURLSessionView_Normal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKURLSessionView_Normal.h; sourceTree = "<group>"; };
+		9352C95D24724916000DA1B8 /* KKURLSessionView_Normal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKURLSessionView_Normal.m; sourceTree = "<group>"; };
+		9352C96224724976000DA1B8 /* KKURLSessionView_Upload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKURLSessionView_Upload.h; sourceTree = "<group>"; };
+		9352C96324724976000DA1B8 /* KKURLSessionView_Upload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKURLSessionView_Upload.m; sourceTree = "<group>"; };
+		9352C9652472498A000DA1B8 /* KKURLSessionView_Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKURLSessionView_Download.h; sourceTree = "<group>"; };
+		9352C9662472498A000DA1B8 /* KKURLSessionView_Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKURLSessionView_Download.m; sourceTree = "<group>"; };
+		9352C96B2472D867000DA1B8 /* KKFileHandleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKFileHandleViewController.h; sourceTree = "<group>"; };
+		9352C96C2472D867000DA1B8 /* KKFileHandleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKFileHandleViewController.m; sourceTree = "<group>"; };
+		9352C96F2472D918000DA1B8 /* tu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tu.gif; sourceTree = "<group>"; };
+		9352C97124739F28000DA1B8 /* KKURLSessionView_offlineDown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKURLSessionView_offlineDown.h; sourceTree = "<group>"; };
+		9352C97224739F28000DA1B8 /* KKURLSessionView_offlineDown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKURLSessionView_offlineDown.m; sourceTree = "<group>"; };
 		9353DD4222C35418009217C1 /* UIViewController+KKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KKAdd.h"; sourceTree = "<group>"; };
 		9353DD4322C35418009217C1 /* UIViewController+KKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KKAdd.m"; sourceTree = "<group>"; };
 		9353DD4722C355EA009217C1 /* KKAboutusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAboutusViewController.h; sourceTree = "<group>"; };
@@ -779,6 +812,8 @@
 		93F936F2246EA4B7008EA4DB /* KKOPerationQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKOPerationQueueViewController.m; sourceTree = "<group>"; };
 		93F936F5246EDA4D008EA4DB /* KKOperationQueueSellTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKOperationQueueSellTicket.h; sourceTree = "<group>"; };
 		93F936F6246EDA4D008EA4DB /* KKOperationQueueSellTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKOperationQueueSellTicket.m; sourceTree = "<group>"; };
+		93F936F8246EF59F008EA4DB /* KKURLSessionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKURLSessionController.h; sourceTree = "<group>"; };
+		93F936F9246EF59F008EA4DB /* KKURLSessionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKURLSessionController.m; sourceTree = "<group>"; };
 		9A231405B48427159F078F02 /* Pods-KKProject_ReactiveCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_ReactiveCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_ReactiveCocoa/Pods-KKProject_ReactiveCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		B12B31BA8575659E169A4242 /* Pods-KKProject_ReactiveObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_ReactiveObjC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_ReactiveObjC/Pods-KKProject_ReactiveObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		B481E0B9A648E9B17C3A032C /* Pods-KKProject_ReactiveCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKProject_ReactiveCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKProject_ReactiveCocoa/Pods-KKProject_ReactiveCocoa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1474,6 +1509,8 @@
 				93A1A264246B9E7B00371FB3 /* Lock */,
 				935122AD246D03B300815DA2 /* GCD */,
 				93F936F4246EA503008EA4DB /* Queue */,
+				93F936FB246EF5AA008EA4DB /* URLSession */,
+				9352C96E2472D86F000DA1B8 /* FileHandle */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1501,6 +1538,7 @@
 		930AABB924681832003A3B77 /* Support files */ = {
 			isa = PBXGroup;
 			children = (
+				9352C96F2472D918000DA1B8 /* tu.gif */,
 				931FBE432455CBA2008475A4 /* ViewController.h */,
 				931FBE442455CBA2008475A4 /* ViewController.m */,
 				931FBE462455CBA2008475A4 /* Main.storyboard */,
@@ -1796,6 +1834,34 @@
 				935122AF246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m */,
 			);
 			path = GCD;
+			sourceTree = "<group>";
+		};
+		9352C9682472499D000DA1B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9352C95624718E65000DA1B8 /* KKURLSessionView.h */,
+				9352C95724718E65000DA1B8 /* KKURLSessionView.m */,
+				9352C9592472487A000DA1B8 /* KKURLSessionBaseView.h */,
+				9352C95A2472487A000DA1B8 /* KKURLSessionBaseView.m */,
+				9352C95C24724916000DA1B8 /* KKURLSessionView_Normal.h */,
+				9352C95D24724916000DA1B8 /* KKURLSessionView_Normal.m */,
+				9352C96224724976000DA1B8 /* KKURLSessionView_Upload.h */,
+				9352C96324724976000DA1B8 /* KKURLSessionView_Upload.m */,
+				9352C9652472498A000DA1B8 /* KKURLSessionView_Download.h */,
+				9352C9662472498A000DA1B8 /* KKURLSessionView_Download.m */,
+				9352C97124739F28000DA1B8 /* KKURLSessionView_offlineDown.h */,
+				9352C97224739F28000DA1B8 /* KKURLSessionView_offlineDown.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9352C96E2472D86F000DA1B8 /* FileHandle */ = {
+			isa = PBXGroup;
+			children = (
+				9352C96B2472D867000DA1B8 /* KKFileHandleViewController.h */,
+				9352C96C2472D867000DA1B8 /* KKFileHandleViewController.m */,
+			);
+			path = FileHandle;
 			sourceTree = "<group>";
 		};
 		9353DD4622C355AC009217C1 /* Controller */ = {
@@ -2183,6 +2249,22 @@
 			path = Queue;
 			sourceTree = "<group>";
 		};
+		93F936FB246EF5AA008EA4DB /* URLSession */ = {
+			isa = PBXGroup;
+			children = (
+				93F936F8246EF59F008EA4DB /* KKURLSessionController.h */,
+				93F936F9246EF59F008EA4DB /* KKURLSessionController.m */,
+				9352C9682472499D000DA1B8 /* View */,
+				9352C94A246F7F95000DA1B8 /* KKFileTransfer.h */,
+				9352C94B246F7F95000DA1B8 /* KKFileTransfer.m */,
+				9352C94D246F9EF3000DA1B8 /* KKFileTransfer+KKAdd.h */,
+				9352C94E246F9EF3000DA1B8 /* KKFileTransfer+KKAdd.m */,
+				9352C953246FE9CB000DA1B8 /* KKDownLoadTask.h */,
+				9352C954246FE9CB000DA1B8 /* KKDownLoadTask.m */,
+			);
+			path = URLSession;
+			sourceTree = "<group>";
+		};
 		F3E9ACCC91B3EC9457AB7448 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2516,6 +2598,7 @@
 				931FBE4D2455CBA4008475A4 /* LaunchScreen.storyboard in Resources */,
 				931FBE4A2455CBA4008475A4 /* Assets.xcassets in Resources */,
 				931FBE482455CBA2008475A4 /* Main.storyboard in Resources */,
+				9352C9702472D918000DA1B8 /* tu.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3133,27 +3216,38 @@
 				933D70EA246AE5BB000E00FA /* KKThreadViewController.m in Sources */,
 				9374DC4424646B99006DE969 /* KKViewController.m in Sources */,
 				93A1A273246BA2D400371FB3 /* KKOSSpinLockViewController.m in Sources */,
+				9352C95E24724916000DA1B8 /* KKURLSessionView_Normal.m in Sources */,
 				933D70E72469B86A000E00FA /* KKRunLoopView.m in Sources */,
+				9352C95B2472487A000DA1B8 /* KKURLSessionBaseView.m in Sources */,
 				930AABBD2468191F003A3B77 /* KKReactiveObjCController.m in Sources */,
 				93A1A26D246BA2BF00371FB3 /* KKNSRecursiveLockViewController.m in Sources */,
+				9352C94C246F7F95000DA1B8 /* KKFileTransfer.m in Sources */,
 				933D70E424690AAA000E00FA /* KKPerson+KKAdd.m in Sources */,
+				9352C94F246F9EF3000DA1B8 /* KKFileTransfer+KKAdd.m in Sources */,
 				931FBE452455CBA2008475A4 /* ViewController.m in Sources */,
 				93A1A26A246BA2B300371FB3 /* KKNSConditionLockViewController.m in Sources */,
 				933D70EE246AFC6D000E00FA /* KKThread.m in Sources */,
 				93A1A267246BA2A400371FB3 /* KKNSLockViewController.m in Sources */,
+				93F936FA246EF59F008EA4DB /* KKURLSessionController.m in Sources */,
+				9352C96424724976000DA1B8 /* KKURLSessionView_Upload.m in Sources */,
+				9352C96D2472D867000DA1B8 /* KKFileHandleViewController.m in Sources */,
 				931FBE3F2455CBA2008475A4 /* AppDelegate.m in Sources */,
 				9384693A2465941600806D88 /* KKMsgForward.m in Sources */,
 				93A1A279246BA2EE00371FB3 /* KKSynchronizedViewController.m in Sources */,
 				93F936F3246EA4B7008EA4DB /* KKOPerationQueueViewController.m in Sources */,
 				9374DC4724646BB0006DE969 /* KKHomeViewController.m in Sources */,
+				9352C97324739F28000DA1B8 /* KKURLSessionView_offlineDown.m in Sources */,
 				93A1A270246BA2CB00371FB3 /* KKPthread_mutexViewController.m in Sources */,
 				9374DC412464681C006DE969 /* KKEventView.m in Sources */,
 				931FBE502455CBA4008475A4 /* main.m in Sources */,
 				93F936F7246EDA4D008EA4DB /* KKOperationQueueSellTicket.m in Sources */,
 				931FBE422455CBA2008475A4 /* SceneDelegate.m in Sources */,
+				9352C955246FE9CB000DA1B8 /* KKDownLoadTask.m in Sources */,
+				9352C9672472498A000DA1B8 /* KKURLSessionView_Download.m in Sources */,
 				930AABC124681958003A3B77 /* KKEventResponseController.m in Sources */,
 				930AABC924681A32003A3B77 /* KKRuntimeController.m in Sources */,
 				93A1A263246B9E7400371FB3 /* KKLockViewController.m in Sources */,
+				9352C95824718E65000DA1B8 /* KKURLSessionView.m in Sources */,
 				930AABCD24681CA5003A3B77 /* KKPerson.m in Sources */,
 				930AABC52468198D003A3B77 /* KKRunLoopController.m in Sources */,
 				935122B0246D0DD400815DA2 /* KKDispatchSemaphoreSellTicket.m in Sources */,
