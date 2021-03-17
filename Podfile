@@ -14,6 +14,7 @@ def commonPods
   pod 'YYKit'
   pod 'AFNetworking'
   pod 'IQKeyboardManager'
+
   
   pod 'EasyReact'
   pod 'ReactiveObjC'
@@ -258,10 +259,6 @@ targets.each do |t|
   end
   
 end
-
-
-
-
 
 
 

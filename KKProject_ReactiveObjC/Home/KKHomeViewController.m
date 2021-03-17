@@ -44,9 +44,9 @@
             NSLog(@"没有安装程序");
         }
     }];
-
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
-
+    
     self.tableView = ({
         UITableView *view = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         view.delegate = self;
@@ -61,7 +61,7 @@
         view;
     });
     
-       
+    
     // Do any additional setup after loading the view.
 }
 
@@ -101,7 +101,9 @@
 
 -(NSMutableArray *)dataList{
     if (_dataList == nil) {
-        _dataList = [NSMutableArray arrayWithObjects:@{@"title":@"ReativeObjC",@"controller":@"KKReactiveObjCController"},@{@"title":@"NSFileHandle/NSFileManager",@"controller":@"KKFileHandleViewController"},@{@"title":@"NSURLSession",@"controller":@"KKURLSessionController"},@{@"title":@"事件响应/传递",@"controller":@"KKEventResponseController"},@{@"title":@"Lock",@"controller":@"KKLockViewController"},@{@"title":@"Thread",@"controller":@"KKThreadViewController"},@{@"title":@"GCD",@"controller":@"KKGCDViewController"},@{@"title":@"NSOPerationQueue",@"controller":@"KKOPerationQueueViewController"},@{@"title":@"RunLoop",@"controller":@"KKRunLoopController"},@{@"title":@"运行时RunTime",@"controller":@"KKRuntimeController"}, nil];
+        _dataList = [NSMutableArray arrayWithObjects:@{@"title":@"scrollView",@"controller":@"KKScrollViewController"},
+                     @{@"title":@"定时器",@"controller":@"KKTimerViewController"},
+                     @{@"title":@"ReativeObjC",@"controller":@"KKReactiveObjCController"},@{@"title":@"NSFileHandle/NSFileManager",@"controller":@"KKFileHandleViewController"},@{@"title":@"NSURLSession",@"controller":@"KKURLSessionController"},@{@"title":@"事件响应/传递",@"controller":@"KKEventResponseController"},@{@"title":@"Lock",@"controller":@"KKLockViewController"},@{@"title":@"Thread",@"controller":@"KKThreadViewController"},@{@"title":@"GCD",@"controller":@"KKGCDViewController"},@{@"title":@"NSOPerationQueue",@"controller":@"KKOPerationQueueViewController"},@{@"title":@"RunLoop",@"controller":@"KKRunLoopController"},@{@"title":@"运行时RunTime",@"controller":@"KKRuntimeController"}, nil];
     }
     return _dataList;
 }
@@ -109,13 +111,13 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

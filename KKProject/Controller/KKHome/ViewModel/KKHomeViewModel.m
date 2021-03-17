@@ -84,8 +84,7 @@
                     [subscriber sendNext:model];
                     [subscriber sendCompleted];
                 } error:^(NSURLResponse *response, NSError *error) {
-                    [subscriber sendNext:error];
-                    [subscriber sendCompleted];
+                    [subscriber sendError:error];
                 } fail:^(NSError *error) {
                     [subscriber sendError:error];
                 }];

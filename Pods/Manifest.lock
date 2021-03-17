@@ -262,69 +262,57 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
-    - BlockHook
-    - Bugly
-    - CocoaLumberjack
-    - DKNightVersion
-    - dsBridge
-    - EasyFoundation
-    - EasyReact
-    - EasySequence
-    - EasyTuple
-    - FBRetainCycleDetector
-    - FFRouter
-    - GPUImage
-    - IQKeyboardManager
-    - JXCategoryView
-    - Masonry
-    - MBProgressHUD
-    - MJRefresh
-    - NIMSDK
-    - OpenShare
-    - Protobuf
-    - ReactiveObjC
-    - SSZipArchive
-    - SVGAPlayer
-    - SVGKit
-    - UMCAnalytics
-    - UMCCommon
-    - UMCCommonLog
-    - UMCPush
-    - UMCSecurityPlugins
-    - UMCShare
-    - YYKit
   trunk:
+    - AFNetworking
     - Alamofire
     - AnimatedCollectionViewLayout
     - Aspects
     - AsyncSwift
     - Atributika
     - BeeHive
+    - BlockHook
+    - Bugly
+    - CocoaLumberjack
     - CollectionKit
     - CryptoSwift
     - CYLTabBarController
+    - DKNightVersion
+    - dsBridge
     - DynamicColor
     - EachNavigationBar
+    - EasyFoundation
+    - EasyReact
+    - EasySequence
+    - EasyTuple
     - EmptyDataSet-Swift
     - ESTabBarController-swift
     - expanding-collection
     - FBAllocationTracker
     - FBMemoryProfiler
+    - FBRetainCycleDetector
+    - FFRouter
     - FoldingCell
+    - GPUImage
     - HandyJSON
     - Instructions
+    - IQKeyboardManager
     - IQKeyboardManagerSwift
+    - JXCategoryView
     - JXSegmentedView
     - KeychainAccess
     - Kingfisher
     - LTMorphingLabel
+    - Masonry
     - Material
+    - MBProgressHUD
+    - MJRefresh
     - Motion
     - Moya
+    - NIMSDK
     - NVActivityIndicatorView
+    - OpenShare
     - PromiseKit
+    - Protobuf
     - Queuer
     - QuickLayout
     - R.swift
@@ -332,6 +320,7 @@ SPEC REPOS:
     - RAMAnimatedTabBarController
     - ReachabilitySwift
     - ReactiveCocoa
+    - ReactiveObjC
     - ReactiveSwift
     - Repeat
     - RxCocoa
@@ -340,7 +329,10 @@ SPEC REPOS:
     - SkeletonView
     - SnapKit
     - SQLite.swift
+    - SSZipArchive
     - Surge
+    - SVGAPlayer
+    - SVGKit
     - SwiftDate
     - SwiftEntryKit
     - SwiftLint
@@ -350,8 +342,15 @@ SPEC REPOS:
     - SwiftyUserDefaults
     - SwipeCellKit
     - thenPromise
+    - UMCAnalytics
+    - UMCCommon
+    - UMCCommonLog
+    - UMCPush
+    - UMCSecurityPlugins
+    - UMCShare
     - ViewAnimator
     - XLPagerTabStrip
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -443,6 +442,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 50811e878d9aeb2b4585541a0b32852a96bf6a0e
+PODFILE CHECKSUM: b5ea3b5dc7282054eb8b2566bdb02620c16de5cc
 
 COCOAPODS: 1.9.1

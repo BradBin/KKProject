@@ -214,7 +214,6 @@
     }];
     [view pushViewWithAnimated:true];
 
-
     //    KKWebViewController *vc = [[KKWebViewController alloc] initWithURLString:@"https://www.baidu.com" webApis:nil];
     //    [self.viewModel.pushVCSubject sendNext:vc];
     //    [self.viewModel.presentVCSubject sendNext:vc];
