@@ -14,6 +14,8 @@ def commonPods
   pod 'YYKit'
   pod 'AFNetworking'
   pod 'IQKeyboardManager'
+  
+  pod 'SDWebImage', '~> 5.10.2'
 
   
   pod 'EasyReact'
